@@ -56,9 +56,9 @@
   "about": {
     "location": "currently in paris",
     "hello": "hi there! i’m ramsey,",
-    "intro": "and I move towards sharp ideas, odd details, and things that just work.",
+    "intro": "and I’m drawn to sharp ideas, odd details, and things that just work.",
     "cv": "cv",
-    "work": "see my work",
+    "copyEmail": "Copy ramseyhat@gmail.com",
     "musicLabel": "music",
     "music": "i’m also kinda obsessed with new music.",
     "suggest": "suggest a song",
@@ -233,6 +233,8 @@
     "pageAlt": "A photographed book page with an image, Arabic lettering and a highlighted passage."
   },
   "runtime": {
+    "emailCopied": "copied",
+    "emailCopyFailed": "couldn’t copy — please select the address",
     "countOne": "Showing {count} project.",
     "countMany": "Showing {count} projects.",
     "filteredOne": "Showing {count} project in {category}.",
@@ -263,7 +265,7 @@
     "homeTitle": "ramsey hatoum — Selected Work",
     "homeDescription": "Made for use. Selected apps, objects, and experiments by ramsey hatoum.",
     "aboutTitle": "about — ramsey hatoum",
-    "aboutDescription": "hi there! i’m ramsey, and I move towards sharp ideas, odd details, and things that just work.",
+    "aboutDescription": "hi there! i’m ramsey, and I’m drawn to sharp ideas, odd details, and things that just work.",
     "handbagTitle": "Handmade Handbag — ramsey hatoum",
     "handbagDescription": "A handmade black handbag with silver hardware. Accessory design by Ramsey Hatoum.",
     "tidleTitle": "Tidle — ramsey hatoum",

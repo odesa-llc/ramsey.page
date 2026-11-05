@@ -58,7 +58,7 @@
     "hello": "salut, moi c’est ramsey,",
     "intro": "et je suis attiré par les idées affûtées, les détails singuliers et les choses qui fonctionnent, tout simplement.",
     "cv": "cv",
-    "work": "voir mes projets",
+    "copyEmail": "Copier ramseyhat@gmail.com",
     "musicLabel": "musique",
     "music": "et je ne me lasse pas de découvrir de nouveaux morceaux.",
     "suggest": "me conseiller un morceau",
@@ -233,6 +233,8 @@
     "pageAlt": "Une page de livre photographiée, avec une image, du texte arabe et un passage surligné."
   },
   "runtime": {
+    "emailCopied": "adresse copiée",
+    "emailCopyFailed": "copie impossible — sélectionnez l’adresse",
     "countOne": "{count} projet affiché.",
     "countMany": "{count} projets affichés.",
     "filteredOne": "{count} projet affiché dans « {category} ».",
