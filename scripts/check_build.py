@@ -17,6 +17,7 @@ class Document(HTMLParser):
 
 
 def check(output, base_path, site_url):
+    base_path = base_path.rstrip('/') + '/'
     catalogs = load_catalogs()
     expected = set()
     for page in PAGES:
