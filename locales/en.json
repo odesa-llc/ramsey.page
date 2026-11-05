@@ -54,11 +54,11 @@
     "things": "things"
   },
   "about": {
-    "location": "based in paris",
+    "location": "currently in paris",
     "hello": "hi there! i’m ramsey,",
     "intro": "a designer who loves bringing creativity and craft into digital experiences.",
-    "cv": "cv ↗",
-    "work": "see my work ↗",
+    "cv": "cv",
+    "work": "see my work",
     "musicLabel": "music",
     "music": "i’m also kinda obsessed with new music.",
     "suggest": "suggest a song",

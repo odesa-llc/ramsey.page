@@ -54,11 +54,11 @@
     "things": "objets"
   },
   "about": {
-    "location": "basé à paris",
+    "location": "actuellement à paris",
     "hello": "salut, moi c’est ramsey.",
     "intro": "je suis designer. J’aime imaginer des expériences numériques et en soigner chaque détail.",
-    "cv": "cv ↗",
-    "work": "voir mes projets ↗",
+    "cv": "cv",
+    "work": "voir mes projets",
     "musicLabel": "musique",
     "music": "et je ne me lasse pas de découvrir de nouveaux morceaux.",
     "suggest": "me conseiller un morceau",
