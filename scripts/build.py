@@ -2,6 +2,7 @@
 """Compile shared portfolio pages and JSON copy into a bilingual static website."""
 import argparse
 import html
+import hashlib
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -170,7 +171,11 @@ def render(source, page, lang, messages, site_url, base_path, gateway=False):
     # Translation data exists before any existing scripts initialize their controls.
     # Keep charset inside the first 1024 bytes; redirect before any other script.
     source = re.sub(r'<meta\s+charset=["\'][^"\']+["\']\s*/?>', '', source, flags=re.I)
-    entry = '<script src="/language-entry.js?v=1" data-base-path="/"></script>\n' if gateway else ''
+    entry = ''
+    if gateway:
+        entry_source = prefix_paths((ROOT / 'site/language-entry.js').read_text(), base_path, 'language-entry.js')
+        entry_version = hashlib.sha256(entry_source.encode()).hexdigest()[:12]
+        entry = f'<script src="/language-entry.js?v={entry_version}" data-base-path="/"></script>\n'
     header = '\n<meta charset="utf-8">\n' + entry + bootstrap(messages) + '\n' + '\n'.join(metadata)
     source = re.sub(r'(<head\b[^>]*>)', lambda m: m[1] + header, source, count=1, flags=re.I)
     source = source.replace('</head>', '<link rel="stylesheet" href="/localized.css?v=1">\n</head>', 1)
