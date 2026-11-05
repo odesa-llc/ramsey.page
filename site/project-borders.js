@@ -109,9 +109,32 @@
       return point.map(function (n) { return n.toFixed(2); }).join(' ');
     }
     function edge(start, middle, end) {
-      // Follow the slight project-specific bend without introducing a kink.
+      // Keep the broad bend, with a small, smooth pen drift along each side.
       var control = bounded([2 * middle[0] - (start[0] + end[0]) / 2, 2 * middle[1] - (start[1] + end[1]) / 2]);
-      return ' Q ' + coordinates(control) + ' ' + coordinates(end);
+      var dx = end[0] - start[0], dy = end[1] - start[1];
+      var length = Math.hypot(dx, dy) || 1;
+      var normal = [-dy / length, dx / length];
+      var drift = (.7 + rng() * .8) * Math.min(1.1, Math.min(w, h) / 300) * profile.amount;
+      var phase = rng() * Math.PI * 2;
+      function sample(t) {
+        var wave = Math.sin(Math.PI * t);
+        var offset = drift * wave * wave * (.55 + .45 * Math.sin(3 * Math.PI * t + phase));
+        return bounded([
+          (1-t)*(1-t)*start[0] + 2*(1-t)*t*control[0] + t*t*end[0] + normal[0]*offset,
+          (1-t)*(1-t)*start[1] + 2*(1-t)*t*control[1] + t*t*end[1] + normal[1]*offset
+        ]);
+      }
+      var points = [start, sample(.25), sample(.5), sample(.75), end];
+      var d = '';
+      for (var i = 0; i < points.length - 1; i++) {
+        var a = points[i], b = points[i+1];
+        var previous = points[i-1] || [2*a[0]-b[0], 2*a[1]-b[1]];
+        var next = points[i+2] || [2*b[0]-a[0], 2*b[1]-a[1]];
+        var c1 = bounded([a[0]+(b[0]-previous[0])/6, a[1]+(b[1]-previous[1])/6]);
+        var c2 = bounded([b[0]-(next[0]-a[0])/6, b[1]-(next[1]-a[1])/6]);
+        d += ' C ' + coordinates(c1) + ' ' + coordinates(c2) + ' ' + coordinates(b);
+      }
+      return d;
     }
     function corner(start, end, outer) {
       // Vary the softness a little at each corner instead of repeating a
