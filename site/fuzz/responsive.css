@@ -1,0 +1,97 @@
+/* The narrow layout follows the story in reading order instead of shrinking
+   the desktop artboard. All measurements use the actual Notebook Hand font. */
+.image-link{display:block}.zoom-link{font-size:18px;text-decoration:underline;text-underline-offset:4px;margin-left:14px}
+.toggle button{min-height:44px}.masthead>a:not(.identity){min-height:44px;display:flex;align-items:center}
+.reveal-stage:focus-visible{outline:2px solid var(--ink);outline-offset:8px}
+@media(max-width:1535px){
+  main{width:100%;max-width:1120px;padding:0 32px}
+  .single{overflow-x:visible}
+  .artboard{position:relative;width:100%;height:auto;padding:32px 0 44px;overflow:visible;display:grid;min-width:0}
+  .artboard>*{position:relative;inset:auto;width:auto;height:auto;min-width:0;transform:none}
+  .artboard>h2,.artboard>.chapter-end{position:relative;inset:auto;width:100%;height:auto}
+  .arrows{display:none}
+  .chapter-label{font-size:24px;line-height:1.35;margin-bottom:20px}
+  .chapter-label::after{display:none}
+  .artboard h2{font-size:clamp(36px,4.9vw,58px);line-height:1.18;white-space:normal;text-wrap:balance;margin-bottom:18px}
+  .note{font-size:25px;line-height:1.35;border-left:1px solid var(--ink);padding-left:14px;margin:18px 0;max-width:36ch}
+  .note br{display:none}
+  .note br::after{content:' '}
+  .chapter-end{font-size:24px;line-height:1.3;margin-top:38px;padding-top:18px}
+  .opening{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);column-gap:48px;grid-template-areas:'nav nav' 'intro setup' 'intro video' 'board video' 'follow sound' 'next next'}
+  .masthead{grid-area:nav;display:flex;align-items:center;justify-content:center;gap:72px;height:126px;padding:0 0 16px;margin-bottom:42px;font-size:24px}
+  .identity{margin:0;gap:2px}.identity img{height:82px}.identity span{font-size:21px}
+  .hero-copy{grid-area:intro;width:100%}.kicker{font-size:20px;line-height:1.4;margin-bottom:22px}
+  .hero-copy h1{font-size:clamp(46px,5.1vw,64px);line-height:1.13;white-space:normal;margin-bottom:24px;letter-spacing:-.5px}
+  .intro{width:100%;max-width:45ch;font-size:24px;line-height:1.48}
+  .small-board{grid-area:board;width:100%;height:auto;aspect-ratio:4/3;margin:12px 0}.small-board img{width:100%;height:100%}
+  .video-figure{grid-area:video;width:100%;align-self:center}.video-shape{transform:none;border-radius:28px 22px 31px 24px}
+  video{height:auto;aspect-ratio:16/9;object-fit:contain;background:var(--paper);width:100%}
+  .video-figure figcaption{font-size:20px;line-height:1.4;justify-content:flex-start;gap:14px;margin-top:18px}
+  .video-figure figcaption span{flex:1;min-width:0}.play-button{flex:0 0 48px;width:48px;height:48px;padding:10px}
+  .setup-note{grid-area:setup;align-self:end}.sound-note{grid-area:sound;margin:16px 0 0;text-align:center;border:0;padding:0}
+  .follow-note{grid-area:follow;justify-self:start;align-self:center;border:0;border-bottom:1px solid var(--ink);padding:0 0 5px}
+  .opening .chapter-end{grid-area:next}
+  .breadboard{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 32px}
+  .breadboard>.chapter-label,.breadboard>h2,.breadboard>.section-deck,.breadboard>.reveal-stage,.breadboard>.board-caption,.breadboard>.view-controls,.breadboard>.build-copy,.breadboard>.reference-note,.breadboard>.chapter-end{grid-column:1/-1}
+  .section-deck{font-size:25px;line-height:1.4}
+  .reveal-stage{width:100%;max-width:1020px;aspect-ratio:16/10;justify-self:center;margin:20px 0 8px;overflow:hidden;order:1}
+  .drawing-layer{inset:0;transform:translateX(16%) scale(.9)}
+  .board-caption{font-size:23px;text-align:center;line-height:1.3;order:2}
+  .view-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 28px;align-items:center;margin:24px 0 16px;font-size:21px;order:3}
+  .toggle{display:flex;flex-wrap:nowrap;gap:4px}.toggle button{font-size:24px;min-height:48px;min-width:120px;padding:7px 23px 9px;line-height:1.2}
+  .exposed-note{order:4}.signal-note{order:5}.perspective-note{order:6;border-bottom:0;font-size:25px}
+  .build-copy{order:7;width:100%;max-width:64ch;font-size:24px;line-height:1.48;margin-top:22px}
+  .reference-note{order:8;width:100%;max-width:60ch;font-size:18px;line-height:1.45;text-align:left;opacity:1;margin-top:16px}
+  .breadboard>.chapter-end{order:9}
+  .prototype{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:48px;grid-template-areas:'label label' 'heading heading' 'plan board' 'access swap' 'access connections' 'closing closing'}
+  .prototype .chapter-label{grid-area:label}.prototype h2{grid-area:heading;margin-bottom:34px}
+  .plan-figure{grid-area:plan;width:100%;align-self:center}.prototype-figure{grid-area:board;width:100%;align-self:center}
+  .plan-crop{width:100%;height:auto;aspect-ratio:620/438;transform:none;border-radius:25px 21px 24px 20px}
+  .plan-crop img{width:116.129%;left:-8.0645%;top:-11.1872%}
+  .prototype-crop{width:100%;height:auto;aspect-ratio:550/497;transform:none;border-radius:26px 22px 29px 24px}
+  .prototype-crop img{width:190.909%;left:-38.182%;top:-68.41%}
+  .plan-figure figcaption,.prototype-figure figcaption{font-size:24px;line-height:1.4;margin-top:16px}
+  .zoom-link{display:block;width:max-content;max-width:100%;min-height:44px;margin:4px auto 0;padding:8px 0;font-size:19px;line-height:1.4}
+  .access-note{grid-area:access}.transistor-note{grid-area:swap}.connections-note{grid-area:connections}
+  .closing-copy{grid-area:closing;font-size:24px;line-height:1.45;margin-top:30px;padding-top:20px}
+}
+@media(max-width:999px){
+  main{max-width:760px;padding:0 24px}
+  .artboard{padding:26px 0 36px}
+  .opening{display:flex;flex-direction:column;gap:0}
+  .masthead{order:0;gap:clamp(30px,6vw,65px);height:110px;margin-bottom:32px;font-size:23px;flex:none}
+  .identity img{height:70px;width:60px}.identity span{font-size:19px;white-space:nowrap}
+  .hero-copy{order:1}.kicker{font-size:18px;line-height:1.4;margin-bottom:19px}
+  .hero-copy h1{font-size:clamp(40px,8.8vw,60px);line-height:1.15;margin-bottom:22px}
+  .intro{font-size:23px;line-height:1.48}
+  .video-figure{order:2;margin-top:28px}.video-figure figcaption{font-size:19px}
+  .sound-note{order:3;align-self:center;font-size:24px;line-height:1.3;margin:15px 0 10px}
+  .small-board,.setup-note{display:none}
+  .follow-note{order:4;align-self:flex-start;font-size:25px;margin-top:18px;justify-self:start}
+  .opening .chapter-end{order:5;margin-top:24px}
+  .artboard h2{font-size:clamp(35px,7vw,47px);line-height:1.2}
+  .chapter-label{font-size:22px;line-height:1.4}
+  .section-deck{font-size:23px;line-height:1.4}
+  .breadboard{display:flex;flex-direction:column}
+  .reveal-stage{aspect-ratio:4/3;margin:24px 0 12px}
+  .drawing-layer{transform:none}
+  .view-controls{flex-direction:column;gap:12px;font-size:19px;margin:24px 0 17px}
+  .exposed-note,.signal-note,.perspective-note{font-size:23px;margin:14px 0;max-width:40ch}
+  .board-caption{font-size:22px;line-height:1.4}
+  .build-copy{font-size:23px}.reference-note{font-size:18px;line-height:1.45}
+  .prototype{display:flex;flex-direction:column}
+  .prototype .chapter-label{order:0}.prototype h2{order:1;margin-bottom:28px}
+  .plan-figure{order:2}.access-note{order:3;margin:10px 0 28px;font-size:23px}
+  .prototype-figure{order:4;margin-top:8px}.transistor-note{order:5;margin-top:24px;font-size:23px}.connections-note{order:6;font-size:23px;margin-top:8px}
+  .closing-copy{order:7;margin-top:25px;font-size:23px}
+}
+@media(max-width:380px){
+  main{padding:0 18px}
+  .masthead{gap:25px;font-size:21px}.identity span{font-size:17px}
+  .intro,.build-copy{font-size:21px;line-height:1.5}
+  .hero-copy h1{font-size:39px;letter-spacing:-.5px}
+  .artboard h2{font-size:34px;line-height:1.22}
+  .video-figure figcaption{font-size:17px;gap:12px}
+  .note{font-size:22px}.toggle button{min-width:110px;font-size:23px;padding-inline:17px}
+  .reference-note{font-size:17px;line-height:1.5}
+}

@@ -1,0 +1,34 @@
+/* Approved A / Cream & ink. Text stays sharp and uses the site's actual font. */
+.restitch-art { background: #EEEDE5 !important; }
+.restitch-survey {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #0D2565;
+  font-family: var(--portfolio-font, 'Notebook Hand', cursive);
+}
+.restitch-art > .restitch-survey { position: absolute; inset: 0; }
+/* Retain the soft perimeter, with a hairline close to the paper color. */
+.restitch-art > .portfolio-border-frame path { stroke: #DDDCD2; stroke-width: .9; }
+.restitch-survey-type {
+  font-weight: 400;
+  dominant-baseline: hanging;
+  font-kerning: normal;
+  font-feature-settings: 'calt' 1, 'kern' 1, 'dlig' 0;
+}
+.restitch-survey-grain { opacity: .065; mix-blend-mode: multiply; pointer-events: none; }
+.restitch-survey[data-gravity-state="waiting"] .restitch-gravity-dot { opacity: 0; }
+.restitch-preview > .restitch-research-art {
+  padding: 0;
+  background: #EEEDE5;
+  overflow: hidden;
+  border: 1px solid #DDDCD2;
+}
+.restitch-research-art > .restitch-survey { height: auto; aspect-ratio: 400 / 436.25; }
+/* Give the portrait chart room for its labels in the scrolling phone gallery. */
+@media (max-width: 700px) {
+  .tile-study [data-grid] > .tile-restitch { --phone-art: clamp(350px, calc(109vw - 34.88px), 580px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .restitch-survey[data-gravity-state="waiting"] .restitch-gravity-dot { opacity: 1; }
+}

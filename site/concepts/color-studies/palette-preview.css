@@ -1,0 +1,25 @@
+/* Shared palette layer. Original source colours remain available for reversion. */
+html[data-palette-study],html[data-palette-study] body,
+html[data-palette-study] [data-screen-label],
+html[data-palette-study] .direction-nav,
+html[data-palette-study] .editorial-intro,
+html[data-palette-study] .tile-caption,
+html[data-palette-study] .portfolio-layout-picker,
+html[data-palette-study] .breadboard-audio-details {
+  background-color:var(--study-background)!important;
+  color:var(--study-ink)!important;
+}
+html[data-palette-study] body * {color:var(--study-ink)!important;border-color:var(--study-ink)!important;outline-color:var(--study-ink)!important}
+html[data-palette-study] body ::before,html[data-palette-study] body ::after {color:var(--study-ink)!important}
+html[data-palette-preview] .portfolio-layout-picker {display:none!important}
+html[data-palette-study] .restitch-art,html[data-palette-study] .restitch-research-art,html[data-palette-study] .restitch-survey {background:var(--study-surface)!important}
+html[data-palette-study] .restitch-survey>g>rect:first-child {fill:var(--study-surface)!important}
+html[data-palette-study] svg [fill="#0D2565" i] {fill:var(--study-ink)!important}
+html[data-palette-study] svg [stroke="#0D2565" i] {stroke:var(--study-ink)!important}
+html[data-palette-study] svg [fill="#B8CCD8" i] {fill:var(--study-accent)!important}
+html[data-palette-study] .project-sequence-dot {border-color:var(--study-ink)!important}
+html[data-palette-study] .project-sequence-dot.is-current {background:var(--study-ink)!important}
+html[data-palette-study] .song-toggle,html[data-palette-study] .song-input {border-color:color-mix(in srgb,var(--study-ink) 35%,transparent)!important}
+html[data-palette-study] .song-toggle:hover,html[data-palette-study] .song-toggle[aria-expanded=true] {background:color-mix(in srgb,var(--study-ink) 4%,transparent)!important}
+html[data-palette-study] .song-input::placeholder {color:color-mix(in srgb,var(--study-ink) 55%,transparent)!important}
+html[data-palette-study] .hello-inline::after {background-image:var(--study-underline)!important}

@@ -1,0 +1,91 @@
+/* Editorial homepage; project card styles remain in the original template. */
+.editorial-masthead,
+.editorial-intro,
+.editorial-masthead *,
+.editorial-intro * {
+  box-sizing: border-box;
+}
+
+.editorial-masthead {
+  flex: 0 0 calc(min(80px, 7.5vh) + 2px);
+  height: calc(min(80px, 7.5vh) + 2px);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #0D2565;
+}
+
+.editorial-identity { display: flex; align-items: center; gap: 32px; }
+.editorial-wordmark { font-family: 'Notebook Hand', cursive; font-size: 29px; white-space: nowrap; }
+.editorial-discipline { font-size: 14px; letter-spacing: .8px; text-transform: uppercase; }
+.editorial-navigation { display: flex; align-items: center; gap: 34px; font-size: 18px; text-transform: uppercase; }
+.editorial-count { font-size: 14px; letter-spacing: .5px; }
+
+.editorial-intro {
+  /* Match the original intro's desktop footprint, including its two text lines. */
+  --intro-height: max(min(180px, 16.7vh), calc(clamp(17px, 2.62vw, 54px) * 2.4 + 44px));
+  flex: 0 0 calc(var(--intro-height) + 2px);
+  height: calc(var(--intro-height) + 2px);
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 438px;
+  gap: 64px;
+  align-items: center;
+  border-bottom: 2px solid #0D2565;
+}
+
+.editorial-eyebrow { font-size: 12px; letter-spacing: 1.15px; text-transform: uppercase; margin-bottom: 4px; }
+.editorial-intro h1 { font-weight: 400; font-size: 53px; line-height: 1; margin: 0; letter-spacing: -.7px; }
+.editorial-description { font-size: 20px; line-height: 1.3; margin: 0; }
+.editorial-trigger {
+  appearance: none;
+  display: inline;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.editorial-masthead a:focus-visible,
+.editorial-trigger:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+@media (max-width: 1099px) {
+  .editorial-masthead { flex-basis: 58px; height: 58px; }
+  .editorial-discipline { display: none; }
+  .editorial-intro { flex: 0 0 auto; height: auto; min-height: 126px; grid-template-columns: minmax(0, 1fr) 320px; gap: 32px; }
+  .editorial-intro h1 { font-size: 44px; }
+  .editorial-description { font-size: 18px; }
+}
+
+@media (max-width: 700px) {
+  .editorial-masthead { padding: 0 16px; }
+  .editorial-navigation { display: none; }
+  .editorial-intro { padding: 14px 16px; min-height: 114px; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .editorial-eyebrow { display: none; }
+  .editorial-intro h1 { font-size: clamp(32px, 6.8vw, 42px) !important; line-height: 1 !important; text-align: left !important; }
+  .editorial-description { font-size: 16px; line-height: 1.25; }
+}
+
+/* A fine, uneven pen stroke under the selected homepage headline. */
+.editorial-intro .handdrawn-heading {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+.editorial-intro .handdrawn-underline {
+  position: absolute;
+  left: -.02em;
+  bottom: -.2em;
+  display: block;
+  width: calc(100% + .52em);
+  height: 12px;
+  overflow: visible;
+  pointer-events: none;
+}

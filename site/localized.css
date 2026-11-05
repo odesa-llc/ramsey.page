@@ -1,0 +1,6 @@
+/* Allow translated copy to wrap while retaining the approved page composition. */
+html[lang="fr"] .tile-caption > div { white-space: normal !important; overflow-wrap: anywhere; }
+html[lang="fr"] .tile-caption { overflow: visible !important; }
+html[lang="fr"] .project-title { overflow-wrap: break-word; }
+html[lang="fr"] .breadboard-audio-toggle { white-space: nowrap; }
+html[lang="fr"] .direction-center-links > a { white-space: nowrap; }

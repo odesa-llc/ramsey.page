@@ -1,0 +1,96 @@
+/* Use the portfolio's shared header and palette around the approved story. */
+.fuzz-page-header {
+  position: absolute;
+  inset: 0 0 auto;
+}
+.masthead.fuzz-header-bar {
+  position: relative;
+  display: grid;
+  height: 132px;
+  padding: 8px 0;
+}
+.fuzz-story-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 12px 50px 0;
+  padding: 26px 0 40px;
+  border-top: 1px solid var(--line);
+  font-size: 23px;
+}
+.fuzz-story-footer a { padding: 10px 0; }
+.fuzz-story-footer a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.reference-drawing .wire { stroke: var(--ink); }
+.reference-drawing .symbol { fill: var(--paper); stroke: var(--ink); }
+.reference-drawing .node { fill: var(--ink); }
+.reveal-stage .drawing-layer {
+  transform: none;
+  z-index: 3;
+  pointer-events: none;
+}
+.reveal-stage .board-photo {
+  mask-image: none;
+  -webkit-mask-image: none;
+  opacity: 1;
+}
+.reveal-stage[data-view="overlay"] .board-photo { opacity: .36; }
+.reveal-stage[data-view="diagram"] .board-photo { opacity: 0; }
+.reference-drawing .wire,
+.reference-drawing .node {
+  paint-order: stroke fill;
+}
+.reference-drawing .label {
+  fill: var(--ink);
+  stroke: var(--paper);
+  stroke-width: 9px;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+}
+.reference-drawing marker path { fill: var(--ink); }
+.breadboard .view-controls {
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  gap: 28px;
+}
+.circuit-values { display: none; }
+html[data-palette-study] .toggle button[aria-pressed="true"] {
+  color: var(--paper) !important;
+}
+.toggle button[aria-pressed="true"] { background: var(--ink); }
+@media (min-width: 1536px) {
+  .breadboard .perspective-note {
+    left: 60px;
+    top: 815px;
+    width: 280px;
+    font-size: 27px;
+  }
+}
+@media (max-width: 1535px) {
+  .fuzz-story-footer { margin: 12px 0 0; }
+}
+@media (max-width: 700px) {
+  .fuzz-story-footer { font-size: 21px; gap: 10px 24px; }
+  .breadboard .view-controls { gap: 12px; }
+  .breadboard .toggle { gap: 2px; max-width: 100%; }
+  .breadboard .toggle button {
+    min-width: 0;
+    flex: 1;
+    font-size: 21px;
+    padding-inline: 17px;
+  }
+  .circuit-values {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 24px;
+    margin: 8px 0 20px;
+    order: 3;
+    font-size: 19px;
+    line-height: 1.4;
+  }
+  .circuit-values div { display: flex; align-items: baseline; gap: 10px; }
+  .circuit-values dt { opacity: .65; min-width: 28px; }
+  .circuit-values dd { margin: 0; }
+}

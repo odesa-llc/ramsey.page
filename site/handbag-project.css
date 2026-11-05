@@ -1,0 +1,78 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #F8F8F6; color: #0D2565; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 1px solid currentColor; outline-offset: 5px; }
+.handbag-project {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 40px 40px;
+}
+.handbag-back { display: inline-block; font-size: 16px; line-height: 1.5; padding: 5px 0; }
+.handbag-back:hover, .handbag-footer a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.handbag-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+  margin-top: 30px;
+}
+.handbag-main { min-width: 0; }
+.handbag-kicker { margin: 0 0 16px; font-size: 16px; line-height: 1.4; opacity: .65; }
+.handbag-copy h1 {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(48px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.5px;
+  text-wrap: balance;
+}
+.handbag-intro { margin: 20px 0 0; font-size: 21px; line-height: 1.5; }
+.handbag-object { width: min(84%, 350px); margin: 28px auto 0; }
+.handbag-object img { display: block; width: 100%; height: auto; }
+.handbag-photo { width: 100%; max-width: 360px; margin: 0 auto; }
+.handbag-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  border-radius: 8px 6px 9px 5px;
+}
+.handbag-photo figcaption { margin-top: 12px; font-size: 16px; line-height: 1.4; opacity: .65; }
+.handbag-footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  font-size: 18px;
+  line-height: 1.4;
+}
+.handbag-footer a { display: block; padding: 10px 0; }
+.handbag-footer a:last-child { text-align: right; }
+@media (max-width: 900px) {
+  .handbag-project { padding: 24px 28px 36px; }
+  .handbag-layout { gap: 36px; }
+  .handbag-copy h1 { font-size: 52px; }
+  .handbag-object { width: min(92%, 320px); }
+}
+@media (max-width: 700px) {
+  .handbag-project { padding: 20px 20px 28px; }
+  .handbag-back { font-size: 16px; }
+  .handbag-layout { grid-template-columns: minmax(0, 1fr); gap: 36px; margin-top: 24px; }
+  .handbag-kicker { font-size: 15px; margin-bottom: 12px; }
+  .handbag-copy h1 { max-width: 11ch; font-size: clamp(40px, 10.7vw, 54px); line-height: 1.12; }
+  .handbag-intro { margin-top: 16px; font-size: 20px; }
+  .handbag-object { width: min(84%, 290px); margin-top: 24px; }
+  .handbag-photo { max-width: 360px; }
+  .handbag-photo figcaption { margin-top: 10px; font-size: 15px; }
+  .handbag-footer { font-size: 17px; gap: 12px; margin-top: 32px; padding-top: 14px; }
+}
+@media (max-width: 360px) {
+  .handbag-project { padding-left: 16px; padding-right: 16px; }
+  .handbag-footer { font-size: 16px; gap: 10px; }
+}

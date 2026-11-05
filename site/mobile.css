@@ -1,0 +1,377 @@
+/* Mobile layer (<=700px). Desktop keeps its inline styles untouched;
+   these overrides only switch on for phone widths. */
+@media (max-width: 700px) {
+
+  /* no visible scrollbar on a phone */
+  html { scrollbar-width: none !important; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0 !important; height: 0 !important; display: none !important; }
+
+  /* five-column project grids collapse to a single column */
+  div[style*="repeat(5"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    row-gap: 28px !important;
+    column-gap: 0 !important;
+  }
+  div[style*="repeat(5"] > * {
+    grid-area: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    min-height: 0 !important;
+    min-width: 0 !important;
+  }
+
+  /* intrinsically wide art must not stretch the single column */
+  img[style*="width: auto"] { max-width: 100% !important; }
+
+  /* the fixed/sticky side rail becomes a normal block above the images */
+  div[style*="30vw"] {
+    position: static !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 0 0 14px !important;
+    z-index: auto !important;
+  }
+
+  /* decorative line marks are a desktop flourish */
+  div[style*="bottom: 84px"],
+  div[style*="bottom: 74px"] { display: none !important; }
+
+  /* home: the full welcome sentence, centred, as one continuous block */
+  h1 {
+    display: block !important;
+    text-align: center !important;
+    font-size: clamp(19px, min(6.9vw, 3.15vh), 34px) !important;
+    line-height: 1.22 !important;
+    text-wrap: pretty;
+  }
+  h1 > span { display: inline !important; white-space: normal !important; }
+  h1 > span:nth-child(1)::after { content: "\00a0"; }
+
+  /* fuzz: the four phone screens read as 2x2 */
+  div[style*="gap: 34px"] { flex-wrap: wrap !important; gap: 12px !important; padding: 0 !important; }
+  div[style*="gap: 34px"] > img { flex: 0 0 calc(50% - 6px) !important; max-height: none !important; }
+
+  /* handbag: full-bleed cover instead of the bleed-out crop */
+  div[style*="-24px 0px -6px"] { margin: 32px 0 0 !important; height: auto !important; }
+
+  /* fuzz: the flow clip bleeds past the viewport at phone width */
+  video[style*="132%"] { width: 100% !important; }
+
+  /* tidle: gaps tighten */
+  div[style*="margin-top: 280px"], div[style*="margin-top: 200px"] { margin-top: 64px !important; }
+
+  /* tidle: the four section texts stack in sequence instead of all pinning to one spot */
+  div[style*="--tidle-texttop"] {
+    position: static !important;
+    margin-bottom: 32px !important;
+  }
+  div[style*="calc(100% - 300px)"] { height: auto !important; }
+  /* the desktop scroll-zone spacers collapse to their content */
+  div[style*="flex: 0 0 auto"]:not([data-nav-page]):not([style*="aspect-ratio"]) { height: auto !important; }
+
+  /* tidle: each case-study text sits directly above its own visuals */
+  .tidle-textcol, div[data-col="img"] { display: contents !important; }
+  div[data-col="img"] > * { padding-right: 0 !important; margin-right: 0 !important; }
+  .tidle-textcol > :nth-child(1) { order: 1 !important; }
+  div[data-col="img"] > :nth-child(1) { order: 2 !important; }
+  .tidle-textcol > :nth-child(2) { order: 3 !important; }
+  div[data-col="img"] > :nth-child(2) { order: 4 !important; }
+  .tidle-textcol > :nth-child(3) { order: 5 !important; }
+  div[data-col="img"] > :nth-child(3) { order: 6 !important; }
+  .tidle-textcol > :nth-child(5) { order: 7 !important; }
+  div[data-col="img"] > :nth-child(4) { order: 8 !important; }
+  div[data-col="img"] > :nth-child(5) { order: 9 !important; }
+  /* visual content: the swipe gallery comes first, the crossfading showcase after */
+  div[data-col="img"] > div[data-vcgal] { order: 8 !important; }
+  div[data-col="img"] > div[data-vcshow] { order: 9 !important; }
+  .tidle-textcol > :nth-child(4),
+  div[data-col="img"] > :nth-child(6) { display: none !important; }
+
+  /* home: welcome text first, the project deck underneath */
+  div[data-grid] { order: 0 !important; }
+  div[data-dots] { display: none !important; }
+  div[data-hero] { order: 0 !important; }
+
+  /* rules stay 2px, as on desktop */
+  div[style*="height: 2px"] { height: 2px !important; }
+  div[style*="position: sticky"][style*="top: 0px"] { border-bottom-width: 2px !important; }
+  div[data-grid] > a, div[data-grid] > div { display: none !important; }
+  div[data-grid][data-slide="0"] > a[href$="/tidle/"],
+  div[data-grid][data-slide="1"] > a[href$="/beirut/"],
+  div[data-grid][data-slide="2"] > a[href$="/handbag/"],
+  div[data-grid][data-slide="3"] > a[href$="/restitch/"],
+  div[data-grid][data-slide="4"] > a[href$="/fuzz/"],
+  div[data-grid][data-slide="4"] > [data-project-card="breadboard"] { display: flex !important; }
+
+
+  /* the header stays pinned while the page scrolls */
+  div[data-about-header] { position: sticky !important; top: 0; z-index: 20; }
+
+  /* the ABOUT link is folded into the menu button (but stays inside the menu) */
+  body.has-mobile-nav a[href$="/about/"] { display: none !important; }
+  body.has-mobile-nav #mnav-panel a { display: block !important; }
+
+  /* the card label keeps its desktop stack: name, discipline, tagline */
+  div[data-grid] > :is(a,[data-project-card]) > div:last-child {
+    flex: 0 0 auto !important;
+    padding: 14px 16px 16px !important;
+  }
+  div[data-grid] > :is(a,[data-project-card]) > div:last-child > div:nth-child(1) {
+    min-height: 0 !important;
+    font-size: clamp(20px, 5.6vw, 27px) !important;
+    margin-bottom: 4px;
+  }
+  div[data-grid] > :is(a,[data-project-card]) > div:last-child > div:nth-child(2) {
+    font-size: clamp(13px, 3.7vw, 17px) !important;
+  }
+  div[data-grid] > :is(a,[data-project-card]) > div:last-child > div:nth-child(3) {
+    min-height: 0 !important;
+    margin-top: 0.45em !important;
+    font-size: clamp(13px, 3.7vw, 17px) !important;
+  }
+
+  /* textures mode: each outline was traced at its own scale, so on a phone they are
+     sized individually to sit on the same footprint as the photo they replace */
+  img[src*="handbag-outline-bg"], img[src*="handbag-scene-card"],
+  img[src*="restitch-outline-bg"], img[src*="restitch-scene-card"],
+  img[src*="tidle-outline-bg"], img[src*="tidle-scene-card"],
+  img[src*="beirut-outline-bg"], img[src*="beirut-scene-shirt"] {
+    inset: auto !important;
+    left: 50% !important; top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  img[src*="handbag-outline-bg"] { width: 115% !important; }
+  img[src*="handbag-scene-card"] { width: 98% !important; }
+  img[src*="restitch-outline-bg"] { width: 100% !important; }
+  img[src*="restitch-scene-card"] { width: 88% !important; }
+  img[src*="tidle-outline-bg"] { width: 100% !important; }
+  img[src*="tidle-scene-card"] { width: 67% !important; }
+  img[src*="beirut-outline-bg"], img[src*="beirut-scene-shirt"] { width: 100% !important; }
+
+  /* project footer becomes: all projects | next project */
+  div[data-nav-page] > a { display: none !important; }
+  div[data-nav-page] > a.mnav-foot {
+    display: block !important;
+    flex: 0 0 auto !important;
+    border-right: none !important;
+    background: transparent !important;
+  }
+  div[data-nav-page] { justify-content: space-between !important; margin-top: 21px !important; }
+
+  /* handbag: the sticky spread stack is a desktop effect - on a phone the
+     pinned frames read as frozen scrolling, so they flow as a normal column */
+  div[style*="aspect-ratio: 1.45"] {
+    position: relative !important;
+    top: auto !important;
+    margin-bottom: 14px !important;
+  }
+  div[style*="aspect-ratio: 1.45"]:last-child { margin-bottom: 0 !important; }
+  div[style*="calc(100vh - 133px)"] {
+    height: auto !important;
+    aspect-ratio: 3 / 4 !important;
+    margin: 20px 0 0 !important;
+  }
+
+  /* project pages: one small, uniform gap between stacked images */
+  div[style*="repeat(5"] {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    row-gap: 14px !important;
+  }
+  div[style*="position: sticky"][style*="top: 0px"] + div[style*="repeat(5"] { padding-top: 30px !important; }
+  div[style*="repeat(5"] > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  div[style*="repeat(5"] div[style*="gap: 20px"],
+  div[style*="repeat(5"] div[style*="gap: 24px"],
+  div[style*="repeat(5"] div[style*="gap: 32px"] { gap: 14px !important; }
+  div[style*="margin-top: 280px"], div[style*="margin-top: 200px"],
+  div[style*="margin-top: 80px"] { margin-top: 14px !important; }
+  div[style*="margin-top: 64px"] { margin-top: 0 !important; }
+  /* double gap between the project description and the first image */
+  div[style*="repeat(5"] > div[style*="30vw"] { padding-bottom: 14px !important; }
+
+  /* About: the desktop ticket card, the PROJECTS link and the project footer
+     are desktop furniture - the phone gets a plain stack instead */
+  div[data-about-header] > a:nth-child(2) { display: none !important; }
+  div[data-about-card] { display: none !important; }
+  div[data-about-hero], div[data-about-rule="2"] { display: none !important; }
+  div[data-about-foot] { display: none !important; }
+  div[data-about-stage] { display: none !important; }
+  div[data-about-mobile] { display: flex !important; order: 1 !important; flex: 1 0 auto; padding-bottom: 18px !important; }
+
+  /* tidle: the phone carousel needs real height on a phone, otherwise the
+     mockups shrink to thumbnails inside their frame */
+  div[style*="76cqw"] { height: min(58vh, 420px) !important; }
+  /* tidle: nothing bleeds past the right edge on a phone */
+  div[data-col="img"] div[style*="-24px"],
+  div[data-col="img"] div[style*="margin-right"] { margin-right: 0 !important; }
+  /* tidle: clear separation before each case-study heading */
+  .tidle-textcol > div { margin-top: 34px !important; }
+  .tidle-textcol > div:first-child { margin-top: 0 !important; }
+
+  /* tidle: the style-modal shot overlapped the carousel on a phone - dropped */
+  img[src*="tidle-style-modal"] { display: none !important; }
+  div[data-col="img"] div:has(> img[src*="tidle-style-modal"]) { display: none !important; }
+
+  /* tidle: the block cards carried a 20px CSS radius on top of the images'
+     own ~2% baked corners, so they read rounder than the add-panel cards -
+     drop it and every card shows the same small baked radius */
+  img[src*="tidle-block-"], img[src*="tidle-lock-before"], img[src*="tidle-lock-after"],
+  img[src*="tidle-custom-modal"] { border-radius: 0 !important; }
+
+  /* tidle: extra air between the add-panel carousel and the block gallery */
+  div[data-col="img"] > div:has(img[src*="tidle-block-"]) { margin-top: 28px !important; }
+
+  /* tidle add blocks: both illustration galleries run one card per row */
+  div:has(> img[src*="tidle-add-"]), div:has(> img[src*="tidle-block-"]) {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  img[src*="tidle-add-"], img[src*="tidle-block-"] {
+    flex: none !important;
+    width: 100% !important;
+  }
+
+  /* about: the portrait sits smaller (the source is only 668px wide, so at
+     full width it read soft) and the header keeps its rule while pinned */
+  /* about: the degree + city lines sit under the links, a touch smaller,
+     as one tight two-line block */
+  div[data-about-mobile] > div:nth-child(3) {
+    order: 1;
+    font-size: clamp(16px, min(5.4vw, 2.5vh), 21px) !important;
+    line-height: 1.35 !important;
+  }
+  /* the arrow links float midway between the polaroid and the footer line */
+  div[data-about-mobile] > div:nth-child(4) { margin-top: auto; margin-bottom: auto; }
+  div[data-about-mobile] > div:nth-child(3) > div { margin-top: 0 !important; display: inline; }
+
+  /* the portrait is printed as a polaroid: square crop, thin white sides,
+     a deep bottom lip, soft instant-film colour and a faint drop */
+  div[data-about-mobile] > img[src*="about-portrait"] {
+    width: 57.6% !important;
+    align-self: center;
+    transform: rotate(1.2deg);
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: 50% 30%;
+    box-sizing: content-box;
+    padding: 4.5% 4.5% 17%;
+    background: #FDFDFB;
+    border-radius: 2px !important;
+    box-shadow: 0 1px 2px rgba(13,37,101,.10), 0 8px 22px rgba(13,37,101,.10);
+    filter: saturate(.82) contrast(.94) brightness(1.04) sepia(.06);
+  }
+  div[data-about-header] { border-bottom: 2px solid #0D2565; }
+  div[data-about-header] + div[style*="height: 2px"] { display: none !important; }
+
+  /* fuzz icons: every icon in the same square cell and the same 80% box, so
+     they read as one even set; a wider gutter keeps them off the edges */
+  div[style*="repeat(4"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    column-gap: 36px !important;
+    row-gap: 40px !important;
+    padding: 0 28px !important;
+    margin-top: 42px !important;    /* with the 14px page gap: 56px */
+    margin-bottom: 42px !important; /* above and below the icon set */
+    box-sizing: border-box;
+  }
+  div[style*="repeat(4"] > div { height: auto !important; aspect-ratio: 1 / 1; }
+  div[style*="repeat(4"] > div > img[src*="/icons/"] {
+    width: 80% !important;
+    height: 80% !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* project descriptions read at 18px on a phone */
+  div[style*="font-size: 16px"][style*="Notebook Hand"] { font-size: 18px !important; }
+
+  /* tidle add blocks: one even 20px rhythm - the extra top margins on the
+     link-preview shot and the panel reel doubled some gaps */
+  img[data-rev="4"], div[data-rev="5"] { margin-top: 0 !important; }
+
+  /* tidle lock panel: before sits small as the reference, after takes the
+     full width as the result, the editor shot follows - one even rhythm */
+  div:has(> div[data-rev="10"]):has(> div[data-rev="11"]) { flex-direction: column !important; gap: 28px !important; }
+  div[data-rev="10"] { flex: none !important; width: 42% !important; }
+  div[data-rev="11"] { flex: none !important; width: 100% !important; }
+  div[data-rev="12"] { margin-top: 8px !important; }
+
+  /* tidle: the six content cards become a swipe gallery - one card at a
+     time, snapping, with a sliver of the next one peeking in */
+  div[data-vcgal] {
+    width: auto !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  div[data-vcgal] > img {
+    flex: 0 0 88% !important;
+    cursor: default !important;
+    will-change: transform;
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+
+  /* tidle: visual content plays as one stationary showcase - the three
+     compositions share a single frame and crossfade in place */
+  /* the frame runs edge to edge, square-cornered; each composition is drawn
+     15% larger than before (was content width, 100% - 32px) and centred, so
+     the Tidle page grows while only the background's outer edges are trimmed */
+  div[data-vcshow] {
+    display: grid !important; gap: 0 !important;
+    width: auto !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    aspect-ratio: 1800 / 3200;
+    height: var(--vc-h, auto);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 !important;
+  }
+  /* the showcase is the page's last visual - it runs straight into the footer rule */
+  div:has(> div[data-col="img"] > div[data-vcshow]) { padding-bottom: 0 !important; }
+  div[data-screen-label]:has(div[data-vcshow]) div[data-nav-page] { margin-top: 0 !important; }
+  div[data-vcshow] > img {
+    /* sized to the larger of: 15% over the old content width, or enough to
+       cover the frame - then centred, so the background always fills it */
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    max-width: none !important;
+    width: max(calc(1.15 * (100% - 32px)), calc(var(--vc-h, 0px) * 0.5625), 100%) !important;
+    height: auto !important;
+    aspect-ratio: 1800 / 3200;
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    transition: opacity .45s ease !important;
+    cursor: default !important;
+  }
+  div[data-vcshow] > img:first-child:not([data-on]):not(:has(~ img[data-on])),
+  div[data-vcshow] > img[data-on] { opacity: 1 !important; }
+}
+
+/* Three visible projects: let the last tablet card fill the remaining row. */
+@media (min-width:701px) and (max-width:1099px){[data-grid][data-project-count="3"] > [data-project-card="breadboard"]{grid-column:1 / -1}}

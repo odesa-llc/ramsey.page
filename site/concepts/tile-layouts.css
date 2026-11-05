@@ -1,0 +1,130 @@
+/* Portfolio layout alternatives; Soft masonry is the default homepage. */
+.tile-study,.tile-study *{box-sizing:border-box}
+.tile-study{height:auto!important;min-height:100vh!important;overflow:visible!important}
+.tile-study .direction-nav-centered{height:132px;padding-top:24px}
+.tile-study .editorial-intro{height:112px!important;flex:0 0 112px!important;min-height:0!important;padding:10px 40px 24px;border:0;grid-template-columns:minmax(0,1fr) 430px;gap:40px}
+.tile-study .editorial-intro h1{font-size:var(--portfolio-display-size);line-height:1;letter-spacing:-1px}
+.tile-study .editorial-description{font-size:18px;line-height:1.3}
+.tile-study .direction-copy-tools{font-size:12px;margin-top:8px}
+.tile-main{padding:8px 40px 48px}
+.tile-study [data-grid]{display:grid!important;flex:none!important;gap:22px!important;min-width:0}
+.tile-study [data-grid]>.tile{display:flex!important;position:relative;min-width:0;min-height:0;height:auto!important;border:0!important;align-self:start}
+.tile-study .tile>div:first-child{flex:none!important;height:var(--art-height,310px);min-height:0!important;aspect-ratio:auto!important;border-radius:7px;isolation:isolate}
+.tile-study .tile-caption{border:0!important;padding:12px 0 0!important;flex:none!important;min-height:56px;overflow:visible!important;background:transparent!important;position:relative;display:block!important}
+.tile-study .tile-caption::before{position:absolute;right:0;top:15px;content:var(--tile-num);font:10px/1 ui-monospace,monospace;opacity:.42}
+.tile-handbag{--tile-num:'2026'}
+.tile-tidle{--tile-num:'2025'}
+.tile-restitch{--tile-num:'2026'}
+.tile-breadboard{--tile-num:'2024'}
+.tile-beirut{--tile-num:'2026'}
+.tile-study .tile-caption>div:first-child{font-size:20px!important;line-height:1.1!important;min-height:0!important;text-transform:none!important;white-space:normal!important;padding-right:44px;letter-spacing:-.25px}
+.tile-study .tile-caption>div:nth-child(2){font-size:12px!important;line-height:1.3!important;margin-top:5px!important;opacity:.65}
+.tile-study .tile-caption>div:nth-child(3){display:none}
+.tile-study [data-dots]{display:none!important}
+.tile-study [data-handbag-cutout]{width:85%!important;height:78%!important}
+.tile-study-1 [data-handbag-cutout]{width:72.25%!important;height:66.3%!important}
+.tile-study [data-tidle-widget]{--tidle-preview-width:84%;height:80%!important}
+.tile-study [data-breadboard-cutout]{width:84%!important;height:66%!important;top:44%!important}
+.tile-study .breadboard-audio{top:auto;bottom:16px}
+/* 01: true staggered reading, equal column widths, different image heights. */
+.tile-study-1 [data-grid]{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(12,50px)!important;row-gap:11px!important;column-gap:22px!important}
+.tile-study-1 .tile-handbag{grid-area:1/1/10/2;--art-height:492px}
+.tile-study-1 .tile-tidle{grid-area:1/2/6/3;--art-height:230px}
+.tile-study-1 .tile-breadboard{grid-area:1/3/8/4;--art-height:355px}
+.tile-study-1 .tile-restitch{grid-area:6/2/13/3;--art-height:362px}
+.tile-study-1 .tile-beirut{grid-area:8/3/13/4;--art-height:230px}
+.tile-study-1 .tile-main{position:relative;padding-bottom:30px}
+.tile-study-1 .tile-main::after{content:'ramsey hatoum';position:absolute;left:40px;bottom:50px;font:13px/1.4 var(--portfolio-font,'Notebook Hand',cursive);white-space:nowrap;opacity:.5}
+/* 02: a dense, fitted image mosaic with one portrait anchor. */
+.tile-study-2 .editorial-intro{padding-left:28px;padding-right:28px}
+.tile-study-2 .tile-main{padding:4px 28px 28px}
+.tile-study-2 [data-grid]{grid-template-columns:5fr 4fr 3fr!important;grid-template-rows:285px 285px!important;gap:12px!important}
+.tile-study-2 [data-grid]>.tile{height:100%!important;align-self:stretch}
+.tile-study-2 .tile-handbag{grid-area:1/1/3/2}
+.tile-study-2 .tile-tidle{grid-area:1/2/2/3}
+.tile-study-2 .tile-breadboard{grid-area:2/2/3/3}
+.tile-study-2 .tile-restitch{grid-area:1/3/2/4}
+.tile-study-2 .tile-beirut{grid-area:2/3/3/4}
+.tile-study-2 .tile>div:first-child{height:100%;border-radius:2px}
+.tile-study-2 .tile-caption{position:absolute;z-index:5;bottom:13px;left:13px;right:13px;width:max-content;max-width:calc(100% - 26px);min-height:0;padding:9px 30px 9px 12px!important;background:#F8F8F6f2!important;border-radius:2px;pointer-events:none}
+.tile-study-2 .tile-caption::before{top:12px;right:10px;font-size:9px}
+.tile-study-2 .tile-caption>div:first-child{font-size:18px!important;padding-right:0}
+.tile-study-2 .tile-caption>div:nth-child(2){font-size:11px!important;margin-top:3px!important}
+.tile-study-2 .tile-caption a{pointer-events:auto}
+.tile-study-2 [data-tidle-widget]{--tidle-preview-width:84%;top:43%!important}
+.tile-study-2 [data-handbag-cutout]{top:45%!important}
+.tile-study-2 [data-breadboard-cutout]{top:35%!important;height:52%!important}
+.tile-study-2 .breadboard-audio{bottom:82px}
+/* 03: staggered editorial spreads, with a deliberate empty margin between works. */
+.tile-study-3 .editorial-intro{padding:10px 64px 28px;height:126px!important;flex-basis:126px!important}
+.tile-study-3 .tile-main{padding:8px 64px 60px}
+.tile-study-3 [data-grid]{grid-template-columns:repeat(12,minmax(0,1fr))!important;grid-template-rows:repeat(20,50px)!important;gap:16px!important}
+.tile-study-3 .tile-tidle{grid-area:1/1/7/8;--art-height:310px}
+.tile-study-3 .tile-handbag{grid-area:3/9/12/13;--art-height:480px}
+.tile-study-3 .tile-breadboard{grid-area:9/1/15/7;--art-height:330px}
+.tile-study-3 .tile-restitch{grid-area:14/9/20/13;--art-height:300px}
+.tile-study-3 .tile-beirut{grid-area:16/3/21/7;--art-height:250px}
+.tile-study-3 .tile>div:first-child{border-radius:0}
+.tile-study-3 .tile-caption{padding-top:15px!important}
+.tile-study-3 .tile-caption>div:first-child{font-size:22px!important}
+.tile-study-3 .tile-caption>div:nth-child(3){display:block;font-size:13px!important;min-height:0!important;line-height:1.3!important;max-width:350px;margin-top:9px!important;opacity:.55;font-style:normal!important}
+.tile-study-3 [data-tidle-widget]{--tidle-preview-width:72%}
+.tile-study-3 [data-handbag-cutout]{width:88%!important}
+/* 04: six pieces, including the introduction, lock together as a small workbench. */
+.tile-study-4 .tile-main{padding:22px 40px 40px}
+.tile-study-4 [data-grid]{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:245px 245px 245px!important;gap:16px!important}
+.tile-study-4 [data-grid]>.tile{height:100%!important;align-self:stretch}
+.tile-study-4 .tile-introduction{grid-area:1/1/2/2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%!important;min-height:0!important;padding:16px 18px 22px 0!important;gap:18px}
+.tile-study-4 .tile-introduction h1{font-size:52px;max-width:190px;line-height:.97}
+.tile-study-4 .tile-introduction .editorial-description{font-size:17px;line-height:1.5;max-width:180px}
+.tile-study-4 .tile-introduction .direction-copy-tools{font-size:11px;margin-top:17px}
+.tile-study-4 .tile-tidle{grid-area:1/2/2/4}
+.tile-study-4 .tile-beirut{grid-area:1/4/3/5}
+.tile-study-4 .tile-handbag{grid-area:2/1/4/2}
+.tile-study-4 .tile-breadboard{grid-area:2/2/3/4}
+.tile-study-4 .tile-restitch{grid-area:3/2/4/5}
+.tile-study-4 .tile>div:first-child{height:calc(100% - 47px);border-radius:6px}
+.tile-study-4 .tile-caption{padding-top:10px!important;min-height:47px}
+.tile-study-4 .tile-caption::before{top:13px}
+.tile-study-4 .tile-caption>div:first-child{font-size:18px!important}
+.tile-study-4 .tile-caption>div:nth-child(2){position:absolute;right:28px;top:9px;margin-top:0!important;font-size:11px!important}
+.tile-study-4 .tile-handbag .tile-caption>div:nth-child(2),.tile-study-4 .tile-beirut .tile-caption>div:nth-child(2){position:static;font-size:11px!important;margin-top:3px!important}
+.tile-study-4 [data-tidle-widget]{--tidle-preview-width:72%}
+.tile-study-4 [data-breadboard-cutout]{top:41%!important;height:62%!important}
+.tile-study-4 .breadboard-audio{bottom:12px}
+@media(min-width:1500px){.tile-study .tile-main,.tile-study>.editorial-intro{width:1440px;margin:0 auto}}
+/* Keep the default desktop gallery and introduction in one compact, centered column. */
+@media(min-width:1001px){.tile-study-1 .tile-main,.tile-study-1>.editorial-intro{width:100%;max-width:1120px;margin-left:auto;margin-right:auto}}
+@media(max-width:1000px) and (min-width:701px){
+ .tile-study .editorial-intro{padding-left:24px;padding-right:24px;grid-template-columns:1fr 320px}
+ .tile-main{padding-left:24px!important;padding-right:24px!important}
+ .tile-study .tile-caption>div:first-child{font-size:18px!important}
+ .tile-study-4 .tile-caption>div:nth-child(2){position:static;margin-top:3px!important}
+ .tile-study-4 .tile-introduction h1{font-size:42px}
+ .tile-study-4 .tile-introduction .editorial-description{font-size:15px}
+}
+@media(max-width:700px){
+ .tile-study .editorial-intro{height:auto!important;flex-basis:auto!important;grid-template-columns:1fr;gap:10px;padding:20px 16px 24px;min-height:0!important}
+ .tile-study .editorial-intro h1{font-size:var(--portfolio-display-size)!important;text-align:left!important}
+ .tile-study .editorial-description{font-size:17px}
+ .tile-study .tile-main{padding:8px 16px 30px!important}
+ .tile-study [data-grid]{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto!important;gap:28px!important;padding:0!important}
+ .tile-study-1 [data-grid]{row-gap:16px!important}
+ .tile-study [data-grid]>.tile,.tile-study-4 .tile-introduction{grid-area:auto!important;display:flex!important;position:relative;height:auto!important;min-width:0;margin:0!important}
+ .tile-study .tile>div:first-child{height:var(--phone-art,340px)!important}
+ .tile-study .tile-tidle{--phone-art:240px}
+ .tile-study .tile-breadboard{--phone-art:300px}
+ .tile-study .tile-restitch{--phone-art:280px}
+ .tile-study .tile-beirut{--phone-art:300px}
+ .tile-study .tile-caption{position:relative;inset:auto;min-height:56px!important;width:100%;max-width:none;padding:12px 0 0!important;background:transparent!important;pointer-events:auto}
+ .tile-study .tile-caption>div:first-child{font-size:21px!important}
+ .tile-study .tile-caption>div:nth-child(2){position:static!important;font-size:13px!important;margin-top:5px!important}
+ .tile-study .tile-caption::before{top:15px;right:0}
+ .tile-study .tile-main::after{display:none}
+ .tile-study-2 [data-handbag-cutout],.tile-study-2 [data-tidle-widget]{top:50%!important}
+ .tile-study-2 [data-breadboard-cutout]{top:44%!important;height:66%!important}
+ .tile-study-2 .breadboard-audio{bottom:16px}
+ .tile-study-3 .tile-caption>div:nth-child(3){display:none}
+ .tile-study-4 .tile-introduction{padding:8px 0!important;gap:12px}
+ .tile-study-4 .tile-introduction h1,.tile-study-4 .tile-introduction .editorial-description{max-width:none}
+}

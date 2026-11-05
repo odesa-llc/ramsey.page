@@ -1,0 +1,11 @@
+/* Avatar outline color control. Soft masonry is the fixed portfolio layout. */
+.portfolio-layout-picker{position:fixed;z-index:110;top:24px;right:24px;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:6px 9px;padding:4px 0 4px 10px;border-radius:4px;background:rgba(248,248,246,.94);color:#0D2565;font:13px/1.2 'Notebook Hand',sans-serif}
+.portfolio-layout-picker label{opacity:.5;font-size:11px}
+.portfolio-layout-field{position:relative;display:block}
+.portfolio-layout-field::after{content:'';position:absolute;right:3px;top:8px;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);pointer-events:none;opacity:.65;transition:transform .2s}
+.portfolio-layout-field:focus-within::after{transform:translateY(2px) rotate(45deg)}
+.portfolio-layout-picker select{appearance:none;-webkit-appearance:none;max-width:155px;border:0;border-bottom:1px solid #0D256530;border-radius:0;color:inherit;background:transparent;padding:3px 20px 5px 0;font:inherit;line-height:1.2;cursor:pointer;transition:border-color .2s}
+.portfolio-layout-picker select:hover{border-color:#0D256590}
+.portfolio-layout-picker select:focus-visible{outline:1px solid currentColor;outline-offset:4px}
+@media(max-width:700px){.portfolio-layout-picker{top:auto;bottom:12px;right:12px;gap:5px 7px;font-size:12px;padding:8px 10px}.portfolio-layout-picker label{font-size:10px}.portfolio-layout-picker select{max-width:150px}.portfolio-layout-field::after{top:7px}}
+@media(prefers-reduced-motion:reduce){.portfolio-layout-picker *{transition:none!important}}

@@ -1,0 +1,29 @@
+*{box-sizing:border-box}
+html,body{margin:0;background:#F8F8F6;color:#0D2565}
+body{cursor:url('/assets/cursor-little-pencil.svg') 2 2,auto}
+a{color:inherit;text-decoration:none;cursor:url('/assets/cursor-little-pencil.svg') 2 2,pointer}
+a:focus-visible{outline:1px solid currentColor;outline-offset:5px}
+.restitch-project{max-width:1120px;margin:0 auto;padding:28px 40px 48px}
+.restitch-back{display:inline-block;font-size:15px;border-bottom:1px solid #0d256566;padding-bottom:3px}
+.restitch-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:64px;align-items:center;margin-top:40px}
+.restitch-kicker{font-size:14px;margin:0 0 18px;opacity:.65}
+.restitch-hero h1{font-size:72px;font-weight:400;line-height:1;margin:0 0 24px;letter-spacing:-1px}
+.restitch-intro{font-size:22px;line-height:1.45;max-width:430px;margin:0}
+.restitch-prototype{display:inline-block;font-size:18px;margin-top:26px;border-bottom:1px solid currentColor;padding-bottom:4px}
+.restitch-preview{margin:0;min-width:0}
+.restitch-preview>div{background:#e8e4dc;border-radius:12px 9px 14px 8px;padding:12px}
+.restitch-preview img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.restitch-preview figcaption{font-size:13px;margin-top:12px;line-height:1.4;opacity:.65}
+.restitch-method{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:64px;border-top:1px solid #0d25652b;padding-top:26px;margin-top:48px}
+.restitch-method .restitch-kicker{margin-bottom:12px}
+.restitch-method h2{font-size:30px;line-height:1.2;font-weight:400;margin:0}
+.restitch-method p{font-size:17px;line-height:1.55;margin:0}
+.restitch-method p+p{margin-top:14px}
+.restitch-details{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:64px}
+.restitch-details article{border-top:1px solid #0d25654d;padding-top:18px}
+.restitch-details h2{font-size:24px;font-weight:400;line-height:1.2;margin:0 0 12px}
+.restitch-details p{font-size:18px;line-height:1.5;margin:0}
+.restitch-footer{display:flex;justify-content:space-between;gap:20px;margin-top:56px;padding-top:20px;border-top:1px solid #0d25654d;font-size:16px}
+.restitch-footer a{border-bottom:1px solid #0d256566;padding-bottom:3px}
+@media(max-width:900px){.restitch-hero,.restitch-method{gap:32px}.restitch-project{padding:24px}.restitch-details{gap:24px}}
+@media(max-width:700px){.restitch-project{padding:20px 16px 32px}.restitch-hero{grid-template-columns:1fr;margin-top:30px;gap:32px}.restitch-hero h1{font-size:56px}.restitch-intro{font-size:20px}.restitch-method{grid-template-columns:1fr;gap:18px;margin-top:36px}.restitch-details{grid-template-columns:1fr;gap:28px;margin-top:36px}.restitch-details p{font-size:18px}.restitch-footer{font-size:14px;gap:12px;margin-top:36px}.restitch-preview>div{padding:18px}}

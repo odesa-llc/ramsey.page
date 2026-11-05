@@ -1,0 +1,6 @@
+/* Draw within the original image boxes; frames never intercept clicks or dragging. */
+.portfolio-border-frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none!important;z-index:20;overflow:visible}
+.portfolio-border-frame path{fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;pointer-events:none}
+[data-portfolio-border="3"] .portfolio-border-frame path{stroke-width:.6;opacity:.24}
+[data-portfolio-border="4"] .portfolio-border-frame path{stroke-width:.95;opacity:.84}
+[data-portfolio-border="4"] .portfolio-border-frame .second-line{stroke-width:.65;opacity:.34}

@@ -1,0 +1,39 @@
+/* Motion belongs to each layout. Inner cutout transforms remain owned by dragging/parallax. */
+.tile-study [data-tile]{opacity:1;transform:none;clip-path:inset(-14px);transition:opacity .55s ease var(--reveal-delay,0ms),transform .55s cubic-bezier(.2,.7,.3,1) var(--reveal-delay,0ms),clip-path .65s cubic-bezier(.2,.7,.3,1) var(--reveal-delay,0ms)}
+.tile-study [data-reveal="pending"]{opacity:0;transform:translateY(14px)}
+.tile-study .tile>div:first-child{transition:transform .32s cubic-bezier(.2,.7,.3,1),box-shadow .32s ease}
+.tile-study .tile-caption::before{transition:opacity .25s,transform .25s}
+.tile-study .tile-caption>div:first-child{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:4px;transition:text-decoration-color .22s}
+.tile-study .tile:is(:hover,:focus-within) .tile-caption>div:first-child{text-decoration-color:currentColor}
+.tile-study .tile:is(:hover,:focus-within) .tile-caption::before{opacity:.8}
+.tile-study .tile.is-handling .tile-caption::before{opacity:1;transform:translateY(-2px)}
+.tile-study .handdrawn-underline{transform-origin:left center;animation:tile-underline-in .65s cubic-bezier(.2,.65,.35,1) .12s both}
+@keyframes tile-underline-in{from{transform:scaleX(0);opacity:.25}to{transform:scaleX(1);opacity:1}}
+/* Masonry: a light rise and a quiet lift on the individual image. */
+@media(hover:hover) and (pointer:fine){.tile-study-1 .tile:is(:hover,:focus-within)>div:first-child{transform:translateY(-3px);box-shadow:0 5px 13px #0D25650a}}
+/* Mosaic: panels reveal within their fitted frame, with a close-up on hover. */
+.tile-study-2 [data-reveal="pending"]{transform:none;clip-path:inset(0 0 9% 0)}
+.tile-study-2 .tile>div:first-child>img:first-child{transition:transform .8s cubic-bezier(.2,.7,.3,1);transform:scale(1)}
+.tile-study-2 .tile-caption{transition:transform .28s ease,background .28s ease!important}
+.tile-study-2 .tile-caption::after{content:'↗';position:absolute;right:10px;top:9px;font:15px/1 sans-serif;opacity:0;transform:translate(-3px,3px);transition:opacity .22s,transform .22s}
+.tile-study-2 .tile:is(:hover,:focus-within) .tile-caption::before{opacity:0}
+.tile-study-2 .tile:is(:hover,:focus-within) .tile-caption::after{opacity:.8;transform:none}
+@media(hover:hover) and (pointer:fine){.tile-study-2 .tile:hover>div:first-child>img:first-child{transform:scale(1.035)}.tile-study-2 .tile:hover .tile-caption{transform:translateX(3px)}}
+/* Offset gallery: slower, scroll-led entrances and barely moving backdrops. */
+.tile-study-3 [data-tile]{transition-duration:.85s,.85s,.65s}
+.tile-study-3 [data-reveal="pending"]{transform:translateY(24px)}
+.tile-study-3 .tile>div:first-child>img:first-child{transform:translateY(var(--gallery-pan,0px)) scale(1.045);transition:transform .18s linear}
+.tile-study-3 .tile-caption::before{content:var(--tile-num) ' ↗';opacity:.4}
+@media(hover:hover) and (pointer:fine){.tile-study-3 .tile:hover .tile-caption::before{transform:translate(2px,-2px);opacity:.8}}
+/* Workbench: the panels settle into place, then respond to being picked up. */
+.tile-study-4 [data-reveal="pending"]{transform:translateY(9px) scale(.985)}
+.tile-study-4 .tile>div:first-child{outline:1px solid transparent;outline-offset:-1px;transition:transform .28s ease,box-shadow .28s ease,outline-color .28s ease}
+.tile-study-4 .tile:is(:focus-within,.is-handling)>div:first-child{outline-color:#0D25653b;box-shadow:0 5px 14px #0D25650d;transform:translateY(-2px)}
+@media(hover:hover) and (pointer:fine){.tile-study-4 .tile:hover>div:first-child{outline-color:#0D25652b;box-shadow:0 4px 12px #0D25650a;transform:translateY(-2px)}}
+.tile-study-4 [data-cutout-dragging]{filter:drop-shadow(0 9px 10px #101a233d)}
+@media(prefers-reduced-motion:reduce){
+ .tile-study [data-tile]{opacity:1!important}
+ .tile-study [data-tile],.tile-study .tile>div:first-child,.tile-study .tile-caption,.tile-study .tile-caption::before,.tile-study .tile-caption::after{transition:none!important;transform:none!important;clip-path:none!important}
+ .tile-study .tile>div:first-child>img:first-child{transform:none!important;transition:none!important}
+ .tile-study .handdrawn-underline{animation:none!important;transform:none!important}
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="/i18n-preview.js?v=1"></script><script src="/i18n.js?v=1"></script>
+<title>Fitted mosaic — ramsey hatoum</title>
+<meta name="description" content="Made for use. Selected apps, objects, and experiments by ramsey hatoum.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/project-visibility.js?v=4"></script>
+<script src="/support.js"></script>
+
+<link rel="preload" href="/assets/fonts/NotebookHand-Regular.woff2?v=1.110" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/typography.css?v=notebook-hand-1.110">
+<link rel="stylesheet" href="/project-filters.css?v=3">
+<script src="/project-filters.js?v=4-i18n-1" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+
+
+
+html, body { margin: 0; background: #F8F8F6; }
+body { cursor: url("/assets/cursor-little-pencil.svg") 2 2, auto; text-wrap: pretty; }
+a, button, [role="button"] { cursor: url("/assets/cursor-little-pencil.svg") 2 2, pointer; }
+a { color: inherit; text-decoration: none; }
+</style>
+<link rel="stylesheet" href="/mobile.css?v=restitch-1" />
+<script src="/image-slot.js"></script>
+<script src="/drift.js"></script>
+<script src="/cutout-interaction.js?v=4"></script>
+<script src="/tidle-widget.js?v=3-i18n-1"></script>
+<link rel="stylesheet" href="/tidle.css?v=neutral-hover-1" />
+<link rel="stylesheet" href="/editorial.css?v=handdrawn-1" />
+<link rel="stylesheet" href="/project-audio.css?v=neutral-hover-1" /><script src="/project-audio.js?v=2-i18n-1"></script>
+<link rel="stylesheet" href="/ascii-nav.css?v=1" />
+<link rel="stylesheet" href="/centered-nav.css?v=18" />
+<link rel="stylesheet" href="/layout-picker.css?v=4">
+<script src="/layout-picker.js?v=14"></script>
+<link rel="stylesheet" href="/concepts/tile-layouts.css?v=9">
+<link rel="stylesheet" href="/concepts/tile-motion.css?v=1">
+<script src="/concepts/tile-motion.js?v=1"></script>
+</helmet>
+<div class="tile-study tile-study-2" data-screen-label="Home" style="background:#F8F8F6;min-height:{{ rootMinHeight }};height:{{ rootHeight }};overflow:{{ rootOverflow }};display:flex;flex-direction:column;font-family:'Notebook Hand',sans-serif;color:#0D2565">
+  <header class="direction-nav direction-nav-centered"><nav class="direction-center-links" aria-label="Main navigation" data-i18n-aria-label="nav.main"><a href="/"><!--i18n:nav.work-->work<!--/i18n--></a><a class="ascii-face-button" href="/" aria-label="ramsey hatoum home" data-i18n-aria-label="nav.home"><img class="ascii-face" src="/assets/ascii-face/ramsey-retro-selected-outline-sage.svg?v=6" alt="" aria-hidden="true" draggable="false"><span class="ascii-face-name">ramsey hatoum</span></a><a href="/about/"><!--i18n:nav.about-->about<!--/i18n--></a></nav></header>
+  <section class="editorial-intro project-filter-intro" data-hero="1" aria-labelledby="editorial-headline" style="background:{{ heroBg }}">
+    <div>
+      <h1 id="editorial-headline" class="handdrawn-heading" style="font-family:{{ headFont }}"><!--i18n:home.headline-->made for use<!--/i18n--><svg class="handdrawn-underline" viewBox="0 0 320 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 7.1 C9 6.5 16 7.5 25 7.2 S40 6.1 49 6.8 S62 8.2 72 7.4 S86 7.3 95 7.6 S109 6.3 118 6.8 S131 7.4 140 7.1 S154 7.7 163 7.4 S176 6.4 185 6.9 S199 7.6 207 7.1 S220 7.2 229 7.7 S243 6.9 252 7.1 S266 6.7 275 7.2 S288 7.8 298 7.1 S310 7.2 319 6.9" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path></svg></h1>
+    </div>
+    <div class="project-filters" data-project-filters="true" role="group" aria-label="Filter projects" data-i18n-aria-label="home.filterLabel"><button type="button" data-project-filter="apps" aria-pressed="false"><!--i18n:home.apps-->apps<!--/i18n--></button><span class="project-filters-separator" aria-hidden="true">/</span><button type="button" data-project-filter="things" aria-pressed="false"><!--i18n:home.things-->things<!--/i18n--></button><span class="project-filters-separator" aria-hidden="true">/</span><button type="button" data-project-filter="research" aria-pressed="false"><!--i18n:home.research-->research<!--/i18n--></button></div><p class="project-filter-status" data-project-filter-status="true" role="status" aria-live="polite" aria-atomic="true"><!--i18n:home.initialCount-->Showing 5 projects.<!--/i18n--></p>
+  </section>
+<main class="tile-main">  <div data-grid="1" data-project-count="{{ visibleCount }}" data-slide="{{ slide }}" style="display:grid;grid-template-columns:{{ gridCols }};grid-template-rows:{{ gridRows }};flex:{{ gridFlex }};min-height:0">
+
+    <a data-project-categories="things" class="tile tile-handbag" data-tile="handbag" href="/handbag/" onMouseEnter="{{ onCard0 }}" onMouseMove="{{ onCardMove }}" onMouseLeave="{{ onCardLeave }}" style="display:flex;flex-direction:column;border-right:{{ cardBorderRight }};border-bottom:{{ cardBorderBottom }};min-height:0;height:{{ cardHeight }}">
+      <div style="flex:{{ imgFlex }};min-height:{{ imgMinHeight }};aspect-ratio:{{ imgAspect }};position:relative;background:{{ card0Bg }};overflow:hidden">
+        <img src="/assets/handbag-paris-motion.jpg" alt="Motion-blurred Paris street with Haussmann buildings" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:46% 50%;pointer-events:none"  data-i18n-alt="home.parisBackground"/>
+        <img src="/assets/widget-outlines/handbag-sage.svg?v=1" ref="{{ handbagOverlayRef }}" data-handbag-cutout="true" alt="My handmade black handbag with silver hardware" draggable="false" title="Drag the handbag" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);translate:0px 0px;width:90%;height:78%;object-fit:contain;cursor:grab;touch-action:none;user-select:none;-webkit-user-drag:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),translate .45s cubic-bezier(.22,.61,.36,1)"  data-i18n-alt="home.handbagAlt" data-i18n-title="home.handbagDrag"/>
+      </div>
+      <div class="tile-caption" style="border-top:2px solid #0D2565;padding:16px 16px 10px {{ labelPadL }}px;background:{{ label0Bg }};flex:0 0 {{ labelHeight }};box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden">
+        <div style="font-family:{{ headFont }};font-weight:400;font-size:{{ titleSize }};line-height:1.1;min-height:calc(2.2em - 12px);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:{{ capsTransform }}"><!--i18n:home.handbagTitle-->Handmade Handbag<!--/i18n--></div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ subSize }};line-height:1.2;margin-top:1px"><!--i18n:home.handbagDiscipline-->Accessory Design<!--/i18n--></div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ tagSize }};line-height:1.25;min-height:2.5em;font-style:italic;margin-top:0.7em;opacity:.85"><!--i18n:home.handbagSummary-->Designed and made by me<!--/i18n--></div>
+      </div>
+    </a>
+
+    <a data-project-categories="apps" class="tile tile-tidle" data-tile="tidle" href="/tidle/" onMouseEnter="{{ onCard2 }}" onMouseMove="{{ onCardMove }}" onMouseLeave="{{ onCardLeave }}" style="display:flex;flex-direction:column;border-right:{{ rowEndBorderRight }};border-bottom:{{ cardBorderBottom }};min-height:0;height:{{ cardHeight }}">
+      <div style="flex:{{ imgFlex }};min-height:{{ imgMinHeight }};aspect-ratio:{{ imgAspect }};position:relative;background:{{ card2Bg }};overflow:hidden">
+        <img src="/assets/tidle-coffee-motion.jpg" alt="Two coffees with curved motion blur and soft film grain" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;pointer-events:none"  data-i18n-alt="home.coffeeAlt"/>
+        <div ref="{{ tidleOverlayRef }}" data-widget-cutout="true" data-tidle-widget="true" role="img" aria-label="Tidle Today's Tasks widget: Done 0 of 8" title="Drag the Tidle widget" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);translate:0px 0px;width:var(--tidle-preview-width,76%);height:78%;cursor:grab;touch-action:none;user-select:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),translate .45s cubic-bezier(.22,.61,.36,1)" data-i18n-aria-label="tidle.widgetLabel" data-i18n-title="tidle.widgetDrag">
+          <svg class="tidle-widget-svg" viewBox="0 0 1866 843" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <clipPath id="tidle-static-artwork"><path clip-rule="evenodd" d="M0 0H1866V843H0Z M238 355H758V465H238Z M236 482H1629V526H236Z"></path></clipPath>
+              <linearGradient id="tidle-count-background" gradientUnits="userSpaceOnUse" x1="0" y1="350" x2="0" y2="465"><stop offset="0" stop-color="#0A0A0A"></stop><stop offset=".45" stop-color="#060606"></stop><stop offset="1" stop-color="#040303"></stop></linearGradient>
+            </defs>
+            <image href="/assets/tidle-widget-cutout.png" x="0" y="0" width="1866" height="843" clip-path="url(#tidle-static-artwork)"></image>
+            <rect x="236" y="353" width="524" height="114" fill="url(#tidle-count-background)" opacity=".99215686"></rect>
+            <text class="tidle-widget-count" data-tidle-count="true" x="250" y="430" fill="#9A9A9F"><!--i18n:tidle.initialCount-->Done 0 of 8<!--/i18n--></text>
+            <rect x="234" y="480" width="1397" height="48" fill="#000000" opacity=".99215686"></rect>
+            <g data-tidle-bar="true" role="progressbar" aria-label="Tasks completed" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" data-i18n-aria-label="tidle.completed">
+              <rect x="250" y="493" width="1365" height="22" rx="11" fill="#29292D"></rect>
+              <rect class="tidle-widget-fill" data-tidle-fill="true" x="250" y="493" width="0" height="22" rx="11" fill="#FFFFFF"></rect>
+            </g>
+            <path data-widget-outline="tidle" d="M62.4,23.8 C65.7,23.6 69.2,23.9 72.7,24.2 C76.2,24.6 79.9,25.3 83.3,25.8 C86.8,26.3 90.2,26.9 93.6,27.5 C97.0,28.0 100.4,28.5 103.8,28.9 C107.1,29.4 110.5,29.8 113.9,30.1 C117.3,30.4 120.7,30.6 124.0,30.7 C127.4,30.8 130.8,30.8 134.2,30.8 C137.6,30.8 141.0,30.6 144.3,30.5 C147.7,30.4 151.1,30.2 154.5,30.0 C157.9,29.9 161.2,29.7 164.6,29.6 C168.0,29.5 171.4,29.4 174.8,29.4 C178.2,29.4 181.5,29.5 184.9,29.6 C188.3,29.8 191.7,30.0 195.1,30.3 C198.5,30.6 201.8,30.9 205.2,31.3 C208.6,31.7 212.0,32.1 215.4,32.5 C218.8,32.9 222.1,33.4 225.5,33.8 C228.9,34.2 232.3,34.6 235.7,35.0 C239.0,35.3 242.4,35.7 245.8,36.0 C249.2,36.3 252.6,36.5 256.0,36.8 C259.3,37.0 262.7,37.2 266.1,37.4 C269.5,37.6 272.9,37.9 276.2,38.1 C279.6,38.3 283.0,38.6 286.4,38.8 C289.8,39.1 293.2,39.4 296.6,39.7 C299.9,40.0 303.3,40.3 306.7,40.7 C310.1,41.0 313.5,41.3 316.8,41.6 C320.2,41.8 323.6,42.1 327.0,42.3 C330.4,42.4 333.8,42.6 337.1,42.6 C340.5,42.6 343.9,42.5 347.3,42.2 C350.7,42.0 354.0,41.7 357.4,41.3 C360.8,40.8 364.2,40.3 367.6,39.7 C371.0,39.0 374.3,38.3 377.7,37.6 C381.1,36.8 384.5,36.0 387.9,35.3 C391.3,34.5 394.6,33.7 398.0,33.0 C401.4,32.3 404.8,31.6 408.2,31.0 C411.6,30.4 414.9,29.9 418.3,29.5 C421.7,29.1 425.1,28.7 428.5,28.5 C431.8,28.2 435.2,28.0 438.6,27.9 C442.0,27.8 445.4,27.7 448.8,27.6 C452.1,27.6 455.5,27.6 458.9,27.5 C462.3,27.5 465.7,27.5 469.1,27.4 C472.4,27.3 475.8,27.2 479.2,27.1 C482.6,27.0 486.0,26.9 489.4,26.7 C492.7,26.6 496.1,26.4 499.5,26.3 C502.9,26.1 506.3,26.0 509.7,25.9 C513.1,25.8 516.6,25.6 520.0,25.7 C523.4,25.7 526.8,25.8 530.1,26.1 C533.4,26.4 536.6,26.9 539.6,27.6 C542.7,28.3 545.8,29.1 548.6,30.2 C551.3,31.3 553.9,32.7 556.1,34.3 C558.4,36.0 560.3,38.0 562.1,40.0 C564.0,42.0 565.6,44.1 567.2,46.4 C568.8,48.6 570.2,50.9 571.5,53.4 C572.9,56.0 574.2,58.6 575.2,61.5 C576.2,64.3 577.1,67.4 577.7,70.7 C578.3,73.9 578.7,77.5 579.0,80.9 C579.3,84.3 579.4,87.9 579.5,91.3 C579.6,94.8 579.7,98.2 579.6,101.6 C579.5,105.0 579.3,108.3 579.0,111.7 C578.7,115.1 578.2,118.5 577.7,121.8 C577.2,125.2 576.6,128.6 576.0,132.0 C575.4,135.4 574.6,138.9 573.9,142.1 C573.2,145.4 572.5,148.5 571.8,151.5 C571.1,154.6 570.5,157.2 569.8,160.2 C569.2,163.2 568.8,166.2 568.1,169.5 C567.4,172.7 566.5,176.2 565.8,179.6 C565.0,182.9 564.3,186.3 563.7,189.6 C563.0,192.9 562.4,196.3 561.8,199.4 C561.1,202.4 560.5,205.5 559.8,208.0 C559.0,210.5 558.1,212.7 557.0,214.4 C556.0,216.2 554.7,217.3 553.6,218.4 C552.5,219.5 551.3,220.1 550.2,220.9 C549.1,221.7 548.2,222.3 547.0,223.0 C545.8,223.6 544.6,224.2 543.2,224.8 C541.7,225.4 540.2,225.8 538.4,226.5 C536.6,227.1 534.6,227.8 532.3,228.5 C530.1,229.2 527.6,230.0 524.9,230.7 C522.1,231.3 519.1,232.0 516.0,232.5 C512.9,233.1 509.6,233.7 506.3,234.2 C503.0,234.7 499.6,235.3 496.2,235.7 C492.9,236.1 489.5,236.5 486.1,236.8 C482.7,237.1 479.3,237.3 476.0,237.4 C472.6,237.5 469.2,237.6 465.8,237.5 C462.4,237.5 459.0,237.4 455.7,237.2 C452.3,237.1 448.9,236.9 445.5,236.8 C442.1,236.6 438.8,236.4 435.4,236.3 C432.0,236.2 428.6,236.2 425.2,236.2 C421.8,236.2 418.5,236.2 415.1,236.4 C411.7,236.5 408.3,236.7 404.9,237.0 C401.5,237.3 398.2,237.7 394.8,238.0 C391.4,238.4 388.0,238.8 384.6,239.3 C381.2,239.7 377.9,240.1 374.5,240.5 C371.1,240.9 367.7,241.3 364.3,241.7 C361.0,242.1 357.6,242.4 354.2,242.7 C350.8,243.0 347.4,243.2 344.0,243.5 C340.7,243.7 337.3,243.9 333.9,244.2 C330.5,244.4 327.1,244.6 323.8,244.8 C320.4,245.1 317.0,245.3 313.6,245.6 C310.2,245.8 306.8,246.1 303.4,246.4 C300.1,246.7 296.7,247.1 293.3,247.4 C289.9,247.7 286.5,248.0 283.2,248.3 C279.8,248.6 276.4,248.9 273.0,249.0 C269.6,249.2 266.2,249.3 262.9,249.3 C259.5,249.3 256.1,249.2 252.7,249.0 C249.3,248.8 246.0,248.4 242.6,248.0 C239.2,247.6 235.8,247.0 232.4,246.4 C229.0,245.8 225.7,245.1 222.3,244.3 C218.9,243.6 215.5,242.8 212.1,242.0 C208.7,241.2 205.4,240.4 202.0,239.7 C198.6,239.0 195.2,238.3 191.8,237.8 C188.4,237.2 185.1,236.6 181.7,236.2 C178.3,235.8 174.9,235.5 171.5,235.2 C168.2,234.9 164.8,234.8 161.4,234.6 C158.0,234.5 154.6,234.4 151.2,234.4 C147.9,234.3 144.5,234.3 141.1,234.3 C137.7,234.2 134.3,234.2 130.9,234.1 C127.6,234.1 124.2,234.0 120.8,233.9 C117.4,233.8 114.0,233.6 110.7,233.5 C107.3,233.3 103.9,233.2 100.5,233.0 C97.2,232.9 93.8,232.7 90.5,232.6 C87.2,232.5 83.9,232.5 80.8,232.4 C77.7,232.3 74.6,232.3 71.8,232.1 C69.0,232.0 66.5,231.7 64.1,231.5 C61.8,231.3 59.6,231.0 57.6,230.6 C55.7,230.2 53.9,229.7 52.3,229.1 C50.7,228.4 49.4,227.7 48.1,226.8 C46.8,225.8 45.4,224.9 44.3,223.6 C43.2,222.4 42.2,220.8 41.4,219.1 C40.5,217.4 39.8,215.6 39.2,213.5 C38.6,211.3 38.1,209.0 37.8,206.4 C37.4,203.7 37.3,200.7 37.1,197.6 C36.9,194.5 36.8,191.2 36.6,187.9 C36.3,184.6 35.9,181.3 35.5,177.9 C35.2,174.6 34.7,171.2 34.2,167.8 C33.8,164.4 33.5,161.0 33.0,157.6 C32.5,154.2 31.9,150.9 31.3,147.5 C30.6,144.1 29.9,140.7 29.2,137.3 C28.5,133.9 27.7,130.6 27.0,127.2 C26.3,123.8 25.6,120.4 25.0,117.0 C24.4,113.6 23.8,110.3 23.3,106.9 C22.8,103.5 22.3,100.1 21.9,96.7 C21.5,93.3 21.1,89.8 20.9,86.3 C20.7,82.9 20.5,79.5 20.5,76.2 C20.6,72.9 20.7,69.6 21.1,66.4 C21.5,63.2 21.9,60.0 22.7,57.0 C23.5,54.0 24.5,51.2 25.9,48.5 C27.2,45.8 28.8,43.1 30.7,40.7 C32.5,38.3 34.4,36.0 36.7,34.0 C39.0,32.1 41.6,30.5 44.3,29.1 C47.0,27.7 50.1,26.5 53.1,25.7 C56.1,24.8 59.2,24.1 62.4,23.8Z" transform="scale(3.11000000)" fill="none" stroke="#8FAA9A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+          </svg>
+        </div>
+      </div>
+      <div class="tile-caption" style="border-top:2px solid #0D2565;padding:16px 16px 10px {{ labelPadL }}px;background:{{ label2Bg }};flex:0 0 {{ labelHeight }};box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden">
+        <div style="font-family:{{ headFont }};font-weight:400;font-size:{{ titleSize }};line-height:1.1;min-height:calc(2.2em - 12px);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:{{ capsTransform }}">Tidle</div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ subSize }};line-height:1.2;margin-top:1px"><!--i18n:home.tidleDiscipline-->iOS App<!--/i18n--></div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ tagSize }};line-height:1.25;min-height:2.5em;font-style:italic;margin-top:0.7em;opacity:.85"><!--i18n:home.tidleSummary-->Tasks, reminders, and daily progress.<!--/i18n--></div>
+      </div>
+    </a>
+
+    <a data-project-categories="apps research" class="tile tile-restitch" data-tile="restitch" href="/restitch/" data-project-id="restitch" onMouseEnter="{{ onCard1 }}" onMouseMove="{{ onCardMove }}" onMouseLeave="{{ onCardLeave }}" style="display:flex;flex-direction:column;border-right:{{ cardBorderRight }};border-bottom:{{ cardBorderBottom }};min-height:0;height:{{ cardHeight }}">
+      <div class="restitch-art" style="flex:{{ imgFlex }};min-height:{{ imgMinHeight }};aspect-ratio:{{ imgAspect }};position:relative;background:#e8e4dc;overflow:hidden">
+        <img src="/assets/restitch/lesson-stack.webp" alt="Restitch sewing lesson screens" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;pointer-events:none" />
+        <img src="/assets/restitch/lesson-stack.webp?v=1" ref="{{ restitchOverlayRef }}" alt="Restitch lesson cards showing Fold &amp; press, step 5 of 7, with a denim hemming preview" draggable="false" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:98%;height:96%;object-fit:contain;transition:transform .35s cubic-bezier(.22,.61,.36,1)" />
+      </div>
+      <div class="tile-caption" style="border-top:2px solid #0D2565;padding:16px 16px 10px {{ labelPadL }}px;background:{{ label1Bg }};flex:0 0 {{ labelHeight }};box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden">
+        <div style="font-family:{{ headFont }};font-weight:400;font-size:{{ titleSize }};line-height:1.1;min-height:calc(2.2em - 12px);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:{{ capsTransform }}">Restitch</div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ subSize }};line-height:1.2;margin-top:1px"><!--i18n:home.restitchDiscipline-->Sewing App · Concept<!--/i18n--></div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ tagSize }};line-height:1.25;min-height:2.5em;font-style:italic;margin-top:0.7em;opacity:.85"><!--i18n:home.restitchSummary-->Small sewing projects, guided by visual lessons, materials checklists, and saved progress.<!--/i18n--></div>
+      </div>
+    </a>
+
+    <div class="tile tile-breadboard" data-tile="breadboard" data-project-card="breadboard" data-project-categories="things" onMouseEnter="{{ onCard3 }}" onMouseMove="{{ onCardMove }}" onMouseLeave="{{ onCardLeave }}" style="display:flex;flex-direction:column;border-right:{{ breadboardBorderRight }};border-bottom:{{ cardBorderBottom }};min-height:0;height:{{ cardHeight }}">
+      <div style="flex:{{ imgFlex }};min-height:{{ imgMinHeight }};aspect-ratio:{{ imgAspect }};position:relative;background:{{ card3Bg }};overflow:hidden;container-type:inline-size">
+        <img src="/assets/fuzz-guitar-motion.jpg" alt="Guitar and amplifier with soft motion blur and warm faded colours" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;pointer-events:none"  data-i18n-alt="home.guitarAlt"/>
+        <a href="/fuzz/" aria-label="View the breadboard fuzz project" style="position:absolute;inset:0;z-index:1" data-i18n-aria-label="home.fuzzLink"></a>
+        <img src="/assets/widget-outlines/breadboard-sage.svg?v=1" ref="{{ fuzzOverlayRef }}" data-breadboard-cutout="true" alt="Breadboard circuit with colorful jumper wires" draggable="false" title="Drag the breadboard" style="z-index:2;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);translate:0px 0px;width:90%;height:78%;object-fit:contain;cursor:grab;touch-action:none;user-select:none;-webkit-user-drag:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),translate .45s cubic-bezier(.22,.61,.36,1)"  data-i18n-alt="home.fuzzAlt" data-i18n-title="home.fuzzDrag"/>
+        <div class="breadboard-audio" data-audio-player="true" role="group" aria-label="Recorded fuzz circuit demo audio" data-i18n-aria-label="runtime.audioGroup">
+          <button class="breadboard-audio-toggle" type="button" data-project-audio="true" aria-label="Play demo audio clip" title="Original sound from the workbench recording" data-i18n-title="runtime.audioTitle" data-i18n-aria-label="runtime.playAudio">
+            <svg viewBox="0 0 7 8" aria-hidden="true"><path class="audio-play" d="M0 0L7 4L0 8Z"></path><path class="audio-pause" d="M0 0H2V8H0Z M5 0H7V8H5Z"></path></svg><span data-audio-label="true"><!--i18n:runtime.play-->Play demo<!--/i18n--></span>
+          </button>
+          <div class="breadboard-audio-details"><input class="breadboard-audio-position" data-audio-position="true" type="range" min="0" max="100" step="0.1" aria-label="Audio position" data-i18n-aria-label="runtime.audioSlider"><span class="breadboard-audio-time" data-audio-time="true" aria-hidden="true"><!--i18n:runtime.initialTime-->0.0s<!--/i18n--></span></div>
+        </div>
+        <audio data-project-audio-media="true" src="/assets/fuzz/workbench-demo-from-6s.m4a" preload="metadata"></audio>
+      </div>
+      <div class="tile-caption" style="border-top:2px solid #0D2565;padding:16px 16px 10px {{ labelPadL }}px;background:{{ label3Bg }};flex:0 0 {{ labelHeight }};box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden">
+        <div style="font-family:{{ headFont }};font-weight:400;font-size:{{ titleSize }};line-height:1.1;min-height:calc(2.2em - 12px);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:{{ capsTransform }}"><a href="/fuzz/"><!--i18n:home.fuzzTitle-->Breadboard Fuzz<!--/i18n--></a></div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ subSize }};line-height:1.2;margin-top:1px"><!--i18n:home.fuzzDiscipline-->Audio Electronics<!--/i18n--></div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ tagSize }};line-height:1.25;min-height:2.5em;font-style:italic;margin-top:0.7em;opacity:.85"><!--i18n:home.fuzzSummary-->A prototype you can hear.<!--/i18n--></div>
+      </div>
+    </div>
+    <a data-project-categories="photography" class="tile tile-beirut" data-tile="beirut" href="/beirut/" onMouseEnter="{{ onCard4 }}" onMouseMove="{{ onCardMove }}" onMouseLeave="{{ onCardLeave }}" style="display:flex;flex-direction:column;border-right:{{ beirutBorderRight }};border-bottom:none;min-height:0;height:{{ cardHeight }}">
+      <div style="flex:{{ imgFlex }};min-height:{{ imgMinHeight }};aspect-ratio:{{ imgAspect }};position:relative;background:{{ card4Bg }};overflow:hidden">
+        <sc-if value="{{ beirutShowIllustration }}" hint-placeholder-val="{{ false }}">
+          <svg viewBox="0 0 200 200" style="position:absolute;inset:0;width:100%;height:100%">
+            <path d="M100 55 C130 75 140 105 120 125 C108 137 92 137 80 125 C60 105 70 75 100 55 Z" fill="none" stroke="#0D2565" stroke-width="2" />
+            <line x1="100" y1="125" x2="100" y2="160" stroke="#0D2565" stroke-width="2" />
+            <path d="M60 150 q40 -18 80 0" fill="none" stroke="#0D2565" stroke-width="2" />
+          </svg>
+        </sc-if>
+        <sc-if value="{{ showColorShapes }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+            <img src="/assets/widget-outlines/camera-sage.svg" alt="" style="width:{{ ovBeirutCW }};height:auto;max-height:92%;object-fit:contain;display:block" />
+          </div>
+        </sc-if>
+        <sc-if value="{{ beirutShowTexture }}" hint-placeholder-val="{{ false }}">
+          <img src="/assets/beirut/filmstrip-wall-washed.jpg?v=1" data-background-treatment="washed" alt="Beirut street beside a filmstrip mural" style="position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%"  data-i18n-alt="home.beirutBackground"/>
+          <img src="/assets/widget-outlines/camera-sage.svg?v=1" ref="{{ beirutOverlayRef }}" data-widget-cutout="true" data-camera-cutout="true" alt="Silver Sony digital camera showing a sunlit graffiti wall, with wrist strap" draggable="false" title="Drag the camera" style="position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);translate:0px 0px;height:100%;width:auto;max-width:90%;object-fit:contain;z-index:2;cursor:grab;touch-action:none;user-select:none;-webkit-user-drag:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),translate .45s cubic-bezier(.22,.61,.36,1);filter:drop-shadow(0 10px 14px rgba(48,43,36,.24))"  data-i18n-alt="home.cameraAlt" data-i18n-title="home.cameraDrag"/>
+        </sc-if>
+        <sc-if value="{{ beirutShowPhoto }}" hint-placeholder-val="{{ true }}">
+          <img src="/assets/beirut/filmstrip-wall-washed.jpg?v=1" data-background-treatment="washed" alt="Sunlit Beirut street beside a filmstrip mural" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%"  data-i18n-alt="home.beirutBackgroundSun"/>
+        <img src="/assets/widget-outlines/camera-sage.svg?v=1" ref="{{ beirutOverlayRef }}" data-widget-cutout="true" data-camera-cutout="true" alt="Silver Sony digital camera showing a sunlit graffiti wall, with wrist strap" draggable="false" title="Drag the camera" style="position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);translate:0px 0px;height:100%;width:auto;max-width:90%;object-fit:contain;z-index:2;cursor:grab;touch-action:none;user-select:none;-webkit-user-drag:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),translate .45s cubic-bezier(.22,.61,.36,1);filter:drop-shadow(0 10px 14px rgba(48,43,36,.24))"  data-i18n-alt="home.cameraAlt" data-i18n-title="home.cameraDrag"/>
+        <div style="position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.22;mix-blend-mode:overlay;background-image:url(data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27140%27%20height%3D%27140%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.9%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27140%27%20height%3D%27140%27%20filter%3D%27url%28%23n%29%27%2F%3E%3C%2Fsvg%3E);background-size:140px 140px;background-repeat:repeat"></div>
+        </sc-if>
+      </div>
+      <div class="tile-caption" style="border-top:2px solid #0D2565;padding:16px 16px 10px {{ labelPadL }}px;background:{{ label4Bg }};flex:0 0 {{ labelHeight }};box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden">
+        <div style="font-family:{{ headFont }};font-weight:400;font-size:{{ titleSize }};line-height:1.1;min-height:calc(2.2em - 12px);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:{{ capsTransform }}"><!--i18n:home.beirutTitle-->Beirut, in passing<!--/i18n--></div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ subSize }};line-height:1.2;margin-top:1px"><!--i18n:home.beirutDiscipline-->Personal Photography<!--/i18n--></div>
+        <div style="font-family:{{ bodyFont }};font-size:{{ tagSize }};line-height:1.25;min-height:2.5em;font-style:italic;margin-top:0.7em;opacity:.85"><!--i18n:home.beirutSummary-->Sites and everyday scenes from Beirut.<!--/i18n--></div>
+      </div>
+    </a>
+
+  </div>
+</main>  <div data-dots="1" data-slide="{{ slide }}" style="display:none;justify-content:center;align-items:center;gap:10px;padding:14px 0 16px;background:#F8F8F6">
+    <button type="button" aria-label="Tidle" onClick="{{ goSlide0 }}" data-project-slide="0" style="width:9px;height:9px;padding:0;border-radius:50%;border:none;background:#0D2565;opacity:.28;cursor:pointer"></button>
+    <button type="button" aria-label="Beirut, in passing" onClick="{{ goSlide1 }}" data-project-slide="1" style="width:9px;height:9px;padding:0;border-radius:50%;border:none;background:#0D2565;opacity:.28;cursor:pointer" data-i18n-aria-label="home.beirutTitle"></button>
+    <button type="button" aria-label="Handmade Handbag" onClick="{{ goSlide2 }}" data-project-slide="2" style="width:9px;height:9px;padding:0;border-radius:50%;border:none;background:#0D2565;opacity:.28;cursor:pointer" data-i18n-aria-label="home.handbagTitle"></button>
+    <button type="button" aria-label="Restitch" onClick="{{ goSlide3 }}" data-project-slide="3" style="width:9px;height:9px;padding:0;border-radius:50%;border:none;background:#0D2565;opacity:.28;cursor:pointer"></button>
+    <button type="button" aria-label="Breadboard fuzz" onClick="{{ goSlide4 }}" data-project-slide="4" style="width:9px;height:9px;padding:0;border-radius:50%;border:none;background:#0D2565;opacity:.28;cursor:pointer" data-i18n-aria-label="home.fuzzTitleLower"></button>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { hover: null, locked: null, card: null, slide: 2, width: typeof window !== 'undefined' ? window.innerWidth : 1440 };
+  visibleSlides = window.PORTFOLIO_PROJECTS.filter((project) => project.visible).map((project) => project.slide);
+  nextSlide(current, direction) {
+    const index = this.visibleSlides.indexOf(current);
+    return this.visibleSlides[(Math.max(0, index) + direction + this.visibleSlides.length) % this.visibleSlides.length];
+  }
+  goSlide(i) { return () => { this.setState({ slide: i }); this.restartSlides(); }; }
+  restartSlides() {
+    clearInterval(this._slideTimer);
+    // phones show one project at a time; the deck advances on its own
+    this._slideTimer = setInterval(() => {
+      if (window.innerWidth <= 700 && !document.hidden && !document.querySelector('[data-cutout-dragging]') && !document.querySelector('[data-audio-playing],[data-audio-seeking]')) {
+        this.setState((s) => ({ slide: this.nextSlide(s.slide, 1) }));
+      }
+    }, 4200);
+  }
+  step(dir) {
+    this.setState((s) => ({ slide: this.nextSlide(s.slide, dir) }));
+    this.restartSlides();
+  }
+  componentDidMount() {
+    this.restartSlides();
+    // the phone deck has no page scroll, so wheel and swipe move between projects
+    this._lastStep = 0;
+    this.onWheel = (e) => {
+      if (window.innerWidth > 700 || Math.abs(e.deltaY) < 4) return;
+      const now = Date.now();
+      if (now - this._lastStep < 420) return;
+      this._lastStep = now;
+      this.step(e.deltaY > 0 ? 1 : -1);
+    };
+    this.onTouchStart = (e) => { this._touchY = e.target.closest('[data-handbag-cutout],[data-breadboard-cutout],[data-widget-cutout],[data-audio-player]') ? null : e.touches[0].clientY; };
+    this.onTouchEnd = (e) => {
+      if (window.innerWidth > 700 || this._touchY == null) return;
+      const dy = this._touchY - e.changedTouches[0].clientY;
+      this._touchY = null;
+      if (Math.abs(dy) > 40) this.step(dy > 0 ? 1 : -1);
+    };
+    window.addEventListener('wheel', this.onWheel, { passive: true });
+    window.addEventListener('touchstart', this.onTouchStart, { passive: true });
+    window.addEventListener('touchend', this.onTouchEnd, { passive: true });
+    this.onResize = () => this.setState({ width: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    this.onDocDown = (e) => {
+      if (this.state.locked && !(e.target.closest && e.target.closest('[data-hover-trigger]'))) {
+        this.setState({ locked: null, hover: null });
+      }
+    };
+    document.addEventListener('pointerdown', this.onDocDown);
+  }
+  componentWillUnmount() {
+    clearInterval(this._slideTimer);
+    window.removeEventListener('wheel', this.onWheel);
+    window.removeEventListener('touchstart', this.onTouchStart);
+    window.removeEventListener('touchend', this.onTouchEnd);
+    window.removeEventListener('resize', this.onResize);
+    document.removeEventListener('pointerdown', this.onDocDown);
+  }
+  tap(cat) {
+    return (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const next = this.state.locked === cat ? null : cat;
+      this.setState({ locked: next, hover: next });
+    };
+  }
+  // on phones the emulated mouseenter would fight the tap, so hover is tap-only there
+  setHover(cat) { return () => { if (this.state.width <= 700) return; if (!this.state.locked) this.setState({ hover: cat }); }; }
+  setCard(i) { return () => { if (this.state.width <= 700) return; this.setState({ card: i }); }; }
+  handbagOverlayRef = React.createRef();
+  restitchOverlayRef = React.createRef();
+  tidleOverlayRef = React.createRef();
+  fuzzOverlayRef = React.createRef();
+  beirutOverlayRef = React.createRef();
+  clearCard = () => {
+    [this.handbagOverlayRef, this.restitchOverlayRef, this.fuzzOverlayRef, this.tidleOverlayRef, this.beirutOverlayRef].forEach((r) => {
+      if (r.current) r.current.style.transform = r.current.dataset.fullbleed ? 'none' : 'translate(-50%,-50%)';
+    });
+    this.setState({ card: null });
+  };
+  onCardMove = (e) => {
+    const refs = { 0: this.handbagOverlayRef, 1: this.restitchOverlayRef, 2: this.tidleOverlayRef, 3: this.fuzzOverlayRef, 4: this.beirutOverlayRef };
+    const r0 = refs[this.state.card];
+    const el = r0 ? r0.current : null;
+    if (!el) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width - 0.5) * 14;
+    const y = ((e.clientY - r.top) / r.height - 0.5) * 14;
+    const base = el.dataset.fullbleed ? '' : 'translate(-50%,-50%) ';
+    el.style.transform = base + 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px)';
+  };
+  clear = () => { if (this.state.width <= 700) return; if (!this.state.locked) this.setState({ hover: null }); };
+  renderVals() {
+    const h = this.state.locked || this.state.hover;
+    const w = this.state.width;
+    const isDesktop = w >= 1100;
+    const isTablet = w >= 700 && w < 1100;
+    const ovScale = 1;
+    const ovHandbagW = (68 * ovScale).toFixed(2) + '%';
+    const ovRestitchW = (78 * ovScale).toFixed(2) + '%';
+    const ovFuzzW = (39.6 * ovScale).toFixed(2) + '%';
+    const ovBeirutH = (82.8 * ovScale).toFixed(2) + '%';
+    const ovFuzzCW = (39.3 * ovScale).toFixed(2) + '%';
+    const ovBeirutCW = (83 * ovScale).toFixed(2) + '%';
+    const visibleCount = this.visibleSlides.length;
+    const gridCols = isDesktop ? 'repeat(' + visibleCount + ',1fr)' : isTablet ? 'repeat(2,1fr)' : '1fr';
+    const gridRows = isDesktop ? 'minmax(0,1fr)' : 'auto';
+    // phones show one card at a time, so the whole home page is sized to one screen
+    const isPhone = w <= 700;
+    const gridFlex = isDesktop || isPhone ? '1' : '0 0 auto';
+    const cardHeight = isDesktop || isPhone ? '100%' : 'auto';
+    const imgHeight = isDesktop ? 'auto' : 'auto';
+    // non-desktop: aspect-ratio sets the basis but the art still grows to fill the grid row,
+    // so neighbouring columns can't end on different lines (border widths shift content width by 2px)
+    const imgFlex = isDesktop || isPhone ? '1' : '1 0 auto';
+    const headerHeight = isDesktop ? 'min(80px,7.5vh)' : '56px';
+    const rootHeight = isDesktop ? '100vh' : isPhone ? '100dvh' : 'auto';
+    const rootOverflow = isDesktop || isPhone ? 'hidden' : 'visible';
+    const cardBorderRight = isDesktop || isTablet ? '2px solid #0D2565' : 'none';
+    const cardBorderBottom = isDesktop ? 'none' : '2px solid #0D2565';
+    const imgMinHeight = '0';
+    // below the desktop breakpoint the card art squares off progressively: portrait at 1100px,
+    // a true 1:1 crop by 860px and under, so the grid stays visual instead of collapsing to text
+    const tallRatio = 288 / 544;
+    const squareAt = 860;
+    const tallAt = 1100;
+    const squareProgress = Math.min(1, Math.max(0, (tallAt - w) / (tallAt - squareAt)));
+    const imgAspect = isDesktop || isPhone ? 'auto' : (tallRatio + (1 - tallRatio) * squareProgress).toFixed(3);
+    const rootMinHeight = isDesktop ? '100vh' : isPhone ? '0' : 'auto';
+    const rowEndBorderRight = isDesktop ? '2px solid #0D2565' : 'none';
+    // two-column layout leaves a hole beside Beirut in the last row
+    const showFiller = isTablet && visibleCount === 5;
+    const beirutBorderRight = isTablet ? '2px solid #0D2565' : 'none';
+    const boardIndex = this.visibleSlides.indexOf(4);
+    const breadboardBorderRight = (isDesktop && boardIndex < visibleCount - 1) || (isTablet && boardIndex % 2 === 0 && boardIndex < visibleCount - 1) ? '2px solid #0D2565' : 'none';
+    const cream = '#F8F8F6';
+    const scriptFont = "'Notebook Hand', cursive";
+    const headFont = h === 'typography' ? scriptFont : "'Notebook Hand', sans-serif";
+    const bodyFont = h === 'typography' ? scriptFont : "'Notebook Hand', sans-serif";
+    const t = h === 'typography';
+    const sansSize = 'clamp(17px,2.62vw,54px)';
+    const scriptSize = 'clamp(25px,3.88vw,78px)';
+    const heroFont = t ? scriptFont : "'Notebook Hand', sans-serif";
+    const triggerFont = t ? scriptFont : "'Notebook Hand', sans-serif";
+    const heroSize = t ? scriptSize : sansSize;
+    const heroLineHeight = t ? '0.8em' : '1.2em';
+    const heroStroke = '0px transparent';
+    const underlineThickness = t ? '.03em' : '.05em';
+    const heroShift = t ? 'translateY(-0.11em)' : 'none';
+    const heroNoWrap = w < 1100 ? 'normal' : 'nowrap';
+    const heroPadY = isDesktop ? 22 : 18;
+    const heroHeight = isDesktop ? 'min(180px,16.7vh)' : 'auto';
+    // derived from the tallest state (typography) so it never clips, yet is shorter than the old fixed clamp
+    const labelHeight = isDesktop ? 'min(160px,14.8vh)' : 'auto';
+    const navSize = t ? '26px' : '20px';
+    const navFont = t ? scriptFont : "'Notebook Hand', sans-serif";
+    const titleSize = 'clamp(15px,1.45vw,26px)';
+    const subSize = 'clamp(13px,1.12vw,20px)';
+    const tagSize = 'clamp(11px,0.98vw,18px)';
+    const sidePad = w < 700 ? 16 : 24;
+    const headerPad = w < 700 ? 16 : 24;
+    const labelPadL = w < 700 ? 16 : 24;
+    const capsTransform = h === 'typography' ? 'none' : 'uppercase';
+    const headerBg = cream;
+    const heroBg = cream;
+    const showIllustration = !h;
+    const showColorShapes = h === 'color';
+    const showPhotos = h === 'typography' || h === 'textures';
+    const handbagShowPhoto = h !== 'color' && h !== 'textures';
+    const handbagShowOutline = h === 'textures';
+    const restitchShowPhoto = h !== 'color' && h !== 'textures';
+    const restitchShowOutline = h === 'textures';
+    const restitchShowIllustration = false;
+    const handbagShowIllustration = false;
+    const fuzzShowPhoto = h !== 'color' && h !== 'textures';
+    const fuzzShowIllustration = false;
+    const tidleShowPhoto = h !== 'color' && h !== 'textures';
+    const tidleShowTexture = h === 'textures';
+    const tidleShowIllustration = false;
+    const beirutShowPhoto = h !== 'color' && h !== 'textures';
+    const beirutShowTexture = h === 'textures';
+    const beirutShowIllustration = false;
+    const fuzzShowTexture = h === 'textures';
+    const shapes = ['#DC5A4E', '#F3963D', '#F6DE49', '#C7ADEB', '#86C177'];
+    const cb = () => cream;
+    const lb = () => cream;
+    return {
+      visibleCount, breadboardBorderRight, headFont, bodyFont, navFont, heroFont, triggerFont, heroSize, heroLineHeight, underlineThickness, heroStroke, heroShift, heroNoWrap, heroPadY, headerPad, labelHeight, rootMinHeight, imgAspect, gridRows, gridFlex, cardHeight, cardBorderRight, rowEndBorderRight, beirutBorderRight, cardBorderBottom, imgMinHeight, navSize, titleSize, subSize, tagSize, capsTransform, headerBg, heroBg, gridCols, sidePad, labelPadL, showFiller, heroHeight, imgHeight, imgFlex, headerHeight, rootHeight, rootOverflow,
+      showIllustration, showColorShapes, showPhotos, handbagShowPhoto, handbagShowOutline, handbagShowIllustration, restitchShowPhoto, restitchShowOutline, restitchShowIllustration, beirutShowTexture, fuzzShowTexture, tidleShowTexture, fuzzShowPhoto, fuzzShowIllustration, beirutShowPhoto, beirutShowIllustration, tidleShowPhoto, tidleShowIllustration, fuzzShowTexture,
+      card0Bg: cb(0), card1Bg: cb(1), card2Bg: cb(2), card3Bg: cb(3), card4Bg: cb(4),
+      label0Bg: lb(0), label1Bg: lb(1), label2Bg: lb(2), label3Bg: lb(3), label4Bg: lb(4),
+      shape0: shapes[0], shape1: shapes[1], shape2: shapes[2], shape3: shapes[3], shape4: shapes[4],
+      navLabel: 'About',
+      onCard0: this.setCard(0), onCard1: this.setCard(1), onCard2: this.setCard(2), onCard3: this.setCard(3), onCard4: this.setCard(4),
+      ovHandbagW, ovRestitchW, ovFuzzW, ovBeirutH, ovFuzzCW, ovBeirutCW,
+      onCardLeave: this.clearCard,
+      onCardMove: this.onCardMove,
+      handbagOverlayRef: this.handbagOverlayRef,
+      restitchOverlayRef: this.restitchOverlayRef,
+      tidleOverlayRef: this.tidleOverlayRef,
+      fuzzOverlayRef: this.fuzzOverlayRef,
+      beirutOverlayRef: this.beirutOverlayRef,
+      onHoverTypo: this.setHover('typography'),
+      onHoverColor: this.setHover('color'),
+      onHoverTexture: this.setHover('textures'),
+      onTapTypo: this.tap('typography'),
+      onTapColor: this.tap('color'),
+      onTapTexture: this.tap('textures'),
+      onLeave: this.clear,
+      slide: String(this.state.slide),
+      goSlide0: this.goSlide(0),
+      goSlide1: this.goSlide(1),
+      goSlide2: this.goSlide(2),
+      goSlide3: this.goSlide(3),
+      goSlide4: this.goSlide(4),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

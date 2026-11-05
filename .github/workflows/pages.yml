@@ -1,0 +1,54 @@
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build and check local links
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          PAGES_ORIGIN: ${{ steps.pages.outputs.origin }}
+        run: |
+          python scripts/build.py --base-path "${PAGES_BASE_PATH:-/}" --site-url "${PAGES_ORIGIN:-https://odesa-llc.github.io}"
+          python scripts/check_build.py dist --base-path "${PAGES_BASE_PATH:-/}" --site-url "${PAGES_ORIGIN:-https://odesa-llc.github.io}"
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4
+

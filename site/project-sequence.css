@@ -1,0 +1,41 @@
+/* Visual placeholders for a future sequence within each project image. */
+.tile-study .project-sequence-dots {
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  transform: translateY(-50%);
+  opacity: .65;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.tile-study .project-sequence-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  box-sizing: border-box;
+  border: 1px solid rgb(13 37 101 / .7);
+  border-radius: 50%;
+  background: rgb(248 248 246 / .3);
+  box-shadow: 0 0 0 1px rgb(248 248 246 / .38);
+  pointer-events: none;
+}
+
+.tile-study .project-sequence-dot.is-current {
+  border-color: #0D2565;
+  background: #0D2565;
+}
+
+.tile-study .tile:hover .project-sequence-dots,
+.tile-study .tile:focus-within .project-sequence-dots {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile-study .project-sequence-dots { transition: none; }
+}

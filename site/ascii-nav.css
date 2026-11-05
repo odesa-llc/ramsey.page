@@ -1,0 +1,19 @@
+/* Centered portrait navigation, shared by the homepage and color studies. */
+.ascii-masthead,.ascii-masthead *{box-sizing:border-box}
+.ascii-masthead{position:relative;z-index:30;flex:0 0 84px;height:84px;display:grid;place-items:center;background:#F8F8F6;border-bottom:1px solid #0D2565;color:#0D2565}
+.ascii-face-button{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;width:80px;height:80px;padding:3px 0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.ascii-face{display:block;object-fit:contain;height:74px;width:auto;pointer-events:none}
+.ascii-face-button:hover .ascii-face{opacity:.75}
+.ascii-face-button:focus-visible,.ascii-masthead a:focus-visible{outline:1px solid #0D2565;outline-offset:4px}
+.ascii-split-nav{display:grid;grid-template-columns:64px 80px 64px;align-items:center;text-align:center;gap:14px;font-size:15px}
+.ascii-split-nav .ascii-face{height:70px}
+.ascii-split-nav>a{padding:10px 0}
+.ascii-split-nav>a:hover{text-decoration:underline;text-underline-offset:4px}
+.ascii-signature{flex-basis:104px;height:104px;border-bottom:0}
+.ascii-signature .ascii-face-button{height:100px;width:100px}
+.ascii-signature .ascii-face{height:74px}
+.ascii-face-name{font-size:13px;line-height:1;letter-spacing:.5px}
+.ascii-face-menu{position:absolute;top:calc(100% - 1px);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:24px;min-width:190px;justify-content:center;padding:13px 20px;border:1px solid #0D2565;border-radius:0 0 18px 18px;background:#F8F8F6;font-size:16px;white-space:nowrap;box-shadow:0 7px 18px rgba(13,37,101,.05)}
+.ascii-face-menu[hidden]{display:none!important}
+.ascii-face-menu a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:700px){.ascii-masthead{flex-basis:84px!important;height:84px!important}.ascii-signature{flex-basis:104px!important;height:104px!important}.ascii-split-nav{gap:12px}}

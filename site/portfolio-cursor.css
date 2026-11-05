@@ -1,0 +1,20 @@
+/* Selected cursor study 04: little pencil in sage #8FAA9A; click target is the graphite tip. */
+@media (any-pointer: fine) {
+  html,
+  body {
+    cursor: url('/assets/cursor-little-pencil.svg?v=sage-2') 3 3,
+            url('/assets/cursor-little-pencil.png?v=sage-2') 3 3, auto !important;
+  }
+
+  a,
+  button,
+  select,
+  [role='button'],
+  [role='link'],
+  [data-hover-trigger],
+  [style*='cursor:pointer'],
+  [style*='cursor: pointer'] {
+    cursor: url('/assets/cursor-little-pencil.svg?v=sage-2') 3 3,
+            url('/assets/cursor-little-pencil.png?v=sage-2') 3 3, pointer !important;
+  }
+}

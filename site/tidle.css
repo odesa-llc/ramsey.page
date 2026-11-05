@@ -1,0 +1,43 @@
+.tidle-widget-svg { display: block; width: 100%; height: 100%; pointer-events: none; }
+.tidle-widget-count { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; font-size: 68px; font-weight: 400; letter-spacing: 0; }
+.tidle-widget-fill { fill: #fff; transition: width .65s cubic-bezier(.2,.65,.35,1); }
+@media (min-width: 1100px) {
+  [data-screen-label="Home"] [data-tidle-widget] { --tidle-preview-width: 90%; }
+}
+@media (prefers-reduced-motion: reduce) { .tidle-widget-fill { transition: none; } }
+
+.tidle-project { min-height: 100vh; display: flex; flex-direction: column; background: #F8F8F6; color: #0D2565; font-family: 'Notebook Hand', sans-serif; }
+.tidle-project * { box-sizing: border-box; }
+.tidle-project-header { height: 58px; flex: 0 0 58px; padding: 0 24px; border-bottom: 1px solid #0D2565; display: flex; align-items: center; justify-content: space-between; }
+.tidle-project-brand { font-family: 'Notebook Hand', cursive; font-size: 29px; }
+.tidle-project-nav { display: flex; gap: 28px; text-transform: uppercase; font-size: 18px; }
+.tidle-project-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 64px; padding: 56px 48px 48px; align-items: center; }
+.tidle-project-kicker { margin: 0 0 14px; font-size: 14px; letter-spacing: .8px; text-transform: uppercase; }
+.tidle-project h1 { margin: 0; font-family: 'Notebook Hand', sans-serif; font-weight: 400; font-size: clamp(54px, 7vw, 100px); line-height: .95; letter-spacing: -1px; }
+.tidle-project-strapline { margin: 18px 0 24px; font-size: 27px; line-height: 1.15; }
+.tidle-project-copy { max-width: 480px; margin: 0 0 26px; font-size: 19px; line-height: 1.45; }
+.tidle-project-link { display: inline-block; padding: 10px 16px; border: 1px solid #0D2565; border-radius: 24px; font-size: 16px; }
+.tidle-project-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.tidle-demo { position: relative; margin: 0; min-height: 350px; background: #ECECE8; border: 1px solid rgba(13,37,101,.18); }
+.tidle-demo-note { position: absolute; left: 20px; right: 20px; bottom: 17px; margin: 0; font-size: 13px; opacity: .65; }
+.tidle-features { padding: 8px 48px 48px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 40px; }
+.tidle-features article { border-top: 1px solid #0D2565; padding-top: 18px; }
+.tidle-features h2 { font-family: 'Notebook Hand',sans-serif; font-size: 22px; font-weight: 400; margin: 0 0 10px; }
+.tidle-features p { font-size: 17px; line-height: 1.4; margin: 0; }
+.tidle-gallery { padding: 36px 48px 48px; border-top: 1px solid #0D2565; }
+.tidle-gallery h2 { font-size: 26px; font-weight: 400; margin: 0 0 24px; }
+.tidle-screens { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; align-items: start; }
+.tidle-screens img { display: block; width: 100%; height: auto; }
+@media (max-width: 900px) { .tidle-project-hero { gap: 32px; padding: 36px 24px; } .tidle-features,.tidle-gallery { padding-left: 24px; padding-right: 24px; } }
+@media (max-width: 700px) {
+  .tidle-project-header { padding: 0 16px; }
+  .tidle-project-nav { display: none; }
+  .tidle-project-hero { grid-template-columns: minmax(0,1fr); padding: 32px 16px 24px; gap: 28px; }
+  .tidle-project h1 { font-size: 64px !important; line-height: .95 !important; text-align: left !important; }
+  .tidle-project-strapline { font-size: 24px; margin: 14px 0 18px; }
+  .tidle-project-copy { font-size: 17px; }
+  .tidle-demo { min-height: 260px; }
+  .tidle-features { grid-template-columns: minmax(0,1fr); gap: 24px; padding: 8px 16px 32px; }
+  .tidle-gallery { padding: 28px 16px; }
+  .tidle-screens { gap: 12px; overflow-x: auto; grid-template-columns: repeat(3,minmax(240px,70vw)); }
+}

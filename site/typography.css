@@ -1,0 +1,50 @@
+/* Shared portfolio typography, traced from the supplied notebook photograph. */
+@font-face {
+  font-family: 'Notebook Hand';
+  src: url('/assets/fonts/NotebookHand-Regular.woff2?v=1.110') format('woff2'),
+       url('/assets/fonts/NotebookHand-Regular.ttf?v=1.110') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --portfolio-font: 'Notebook Hand', 'Segoe Print', cursive;
+  --portfolio-display-size: 39.69px;
+}
+
+@media (max-width: 700px) {
+  :root { --portfolio-display-size: 31.59px; }
+}
+
+/* The retained templates include inline font declarations and hover fonts. */
+body,
+body :where(div, main, section, article, header, footer, nav, aside,
+  h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea,
+  label, li, dt, dd, figure, figcaption, summary, small, strong, em,
+  blockquote, td, th, caption, legend, fieldset, time, option),
+body ::before,
+body ::after {
+  font-family: var(--portfolio-font) !important;
+  font-synthesis: none;
+  /* Keep the pen shapes and contextual alternates; photo joins remain optional. */
+  font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1, 'dlig' 0;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+}
+
+/* Character diagrams depend on a fixed-width grid. */
+pre, code, kbd, samp,
+pre *, code *, kbd *, samp * {
+  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace !important;
+}
+
+/* Allow the wider handwriting to fit the circuit project's existing column. */
+.fuzz-hero > div { min-width: 0; }
+.fuzz-hero h1 {
+  font-size: clamp(48px, 5.6vw, 88px);
+  line-height: 1.05;
+}
+@media (max-width: 700px) {
+  .fuzz-hero h1 { font-size: clamp(44px, 14vw, 64px); }
+}
