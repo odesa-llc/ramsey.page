@@ -33,6 +33,7 @@ jobs:
         run: |
           python scripts/build.py --base-path "${PAGES_BASE_PATH:-/}" --site-url "${PAGES_ORIGIN:-https://odesa-llc.github.io}"
           python scripts/check_build.py dist --base-path "${PAGES_BASE_PATH:-/}" --site-url "${PAGES_ORIGIN:-https://odesa-llc.github.io}"
+          node scripts/check_languages.cjs
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:

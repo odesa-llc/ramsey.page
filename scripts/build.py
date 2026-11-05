@@ -27,7 +27,7 @@ SOURCE_ROUTES.update(ALIASES)
 TOKEN = re.compile(r'<!--i18n:([\w.]+)-->(.*?)<!--/i18n-->', re.S)
 ATTRIBUTE = re.compile(r'\s+data-i18n-([\w-]+)="([\w.]+)"')
 TAG = re.compile(r'<[^>]+>')
-QUOTED_PATH = re.compile(r'''(?P<quote>["'])(?P<url>/(?!/)[^"'\s<>\\]*)''')
+QUOTED_PATH = re.compile(r'''(?P<quote>["'])(?P<url>/(?!/)[^"'\s<>\\]*)(?=(?P=quote))''')
 CSS_PATH = re.compile(r'''(?P<start>url\(\s*)(?P<url>/(?!/)[^\s)'"\\]+)''')
 FAVICON_LINKS = '''<link rel="icon" href="/favicon.ico?v=1" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/avatar-beige-16.png?v=1">
@@ -185,7 +185,8 @@ def prefix_paths(source, base_path, filename):
     if base_path == '/': return source
     def replace(match):
         value = match['url']
-        if value == '/' and filename == 'support.js': return match[0]
+        # A standalone slash in JavaScript is a delimiter, not an asset URL.
+        if value == '/' and filename.endswith('.js'): return match[0]
         return match[0][:-len(value)] + base_path + value[1:]
     return CSS_PATH.sub(replace, QUOTED_PATH.sub(replace, source))
 

@@ -48,3 +48,22 @@ vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../site/i18n-preview.js
 vm.runInNewContext(formatter, previewContext);
 assert.equal(previewContext.window.portfolioText('runtime.done', {done: 1, total: 8}), 'Done 1 of 8');
 console.log('Passed 13 entry-routing cases and English/French runtime-message checks.');
+
+// Test the deployed script too: URL rewriting must preserve its separators.
+const builtEntry = path.join(__dirname, '../dist/language-entry.js');
+if (fs.existsSync(builtEntry)) {
+  const builtSource = fs.readFileSync(builtEntry, 'utf8');
+  const builtHtml = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8');
+  const base = builtHtml.match(/data-base-path="([^"]+)"/)[1];
+  for (const language of ['en', 'fr']) {
+    let destination;
+    const context = {
+      document: {currentScript: {getAttribute: () => base}},
+      navigator: {languages: [language + '-FR']},
+      location: {pathname: base, search: '?ref=portfolio', hash: '#projects', replace: value => {destination = value;}}
+    };
+    vm.runInNewContext(builtSource, context);
+    assert.equal(destination, base + language + '/?ref=portfolio#projects');
+  }
+  console.log('Passed built English/French entry redirects at ' + base);
+}
