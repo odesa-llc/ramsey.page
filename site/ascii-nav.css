@@ -3,7 +3,7 @@
 .ascii-masthead{position:relative;z-index:30;flex:0 0 84px;height:84px;display:grid;place-items:center;background:#F8F8F6;border-bottom:1px solid #0D2565;color:#0D2565}
 .ascii-face-button{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;width:80px;height:80px;padding:3px 0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
 .ascii-face{display:block;object-fit:contain;height:74px;width:auto;pointer-events:none}
-.ascii-face-button:hover .ascii-face{opacity:.75}
+.ascii-face-button:hover .ascii-face{opacity:1}
 .ascii-face-button:focus-visible,.ascii-masthead a:focus-visible{outline:1px solid #0D2565;outline-offset:4px}
 .ascii-split-nav{display:grid;grid-template-columns:64px 80px 64px;align-items:center;text-align:center;gap:14px;font-size:15px}
 .ascii-split-nav .ascii-face{height:70px}
