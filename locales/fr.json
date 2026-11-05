@@ -131,7 +131,7 @@
     "boardAlt": "Circuit de fuzz sur une plaque d’essai, avec ses composants et ses fils de connexion apparents",
     "videoLabel": "Essai sonore du circuit de fuzz",
     "play": "Lancer la vidéo avec le son",
-    "bench": "Essai sonore · 12 s · son d’origine",
+    "bench": "Essai sonore · 12 s",
     "setup": "tout le montage,",
     "wires": "fils compris",
     "sound": "mettez le son",

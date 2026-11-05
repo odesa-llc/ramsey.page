@@ -112,7 +112,7 @@
  .tile-study-1 [data-grid]{row-gap:16px!important}
  .tile-study [data-grid]>.tile,.tile-study-4 .tile-introduction{grid-area:auto!important;display:flex!important;position:relative;height:auto!important;min-width:0;margin:0!important}
  .tile-study .tile>div:first-child{height:var(--phone-art,340px)!important}
- .tile-study .tile-tidle{--phone-art:240px}
+ .tile-study .tile-tidle{--phone-art:240px;order:-1}
  .tile-study .tile-breadboard{--phone-art:300px}
  .tile-study .tile-restitch{--phone-art:280px}
  .tile-study .tile-beirut{--phone-art:300px}

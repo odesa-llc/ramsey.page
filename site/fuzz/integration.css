@@ -56,6 +56,22 @@
   gap: 28px;
 }
 .circuit-values { display: none; }
+.breadboard .reference-title {
+  top: 32px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+@media (max-width: 1535px) {
+  .breadboard .reference-title {
+    position: relative;
+    inset: auto;
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0 0 20px;
+    font-size: 24px;
+    line-height: 1.35;
+  }
+}
 html[data-palette-study] .toggle button[aria-pressed="true"] {
   color: var(--paper) !important;
 }

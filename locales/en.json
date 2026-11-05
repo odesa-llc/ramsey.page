@@ -131,7 +131,7 @@
     "boardAlt": "Breadboard fuzz circuit with exposed components and jumper wires",
     "videoLabel": "Breadboard fuzz workbench sound test",
     "play": "Play bench test with sound",
-    "bench": "Bench test · 12 sec · original sound",
+    "bench": "Bench test · 12 sec",
     "setup": "the whole setup,",
     "wires": "wires and all",
     "sound": "sound on",

@@ -1,10 +1,10 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <script src="/i18n-preview.js?v=1"></script><script src="/i18n.js?v=1"></script><meta name="viewport" content="width=device-width,initial-scale=1"><title><!--i18n:seo.fuzzTitle-->Breadboard Fuzz — ramsey hatoum<!--/i18n--></title><meta name="description" content="A fuzz circuit I built on a breadboard: hear the bench test, explore the photo-to-wireframe reveal, and follow the layout notes into a soldered prototype."><link rel="icon" href="data:,"><link rel="preload" href="/assets/fonts/NotebookHand-Regular.woff2?v=1.110" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/fuzz/story.css?v=1"><link rel="stylesheet" href="/fuzz/responsive.css?v=1">
 <link rel="stylesheet" href="/ascii-nav.css?v=1">
-<link rel="stylesheet" href="/centered-nav.css?v=18">
+<link rel="stylesheet" href="/centered-nav.css?v=19">
 <link rel="stylesheet" href="/typography.css?v=notebook-hand-1.110">
 <link rel="stylesheet" href="/portfolio-cursor.css?v=little-pencil-sage-2">
-<link rel="stylesheet" href="/fuzz/integration.css?v=5">
+<link rel="stylesheet" href="/fuzz/integration.css?v=6">
 <script src="/project-visibility.js?v=4"></script>
 <script src="/palette-settings.js?v=2"></script>
 <script src="/concepts/color-studies/palette-preview.js?v=3"></script>
@@ -14,17 +14,16 @@
 <main class="fuzz-story">
 <section class="artboard opening" id="listen" aria-labelledby="fuzz-title">
   <div class="masthead fuzz-header-bar" aria-hidden="true"></div>
-  <div class="hero-copy"><p class="kicker fuzz-kicker"><!--i18n:fuzz.kicker-->Audio electronics · Breadboard prototype<!--/i18n--></p><h1 id="fuzz-title"><!--i18n:fuzz.title-->Breadboard fuzz.<!--/i18n--></h1><p class="intro fuzz-intro"><!--i18n:fuzz.intro-->I built a fuzz circuit on a breadboard and tested its output through a guitar amp. This is the working setup, with its wires, components, and sound out in the open.<!--/i18n--></p></div>
+  <div class="hero-copy"><h1 id="fuzz-title"><!--i18n:fuzz.title-->Breadboard fuzz.<!--/i18n--></h1><p class="intro fuzz-intro"><!--i18n:fuzz.intro-->I built a fuzz circuit on a breadboard and tested its output through a guitar amp. This is the working setup, with its wires, components, and sound out in the open.<!--/i18n--></p></div>
   <div class="small-board"><img src="/assets/breadboard-cutout.png" alt="Breadboard fuzz circuit with exposed components and jumper wires" data-i18n-alt="fuzz.boardAlt"><svg viewBox="0 0 480 340" aria-hidden="true"><path d="M20 80H120M48 60V130M360 296H455M430 270V320"/></svg></div>
-  <figure class="video-figure"><div class="video-shape"><video id="bench-video" playsinline preload="metadata" poster="/assets/fuzz/bench-test-poster.jpg" aria-label="Breadboard fuzz workbench sound test" data-i18n-aria-label="fuzz.videoLabel"><source src="/assets/fuzz/bench-test.mp4" type="video/mp4"></video></div><figcaption><button class="play-button" type="button" aria-label="Play bench test with sound" data-i18n-aria-label="fuzz.play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4L20 12 8 20Z"/></svg></button><span><!--i18n:fuzz.bench-->Bench test · 12 sec · original sound<!--/i18n--></span></figcaption></figure>
+  <figure class="video-figure"><div class="video-shape"><video id="bench-video" playsinline preload="metadata" poster="/assets/fuzz/bench-test-poster.jpg" aria-label="Breadboard fuzz workbench sound test" data-i18n-aria-label="fuzz.videoLabel"><source src="/assets/fuzz/bench-test.mp4" type="video/mp4"></video></div><figcaption><button class="play-button" type="button" aria-label="Play bench test with sound" data-i18n-aria-label="fuzz.play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4L20 12 8 20Z"/></svg></button><span><!--i18n:fuzz.bench-->Bench test · 12 sec<!--/i18n--></span></figcaption></figure>
   <aside class="note setup-note"><!--i18n:fuzz.setup-->the whole setup,<!--/i18n--><br><!--i18n:fuzz.wires--> wires and all<!--/i18n--></aside>
   <aside class="note sound-note"><!--i18n:fuzz.sound-->sound on<!--/i18n--></aside>
   <a class="note follow-note" href="#breadboard"><!--i18n:fuzz.follow-->follow the build ↓<!--/i18n--></a>
   <svg class="arrows" viewBox="0 0 1536 1024" aria-hidden="true"><defs><marker id="arrow-opening" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto"><path d="M2 2L10 6 2 10"/></marker></defs><path d="M1400 254C1455 377 1390 555 1268 676" marker-end="url(#arrow-opening)"/><path d="M672 888Q727 912 787 863" marker-end="url(#arrow-opening)"/></svg>
-  <div class="chapter-end"><!--i18n:fuzz.reference-->01 / Reference + simulation<!--/i18n--></div>
 </section>
 <section class="artboard breadboard" id="breadboard" aria-labelledby="breadboard-title">
-  <p class="chapter-label"><!--i18n:fuzz.boardChapter-->02 / On the breadboard<!--/i18n--></p><h2 id="breadboard-title"><!--i18n:fuzz.boardTitle-->From object to circuit.<!--/i18n--></h2><p class="section-deck"><!--i18n:fuzz.boardDeck-->The circuit reference, drawn over the build.<!--/i18n--></p>
+  <h2 class="chapter-label reference-title" id="breadboard-title"><!--i18n:fuzz.reference-->01 / Reference + simulation<!--/i18n--></h2>
   <div class="reveal-stage" data-view="overlay" aria-describedby="circuit-reference-values circuit-reference-note"><div class="drawing-layer"><svg class="reference-drawing" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img" aria-labelledby="title desc">
   <title id="title"><!--i18n:fuzz.diagramTitle-->Proposed Bazz Fuss circuit underlay<!--/i18n--></title>
   <desc id="desc"><!--i18n:fuzz.diagramDescription-->A footprint-sized Bazz Fuss reference schematic. MPSA14 transistor, BAT41 collector-to-base diode, 10 kilohm collector resistor, 470 nanofarad input capacitor, 100 nanofarad output capacitor, and 100 kilohm volume potentiometer. These reference values and connections have not been verified against the photographed breadboard.<!--/i18n--></desc>
