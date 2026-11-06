@@ -25,6 +25,7 @@ python3 scripts/build.py --base-path / --site-url https://ramsey.page
 python3 scripts/check_build.py dist --base-path / --site-url https://ramsey.page
 node scripts/check_languages.cjs
 node scripts/check_analytics.cjs
+node scripts/check_visitor_book.cjs
 ```
 
 For repository-path hosting, pass `--base-path /ramsey.page/` and
@@ -70,5 +71,30 @@ For a basic ordered funnel in GA4 Explore, use `session_start` → a `page_view`
 whose `content_group` is `project` → `contact_click`, with indirectly followed
 steps. Keep CV actions available independently; a visitor need not view a
 project first. A funnel counts users completing steps, not independent click
-totals. The custom dashboard, report API credentials, Firebase, and Chart.js
-are deferred until the built-in reports prove insufficient.
+totals.
+
+### Private visitor book
+
+`/visitor-book/` uses the selected handwritten Visitor book design. It reads
+the same GA4 property directly through the Analytics Data API. Set its public
+OAuth web client ID in `site/visitor-book/config.json`; enable the Analytics
+Data API on that client's Google Cloud project and allow the JavaScript origin
+`https://ramsey.page`. The authorized account must have access to the property.
+The only requested scope is `analytics.readonly`; Google scopes this to the
+Analytics properties that account can read, while the page queries only this
+portfolio's configured property. For personal use, keep the OAuth app in
+Testing with the owner's account as a test user.
+
+There is no client secret, server, API key, custom database, or public report
+export. Access tokens and report responses stay in page memory and disappear
+on reload. Disconnect revokes the grant and clears the displayed reports.
+The HTML is public and nonindexable; the actual report data requires Google
+authorization. No analytics is collected on the visitor-book page itself.
+
+The view shows seven complete days in Europe/Paris, daily session dots, traffic
+sources, page views, CV/contact clicks, and top pages. Selecting a source filters
+every panel. Google can delay, threshold, or sample results; the view flags
+reported limitations. This is an acquisition/outcome summary, not an ordered
+funnel. `?preview=1` explicitly uses sample data without Google requests. The
+small dot chart uses CSS; Firebase, Cloudflare Workers and Chart.js are not
+needed for this version.
