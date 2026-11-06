@@ -25,9 +25,12 @@
   border: 1px solid #DDDCD2;
 }
 .restitch-research-art > .restitch-survey { height: auto; aspect-ratio: 400 / 436.25; }
-/* Give the portrait chart room for its labels in the scrolling phone gallery. */
+/* Keep the chart's viewBox and mobile card in the same proportions. */
 @media (max-width: 700px) {
-  .tile-study [data-grid] > .tile-restitch { --phone-art: clamp(350px, calc(109vw - 34.88px), 580px); }
+  .tile-study [data-grid] > .tile-restitch > .restitch-art {
+    height: auto !important;
+    aspect-ratio: 400 / 436.25 !important;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .restitch-survey[data-gravity-state="waiting"] .restitch-gravity-dot { opacity: 1; }
