@@ -41,8 +41,10 @@ a { color: inherit; text-decoration: none; }
 <link rel="stylesheet" href="/concepts/tile-layouts.css?v=9">
 <link rel="stylesheet" href="/concepts/tile-motion.css?v=1">
 <script src="/concepts/tile-motion.js?v=1"></script>
+<link rel="stylesheet" href="/mobile-masonry.css?v=2">
+<script src="/mobile-masonry.js?v=2"></script>
 </helmet>
-<div class="tile-study tile-study-1" data-screen-label="Home" style="background:#F8F8F6;min-height:{{ rootMinHeight }};height:{{ rootHeight }};overflow:{{ rootOverflow }};display:flex;flex-direction:column;font-family:'Notebook Hand',sans-serif;color:#0D2565">
+<div class="tile-study tile-study-1" data-screen-label="Home" data-mobile-layout="masonry" style="background:#F8F8F6;min-height:{{ rootMinHeight }};height:{{ rootHeight }};overflow:{{ rootOverflow }};display:flex;flex-direction:column;font-family:'Notebook Hand',sans-serif;color:#0D2565">
   <header class="direction-nav direction-nav-centered"><nav class="direction-center-links" aria-label="Main navigation" data-i18n-aria-label="nav.main"><a href="/"><!--i18n:nav.work-->work<!--/i18n--></a><a class="ascii-face-button" href="/" aria-label="ramsey hatoum home" data-i18n-aria-label="nav.home"><img class="ascii-face" src="/assets/ascii-face/ramsey-retro-selected-portrait-smile.svg?v=2" alt="" aria-hidden="true" draggable="false"><span class="ascii-face-name">ramsey hatoum</span></a><a href="/about/"><!--i18n:nav.about-->about<!--/i18n--></a></nav></header>
   <section class="editorial-intro project-filter-intro" data-hero="1" aria-labelledby="editorial-headline" style="background:{{ heroBg }}">
     <div>
@@ -174,40 +176,13 @@ class Component extends DCLogic {
     return this.visibleSlides[(Math.max(0, index) + direction + this.visibleSlides.length) % this.visibleSlides.length];
   }
   goSlide(i) { return () => { this.setState({ slide: i }); this.restartSlides(); }; }
-  restartSlides() {
-    clearInterval(this._slideTimer);
-    // phones show one project at a time; the deck advances on its own
-    this._slideTimer = setInterval(() => {
-      if (window.innerWidth <= 700 && !document.hidden && !document.querySelector('[data-cutout-dragging]') && !document.querySelector('[data-audio-playing],[data-audio-seeking]')) {
-        this.setState((s) => ({ slide: this.nextSlide(s.slide, 1) }));
-      }
-    }, 4200);
-  }
+  restartSlides() { clearInterval(this._slideTimer); }
   step(dir) {
     this.setState((s) => ({ slide: this.nextSlide(s.slide, dir) }));
     this.restartSlides();
   }
   componentDidMount() {
     this.restartSlides();
-    // the phone deck has no page scroll, so wheel and swipe move between projects
-    this._lastStep = 0;
-    this.onWheel = (e) => {
-      if (window.innerWidth > 700 || Math.abs(e.deltaY) < 4) return;
-      const now = Date.now();
-      if (now - this._lastStep < 420) return;
-      this._lastStep = now;
-      this.step(e.deltaY > 0 ? 1 : -1);
-    };
-    this.onTouchStart = (e) => { this._touchY = e.target.closest('[data-handbag-cutout],[data-breadboard-cutout],[data-widget-cutout],[data-audio-player]') ? null : e.touches[0].clientY; };
-    this.onTouchEnd = (e) => {
-      if (window.innerWidth > 700 || this._touchY == null) return;
-      const dy = this._touchY - e.changedTouches[0].clientY;
-      this._touchY = null;
-      if (Math.abs(dy) > 40) this.step(dy > 0 ? 1 : -1);
-    };
-    window.addEventListener('wheel', this.onWheel, { passive: true });
-    window.addEventListener('touchstart', this.onTouchStart, { passive: true });
-    window.addEventListener('touchend', this.onTouchEnd, { passive: true });
     this.onResize = () => this.setState({ width: window.innerWidth });
     window.addEventListener('resize', this.onResize);
     this.onDocDown = (e) => {
@@ -219,9 +194,6 @@ class Component extends DCLogic {
   }
   componentWillUnmount() {
     clearInterval(this._slideTimer);
-    window.removeEventListener('wheel', this.onWheel);
-    window.removeEventListener('touchstart', this.onTouchStart);
-    window.removeEventListener('touchend', this.onTouchEnd);
     window.removeEventListener('resize', this.onResize);
     document.removeEventListener('pointerdown', this.onDocDown);
   }

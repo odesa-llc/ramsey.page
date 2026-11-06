@@ -1,0 +1,132 @@
+/* Approved mobile study 01: equal columns with independent card heights. */
+@media (max-width: 700px) {
+  [data-screen-label="Home"][data-mobile-layout="masonry"] {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+  }
+  [data-mobile-layout="masonry"] .direction-nav-centered { height: 136px; }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] .editorial-intro {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: none !important;
+    padding: 32px 18px 34px !important;
+    border: 0;
+  }
+  [data-mobile-layout="masonry"] .editorial-intro h1 {
+    font-size: 34px !important;
+    line-height: 1.04 !important;
+    margin: 0 0 25px;
+    letter-spacing: -.6px;
+  }
+  [data-mobile-layout="masonry"] .project-filters {
+    justify-content: flex-start;
+    gap: 17px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  [data-mobile-layout="masonry"] .project-filters button { padding: 0; }
+  [data-mobile-layout="masonry"] .tile-main { padding: 0 18px 38px !important; }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] {
+    --mobile-card-width: calc((100vw - 50px) / 2);
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+    gap: 28px 14px !important;
+    align-items: start;
+    padding: 0 !important;
+    flex: none !important;
+    min-width: 0;
+  }
+  [data-mobile-layout="masonry"] > [data-grid] { margin: 0 18px 38px; }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] > [data-project-categories] {
+    display: flex !important;
+    flex-direction: column;
+    grid-area: auto !important;
+    order: 0 !important;
+    align-self: start;
+    height: auto !important;
+    min-height: 0 !important;
+    min-width: 0;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+  }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] > [data-project-filter-hidden] { display: none !important; }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid][data-masonry-ready] {
+    grid-auto-rows: 1px !important;
+    row-gap: 0 !important;
+  }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid][data-masonry-ready] > [data-project-categories] {
+    grid-area: var(--masonry-row) / var(--masonry-column) / span var(--masonry-span) / span 1 !important;
+  }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] > .tile-introduction {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    padding: 32px 0 34px !important;
+  }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid][data-masonry-ready] > .tile-introduction {
+    grid-area: 1 / 1 / span var(--masonry-span) / -1 !important;
+  }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] > [data-project-categories] > div:first-child {
+    flex: none !important;
+    height: var(--mobile-art-height, calc(var(--mobile-card-width) * 1.2)) !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    border-radius: 8px 5px 7px 6px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  [data-mobile-project="handbag"] { --mobile-art-height: calc(var(--mobile-card-width) * 1.57647); }
+  [data-mobile-project="tidle"] { --mobile-art-height: calc(var(--mobile-card-width) * .941176); }
+  [data-mobile-project="restitch"] { --mobile-art-height: calc(var(--mobile-card-width) * 1.188235); }
+  [data-mobile-project="breadboard"] { --mobile-art-height: calc(var(--mobile-card-width) * 1.529412); }
+  [data-mobile-project="beirut"] { --mobile-art-height: calc(var(--mobile-card-width) * .894118); }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] > [data-project-categories] > div:last-child {
+    position: relative;
+    inset: auto;
+    display: block !important;
+    flex: none !important;
+    width: 100%;
+    max-width: none;
+    min-height: 58px !important;
+    padding: 9px 1px 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+    pointer-events: auto;
+  }
+  [data-mobile-layout="masonry"] .tile-caption::before,
+  [data-mobile-layout="masonry"] .tile-caption::after,
+  [data-mobile-layout="masonry"] .tile-main::after { display: none !important; }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] > [data-project-categories] > div:last-child > div:first-child {
+    font-size: clamp(16px, 4.87vw, 19px) !important;
+    font-weight: 400;
+    line-height: 1.12 !important;
+    min-height: 0 !important;
+    padding: 0;
+    margin: 0 0 4px;
+    letter-spacing: -.25px;
+    white-space: normal !important;
+    text-transform: none !important;
+    overflow: visible;
+    text-overflow: clip;
+  }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] > [data-project-categories] > div:last-child > div:nth-child(2) {
+    position: static !important;
+    font-size: 13.5px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    opacity: .58;
+  }
+  [data-screen-label="Home"][data-mobile-layout="masonry"] [data-grid] > [data-project-categories] > div:last-child > div:nth-child(3) { display: none !important; }
+  [data-mobile-layout="masonry"] [data-handbag-cutout] { width: 100% !important; height: 78% !important; }
+  [data-mobile-layout="masonry"] [data-tidle-widget] { width: 90% !important; height: 80% !important; top: 50% !important; }
+  [data-mobile-layout="masonry"] [data-breadboard-cutout] { width: 94% !important; height: 74% !important; top: 44% !important; }
+  [data-mobile-layout="masonry"] [data-camera-cutout] { width: 96% !important; max-width: 96% !important; height: 90% !important; top: 57% !important; }
+  [data-mobile-layout="masonry"] .breadboard-audio { top: auto; bottom: 12px; }
+  [data-mobile-layout="masonry"] .project-sequence-dots { right: 7px; gap: 5px; }
+  [data-mobile-layout="masonry"] .project-sequence-dot { width: 4px; height: 4px; }
+}
