@@ -17,7 +17,7 @@
     if (!kind) return null;
     var outline = document.createElement('img');
     outline.className = 'cutout-hover-outline'; outline.alt = ''; outline.setAttribute('aria-hidden', 'true'); outline.draggable = false;
-    outline.src = '/assets/widget-outlines/' + kind + '-hover.svg?v=2';
+    outline.src = '/assets/widget-outlines/' + kind + '-hover.svg?v=3';
     image.after(outline);
     function sync() {
       outline.style.left = image.offsetLeft + 'px'; outline.style.top = image.offsetTop + 'px';
