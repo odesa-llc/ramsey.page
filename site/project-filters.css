@@ -25,7 +25,6 @@
 .project-filters button[aria-pressed="true"] { opacity: 1; text-decoration-line: underline; }
 .project-filters button:hover { opacity: 1; }
 .project-filters button:focus-visible { outline: 2px solid #8FAA9A; outline-offset: 4px; }
-.project-filters-separator { opacity: .3; }
 .project-filter-status {
   position: absolute;
   width: 1px;

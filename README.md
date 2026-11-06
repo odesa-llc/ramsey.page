@@ -92,7 +92,7 @@ The HTML is public and nonindexable; the actual report data requires Google
 authorization. No analytics is collected on the visitor-book page itself.
 
 The view shows seven complete days in Europe/Paris, daily session dots, traffic
-sources, page views, CV/contact clicks, and top pages. Selecting a source filters
+sources, page views, CV and contact clicks, and top pages. Selecting a source filters
 every panel. Google can delay, threshold, or sample results; the view flags
 reported limitations. This is an acquisition/outcome summary, not an ordered
 funnel. `?preview=1` explicitly uses sample data without Google requests. The

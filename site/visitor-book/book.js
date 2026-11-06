@@ -9,9 +9,11 @@
   function status(text) { $('status').textContent = text; }
   function text(tag, value, className) { var node = document.createElement(tag); node.textContent = value; if (className) node.className = className; return node; }
   function sourceName(row) {
-    if (row.source === '(direct)') return 'direct / unknown';
+    if (row.source === '(direct)') return 'direct or unknown';
     if (row.source === '(not set)') return 'unknown';
-    return row.source + (row.medium && row.medium !== '(none)' ? ' / ' + row.medium : '');
+    if (row.medium === 'organic') return row.source + ' search';
+    if (['cpc','ppc','paid_social'].indexOf(row.medium) !== -1) return row.source + ' ads';
+    return row.source + (row.medium && ['(none)','social','referral'].indexOf(row.medium) === -1 ? ' (' + row.medium + ')' : '');
   }
   function render(data, range) {
     $('visit-total').textContent = format.format(data.sessions);
