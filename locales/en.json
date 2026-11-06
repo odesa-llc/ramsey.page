@@ -16,6 +16,9 @@
     "fuzzNext": "Breadboard Fuzz →"
   },
   "home": {
+    "wipMessage": "Glad you’re here! I’m cleaning things up. Come back soon :)",
+    "wipLabel": "A little site update",
+    "wipDismiss": "Dismiss site update",
     "headline": "made for use",
     "filterLabel": "Filter projects",
     "all": "all",

@@ -16,6 +16,9 @@
     "fuzzNext": "Circuit de fuzz →"
   },
   "home": {
+    "wipMessage": "Bienvenue ! Je remets un peu d’ordre par ici. Repassez bientôt :)",
+    "wipLabel": "Une petite mise à jour du site",
+    "wipDismiss": "Fermer ce message",
     "headline": "pensé pour le quotidien",
     "filterLabel": "Filtrer les projets",
     "all": "tout",
