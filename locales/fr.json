@@ -68,7 +68,6 @@
     "parisAlt": "Rue parisienne"
   },
   "tidle": {
-    "kicker": "Conception et développement · iOS et iPadOS",
     "strapline": "De petites tâches, des progrès qui se voient.",
     "intro": "J’ai créé Tidle pour garder le fil des tâches du quotidien. L’ajout rapide, les catégories et les sous-tâches facilitent l’organisation ; les rappels et les tâches récurrentes aident à ne rien oublier.",
     "appStore": "Voir sur l’App Store ↗",
@@ -104,7 +103,6 @@
     "footnote": "Plusieurs réponses possibles · oct. 2026"
   },
   "restitch": {
-    "kicker": "Application de couture · Concept",
     "intro": "Restitch vous guide pas à pas pour faire un ourlet de jean ou une fleur en tissu. Des étapes illustrées pour se lancer avec ce que vous avez, à votre rythme.",
     "prototype": "Essayer le prototype ↗",
     "researchDate": "Enquête exploratoire · 2–14 octobre 2026",
@@ -120,7 +118,6 @@
     "progressBody": "Le navigateur mémorise le matériel que vous avez coché et les étapes terminées. Vous pouvez reprendre votre projet là où vous en étiez, ou revoir une étape précédente."
   },
   "fuzz": {
-    "kicker": "Électronique audio · Prototype sur plaque d’essai",
     "title": "Circuit de fuzz.",
     "intro": "J’ai monté un circuit de fuzz pour guitare sur une plaque d’essai sans soudure, puis je l’ai testé sur un ampli. Le montage reste à découvert : on voit les fils et les composants, et on peut en écouter le son.",
     "boardAlt": "Circuit de fuzz sur une plaque d’essai, avec ses composants et ses fils de connexion apparents",
@@ -174,7 +171,6 @@
     "removableConnections": "connexions démontables"
   },
   "beirut": {
-    "kicker": "Série photo personnelle · Beyrouth",
     "title": "Beyrouth, au fil des rues.",
     "intro": "Un regard personnel sur Beyrouth : ses rues, ses ateliers, ses cafés et les détails du quotidien qui retiennent l’attention.",
     "credit": "Photographies et sélection — Ramsey Hatoum",

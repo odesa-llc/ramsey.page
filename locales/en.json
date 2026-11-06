@@ -68,7 +68,6 @@
     "parisAlt": "Paris street"
   },
   "tidle": {
-    "kicker": "App design & development · iOS & iPadOS",
     "strapline": "Small tasks. Visible progress.",
     "intro": "I built Tidle to make everyday tasks easier to keep in view. Quick capture, categories, and subtasks keep plans organized, while reminders and recurring tasks help the day stay on track.",
     "appStore": "View on the App Store ↗",
@@ -104,7 +103,6 @@
     "footnote": "Multiple choices allowed · Oct 2026"
   },
   "restitch": {
-    "kicker": "Sewing app · Concept",
     "intro": "Small sewing projects, broken into visual steps. Restitch helps you hem a pair of jeans or make a fabric flower, using what you have and moving at your own pace.",
     "prototype": "Try the prototype ↗",
     "researchDate": "Early research · 2–14 October 2026",
@@ -120,7 +118,6 @@
     "progressBody": "Materials readiness and completed steps stay saved in your browser. Return to an earlier lesson or continue a project at your own pace."
   },
   "fuzz": {
-    "kicker": "Audio electronics · Breadboard prototype",
     "title": "Breadboard fuzz.",
     "intro": "I built a fuzz circuit on a breadboard and tested its output through a guitar amp. This is the working setup, with its wires, components, and sound out in the open.",
     "boardAlt": "Breadboard fuzz circuit with exposed components and jumper wires",
@@ -174,7 +171,6 @@
     "removableConnections": "removable connections"
   },
   "beirut": {
-    "kicker": "Personal photography · Beirut",
     "title": "Beirut, in passing.",
     "intro": "A personal photography project documenting sites and everyday scenes from Beirut. Streets, workshops, cafés, and the small details in between.",
     "credit": "Photography & selection — Ramsey Hatoum",
