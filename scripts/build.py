@@ -140,12 +140,12 @@ def add_favicon(source):
 
 
 def bootstrap(messages):
-    runtime = {key: value for key, value in messages.items() if key.startswith(('runtime.', 'home.'))}
+    runtime = {key: value for key, value in messages.items() if key.startswith(('runtime.', 'home.', 'analytics.'))}
     payload = json.dumps(runtime, ensure_ascii=False).replace('<', '\\u003c').replace('&', '\\u0026')
     return '<script id="portfolio-messages" type="application/json">' + payload + '</script>\n<script src="/i18n.js?v=1"></script>'
 
 
-def render(source, page, lang, messages, site_url, base_path, gateway=False):
+def render(source, page, lang, messages, site_url, base_path, gateway=False, analytics=None):
     source = clean_seo(localize_links(translate(source, messages), lang))
     source = re.sub(r'<html\b[^>]*>', '<html lang="' + lang + '">', source, count=1, flags=re.I)
     absolute = lambda path: site_url + base_path.rstrip('/') + path
@@ -179,6 +179,12 @@ def render(source, page, lang, messages, site_url, base_path, gateway=False):
     header = '\n<meta charset="utf-8">\n' + entry + bootstrap(messages) + '\n' + '\n'.join(metadata)
     source = re.sub(r'(<head\b[^>]*>)', lambda m: m[1] + header, source, count=1, flags=re.I)
     source = source.replace('</head>', '<link rel="stylesheet" href="/localized.css?v=1">\n</head>', 1)
+    if analytics and not gateway:
+        payload = html.escape(json.dumps(analytics, separators=(',', ':')), quote=True)
+        tracking = (f'<meta name="portfolio:analytics" content="{payload}">\n'
+                    '<link rel="stylesheet" href="/analytics.css?v=1">\n'
+                    '<script src="/analytics.js?v=1" defer></script>\n')
+        source = source.replace('</head>', tracking + '</head>', 1)
     if page == 'home':
         # Keep text, images, and ordinary project links usable without the renderer.
         fallback = '<noscript><style>x-dc{display:block}.tile-study [data-grid]{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))!important}.tile-study .tile{min-height:360px}.project-filters{display:none}.tile-study .tile-caption{flex:auto!important}html,body{height:auto!important}</style></noscript>'
@@ -241,6 +247,12 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
     if output == ROOT or ROOT not in output.parents or output == source or source in output.parents:
         raise ValueError('Build output must be inside this project and outside site/.')
     catalogs = load_catalogs()
+    analytics_config = json.loads((ROOT / 'analytics.json').read_text())
+    measurement_id = analytics_config.get('measurement_id', '')
+    if measurement_id and not re.fullmatch(r'G-[A-Z0-9]{6,}', measurement_id):
+        raise ValueError('analytics.json: invalid GA4 measurement_id')
+    analytics = ({'measurementId': measurement_id, 'hosts': analytics_config['production_hosts']}
+                 if measurement_id else None)
     preview = {key: value for key, value in catalogs['en'].items() if key.startswith(('runtime.', 'home.'))}
     preview_source = '// Generated from locales/en.json for direct authored-template previews.\nwindow.PORTFOLIO_PREVIEW_MESSAGES = ' + json.dumps(preview, ensure_ascii=False) + ';\n'
     (source / 'i18n-preview.js').write_text(preview_source)
@@ -256,10 +268,10 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
         for lang in LANGUAGES:
             destination = output / (page_path(page, lang).lstrip('/') + 'index.html')
             destination.parent.mkdir(parents=True, exist_ok=True)
-            destination.write_text(render(template, page, lang, catalogs[lang], site_url, base_path))
+            destination.write_text(render(template, page, lang, catalogs[lang], site_url, base_path, analytics=analytics))
         if page != 'home':
             # Existing bookmarks remain readable English aliases, canonical to /en/.
-            (output / filename).write_text(render(template, page, 'en', catalogs['en'], site_url, base_path))
+            (output / filename).write_text(render(template, page, 'en', catalogs['en'], site_url, base_path, analytics=analytics))
     (output / 'index.html').write_text(render((source / 'index.html').read_text(), 'home', 'en', catalogs['en'], site_url, base_path, gateway=True))
     for alias, page in ALIASES.items():
         destination = output / alias.lstrip('/') / 'index.html'

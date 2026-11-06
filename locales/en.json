@@ -266,5 +266,12 @@
     "fuzzDescription": "A fuzz circuit I built on a breadboard: hear the bench test, explore the photo-to-wireframe reveal, and follow the layout notes into a soldered prototype.",
     "beirutTitle": "Beirut, in passing — ramsey hatoum",
     "beirutDescription": "A personal photography project by Ramsey Hatoum. Sites and everyday scenes from Beirut: streets, workshops, cafés, quiet corners and nights out."
+  },
+  "analytics": {
+    "title": "A little site analytics?",
+    "description": "Google Analytics uses optional cookies to measure visits and CV/contact clicks. No advertising tracking. You can change your choice anytime.",
+    "allow": "Allow analytics",
+    "decline": "No thanks",
+    "choices": "Analytics choices"
   }
 }

@@ -266,5 +266,12 @@
     "fuzzDescription": "Un circuit de fuzz pour guitare réalisé par Ramsey Hatoum. Écoutez l’essai sonore et suivez sa réalisation, de la plaque d’essai au prototype soudé.",
     "beirutTitle": "Beyrouth, au fil des rues — ramsey hatoum",
     "beirutDescription": "Beyrouth à travers les photos de Ramsey Hatoum : scènes de rue, ateliers, cafés et ambiances nocturnes."
+  },
+  "analytics": {
+    "title": "Quelques statistiques de visite ?",
+    "description": "Google Analytics utilise des cookies facultatifs pour mesurer les visites et les clics sur le CV et le contact. Aucun suivi publicitaire. Vous pouvez changer votre choix à tout moment.",
+    "allow": "Autoriser",
+    "decline": "Non merci",
+    "choices": "Choix des statistiques"
   }
 }
