@@ -69,7 +69,9 @@
   },
   "tidle": {
     "intro": "I built Tidle to make everyday tasks easier to keep in view. Quick capture, categories, and subtasks keep plans organized, while reminders and recurring tasks help the day stay on track.",
-    "appStore": "View on the App Store ↗",
+    "appStore": "View on the App Store",
+    "previousProject": "Handmade Handbag",
+    "allProjects": "All projects",
     "widgetLabel": "Tidle Today's Tasks widget: Done 0 of 8",
     "widgetDrag": "Drag the Tidle widget",
     "initialCount": "Done 0 of 8",
@@ -269,7 +271,7 @@
   },
   "analytics": {
     "title": "A little site analytics?",
-    "description": "Google Analytics uses optional cookies to measure visits and clicks on the CV and contact buttons. No advertising tracking. You can change your choice anytime.",
+    "description": "Optional Google Analytics cookies count visits and clicks. Sadly, no chocolate chips.",
     "allow": "Allow analytics",
     "decline": "No thanks",
     "choices": "Analytics choices"

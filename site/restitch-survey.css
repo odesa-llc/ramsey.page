@@ -16,6 +16,10 @@
   font-kerning: normal;
   font-feature-settings: 'calt' 1, 'kern' 1, 'dlig' 0;
 }
+.restitch-survey-value {
+  dominant-baseline: alphabetic;
+  alignment-baseline: baseline;
+}
 .restitch-survey-grain { opacity: .065; mix-blend-mode: multiply; pointer-events: none; }
 .restitch-survey[data-gravity-state="waiting"] .restitch-gravity-dot { opacity: 0; }
 .restitch-preview > .restitch-research-art {

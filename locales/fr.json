@@ -69,7 +69,9 @@
   },
   "tidle": {
     "intro": "J’ai créé Tidle pour garder le fil des tâches du quotidien. L’ajout rapide, les catégories et les sous-tâches facilitent l’organisation ; les rappels et les tâches récurrentes aident à ne rien oublier.",
-    "appStore": "Voir sur l’App Store ↗",
+    "appStore": "Voir sur l’App Store",
+    "previousProject": "Sac fait main",
+    "allProjects": "Tous les projets",
     "widgetLabel": "Widget Tidle — tâches terminées : 0 sur 8.",
     "widgetDrag": "Faites glisser le widget Tidle",
     "initialCount": "0 sur 8",
@@ -269,7 +271,7 @@
   },
   "analytics": {
     "title": "Quelques statistiques de visite ?",
-    "description": "Google Analytics utilise des cookies facultatifs pour mesurer les visites et les clics sur le CV et le contact. Aucun suivi publicitaire. Vous pouvez changer votre choix à tout moment.",
+    "description": "Des cookies Google Analytics facultatifs comptent les visites et les clics. Sans pépites de chocolat, hélas.",
     "allow": "Autoriser",
     "decline": "Non merci",
     "choices": "Choix des statistiques"

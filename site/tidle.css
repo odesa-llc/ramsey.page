@@ -41,3 +41,9 @@
   .tidle-gallery { padding: 28px 16px; }
   .tidle-screens { gap: 12px; overflow-x: auto; grid-template-columns: repeat(3,minmax(240px,70vw)); }
 }
+
+/* Match the hand-drawn link arrows on About, including on iOS. */
+.tidle-project-link, .tidle-project .project-footer a { display: inline-flex; align-items: center; gap: .25em; }
+.tidle-project .link-arrow { display: block; width: .95em; height: .95em; flex: 0 0 auto; }
+.tidle-project .link-arrow-left { transform: rotate(-135deg); }
+.tidle-project .link-arrow-right { transform: rotate(45deg); }
