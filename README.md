@@ -73,9 +73,9 @@ steps. Keep CV actions available independently; a visitor need not view a
 project first. A funnel counts users completing steps, not independent click
 totals.
 
-### Private visitor book
+### Private site stats
 
-`/visitor-book/` uses the selected handwritten Visitor book design. It reads
+`/visitor-book/` displays Site stats using the selected handwritten design. It reads
 the same GA4 property directly through the Analytics Data API. Set its public
 OAuth web client ID in `site/visitor-book/config.json`; enable the Analytics
 Data API on that client's Google Cloud project and allow the JavaScript origin

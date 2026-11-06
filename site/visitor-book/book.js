@@ -107,7 +107,7 @@
   fetch(configUrl,{cache:'no-store'}).then(function (response) { if (!response.ok) throw Error(); return response.json(); }).then(function (settings) {
     config=settings;
     if (!/^\d+$/.test(config.propertyId) || !/^[\w-]+\.apps\.googleusercontent\.com$/.test(config.clientId)) {
-      status('The visitor book is ready. The private Google connection is awaiting setup.'); return;
+      status('Site stats is ready. The private Google connection is awaiting setup.'); return;
     }
     var script=document.createElement('script'); script.src='https://accounts.google.com/gsi/client'; script.async=true;
     script.onerror=function () { status('Google could not load. Check your connection or content blocker.'); };
