@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ramsey Hatoum — portfolio</title>
+  <link rel="canonical" href="https://ramsey.page/">
+  <script>
+    (function () {
+      'use strict';
+      // /ig/ stays short in Instagram; the destination keeps the bio campaign.
+      var destination = new URL('../', location.href);
+      destination.search = location.search;
+      destination.searchParams.set('utm_source', 'instagram');
+      destination.searchParams.set('utm_medium', 'social');
+      destination.searchParams.set('utm_campaign', 'portfolio');
+      destination.searchParams.set('utm_content', 'bio');
+      destination.hash = location.hash;
+      // Retain only the external referrer's origin across both redirect steps.
+      if (document.referrer) {
+        try {
+          var referrer = new URL(document.referrer);
+          if (/^https?:$/.test(referrer.protocol) && referrer.origin !== location.origin) {
+            destination.searchParams.set('_portfolio_ref', referrer.origin);
+          }
+        } catch (_) {}
+      }
+      location.replace(destination.href);
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=../?utm_source=instagram&amp;utm_medium=social&amp;utm_campaign=portfolio&amp;utm_content=bio">
+  </noscript>
+</head>
+<body>
+  <p><a href="../?utm_source=instagram&amp;utm_medium=social&amp;utm_campaign=portfolio&amp;utm_content=bio">Continue to the portfolio</a></p>
+</body>
+</html>
