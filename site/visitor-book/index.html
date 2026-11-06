@@ -2,55 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com; style-src 'self' 'unsafe-inline' https://accounts.google.com; frame-src https://accounts.google.com; connect-src 'self' https://analyticsdata.googleapis.com https://accounts.google.com; img-src 'self' data: https://*.googleusercontent.com; base-uri 'self'; form-action 'none'">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
   <title>Site stats — ramsey.page</title>
-  <link rel="preload" href="/assets/fonts/NotebookHand-Regular.woff2?v=1.110" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/typography.css?v=1.110">
-  <link rel="stylesheet" href="/visitor-book/book.css?v=1">
-  <script src="/visitor-book/reports.js?v=1" defer></script>
-  <script src="/visitor-book/book.js?v=1" defer></script>
+  <link rel="canonical" href="https://ramsey.page/visitors/">
+  <script>location.replace('/visitors/' + location.search + location.hash);</script>
+  <meta http-equiv="refresh" content="0;url=/visitors/">
 </head>
-<body>
-  <main class="visitor-paper">
-    <header class="visitor-head"><a href="/">ramsey.page</a><span>site stats</span></header>
-    <div class="book-toolbar">
-      <nav aria-label="Report period">
-        <button type="button" data-period="current" aria-pressed="true">last 7 days</button>
-        <button type="button" data-period="previous" aria-pressed="false">the 7 before</button>
-      </nav>
-      <button type="button" id="disconnect" hidden>disconnect</button>
-    </div>
-    <p id="sample-label" class="sample-label" hidden>Design preview · sample data</p>
-    <h1><span id="visit-total">—</span> little visits.</h1>
-    <p id="date-label" class="visitor-subtitle">A small, private note on who stopped by.</p>
-    <p id="source-filter" hidden><span></span> <button type="button" id="clear-filter">show everyone</button></p>
-    <section class="connection" id="connection">
-      <p>Read-only reports for ramsey.page, private to your Google account. Your connection stays in this browser and clears when you leave.</p>
-      <button type="button" id="connect">connect Google Analytics</button>
-      <a href="?preview=1" id="preview-link">preview the design</a>
-    </section>
-    <p id="status" role="status" aria-live="polite"></p>
-    <div id="report" hidden>
-      <div id="days" class="visitor-days" role="img"></div>
-      <p id="dot-legend" class="dot-legend"></p>
-      <div class="visitor-lower">
-        <section class="sources"><h2>came from</h2><div id="sources"></div></section>
-        <p class="visitor-note" id="busiest"></p>
-      </div>
-      <section class="actions" aria-label="Page views and actions">
-        <div><span id="views">—</span><span>page views</span></div>
-        <div><span id="cv">—</span><span>CV clicks</span></div>
-        <div><span id="contact">—</span><span>contact clicks</span></div>
-      </section>
-      <section class="pages"><h2>what caught their eye</h2><div id="pages"></div></section>
-      <p id="data-note" class="visitor-foot"></p>
-    </div>
-    <footer class="visitor-foot">Visits may include repeat visitors. CV and contact clicks measure interest, not completed enquiries.<br>
-      <a href="https://analytics.google.com/analytics/web/#/a146324059p562895025/reports/intelligenthome" target="_blank" rel="noopener">open full reports ↗</a>
-    </footer>
-  </main>
-</body>
+<body><a href="/visitors/">Open site stats</a></body>
 </html>

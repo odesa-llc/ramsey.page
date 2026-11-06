@@ -75,7 +75,7 @@ totals.
 
 ### Private site stats
 
-`/visitor-book/` displays Site stats using the selected handwritten design. It reads
+`/visitors/` displays Site stats using the selected handwritten design. It reads
 the same GA4 property directly through the Analytics Data API. Set its public
 OAuth web client ID in `site/visitor-book/config.json`; enable the Analytics
 Data API on that client's Google Cloud project and allow the JavaScript origin
@@ -89,7 +89,9 @@ There is no client secret, server, API key, custom database, or public report
 export. Access tokens and report responses stay in page memory and disappear
 on reload. Disconnect revokes the grant and clears the displayed reports.
 The HTML is public and nonindexable; the actual report data requires Google
-authorization. No analytics is collected on the visitor-book page itself.
+authorization. No analytics is collected on the visitors page itself.
+
+The previous `/visitor-book/` URL redirects to `/visitors/`, preserving preview links.
 
 The view shows seven complete days in Europe/Paris, daily session dots, traffic
 sources, page views, CV and contact clicks, and top pages. Selecting a source filters

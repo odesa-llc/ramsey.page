@@ -27,7 +27,7 @@
     "initialCount": "Showing 5 projects.",
     "handbagTitle": "Handmade Handbag",
     "handbagDiscipline": "Accessory Design",
-    "handbagSummary": "Designed and made by me",
+    "handbagSummary": "WIP",
     "tidleDiscipline": "iOS App",
     "tidleSummary": "Tasks, reminders, and daily progress.",
     "restitchDiscipline": "Sewing App · Concept",
@@ -63,7 +63,7 @@
     "cvHref": "/assets/ramsey-hatoum-product-design-resume.pdf"
   },
   "handbag": {
-    "intro": "Designed and made by me.",
+    "intro": "WIP",
     "alt": "Handmade black handbag with silver hardware",
     "parisAlt": "Paris street"
   },
