@@ -27,6 +27,7 @@
 .restitch-research-art > .restitch-survey { height: auto; aspect-ratio: 400 / 436.25; }
 /* Keep the chart's viewBox and mobile card in the same proportions. */
 @media (max-width: 700px) {
+  .restitch-survey-value { font-size: 58px; }
   .tile-study [data-grid] > .tile-restitch > .restitch-art {
     height: auto !important;
     aspect-ratio: 400 / 436.25 !important;

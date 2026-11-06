@@ -31,3 +31,8 @@
 .direction-copy-tools{display:block;margin-top:9px;font-size:13px;line-height:1.2;opacity:.72}
 .direction-copy-tools .editorial-trigger{text-underline-offset:3px}
 @media(max-width:700px){.direction-center-links{gap:32px;grid-template-columns:60px 110px 60px}.direction-copy-tools{font-size:12px;margin-top:7px}.editorial-intro{min-height:138px!important}.editorial-intro h1{max-width:100%;font-size:clamp(30px,6.8vw,42px)!important}}
+@media(max-width:700px){
+ .direction-center-links .ascii-face{height:64px}
+ .avatar-name-easy-tilt .direction-center-links .ascii-face{top:34px;height:64px}
+ .avatar-name-easy-tilt .direction-center-links .ascii-face-button::before{top:34px;width:45.589px;height:64px}
+}

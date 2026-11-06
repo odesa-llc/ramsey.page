@@ -11,11 +11,11 @@
 
 <link rel="preload" href="/assets/fonts/NotebookHand-Regular.woff2?v=1.110" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/typography.css?v=notebook-hand-1.110">
-<link rel="stylesheet" href="/restitch-survey.css?v=3">
+<link rel="stylesheet" href="/restitch-survey.css?v=4">
 <script src="/restitch-survey.js?v=2" defer></script>
 <script src="/palette-settings.js?v=2"></script>
 <script src="/concepts/color-studies/palette-preview.js?v=3"></script>
-<link rel="stylesheet" href="/project-filters.css?v=3">
+<link rel="stylesheet" href="/project-filters.css?v=4">
 <script src="/project-filters.js?v=4-i18n-1" defer></script>
 </head>
 <body>
@@ -40,7 +40,7 @@ a { color: inherit; text-decoration: none; }
 <link rel="stylesheet" href="/editorial.css?v=handdrawn-1" />
 <link rel="stylesheet" href="/project-audio.css?v=neutral-hover-1" /><script src="/project-audio.js?v=2-i18n-1"></script>
 <link rel="stylesheet" href="/ascii-nav.css?v=2" />
-<link rel="stylesheet" href="/centered-nav.css?v=21" />
+<link rel="stylesheet" href="/centered-nav.css?v=22" />
 <link rel="stylesheet" href="/layout-picker.css?v=4">
 <script src="/layout-picker.js?v=15"></script>
 <link rel="stylesheet" href="/mobile-masonry.css?v=2">
@@ -53,7 +53,7 @@ a { color: inherit; text-decoration: none; }
       <div class="editorial-eyebrow"><span style="text-transform:none">ramsey hatoum</span> · SELECTED WORK</div>
       <h1 id="editorial-headline" class="handdrawn-heading" style="font-family:{{ headFont }}"><!--i18n:home.headline-->made for use<!--/i18n--><svg class="handdrawn-underline" viewBox="0 0 320 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 7.1 C9 6.5 16 7.5 25 7.2 S40 6.1 49 6.8 S62 8.2 72 7.4 S86 7.3 95 7.6 S109 6.3 118 6.8 S131 7.4 140 7.1 S154 7.7 163 7.4 S176 6.4 185 6.9 S199 7.6 207 7.1 S220 7.2 229 7.7 S243 6.9 252 7.1 S266 6.7 275 7.2 S288 7.8 298 7.1 S310 7.2 319 6.9" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path></svg></h1>
     </div>
-    <div class="project-filters" data-project-filters="true" role="group" aria-label="Filter projects" data-i18n-aria-label="home.filterLabel"><button type="button" data-project-filter="apps" aria-pressed="false"><!--i18n:home.apps-->apps<!--/i18n--></button><button type="button" data-project-filter="things" aria-pressed="false"><!--i18n:home.things-->things<!--/i18n--></button><button type="button" data-project-filter="research" aria-pressed="false"><!--i18n:home.research-->research<!--/i18n--></button></div><p class="project-filter-status" data-project-filter-status="true" role="status" aria-live="polite" aria-atomic="true"><!--i18n:home.initialCount-->Showing 5 projects.<!--/i18n--></p>
+    <div class="project-filters" data-project-filters="true" role="group" aria-label="Filter projects" data-i18n-aria-label="home.filterLabel"><button type="button" data-project-filter="apps" aria-pressed="false"><!--i18n:home.apps-->apps<!--/i18n--></button><span class="project-filters-separator" aria-hidden="true">/</span><button type="button" data-project-filter="things" aria-pressed="false"><!--i18n:home.things-->things<!--/i18n--></button><span class="project-filters-separator" aria-hidden="true">/</span><button type="button" data-project-filter="research" aria-pressed="false"><!--i18n:home.research-->research<!--/i18n--></button></div><p class="project-filter-status" data-project-filter-status="true" role="status" aria-live="polite" aria-atomic="true"><!--i18n:home.initialCount-->Showing 5 projects.<!--/i18n--></p>
   </section>
   <div data-grid="1" data-project-count="{{ visibleCount }}" data-slide="{{ slide }}" style="display:grid;grid-template-columns:{{ gridCols }};grid-template-rows:{{ gridRows }};flex:{{ gridFlex }};min-height:0">
 
@@ -109,8 +109,7 @@ a { color: inherit; text-decoration: none; }
     <rect width="400" height="436.25" fill="#EEEDE5"></rect>
     <rect class="restitch-survey-grain" width="400" height="436.25" filter="url(#restitch-paper-grain)"></rect>
     <g class="restitch-survey-type" fill="#0D2565">
-      <text x="23.75" y="18.75" font-size="14"><!--i18n:survey.research-->user research<!--/i18n--></text>
-      <text x="23.75" y="54" font-size="64">58%</text>
+      <text class="restitch-survey-value" x="23.75" y="24" font-size="64">58%</text>
       <text x="23.75" y="123" font-size="20"><!--i18n:survey.experience-->users with prior experience<!--/i18n--></text>
       <text x="23.75" y="148" font-size="20"><!--i18n:survey.finding-->said finding <!--/i18n--><tspan style="text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px"><!--i18n:survey.time-->time<!--/i18n--></tspan><!--i18n:survey.sewing--> for sewing<!--/i18n--></text>
       <text x="23.75" y="173" font-size="20"><!--i18n:survey.challenge-->was a challenge.<!--/i18n--></text>
