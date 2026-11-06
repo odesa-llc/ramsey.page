@@ -1,4 +1,4 @@
-// Bake the approved 45% closed-mouth smile and 10% facial softness into the SVG.
+// Bake the approved 40% closed-mouth smile and 10% facial softness into the SVG.
 // Keep the ASCII grid, font, silhouette and stroke density intact.
 const fs = require('node:fs');
 const path = require('node:path');
@@ -14,7 +14,7 @@ const marks = [...source.matchAll(pattern)].map(match => ({
   raw: match[0],
 }));
 const softness = .10;
-const smile = .45;
+const smile = .40;
 const smooth = (lo, hi, value) => {
   const t = Math.max(0, Math.min(1, (value - lo) / (hi - lo)));
   return t * t * (3 - 2 * t);
@@ -59,6 +59,7 @@ function warp(mark) {
 // Allow only equivalent or denser character substitutions as the lips curve.
 const density = glyph => glyph === '#' ? 3 : glyph === '=' ? 2 : 1;
 let index = 0, changedGlyphs = 0, preventedPaleGaps = 0;
+const mouthToneCells = [];
 let result = source.replace(pattern, (whole, sx, sy, fill, opacity) => {
   const mark = marks[index++];
   let point = { x: mark.x, y: mark.y };
@@ -77,15 +78,23 @@ let result = source.replace(pattern, (whole, sx, sy, fill, opacity) => {
   assert(density(glyph) >= density(mark.glyph), 'Smile must not reduce ASCII stroke density');
   if (mark.y < 215) assert.deepEqual(colour, mark.colour, 'Hair must remain unchanged');
   const hex = '#' + colour.map(channel => channel.toString(16).padStart(2, '0')).join('');
+  const mouthRadius = Math.hypot((mark.x - 242) / 112, (mark.y - 545) / 86);
+  const gapWeight = 1 - smooth(.62, 1, mouthRadius);
+  if (gapWeight > 0) mouthToneCells.push(`<rect x="${sx}" y="${mark.y - 15.5}" width="12" height="19.5" fill="${hex}" fill-opacity="${gapWeight.toFixed(3)}"/>`);
   return `<text x="${sx}" y="${sy}" fill="${hex}" opacity="${opacity}">${glyph}</text>`;
 });
-// Reduce the photographic mouth detail only gently, retaining tone between glyphs.
-const mask = '<defs><filter id="smile-photo-feather" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="17"/></filter><mask id="smile-photo-mask" maskUnits="userSpaceOnUse" x="-20" y="-10" width="520" height="730"><rect x="-20" y="-10" width="520" height="730" fill="white"/><ellipse cx="242" cy="545" rx="112" ry="83" fill="black" opacity="0.2025" filter="url(#smile-photo-feather)"/></mask></defs>';
+// Retain more of the base tone between glyphs; soften only this backing layer.
+const mask = '<defs><filter id="smile-photo-feather" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="17"/></filter><filter id="smile-tone-feather" x="-30%" y="-40%" width="160%" height="180%"><feGaussianBlur stdDeviation="8.5"/></filter><mask id="smile-photo-mask" maskUnits="userSpaceOnUse" x="-20" y="-10" width="520" height="730"><rect x="-20" y="-10" width="520" height="730" fill="white"/><ellipse cx="242" cy="545" rx="112" ry="83" fill="black" opacity="0.08" filter="url(#smile-photo-feather)"/></mask></defs>';
 result = result.replace(/(<g clip-path="url\(#portrait-clip\)"[^>]* opacity=")([\d.]+)("[^>]*>)([\s\S]*?)(<\/g>)/g,
   (_, before, opacity, after, content, close) => before + (Number(opacity) * (1 - .9 * softness)).toFixed(4) + after + '<g mask="url(#smile-photo-mask)">' + content + '</g>' + close);
 result = result.replace(/(<svg[^>]*>)/, '$1' + mask);
+// A faint, continuous skin-tone backing fills paper-white holes at the mouth.
+// Feather the backing so individual cells never appear as visible cubes.
+const toneLayer = '<g id="smile-gap-fill" clip-path="url(#portrait-clip)" opacity="0.10" filter="url(#smile-tone-feather)" aria-hidden="true">' + mouthToneCells.join('') + '</g>';
+result = result.replace(/(?=<g font-family="Courier New,monospace")/, toneLayer);
+assert(result.includes('id="smile-gap-fill"'), 'Mouth backing must sit below the ASCII characters');
 result = result.replace('<title id="title">Ramsey — balanced detail ASCII avatar</title>', '<title id="title">Ramsey — gentle closed-mouth smile ASCII avatar</title>');
-result = result.replace(/<desc>[\s\S]*?<\/desc>/, '<desc>Approved 45% closed-mouth smile, 10% facial softness. Original ASCII grid and stroke density preserved, with gently following moustache and reduced pale mouth artifacts.</desc>');
+result = result.replace(/<desc>[\s\S]*?<\/desc>/, '<desc>Approved 40% closed-mouth smile, 10% facial softness. Original ASCII grid and stroke density preserved, with gently following moustache and continuous skin tone filling pale mouth gaps.</desc>');
 const after = [...result.matchAll(pattern)];
 assert.equal(after.length, marks.length, 'Character count must remain unchanged');
 after.forEach((match, i) => {
@@ -94,4 +103,4 @@ after.forEach((match, i) => {
 });
 const destination = path.join(assets, 'ramsey-retro-selected-portrait-smile.svg');
 fs.writeFileSync(destination, result);
-console.log(JSON.stringify({ destination, smile: 45, facialSoftness: 10, glyphs: marks.length, changedGlyphs, preventedPaleGaps, reducedStrokeDensity: 0 }));
+console.log(JSON.stringify({ destination, smile: 40, facialSoftness: 10, glyphs: marks.length, changedGlyphs, preventedPaleGaps, backedMouthCells: mouthToneCells.length, reducedStrokeDensity: 0 }));
