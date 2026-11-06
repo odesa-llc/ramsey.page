@@ -1,5 +1,5 @@
 /* Only the sage contour springs outward; the artwork stays still. */
-.cutout-hover-outline { position: absolute; z-index: 4; display: block; margin: 0 !important; max-width: none !important; object-fit: contain; pointer-events: none !important; opacity: 0; transform: translate(-50%,-50%) scale(1); transition: opacity .12s ease, transform .18s ease-out; }
+.cutout-hover-outline { position: absolute; z-index: 4; display: block; margin: 0 !important; max-width: none !important; object-fit: contain; pointer-events: none !important; opacity: 1; transform: translate(-50%,-50%) scale(1); transition: transform .18s ease-out, translate .45s cubic-bezier(.22,.61,.36,1); }
 .cutout-hover-outline.is-active { opacity: 1; transform: translate(-50%,-50%) scale(1.035); }
 .cutout-svg-outline { transform-box: fill-box; transform-origin: center; transition: transform .18s ease-out; }
 .cutout-svg-outline.is-active { transform: scale(1.035); }

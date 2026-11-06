@@ -17,7 +17,7 @@
     if (!kind) return null;
     var outline = document.createElement('img');
     outline.className = 'cutout-hover-outline'; outline.alt = ''; outline.setAttribute('aria-hidden', 'true'); outline.draggable = false;
-    outline.src = '/assets/widget-outlines/' + kind + '-hover.svg?v=1';
+    outline.src = '/assets/widget-outlines/' + kind + '-hover.svg?v=2';
     image.after(outline);
     function sync() {
       outline.style.left = image.offsetLeft + 'px'; outline.style.top = image.offsetTop + 'px';
@@ -37,6 +37,7 @@
     var ease = 'translate .45s cubic-bezier(.22,.61,.36,1)';
     image.style.transition = reduced.matches ? 'none' : ease;
     var outline = outlineFor(image);
+    var separateOutline = outline && outline.classList.contains('cutout-hover-outline');
     function active(value) { if (outline) outline.classList.toggle('is-active', value && !drag); }
     image.addEventListener('pointerenter', function () { if (hover.matches) active(true); });
     image.addEventListener('pointerleave', function () { active(false); });
@@ -52,6 +53,7 @@
       active(false);
       image.setAttribute('data-cutout-dragging', 'true');
       image.style.transition = 'none';
+      if (separateOutline) outline.style.transition = 'none';
       image.style.cursor = 'grabbing';
       image.setPointerCapture(event.pointerId);
     });
@@ -60,6 +62,7 @@
       var dx = event.clientX - drag.x, dy = event.clientY - drag.y;
       if (Math.hypot(dx, dy) > 4) drag.moved = true;
       image.style.translate = Math.max(-drag.maxX, Math.min(drag.maxX, dx)) + 'px ' + Math.max(-drag.maxY, Math.min(drag.maxY, dy)) + 'px';
+      if (separateOutline) outline.style.translate = image.style.translate;
     });
     function release(event) {
       if (!drag || event.pointerId !== drag.id) return;
@@ -69,6 +72,7 @@
       image.removeAttribute('data-cutout-dragging');
       image.style.transition = reduced.matches ? 'none' : ease;
       image.style.translate = '0px 0px';
+      if (separateOutline) { outline.style.transition = ''; outline.style.translate = '0px 0px'; }
       image.style.cursor = 'grab';
       active(hover.matches && image.matches(':hover'));
       if (image.hasPointerCapture(id)) image.releasePointerCapture(id);
