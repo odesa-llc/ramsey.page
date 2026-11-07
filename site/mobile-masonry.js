@@ -37,7 +37,7 @@
     if (!observed.has(grid)) { observed.add(grid); resize.observe(grid); }
     set(grid, '--mobile-card-width', ((grid.getBoundingClientRect().width - 14) / 2).toFixed(3) + 'px');
     cards = cards.filter(function (card) { return !card.hidden && getComputedStyle(card).display !== 'none'; });
-    var fullGallery = cards.length === 5 && (!grid.dataset.activeProjectFilter || grid.dataset.activeProjectFilter === 'all');
+    var fullGallery = cards.length === 6 && (!grid.dataset.activeProjectFilter || grid.dataset.activeProjectFilter === 'all');
     var columns = {handbag: 0, tidle: 1, restitch: 1, breadboard: 0, beirut: 1};
     var bottoms = [0, 0];
     // The retained workbench template keeps its introduction inside the grid.
@@ -49,6 +49,15 @@
       if (!observed.has(introduction)) { observed.add(introduction); resize.observe(introduction); }
     }
     cards.forEach(function (card) {
+      if (card.dataset.mobileProject === 'role-management') {
+        var top = Math.max(bottoms[0], bottoms[1]);
+        var roleHeight = Math.ceil(card.getBoundingClientRect().height);
+        set(card, '--masonry-column', '1');
+        set(card, '--masonry-row', String(top + 1));
+        set(card, '--masonry-span', String(roleHeight));
+        bottoms = [top + roleHeight + 28, top + roleHeight + 28];
+        return;
+      }
       var column = fullGallery ? columns[card.dataset.mobileProject] : (bottoms[0] <= bottoms[1] ? 0 : 1);
       var height = Math.ceil(card.getBoundingClientRect().height);
       set(card, '--masonry-column', String(column + 1));

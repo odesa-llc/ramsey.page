@@ -21,6 +21,7 @@ PAGES = {
     'restitch': ('restitch/index.html', {'en': 'restitch/', 'fr': 'restitch/'}),
     'fuzz': ('fuzz/index.html', {'en': 'fuzz/', 'fr': 'fuzz/'}),
     'beirut': ('beirut/index.html', {'en': 'beirut/', 'fr': 'beyrouth/'}),
+    'role': ('role-management/index.html', {'en': 'role-management/', 'fr': 'gestion-des-roles/'}),
 }
 ALIASES = {}
 SOURCE_ROUTES = {'/' + filename.removesuffix('index.html'): page for page, (filename, _) in PAGES.items()}
@@ -308,7 +309,7 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
     (output / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + site_url + base_path + 'sitemap.xml\n')
     (output / '.nojekyll').touch()
     checked = verify(output, base_path)
-    print(f'Built 14 localized pages + language entry; checked {checked} local HTML references at {output}')
+    print(f'Built {len(PAGES) * len(LANGUAGES)} localized pages + language entry; checked {checked} local HTML references at {output}')
     return output
 
 

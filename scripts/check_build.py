@@ -61,7 +61,7 @@ def check(output, base_path, site_url):
     study = (output / 'concepts/original-layout.html').read_text()
     assert 'name="robots" content="noindex"' in study
     assert base_path + 'sitemap.xml' in (output / 'robots.txt').read_text()
-    print(f'Passed HTML, metadata, navigation, sitemap, and entry checks for 14 pages at {base_path}')
+    print(f'Passed HTML, metadata, navigation, sitemap, and entry checks for {len(PAGES) * len(LANGUAGES)} pages at {base_path}')
 
 
 if __name__ == '__main__':

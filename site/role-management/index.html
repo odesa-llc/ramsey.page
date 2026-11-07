@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title><!--i18n:seo.roleTitle-->Role management — ramsey hatoum<!--/i18n--></title>
+<link rel="preload" href="/assets/fonts/NotebookHand-Regular.woff2?v=1.110" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/typography.css?v=notebook-hand-1.110">
+<link rel="stylesheet" href="/portfolio-cursor.css?v=little-pencil-sage-2">
+<link rel="stylesheet" href="/ascii-nav.css?v=2"><link rel="stylesheet" href="/centered-nav.css?v=22">
+<link rel="stylesheet" href="/role-management/project.css?v=1">
+<script src="/role-management/project.js?v=1" defer></script>
+</head><body>
+<div id="airline-role-project">
+  <header class="direction-nav direction-nav-centered avatar-name-easy-tilt"><nav class="direction-center-links" aria-label="Main navigation" data-i18n-aria-label="nav.main"><a href="/"><!--i18n:nav.work-->work<!--/i18n--></a><a class="ascii-face-button" href="/" aria-label="ramsey hatoum home" data-i18n-aria-label="nav.home"><img class="ascii-face" src="/assets/ascii-face/ramsey-retro-selected-portrait-smile.svg?v=2" alt="" aria-hidden="true" draggable="false"><span class="ascii-face-name">ramsey hatoum</span></a><a href="/about/"><!--i18n:nav.about-->about<!--/i18n--></a></nav></header>
+  <main class="project-main">
+    <section class="project-opening" aria-labelledby="role-project-title">
+      <div class="project-copy">
+        <h1 class="project-title" id="role-project-title"><!--i18n:role.title-->Role management.<!--/i18n--></h1>
+        <p class="project-intro"><!--i18n:role.intro-->At PwC, I designed a role-based access model for a Fortune 500 airline’s employee app, defining what 80,000+ employees across 40 roles could see and do.<!--/i18n--></p>
+        <a class="project-follow" href="#role-project-context"><!--i18n:role.follow-->the role-management challenge ↓<!--/i18n--></a>
+      </div>
+      <div class="problem-copy"><h2><!--i18n:role.problem-->Problem: how do we manage app access for +80,000 employees?<!--/i18n--></h2></div>
+
+    </section>
+    <section class="project-context" id="role-project-context" aria-labelledby="role-context-title">
+      <h2 class="project-section-title" id="role-context-title"><!--i18n:role.mapStart-->01. I mapped<!--/i18n--><br><!--i18n:role.mapEnd-->access needs.<!--/i18n--></h2>
+      <div class="context-copy">
+        <p><!--i18n:role.mapBody-->I reviewed data extracts and spoke with teams across the hierarchy to understand how responsibilities should translate into access.<!--/i18n--></p>
+      </div>
+      <div class="section-visual">
+        <figure class="employee-pool">
+          <div class="pool-cloud" id="employee-pool-cloud" role="img" aria-label="An illustrative pool of 80 dots before grouping, representing about 80,000 employees." data-i18n-aria-label="role.poolLabel"></div>
+          <figcaption class="pool-caption"><!--i18n:role.poolCaption-->one pool of employees · one dot ≈ 1,000 people<!--/i18n--></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="project-context" aria-labelledby="role-needs-title">
+      <h2 class="project-section-title" id="role-needs-title"><!--i18n:role.beyondStart-->02. I looked beyond<!--/i18n--><br><!--i18n:role.beyondEnd-->departments.<!--/i18n--></h2>
+      <div class="context-copy">
+        <p><!--i18n:role.beyondBody-->Access needed to reflect both where someone worked and the job they did.<!--/i18n--></p>
+      </div>
+    </section>
+    <section class="project-context" aria-labelledby="role-groups-title">
+      <h2 class="project-section-title" id="role-groups-title"><!--i18n:role.codesStart-->03. I turned codes<!--/i18n--><br><!--i18n:role.codesEnd-->into roles.<!--/i18n--></h2>
+      <div class="context-copy">
+        <p><!--i18n:role.codesBody-->I combined department and job codes to map employees into 40 access roles.<!--/i18n--></p>
+      </div>
+      <div class="section-visual department-visual">
+        
+<div id="airline-department-grid">
+  <svg class="pen-filter" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="airline-pen-line" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency=".13" numOctaves="2" seed="8" result="pen-grain" />
+        <feDisplacementMap in="SourceGraphic" in2="pen-grain" scale="1.65" xChannelSelector="R" yChannelSelector="G" result="pen-stroke" />
+        <feOffset in="pen-stroke" dx=".3" dy=".2" result="pen-echo" />
+        <feComponentTransfer in="pen-echo" result="faint-echo"><feFuncA type="linear" slope=".24" /></feComponentTransfer>
+        <feMerge><feMergeNode in="faint-echo" /><feMergeNode in="pen-stroke" /></feMerge>
+      </filter>
+    </defs>
+  </svg>
+  <div class="airline-preview">
+    <section class="airline-paper" aria-label="Airline staff grouped by department" data-i18n-aria-label="role.departmentLabel">
+      <div class="airline-subtitle"><!--i18n:role.dotCaption-->one dot ≈ 1,000 employees<!--/i18n--></div>
+      <div class="department-grid"></div>
+      <div class="airline-foot"><span class="selection-summary" aria-live="polite"><!--i18n:role.total-->≈80,000 employees · 5 departments<!--/i18n--></span><div class="foot-actions"><span><!--i18n:role.illustrativeSplit-->illustrative department split<!--/i18n--></span><button class="replay-dots cursor-interaction" type="button" hidden><!--i18n:role.replay-->replay<!--/i18n--></button></div></div>
+    </section>
+  </div>
+</div>
+
+
+      </div>
+    </section>
+    <section class="project-context" aria-labelledby="role-permissions-title">
+      <h2 class="project-section-title" id="role-permissions-title"><!--i18n:role.exceptionsStart-->04. I made room<!--/i18n--><br><!--i18n:role.exceptionsEnd-->for exceptions.<!--/i18n--></h2>
+      <div class="context-copy">
+        <p><!--i18n:role.exceptionsBody-->We gave the support team a manual route to grant access when the standard mapping didn’t fit.<!--/i18n--></p>
+      </div>
+      <div class="section-visual">
+        <figure class="role-formation" aria-label="Illustrative role formation from department and job codes, with a separate exception path for two cases." data-i18n-aria-label="role.formationLabel">
+          <div class="role-flow">
+            <div class="role-inputs">
+              <div class="role-department" data-department="inflight" style="--dot-color:var(--role-coral)">
+                <span class="role-avatar" aria-hidden="true"><svg class="lucide" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/airline-icons.svg#concierge-bell"></use></svg></span>
+                <h3><!--i18n:role.inflight-->Inflight<!--/i18n--></h3>
+                <svg class="role-cluster" viewBox="0 0 240 210" role="img" aria-label="Inflight employees, with outlined subsets for job codes A and B." data-i18n-aria-label="role.inflightLabel">
+                  <g class="department-dots">
+                    <ellipse cx="95" cy="65" rx="7.8" ry="7.3" transform="rotate(-12 95 65)"/><ellipse cx="121" cy="64" rx="7.3" ry="7.8"/><ellipse cx="96" cy="90" rx="7.6" ry="7.2"/><ellipse cx="122" cy="91" rx="7.5" ry="7.8"/>
+                    <ellipse cx="65" cy="79" rx="7.5" ry="7.1"/><ellipse cx="156" cy="77" rx="7.7" ry="7.3"/><ellipse cx="70" cy="110" rx="7.3" ry="7.8"/><ellipse cx="148" cy="105" rx="7.6" ry="7.2"/><ellipse cx="178" cy="104" rx="7.8" ry="7.2"/>
+                    <ellipse cx="92" cy="125" rx="7.6" ry="7.1"/><ellipse cx="139" cy="130" rx="7.2" ry="7.9"/><ellipse cx="59" cy="145" rx="7.4" ry="7.7"/><ellipse cx="177" cy="139" rx="7.7" ry="7.2"/>
+                    <ellipse cx="88" cy="162" rx="7.8" ry="7.2"/><ellipse cx="117" cy="160" rx="7.2" ry="7.9"/><ellipse cx="145" cy="162" rx="7.5" ry="7.4"/><ellipse cx="169" cy="177" rx="7.5" ry="7.1"/>
+                  </g>
+                  <path class="job-boundary" d="M77 57C86 45 132 45 140 58C149 74 146 103 131 105C115 110 85 107 79 96C72 85 70 66 77 57Z"/>
+                  <path class="job-boundary" d="M74 152C92 144 140 144 155 153C167 163 155 176 137 177C112 180 84 176 76 168C69 164 68 158 74 152Z"/>
+                  <path class="job-leader" d="M70 30L89 49M70 192L85 174"/>
+                  <text x="35" y="23"><!--i18n:role.jobA-->Job code A<!--/i18n--></text><text x="25" y="209"><!--i18n:role.jobB-->Job code B<!--/i18n--></text>
+                </svg>
+              </div>
+              <div class="role-department" data-department="flight-ops" style="--dot-color:var(--role-blue)">
+                <span class="role-avatar" aria-hidden="true"><svg class="lucide" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/airline-icons.svg#plane"></use></svg></span>
+                <h3><!--i18n:role.flightOps-->Flight Ops<!--/i18n--></h3>
+                <svg class="role-cluster" viewBox="0 0 240 210" role="img" aria-label="Flight Ops employees, with outlined subsets for job codes A and B." data-i18n-aria-label="role.flightOpsLabel">
+                  <g class="department-dots">
+                    <ellipse cx="89" cy="72" rx="7.6" ry="7.3"/><ellipse cx="117" cy="73" rx="7.3" ry="7.8"/><ellipse cx="145" cy="71" rx="7.9" ry="7.2"/><ellipse cx="180" cy="58" rx="7.2" ry="7.7"/>
+                    <ellipse cx="56" cy="79" rx="7.5" ry="7.2"/><ellipse cx="68" cy="110" rx="7.1" ry="7.9"/><ellipse cx="101" cy="110" rx="7.6" ry="7.2"/><ellipse cx="134" cy="116" rx="7.8" ry="7.3"/>
+                    <ellipse cx="165" cy="101" rx="7.4" ry="7.7"/><ellipse cx="191" cy="106" rx="7.8" ry="7.2"/><ellipse cx="184" cy="137" rx="7.3" ry="7.8"/><ellipse cx="59" cy="143" rx="7.5" ry="7.2"/>
+                    <ellipse cx="100" cy="163" rx="7.8" ry="7.3"/><ellipse cx="129" cy="162" rx="7.3" ry="7.8"/><ellipse cx="158" cy="165" rx="7.7" ry="7.2"/>
+                  </g>
+                  <path class="job-boundary" d="M75 61C89 50 144 49 157 60C169 72 162 87 149 88C125 92 86 92 78 83C71 78 69 68 75 61Z"/>
+                  <path class="job-boundary" d="M85 153C107 145 151 145 169 155C181 166 167 178 148 178C126 181 97 178 88 171C79 166 78 158 85 153Z"/>
+                  <path class="job-leader" d="M70 30L87 54M72 191L94 175"/>
+                  <text x="35" y="23"><!--i18n:role.jobA-->Job code A<!--/i18n--></text><text x="25" y="209"><!--i18n:role.jobB-->Job code B<!--/i18n--></text>
+                </svg>
+              </div>
+            </div>
+            <svg class="flow-arrow input-role-arrow" viewBox="0 0 80 35" aria-hidden="true"><path d="M3 17C24 13 46 22 75 17M65 8L75 17L65 26"/></svg>
+            <div class="role-result"><span class="role-label"><!--i18n:role.roleA-->Role A<!--/i18n--></span><span class="role-rule"><!--i18n:role.rule-->Inflight + job code A<!--/i18n--></span></div>
+            <svg class="flow-arrow role-permission-arrow" viewBox="0 0 80 35" aria-hidden="true"><path d="M3 17Q35 15 75 17M65 8L75 17L65 26"/></svg>
+            <div class="role-permissions"><h3><!--i18n:role.permissions-->Permissions<!--/i18n--></h3><div class="permission-branches"><span><!--i18n:role.view-->View<!--/i18n--></span><span><!--i18n:role.update-->Update<!--/i18n--></span></div></div>
+            <div class="role-exceptions">
+              <svg class="exception-connectors" viewBox="0 0 180 90" role="img" aria-label="Two cases outside the standard mapping follow the exception path." data-i18n-aria-label="role.exceptionLabel">
+                <ellipse class="exception-dot" cx="14" cy="27" rx="8.2" ry="7.7" transform="rotate(-12 14 27)"/>
+                <ellipse class="exception-dot" cx="15" cy="65" rx="7.8" ry="8.3" transform="rotate(9 15 65)"/>
+                <path d="M31 27Q63 27 82 45M31 65Q63 65 82 45M82 45Q121 29 172 38"/>
+                <path class="arrow-tip" d="M162 29L173 38L161 46"/>
+              </svg>
+              <span class="exception-label"><!--i18n:role.exceptionPath-->Exception path<!--/i18n--><span class="exception-owner"><!--i18n:role.exceptionOwner-->Manual access through support<!--/i18n--></span></span>
+            </div>
+          </div>
+          <figcaption class="role-caption"><!--i18n:role.roleCaption-->Illustrative role and permissions<!--/i18n--></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="project-context" aria-labelledby="role-rollout-title">
+      <h2 class="project-section-title" id="role-rollout-title"><!--i18n:role.testStart-->05. We tested<!--/i18n--><br><!--i18n:role.testEnd-->the model and launched.<!--/i18n--></h2>
+      <div class="context-copy">
+        <p><!--i18n:role.testBody-->We put the model through user acceptance testing before rollout.<!--/i18n--></p>
+      </div>
+    </section>
+    <footer class="project-footer" aria-label="More work" data-i18n-aria-label="role.moreWork">
+      <a href="/"><!--i18n:role.allProjects-->← all projects<!--/i18n--></a>
+      <a href="/fuzz/"><!--i18n:role.nextProject-->Breadboard Fuzz →<!--/i18n--></a>
+    </footer>
+  </main>
+</div>
+
+</body></html>

@@ -5,7 +5,8 @@
     { id: 'tidle', path: '/tidle/', slide: 0, visible: true },
     { id: 'restitch', path: '/restitch/', slide: 3, visible: true },
     { id: 'breadboard', path: '/fuzz/', slide: 4, visible: true },
-    { id: 'beirut', path: '/beirut/', slide: 1, visible: true }
+    { id: 'beirut', path: '/beirut/', slide: 1, visible: true },
+    { id: 'role-management', path: '/role-management/', slide: 5, visible: true }
   ];
   window.PORTFOLIO_PROJECTS = projects;
   var hidden = projects.filter(function (project) { return !project.visible; });
