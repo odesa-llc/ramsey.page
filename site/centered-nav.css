@@ -11,7 +11,7 @@
 /* Selected name treatment: Easy Tilt, 36% straightening / 49% looseness. The mask follows the active ink color. */
 @supports (mask-image:url('/assets/avatar-name-easy-tilt.svg')) or (-webkit-mask-image:url('/assets/avatar-name-easy-tilt.svg')){
  .direction-nav.avatar-name-easy-tilt{padding:8px 0!important}
- .avatar-name-easy-tilt .direction-center-links .ascii-face-button{position:relative;height:112px;min-height:0;width:110px;padding:0;gap:0;transform:translateY(16px)}
+ .avatar-name-easy-tilt .direction-center-links .ascii-face-button{position:relative;height:112px;min-height:0;width:110px;padding:0;gap:0;transform:translateY(16px) scale(.95)}
  .avatar-name-easy-tilt .direction-center-links .ascii-face{position:absolute;left:50%;top:32px;transform:translateX(-50%);height:74px;width:auto}
  .avatar-name-easy-tilt .direction-center-links .ascii-face-name{position:absolute;left:50%;top:2px;transform:translateX(-50%);display:block;width:140px;height:118px;max-width:none;overflow:hidden;font-size:0;line-height:0;background:currentColor;pointer-events:none;-webkit-mask:url('/assets/avatar-name-easy-tilt.svg?v=13') center/contain no-repeat;mask:url('/assets/avatar-name-easy-tilt.svg?v=13') center/contain no-repeat}
  /* The existing portrait contour springs outward on hover. */
