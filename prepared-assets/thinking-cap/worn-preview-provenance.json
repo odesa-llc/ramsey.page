@@ -1,16 +1,16 @@
 {
   "mode": "built-in imagegen",
-  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-0d0abe88-b5de-416d-9936-a76de2771819.png",
-  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-lower-fit-bw.png",
+  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-b4412698-2783-4ffd-9a1e-b0bdd3348e9a.png",
+  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-deep-fit-bw.png",
   "construction_reference": "https://www.youtube.com/watch?v=K_tRLtpuhns&t=495s",
-  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-deep-fit-bw.png",
-  "web_asset": "site/assets/skull-cap/worn-preview-bw.jpg",
+  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-plain-background-bw.png",
+  "web_asset": "site/assets/skull-cap/worn-preview-plain-bw.jpg",
   "dimensions": [
     1088,
-    1446
+    1445
   ],
-  "sha256": "23a7fb5977445dca3ca870c88cfdccf8a95624d77c9f71a8772f84340b6b0cb8",
-  "prompt_file": "output/imagegen/skull-cap-portrait/deep-fit-bw-prompt.txt",
-  "changes": "Deeper head-hugging ear coverage matching the user reference, front just above the eyebrows, preserved brushed finish, four-panel joins and monochrome crewneck portrait.",
+  "sha256": "4bb62c49420dfd64d338f511a56684cb1dd77ef9a54fd2bc9c52bd5300984c5d",
+  "prompt_file": "output/imagegen/skull-cap-portrait/plain-background-bw-prompt.txt",
+  "changes": "Background-only edit: plain light neutral gray, faint soft contour shadow; approved deep fit, brushed finish, embroidery, seams, face, pose, sweater and monochrome styling preserved.",
   "fit_reference": "/var/folders/rj/0x7v_c8n7ss_klq9scfrjhyr0000gn/T/codex-clipboard-51fd17a0-af20-41a3-b0d2-2fd8b2d6fc85.png"
 }
