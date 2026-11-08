@@ -347,7 +347,7 @@
     "intro": "An old sweater, turned into a fitted beanie. My plan for making one, following wynunlimited’s tutorial.",
     "tutorial": "watch the tutorial ↗",
     "pattern": "get the pattern PDF ↗",
-    "heroCaption": "the shape I’m aiming for",
+    "heroCaption": "the tutorial’s finish",
     "step1": "Print the PDF at 100% / Actual size on A4 or Letter. Check the 50 mm square, then choose a size from the head measurements. Try a test first: knits stretch differently.",
     "step2": "Use an old knit sweater, or about ¼ metre of 60-inch-wide knit. Cut four pieces on the fold, with the stretch running across the head. Snip tiny 2 mm notches at both ends of each fold.",
     "step3": "Pair the pieces, right sides together. Match the tips and centre notches; sew one curved side of each pair at ¼ in (6 mm). Backstitch both ends. Sew slowly without stretching; the tutorial uses a 2.5 mm stitch. Press the seams open to reduce bulk.",
@@ -375,11 +375,9 @@
     "borderNote": "For the bottom edge, I’d add cream barbed-wire stitching 2 cm above the fold. Work on the outer halves while flat: two close rows, dense little wraps, then Xs beside each wrap. Match the pattern across seams, keep the lining free, and test the stretch first.",
     "borderCaption": "_hive.mentality_’s stitch ↗",
     "borderAlt": "The Instagram tutorial showing dense thread wraps and crossed barbs along two rows of stitching.",
-    "previewCaption": "the planned finish · drag to turn",
+    "previewCaption": "preview",
     "previewAlt": "A charcoal four-panel knit cap with a cream barbed-wire stitch circling its lower edge. Drag or use the arrow keys to turn it.",
-    "pause": "pause rotation",
-    "play": "play rotation",
-    "still": "generated still ↗",
-    "previewCredit": "AI finish study."
+    "pause": "pause",
+    "play": "play"
   }
 }

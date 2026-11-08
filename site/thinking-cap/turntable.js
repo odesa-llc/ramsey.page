@@ -23,8 +23,8 @@ async function init() {
   renderer.toneMappingExposure = 1.2;
   const scene = new T.Scene();
   const camera = new T.PerspectiveCamera(30, 1, 0.1, 30);
-  camera.position.set(0, 2.05, 5.2);
-  camera.lookAt(0, 0.82, 0);
+  camera.position.set(0, 1.85, 5.2);
+  camera.lookAt(0, 0.74, 0);
   scene.add(new T.HemisphereLight(0xffffff, 0x66645f, 3));
   const key = new T.DirectionalLight(0xfffcf6, 3.7);
   key.position.set(-3, 5, 4);
@@ -49,14 +49,30 @@ async function init() {
   cap.rotation.y = 0.35;
   scene.add(cap);
   const tau = Math.PI * 2;
+  const random = seed => {
+    const value = Math.sin(seed * 12.9898 + 4.1414) * 43758.5453;
+    return value - Math.floor(value);
+  };
+  const angleDistance = (a, b) => Math.atan2(Math.sin(a - b), Math.cos(a - b));
 
   function surface(a, t, lift = 0) {
-    const crown = Math.max(0, t - 0.22) / 0.78;
-    const base = Math.sqrt(Math.max(0, 1 - crown * crown));
-    const seam = 0.009 * Math.exp(-Math.pow(Math.sin(2 * (a - Math.PI / 4)) / 0.035, 2)) * Math.sin(t * Math.PI);
-    const ripple = (0.008 * Math.sin(a * 9 + t * 14) + 0.004 * Math.cos(a * 4)) * Math.pow(1 - t, 3);
-    const r = base * (0.982 + 0.018 * Math.sin(t * Math.PI)) - seam + ripple + lift;
-    return new T.Vector3(r * Math.sin(a), t * 1.66 + 0.004 * Math.cos(a * 2) * (1 - t), r * Math.cos(a) * 0.92);
+    const crown = Math.max(0, t - 0.18) / 0.82;
+    const base = Math.pow(Math.max(0, 1 - Math.pow(crown, 2.2)), 1 / 2.2);
+    const body = Math.sin(t * Math.PI);
+    const seam = 0.024 * Math.exp(-Math.pow(Math.sin(2 * (a - Math.PI / 4)) / 0.11, 2)) * body;
+    const panels = 0.016 * Math.cos(4 * a + 0.12) * Math.pow(body, 1.2);
+    const ripple = (0.011 * Math.sin(a * 9 + t * 14) + 0.007 * Math.cos(a * 4)) * Math.pow(1 - t, 2);
+    // Shallow unequal folds interrupt the smooth dome, like soft sewn knit.
+    const frontFold = Math.exp(-Math.pow(angleDistance(a, 0.58) / 0.17, 2));
+    const backFold = Math.exp(-Math.pow(angleDistance(a, 3.55) / 0.21, 2));
+    const folds = (0.046 * frontFold + 0.036 * backFold) * Math.exp(-Math.pow((t - 0.64) / 0.27, 2)) * body;
+    const r = base * (0.982 + 0.018 * body) - seam - folds + panels + ripple + lift;
+    const hemWave = (0.011 * Math.sin(a * 3 + 0.4) + 0.006 * Math.cos(a * 7)) * Math.pow(1 - t, 3);
+    const uneven = (0.016 * Math.sin(a * 3 + 0.4) + 0.009 * Math.cos(a * 5)) * body;
+    const crownDip = 0.042 * Math.exp(-Math.pow(base / 0.25, 2));
+    return new T.Vector3(r * Math.sin(a) + 0.065 * Math.pow(t, 3),
+      t * 1.5 - crownDip + hemWave + uneven,
+      r * Math.cos(a) * 0.84 - 0.035 * Math.pow(t, 3));
   }
 
   const positions = [], uvs = [], indices = [];
@@ -80,11 +96,9 @@ async function init() {
   cap.add(new T.Mesh(geometry, cloth));
 
   // A narrow soft edge, rather than a turned-up ribbed cuff.
-  const hem = new T.Mesh(new T.TorusGeometry(0.984, 0.012, 8, 160), cloth);
-  hem.rotation.x = Math.PI / 2;
-  hem.scale.y = 0.92;
-  hem.position.y = 0.006;
-  cap.add(hem);
+  const hem = [];
+  for (let i = 0; i <= 200; i++) hem.push(surface(i / 200 * tau, 0.004));
+  cord(hem, 0.012, cloth, 200);
   const inside = new T.Mesh(geometry, cloth.clone());
   inside.scale.set(0.982, 0.985, 0.982);
   inside.position.y = 0.012;
@@ -101,36 +115,55 @@ async function init() {
     cord(points, 0.0025, seamThread, 70);
   }
 
-  // Parallel wandering strands, dense wraps and crossed thread barbs.
-  const repeats = 14, bandT = 0.105;
+  // Larger, uneven machine-darned barbs; each crossed stitch has its own angle.
+  const repeats = 14, bandT = 0.13;
+  const bandCenter = a => bandT + Math.sin(a * 3 + 0.6) * 0.005 + Math.sin(a * 7) * 0.003;
   for (let strand = -1; strand <= 1; strand += 2) {
     const points = [];
     for (let i = 0; i <= 560; i++) {
       const a = i / 560 * tau;
-      const wave = Math.sin(a * repeats) * 0.006 + Math.sin(a * repeats * 2) * 0.002;
-      const spread = 0.004 + 0.005 * (1 - Math.cos(a * repeats)) / 2;
-      points.push(surface(a, bandT + wave + strand * spread, 0.005));
+      const wave = Math.sin(a * repeats + 0.3) * 0.005 + Math.sin(a * 19) * 0.002;
+      const spread = 0.006 + 0.005 * (1 - Math.cos(a * repeats + 0.3)) / 2;
+      points.push(surface(a, bandCenter(a) + wave + strand * spread, 0.005));
     }
     cord(points, 0.0027, thread, 560);
   }
   for (let k = 0; k < repeats; k++) {
-    const a = k * tau / repeats;
-    for (let wrap = -2; wrap <= 2; wrap++) {
+    const a = k * tau / repeats + (random(k + 4) - 0.5) * 0.05;
+    const center = bandCenter(a);
+    const wraps = 6 + Math.floor(random(k + 41) * 3);
+    const width = 0.043 + random(k + 81) * 0.025;
+    for (let wrap = 0; wrap < wraps; wrap++) {
       const points = [];
+      const seed = k * 23 + wrap * 3;
+      const offset = (wrap / (wraps - 1) - 0.5) * width;
+      const height = 0.034 + random(seed + 12) * 0.024;
+      const lean = (random(seed + 32) - 0.5) * 0.023;
       for (let j = 0; j <= 14; j++) {
         const s = j / 14;
-        points.push(surface(a + wrap * 0.006 + 0.004 * Math.sin(s * Math.PI), bandT - 0.014 + 0.028 * s, 0.006 + 0.003 * Math.sin(s * Math.PI)));
+        const wobble = 0.002 * Math.sin(s * Math.PI * 3 + seed) * Math.sin(s * Math.PI);
+        points.push(surface(a + offset + lean * (s - 0.5) + wobble,
+          center + (s - 0.5) * height + (random(seed + 3) - 0.5) * 0.01,
+          0.006 + 0.003 * Math.sin(s * Math.PI)));
       }
       cord(points, 0.0028, thread, 14);
     }
     for (const side of [-1, 1]) {
       for (const slope of [-1, 1]) {
+        const seed = k * 31 + side * 7 + slope * 3;
+        const reach = 0.11 + random(seed + 7) * 0.055;
+        const span = 0.049 + random(seed + 24) * 0.037;
+        const offset = side * (0.041 + random(seed + 52) * 0.017);
+        const vertical = (random(seed + 14) - 0.5) * 0.022;
         const points = [];
         for (let j = 0; j <= 10; j++) {
           const s = j / 10 - 0.5;
-          points.push(surface(a + side * 0.026 + s * 0.027, bandT + slope * s * 0.067, 0.005 + 0.003 * Math.sin((s + 0.5) * Math.PI)));
+          const wobble = Math.sin((s + 0.5) * Math.PI) * 0.002 * Math.sin(seed + s * 8);
+          points.push(surface(a + offset + s * span + wobble,
+            center + vertical + slope * s * reach,
+            0.005 + 0.003 * Math.sin((s + 0.5) * Math.PI)));
         }
-        cord(points, 0.0025, thread, 12);
+        cord(points, 0.0024 + random(seed + 93) * 0.0005, thread, 12);
       }
     }
   }

@@ -347,7 +347,7 @@
     "intro": "Transformer un vieux pull en bonnet ajusté. Mon plan pour en faire un, d’après le tutoriel de wynunlimited.",
     "tutorial": "voir le tutoriel ↗",
     "pattern": "obtenir le patron PDF ↗",
-    "heroCaption": "la forme que je vise",
+    "heroCaption": "le bonnet du tutoriel",
     "step1": "Imprimer le PDF à 100 % / taille réelle sur du papier A4 ou Letter. Vérifier le carré de 50 mm, puis choisir la taille selon le tour de tête. Faire un essai : chaque maille réagit différemment.",
     "step2": "Utiliser un vieux pull en maille, ou environ ¼ de mètre de maille en 152 cm de large. Couper quatre pièces au pli, l’élasticité dans le sens du tour de tête. Faire de petits crans de 2 mm aux deux extrémités de chaque pli.",
     "step3": "Assembler les pièces deux par deux, endroit contre endroit. Aligner les pointes et les crans centraux ; coudre un côté arrondi de chaque paire à 6 mm du bord. Faire un point d’arrêt aux extrémités. Coudre lentement sans étirer ; le tutoriel utilise un point de 2,5 mm. Ouvrir les coutures au fer pour limiter l’épaisseur.",
@@ -375,11 +375,9 @@
     "borderNote": "Pour le bas, j’ajouterais du fil barbelé écru à 2 cm du pli. Travailler les moitiés extérieures à plat : deux lignes proches, de petits points denses, puis des X de chaque côté. Aligner le motif aux coutures, laisser la doublure libre et tester l’élasticité d’abord.",
     "borderCaption": "le point de _hive.mentality_ ↗",
     "borderAlt": "Le tutoriel Instagram montrant des points denses et des croix le long de deux lignes de couture.",
-    "previewCaption": "le résultat prévu · faire glisser pour tourner",
+    "previewCaption": "aperçu",
     "previewAlt": "Un bonnet en maille anthracite à quatre panneaux, avec une ligne de fil barbelé écru au-dessus du bord. Faire glisser ou utiliser les flèches pour le tourner.",
-    "pause": "mettre en pause",
-    "play": "lancer la rotation",
-    "still": "image générée ↗",
-    "previewCredit": "Étude du résultat par IA."
+    "pause": "pause",
+    "play": "lancer"
   }
 }

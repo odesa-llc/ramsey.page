@@ -17,13 +17,23 @@
   "assets": [
     "site/assets/thinking-cap/planned-cap.webp",
     "site/assets/thinking-cap/charcoal-knit.webp",
-    "site/assets/thinking-cap/barbwire-reference.webp"
+    "site/assets/thinking-cap/barbwire-reference.webp",
+    "site/assets/thinking-cap/cap-preview-v2.webp"
   ],
-  "animation": "Actual WebGL four-panel cap geometry with generated knit texture, handmade thread geometry, 42 second rotation about the vertical y axis. Generated product still is the fallback.",
+  "animation": "Actual WebGL four-panel cap geometry with the generated knit texture and handmade thread geometry. A 42 second rotation about the vertical y axis. The current still fallback is captured from the revised 3D viewer.",
   "photo_treatment": "CSS grayscale(1) contrast(.88) brightness(1.04); original tutorial frames preserved.",
   "three": {
     "version": "0.180.0",
     "source": "https://registry.npmjs.org/three/-/three-0.180.0.tgz",
     "license": "MIT; shipped in vendor/THREE-LICENSE.txt"
+  },
+  "refinement": {
+    "requested": "Broader taller uneven barbs; natural sewn cap silhouette; preview at top with only preview and pause captions.",
+    "geometry": "Shortened crown, oval opening, unequal panel depressions, shallow folds, slight crown lean and uneven hem. Deterministically varied stitch heights, widths, spacing, angles and wrap counts.",
+    "fallback": "site/assets/thinking-cap/cap-preview-v2.webp (captured from the revised 3D viewer)",
+    "fallback_dimensions": [
+      927,
+      858
+    ]
   }
 }
