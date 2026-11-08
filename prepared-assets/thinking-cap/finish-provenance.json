@@ -25,7 +25,8 @@
     "site/assets/thinking-cap/cap-preview-v5.webp",
     "site/assets/thinking-cap/cap-preview-v6.webp",
     "site/assets/skull-cap/worn-preview-bw.jpg",
-    "site/assets/skull-cap/worn-preview-plain-bw.jpg"
+    "site/assets/skull-cap/worn-preview-plain-bw.jpg",
+    "site/assets/skull-cap/worn-preview-front-nudged-bw.jpg"
   ],
   "animation": "Actual WebGL four-panel cap geometry with the generated knit texture and handmade thread geometry. A 42 second rotation about the vertical y axis. The current still fallback is captured from the revised 3D viewer.",
   "photo_treatment": "CSS grayscale(1) contrast(.88) brightness(1.04); original tutorial frames preserved.",
@@ -62,7 +63,7 @@
       533
     ],
     "construction": "Subtle pressed seam channels with shallow fabric lips on each side of the join, plus narrow tonal stitching. No contrasting piping.",
-    "photo_fit": "Deeper ear-covering fit following the user’s fitted skull-cap reference, front just above the eyebrows; neutral black-and-white portrait in the existing finish area.",
+    "photo_fit": "Deep ear-covering fit with the front hem gently nudged higher above the eyebrows, blending into unchanged low side edges; subtle panel joins and monochrome crewneck portrait.",
     "portrait_provenance": "prepared-assets/thinking-cap/worn-preview-provenance.json",
     "photo_background": "Plain light gray with a faint soft contour shadow; approved ear-covering fit preserved."
   }
