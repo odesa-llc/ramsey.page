@@ -361,16 +361,25 @@
     "gapCaption": "leave the turning gap",
     "turnCaption": "turn, then close the opening",
     "tackCaption": "a small stitch through both crowns",
-    "heroAlt": "The tutorial’s finished purple four-panel beanie held over an ironing board.",
+    "heroAlt": "The tutorial’s finished four-panel beanie held over an ironing board, shown in black and white.",
     "scaleAlt": "The pattern cover’s square marked 2 inches or 5 centimetres for checking the print scale.",
     "patternAlt": "The size 3 pattern showing cut four, a horizontal stretch arrow, cut on fold, and quarter-inch seam allowance.",
-    "cutAlt": "Four purple knit pieces opened out, with pointed ends and centre folds.",
+    "cutAlt": "Four knit pieces opened out, with pointed ends and centre folds, shown in black and white.",
     "pinAlt": "Two pairs of knit panels with one curved side pinned on each pair.",
     "pressAlt": "The two sewn pairs opened out, with their seam allowances pressed apart.",
     "gapAlt": "The joined panels pinned around the perimeter, with the small turning gap indicated near a crown.",
     "turnAlt": "The right-side-out double-ended beanie before one half is tucked inside the other.",
     "tackAlt": "A hand-sewing needle joining the inner and outer crown at their seam intersections.",
     "credit": "Reference frames from wynunlimited’s tutorial. Click a picture to enlarge, or its time to rewatch.",
-    "back": "all projects ↗"
+    "back": "all projects ↗",
+    "borderNote": "For the bottom edge, I’d add cream barbed-wire stitching 2 cm above the fold. Work on the outer halves while flat: two close rows, dense little wraps, then Xs beside each wrap. Match the pattern across seams, keep the lining free, and test the stretch first.",
+    "borderCaption": "_hive.mentality_’s stitch ↗",
+    "borderAlt": "The Instagram tutorial showing dense thread wraps and crossed barbs along two rows of stitching.",
+    "previewCaption": "the planned finish · drag to turn",
+    "previewAlt": "A charcoal four-panel knit cap with a cream barbed-wire stitch circling its lower edge. Drag or use the arrow keys to turn it.",
+    "pause": "pause rotation",
+    "play": "play rotation",
+    "still": "generated still ↗",
+    "previewCredit": "AI finish study."
   }
 }

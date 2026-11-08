@@ -1,0 +1,29 @@
+{
+  "mode": "built-in imagegen",
+  "product": {
+    "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-abef15a4-faf8-44cd-8981-6207fedce64d.png",
+    "prompt": "Create a photorealistic studio product visualization of the planned handmade Thinking Cap for a personal sewing project. Image 1 is the construction/shape reference: a close-fitting, short, four-panel skull-cap beanie sewn from an old fine-knit sweater, rounded crown, four subtle curved seams meeting at the top, double layered, a simple folded lower edge with NO turned-up cuff. Image 2 is ONLY a stitch motif reference: handmade barbed-wire embroidery, two closely parallel gently wandering cream threads with little tightly darned wraps at intervals and crossed X-shaped stitches on either side of each wrap. Make one complete cap, charcoal-black fine wool/cotton sweater knit with visible small knit loops and soft natural fabric imperfections. Add one continuous narrow off-white barbed-wire embroidered line circling the entire cap about 18 mm above its bottom edge. The embroidery is thread, not actual metal wire. Keep the cap modestly rounded and fitted, about 20 cm tall, without a point or pompom. Show it upright as if supported by an invisible head form, three-quarter view from slightly above eye level, entire cap visible and centered with comfortable margins. Soft broad studio light, convincing fabric depth and thread detail, neutral tones to suit a warm paper and navy handwriting website. Transparent background with no floor, no person, no hands, no text, no logos, no other objects. High quality realistic three-dimensional product photograph."
+  },
+  "texture": {
+    "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-c2549e5c-93e1-4d3c-b5eb-a401e915c604.png",
+    "prompt": "A seamless repeating square PBR base-color texture of charcoal-black fine-gauge knitted sweater cloth, for a realistic 3D skull-cap beanie. Orthographic macro view directly perpendicular to a perfectly flat fabric plane. Small vertical columns of V-shaped stockinette knit loops, subtle worn wool/cotton fibres and tiny natural irregularities. The whole image is uniformly filled with approximately 65 stitch columns across, medium-fine sweater gauge. Neutral charcoal gray, the fibres visibly detailed, no colored flecks. Very flat diffuse illumination, no directional shadows, no gradients, no folds, no seams, no embroidery, no cap silhouette, no borders, no text, no perspective, no objects. Tile seamlessly on all four edges. Photorealistic material scan suitable to wrap on a 3D cap mesh. Square image."
+  },
+  "instagram": {
+    "url": "https://www.instagram.com/p/DPLJukSjiYv/",
+    "creator": "_hive.mentality_",
+    "captured_frame_seconds": 26,
+    "note": "Screenshot of the crossed-barb step; the cap placement is an adaptation."
+  },
+  "assets": [
+    "site/assets/thinking-cap/planned-cap.webp",
+    "site/assets/thinking-cap/charcoal-knit.webp",
+    "site/assets/thinking-cap/barbwire-reference.webp"
+  ],
+  "animation": "Actual WebGL four-panel cap geometry with generated knit texture, handmade thread geometry, 42 second rotation about the vertical y axis. Generated product still is the fallback.",
+  "photo_treatment": "CSS grayscale(1) contrast(.88) brightness(1.04); original tutorial frames preserved.",
+  "three": {
+    "version": "0.180.0",
+    "source": "https://registry.npmjs.org/three/-/three-0.180.0.tgz",
+    "license": "MIT; shipped in vendor/THREE-LICENSE.txt"
+  }
+}
