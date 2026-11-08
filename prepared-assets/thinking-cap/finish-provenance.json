@@ -18,7 +18,9 @@
     "site/assets/thinking-cap/planned-cap.webp",
     "site/assets/thinking-cap/charcoal-knit.webp",
     "site/assets/thinking-cap/barbwire-reference.webp",
-    "site/assets/thinking-cap/cap-preview-v2.webp"
+    "site/assets/thinking-cap/cap-preview-v2.webp",
+    "site/assets/thinking-cap/fashion-army-pastel-backdrop.webp",
+    "site/assets/thinking-cap/cap-preview-v3.webp"
   ],
   "animation": "Actual WebGL four-panel cap geometry with the generated knit texture and handmade thread geometry. A 42 second rotation about the vertical y axis. The current still fallback is captured from the revised 3D viewer.",
   "photo_treatment": "CSS grayscale(1) contrast(.88) brightness(1.04); original tutorial frames preserved.",
@@ -35,5 +37,9 @@
       927,
       858
     ]
+  },
+  "backdrop": {
+    "source": "prepared-assets/thinking-cap/backdrop-provenance.json",
+    "current_fallback": "site/assets/thinking-cap/cap-preview-v3.webp"
   }
 }

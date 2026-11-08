@@ -30,11 +30,11 @@
 .cap-finish{padding-top:28px;border-top:1px solid #8faa9a55;align-items:start}
 .cap-stitch-reference{max-width:260px;margin-top:26px!important}
 .cap-stitch-reference .frame-link img{aspect-ratio:5/3;object-fit:cover;object-position:50% 61%}
-.cap-turntable{position:relative;width:100%;aspect-ratio:1.08;isolation:isolate;overflow:hidden;border:1px solid #8FAA9A;border-radius:18px 13px 20px 15px;background:radial-gradient(ellipse at 48% 35%,#fff 0%,#f0f0ec 90%);cursor:grab;touch-action:pan-y}
+.cap-turntable{position:relative;width:100%;aspect-ratio:1.08;isolation:isolate;overflow:hidden;border:1px solid #8FAA9A;border-radius:18px 13px 20px 15px;background:#d1d8dc url("/assets/thinking-cap/fashion-army-pastel-backdrop.webp") center/cover no-repeat;container-type:inline-size;cursor:grab;touch-action:pan-y}
 .cap-turntable.is-dragging{cursor:grabbing}
 .cap-turntable:focus-visible{outline:2px solid #0D2565;outline-offset:6px}
 .cap-turntable canvas,.cap-poster{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
-.cap-poster{transition:opacity .3s}
+.cap-poster{object-fit:cover;transition:opacity .3s}
 .cap-turntable canvas{opacity:0;transition:opacity .3s}
 .cap-turntable.has-model canvas{opacity:1}.cap-turntable.has-model .cap-poster{opacity:0}
 .cap-ground{position:absolute;left:20%;right:20%;bottom:8%;height:6%;border-radius:50%;background:#28282225;filter:blur(13px);z-index:-1}
@@ -46,3 +46,6 @@
 
 .cap-turntable:not(.has-model) .cap-ground{opacity:0}
 .project-opening .cap-preview{align-self:center}
+
+/* Fine square screen texture, confined to the pastel background. */
+.cap-turntable::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(90deg,rgba(255,255,255,.14) 0 14%,rgba(80,100,116,.055) 14% 28%,transparent 28%),linear-gradient(0deg,rgba(255,255,255,.14) 0 14%,rgba(80,100,116,.055) 14% 28%,transparent 28%);background-size:6px 6px;background-size:1cqw 1cqw}
