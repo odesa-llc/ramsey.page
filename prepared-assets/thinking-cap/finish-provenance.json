@@ -21,7 +21,8 @@
     "site/assets/thinking-cap/cap-preview-v2.webp",
     "site/assets/thinking-cap/fashion-army-pastel-backdrop.webp",
     "site/assets/thinking-cap/cap-preview-v3.webp",
-    "site/assets/thinking-cap/cap-preview-v4.webp"
+    "site/assets/thinking-cap/cap-preview-v4.webp",
+    "site/assets/thinking-cap/cap-preview-v5.webp"
   ],
   "animation": "Actual WebGL four-panel cap geometry with the generated knit texture and handmade thread geometry. A 42 second rotation about the vertical y axis. The current still fallback is captured from the revised 3D viewer.",
   "photo_treatment": "CSS grayscale(1) contrast(.88) brightness(1.04); original tutorial frames preserved.",
@@ -41,7 +42,7 @@
   },
   "backdrop": {
     "source": "prepared-assets/thinking-cap/backdrop-provenance.json",
-    "current_fallback": "site/assets/thinking-cap/cap-preview-v4.webp"
+    "current_fallback": "site/assets/thinking-cap/cap-preview-v5.webp"
   },
   "stitch_width_refinement": "Central darned wraps vary from narrow to wide, with thread count following the width and the two crossed ends positioned beside each cluster."
 }
