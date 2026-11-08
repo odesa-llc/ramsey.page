@@ -284,7 +284,9 @@
     "beirutTitle": "Beyrouth, au fil des rues — ramsey hatoum",
     "beirutDescription": "Beyrouth à travers les photos de Ramsey Hatoum : scènes de rue, ateliers, cafés et ambiances nocturnes.",
     "roleTitle": "Gestion des rôles — ramsey hatoum",
-    "roleDescription": "Chez PwC, j’ai conçu un modèle d’accès par rôle pour l’application des employés d’une compagnie aérienne du Fortune 500, définissant ce que plus de 80 000 personnes réparties sur 40 rôles pouvaient voir et faire."
+    "roleDescription": "Chez PwC, j’ai conçu un modèle d’accès par rôle pour l’application des employés d’une compagnie aérienne du Fortune 500, définissant ce que plus de 80 000 personnes réparties sur 40 rôles pouvaient voir et faire.",
+    "thinkingCapTitle": "Thinking cap — ramsey hatoum",
+    "thinkingCapDescription": "Un plan illustré pour coudre un bonnet ajusté à partir d’un vieux pull en maille, d’après le tutoriel Thinking Cap de wynunlimited."
   },
   "analytics": {
     "title": "Quelques statistiques de visite ?",
@@ -339,5 +341,36 @@
     "flightOpsLabel": "Personnel des opérations aériennes, avec des sous-ensembles pour les codes métier A et B.",
     "exceptionLabel": "Deux cas hors des règles standard suivent le parcours d’exception.",
     "moreWork": "Autres projets"
+  },
+  "thinkingCap": {
+    "title": "Thinking cap.",
+    "intro": "Transformer un vieux pull en bonnet ajusté. Mon plan pour en faire un, d’après le tutoriel de wynunlimited.",
+    "tutorial": "voir le tutoriel ↗",
+    "pattern": "obtenir le patron ↗",
+    "heroCaption": "la forme que je vise",
+    "step1": "Imprimer le patron à 100 % sur du papier A4 ou Letter. Vérifier le carré de 2 pouces / 5 cm, puis choisir la taille selon le tour de tête. Faire un essai : chaque maille réagit différemment.",
+    "step2": "Utiliser un vieux pull en maille, ou environ ¼ de mètre de maille en 152 cm de large. Couper quatre pièces au pli, l’élasticité dans le sens du tour de tête. Faire de petits crans de 2 mm aux deux extrémités de chaque pli.",
+    "step3": "Assembler les pièces deux par deux, endroit contre endroit. Aligner les pointes et les crans centraux ; coudre un côté arrondi de chaque paire à 6 mm du bord. Faire un point d’arrêt aux extrémités. Coudre lentement sans étirer ; le tutoriel utilise un point de 2,5 mm. Ouvrir les coutures au fer pour limiter l’épaisseur.",
+    "step4": "Ouvrir les deux paires et les placer endroit contre endroit. Aligner les coutures et les crans, puis épingler le contour. Garder une ouverture de 5 cm près du sommet intérieur. Coudre le reste du contour à 6 mm, avec un point d’arrêt de chaque côté de l’ouverture.",
+    "step5": "Retourner par l’ouverture et la refermer à la machine. Rentrer cette moitié dans l’autre, en alignant les coutures du sommet. Repasser doucement le pli du bas. En option : fixer les deux sommets par un petit point à la main pour maintenir les épaisseurs au lavage.",
+    "scaleCaption": "vérifier l’échelle d’impression",
+    "patternCaption": "repère du patron · pas à l’échelle",
+    "cutCaption": "les quatre pièces dépliées",
+    "pinCaption": "un côté arrondi par paire",
+    "pressCaption": "ouvrir les coutures au fer",
+    "gapCaption": "garder une ouverture pour retourner",
+    "turnCaption": "retourner, puis fermer l’ouverture",
+    "tackCaption": "un petit point entre les deux sommets",
+    "heroAlt": "Le bonnet violet à quatre panneaux du tutoriel, présenté sur une planche à repasser.",
+    "scaleAlt": "Le carré de contrôle du patron, marqué 2 pouces ou 5 centimètres pour vérifier l’échelle d’impression.",
+    "patternAlt": "Le patron de taille 3 indiquant quatre pièces, le sens horizontal de l’élasticité, la coupe au pli et la marge de couture.",
+    "cutAlt": "Quatre pièces de maille violette dépliées, avec leurs extrémités pointues et leurs plis centraux.",
+    "pinAlt": "Deux paires de panneaux en maille, épinglés sur un côté arrondi de chaque paire.",
+    "pressAlt": "Les deux paires cousues et dépliées, avec leurs marges de couture ouvertes au fer.",
+    "gapAlt": "Les panneaux épinglés sur le contour, avec la petite ouverture indiquée près d’un sommet.",
+    "turnAlt": "Le bonnet à deux extrémités retourné sur l’endroit, avant de rentrer une moitié dans l’autre.",
+    "tackAlt": "Une aiguille à coudre reliant les sommets intérieur et extérieur à l’intersection des coutures.",
+    "credit": "Images de référence tirées du tutoriel de wynunlimited. Cliquer sur une image pour l’agrandir, ou sur son minutage pour revoir le passage.",
+    "back": "tous les projets ↗"
   }
 }

@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from urllib.parse import urlsplit
 from xml.etree import ElementTree as ET
-from build import PAGES, LANGUAGES, page_path, load_catalogs
+from build import PAGES, LANGUAGES, UNLISTED_PAGES, page_path, load_catalogs
 
 
 class Document(HTMLParser):
@@ -24,7 +24,8 @@ def check(output, base_path, site_url):
         for lang in LANGUAGES:
             route = page_path(page, lang)
             absolute = site_url + base_path.rstrip('/') + route
-            expected.add(absolute)
+            if page not in UNLISTED_PAGES:
+                expected.add(absolute)
             source = (output / (route.lstrip('/') + 'index.html')).read_text()
             assert source.index('<meta charset="utf-8">') < 1024
             doc = Document(source)
@@ -35,7 +36,15 @@ def check(output, base_path, site_url):
             for locale in LANGUAGES:
                 assert alternates[locale] == site_url + base_path.rstrip('/') + page_path(page, locale)
             assert alternates['x-default'] == site_url + base_path.rstrip('/') + ('/' if page == 'home' else page_path(page, 'en'))
-            assert not any(a.get('name') == 'robots' and 'noindex' in a.get('content', '') for _, a in doc.tags)
+            noindex = any(a.get('name') == 'robots' and 'noindex' in a.get('content', '') for _, a in doc.tags)
+            assert noindex == (page in UNLISTED_PAGES), (route, noindex)
+            if page in UNLISTED_PAGES:
+                alias = Document((output / PAGES[page][0]).read_text())
+                assert any(a.get('name') == 'robots' and 'noindex' in a.get('content', '') for _, a in alias.tags)
+            else:
+                hidden_routes = {base_path.rstrip('/') + page_path(hidden, lang) for hidden in UNLISTED_PAGES}
+                hidden_routes.update(base_path + PAGES[hidden][0].removesuffix('index.html') for hidden in UNLISTED_PAGES)
+                assert not any(tag == 'a' and urlsplit(a.get('href', '')).path in hidden_routes for tag, a in doc.tags), route
             assert '<!--i18n:' not in source and 'data-i18n-' not in source
             assert not any('language-entry.js' in a.get('src', '') for _, a in doc.tags)
             assert len([a for tag, a in doc.tags if tag == 'script' and '/i18n.js?' in a.get('src', '')]) == 1

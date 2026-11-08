@@ -1,0 +1,27 @@
+/* A short working reference, using the portfolio's shared project opening. */
+.cap-project{--project-paper:#F8F8F6;--project-ink:#0D2565;-webkit-font-smoothing:antialiased}
+.cap-project *{box-sizing:border-box}
+.cap-project .project-title{margin-bottom:18px}
+.cap-project .project-intro{max-width:31ch;font-size:25px;line-height:1.48}
+.cap-project .project-opening{padding-bottom:64px}
+.cap-project .project-opening-grid{align-items:center}
+.cap-sources{display:flex;gap:12px 26px;flex-wrap:wrap;margin-top:25px;font-size:19px;line-height:1.4}
+.cap-sources a,.cap-footer>a{border-bottom:1px solid color-mix(in srgb,currentColor 35%,transparent);padding-bottom:3px}
+.cap-project a:hover{opacity:.72}
+.cap-project a:focus-visible{outline:2px solid #0D2565;outline-offset:6px;border-radius:2px}
+.cap-project figure{margin:0;min-width:0}
+.cap-project .frame-link{display:block;border:1px solid #8FAA9A;border-radius:12px 9px 14px 10px;overflow:hidden}
+.cap-project .frame-link img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#eee6df}
+.cap-project figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:10px 2px 0;font-size:16px;line-height:1.4}
+.frame-time{white-space:nowrap;opacity:.72}
+.cap-build{display:grid;gap:62px;padding:10px 0 38px}
+.cap-step{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:center}
+.cap-note{margin:0;max-width:34ch;font-size:22px;line-height:1.55;text-wrap:pretty}
+.cap-media{min-width:0}
+.cap-pair{display:grid;gap:20px;grid-template-columns:1fr 1fr;align-items:start}
+.cap-pair figcaption{font-size:15px;flex-wrap:wrap;gap:3px 10px}
+.cap-footer{margin-top:24px;padding:22px 0 12px;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent);display:flex;gap:28px;justify-content:space-between;align-items:start;font-size:17px;line-height:1.5}
+.cap-footer p{max-width:55ch;margin:0;opacity:.75}.cap-footer>a{white-space:nowrap}
+@media(min-width:1536px){.cap-step{grid-template-columns:minmax(0,480px) minmax(0,1fr);gap:25px}.cap-note{font-size:25px;max-width:33ch}.cap-build{gap:80px}.cap-pair{gap:26px}}
+@media(max-width:999px){.cap-project .project-opening-grid{gap:28px}.cap-project .project-intro{max-width:40ch}.cap-project .project-visual{max-width:100%}.cap-project .project-opening{padding-bottom:44px}.cap-step{grid-template-columns:1fr;gap:22px}.cap-note{max-width:48ch}.cap-build{gap:46px}.cap-pair{gap:20px}.cap-project .cap-hero{max-width:100%}}
+@media(max-width:520px){.cap-project .project-intro{font-size:23px}.cap-sources{font-size:18px;gap:12px 22px}.cap-note{font-size:21px;line-height:1.5}.cap-pair{grid-template-columns:1fr;gap:20px}.cap-project figcaption,.cap-pair figcaption{font-size:16px;flex-wrap:nowrap}.cap-footer{display:block;font-size:16px}.cap-footer>a{display:inline-block;margin-top:20px}.cap-build{gap:42px}}

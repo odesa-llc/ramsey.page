@@ -22,7 +22,9 @@ PAGES = {
     'fuzz': ('fuzz/index.html', {'en': 'fuzz/', 'fr': 'fuzz/'}),
     'beirut': ('beirut/index.html', {'en': 'beirut/', 'fr': 'beyrouth/'}),
     'role': ('role-management/index.html', {'en': 'role-management/', 'fr': 'gestion-des-roles/'}),
+    'thinkingCap': ('thinking-cap/index.html', {'en': 'thinking-cap/', 'fr': 'thinking-cap/'}),
 }
+UNLISTED_PAGES = {'thinkingCap'}
 ALIASES = {}
 SOURCE_ROUTES = {'/' + filename.removesuffix('index.html'): page for page, (filename, _) in PAGES.items()}
 SOURCE_ROUTES.update(ALIASES)
@@ -169,6 +171,8 @@ def render(source, page, lang, messages, site_url, base_path, gateway=False, ana
         f'<meta name="twitter:title" content="{esc(title)}">',
         f'<meta name="twitter:description" content="{esc(description)}">',
     ]
+    if page in UNLISTED_PAGES:
+        metadata.append('<meta name="robots" content="noindex">')
     # Translation data exists before any existing scripts initialize their controls.
     # Keep charset inside the first 1024 bytes; redirect before any other script.
     source = re.sub(r'<meta\s+charset=["\'][^"\']+["\']\s*/?>', '', source, flags=re.I)
@@ -302,7 +306,7 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
     namespace = 'http://www.sitemaps.org/schemas/sitemap/0.9'
     ET.register_namespace('', namespace)
     sitemap = ET.Element('{' + namespace + '}urlset')
-    for route in ['/'] + [page_path(page, lang) for page in PAGES for lang in LANGUAGES]:
+    for route in ['/'] + [page_path(page, lang) for page in PAGES if page not in UNLISTED_PAGES for lang in LANGUAGES]:
         entry = ET.SubElement(sitemap, '{' + namespace + '}url')
         ET.SubElement(entry, '{' + namespace + '}loc').text = site_url + base_path.rstrip('/') + route
     ET.ElementTree(sitemap).write(output / 'sitemap.xml', encoding='utf-8', xml_declaration=True)

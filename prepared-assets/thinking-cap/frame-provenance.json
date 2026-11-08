@@ -1,0 +1,55 @@
+{
+  "source_url": "https://www.youtube.com/watch?v=K_tRLtpuhns",
+  "creator": "wynunlimited",
+  "title": "How To Sew The Thinking Cap(skull cap beanie)",
+  "review": "Full English transcript and visual overview of the full tutorial, with close inspection of selected 1080p frames.",
+  "frames": {
+    "hero": {
+      "seconds": 495,
+      "asset": "finished-beanie.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    },
+    "scale": {
+      "seconds": 28,
+      "asset": "print-scale.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    },
+    "pattern": {
+      "seconds": 112,
+      "asset": "pattern-reference.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    },
+    "cut": {
+      "seconds": 165,
+      "asset": "four-pieces.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    },
+    "pin": {
+      "seconds": 195,
+      "asset": "pin-pairs.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    },
+    "press": {
+      "seconds": 303,
+      "asset": "press-seams.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    },
+    "gap": {
+      "seconds": 374,
+      "asset": "turning-gap.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    },
+    "turn": {
+      "seconds": 436,
+      "asset": "turn-right-side-out.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    },
+    "tack": {
+      "seconds": 520,
+      "asset": "tack-crowns.jpg",
+      "derivative": "1600 × 900 JPEG; full original frame, no content edits"
+    }
+  },
+  "project_route": "/thinking-cap/",
+  "visibility": "Unlisted: no homepage or project-navigation links; noindex; excluded from sitemap."
+}
