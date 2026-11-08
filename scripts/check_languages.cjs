@@ -7,6 +7,7 @@ const source = fs.readFileSync(path.join(__dirname, '../site/language-entry.js')
 function route(pathname, languages, language = 'en', base = '/') {
   let destination = null;
   const context = {
+    URLSearchParams,
     document: {currentScript: {getAttribute: () => base}},
     navigator: {languages, language},
     location: {pathname, search: '?ref=portfolio', hash: '#projects', replace: value => {destination = value;}}
@@ -58,6 +59,7 @@ if (fs.existsSync(builtEntry)) {
   for (const language of ['en', 'fr']) {
     let destination;
     const context = {
+      URLSearchParams,
       document: {currentScript: {getAttribute: () => base}},
       navigator: {languages: [language + '-FR']},
       location: {pathname: base, search: '?ref=portfolio', hash: '#projects', replace: value => {destination = value;}}

@@ -143,7 +143,7 @@ def add_favicon(source):
 
 
 def bootstrap(messages):
-    runtime = {key: value for key, value in messages.items() if key.startswith(('runtime.', 'home.', 'analytics.'))}
+    runtime = {key: value for key, value in messages.items() if key.startswith(('runtime.', 'home.'))}
     payload = json.dumps(runtime, ensure_ascii=False).replace('<', '\\u003c').replace('&', '\\u0026')
     return '<script id="portfolio-messages" type="application/json">' + payload + '</script>\n<script src="/i18n.js?v=1"></script>'
 
@@ -187,8 +187,7 @@ def render(source, page, lang, messages, site_url, base_path, gateway=False, ana
     if analytics and not gateway:
         payload = html.escape(json.dumps(analytics, separators=(',', ':')), quote=True)
         tracking = (f'<meta name="portfolio:analytics" content="{payload}">\n'
-                    '<link rel="stylesheet" href="/analytics.css?v=1">\n'
-                    '<script src="/analytics.js?v=1" defer></script>\n')
+                    '<script src="/analytics.js?v=2" defer></script>\n')
         source = source.replace('</head>', tracking + '</head>', 1)
     if page == 'home':
         # Keep text, images, and ordinary project links usable without the renderer.

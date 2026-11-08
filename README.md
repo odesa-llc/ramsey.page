@@ -43,9 +43,10 @@ validates all fourteen localized pages, then publishes `dist/` on pushes to
 GA4 is configured in `analytics.json` for production hosts only. An empty
 measurement ID disables injection. Local previews send no analytics.
 
-Visitors can allow or decline optional analytics in English or French and
-change their choice with **Analytics choices**. Google loads only after they
-allow it. Choices expire after 180 days. Advertising features are disabled.
+Tracking starts automatically on production pages, without an analytics panel
+or preferences button. Earlier explicit refusals remain respected until their
+original 180-day expiry. Advertising storage, Google signals and advertising
+personalization remain disabled.
 
 The site sends one `page_view` per page load plus `cv_click` and `contact_click`.
 The contact action measures clicking the copy-email control, not a sent enquiry;
@@ -64,7 +65,7 @@ https://ramsey.page/?utm_source=instagram&utm_medium=social&utm_campaign=portfol
 Change `utm_content` for a story or another placement. Do not add UTMs to
 internal site navigation. The language entry preserves campaign tags and
 external referring origins. Tracking excludes URL fragments and arbitrary
-query parameters. Consent refusals, blockers, missing referrers, and cross-device
+query parameters. Earlier refusals, blockers, missing referrers, and cross-device
 visits mean these reports are directional rather than complete visitor counts.
 
 For a basic ordered funnel in GA4 Explore, use `session_start` → a `page_view`
@@ -96,7 +97,15 @@ The previous `/visitor-book/` URL redirects to `/visitors/`, preserving preview 
 The view shows seven complete days in Europe/Paris, daily session dots, traffic
 sources, page views, CV and contact clicks, and top pages. Selecting a source filters
 every panel. Google can delay, threshold, or sample results; the view flags
-reported limitations. This is an acquisition/outcome summary, not an ordered
+reported limitations. Instagram source aliases are grouped, with aggregate
+queries to avoid double-counting sessions within a group. Selecting Instagram
+includes all of its original source/medium pairs across every panel. Incoming
+Instagram UTM aliases are standardized to `instagram / social` while paid
+mediums are preserved. Missing and unavailable attribution have separate labels;
+source-count discrepancies are flagged without changing Google's total or
+inventing sources for historical sessions.
+
+This is an acquisition/outcome summary, not an ordered
 funnel. `?preview=1` explicitly uses sample data without Google requests. The
 small dot chart uses CSS; Firebase, Cloudflare Workers and Chart.js are not
 needed for this version.

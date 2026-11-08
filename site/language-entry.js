@@ -11,16 +11,17 @@
     var candidate = String(preferences[i]).toLowerCase().split('-')[0];
     if (candidate === 'en' || candidate === 'fr') { language = candidate; break; }
   }
-  var search = location.search;
+  var search = new URLSearchParams(location.search);
   // A client-side language redirect must not hide the incoming referral source.
   // Pass only its origin, without paths, query strings or any visitor identifier.
   if (document.referrer) {
     try {
       var referrer = new URL(document.referrer);
       if (/^https?:$/.test(referrer.protocol) && referrer.origin !== location.origin) {
-        search += (search ? '&' : '?') + '_portfolio_ref=' + encodeURIComponent(referrer.origin);
+        search.set('_portfolio_ref', referrer.origin);
       }
     } catch (_) {}
   }
-  location.replace(base + language + '/' + search + location.hash);
+  var query = search.toString();
+  location.replace(base + language + '/' + (query ? '?' + query : '') + location.hash);
 })();
