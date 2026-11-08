@@ -376,8 +376,10 @@
     "borderCaption": "le point de _hive.mentality_ ↗",
     "borderAlt": "Le tutoriel Instagram montrant des points denses et des croix le long de deux lignes de couture.",
     "previewCaption": "aperçu",
-    "previewAlt": "Un bonnet en maille anthracite à quatre panneaux, avec une ligne de fil barbelé écru au-dessus du bord. Faire glisser ou utiliser les flèches pour le tourner.",
+    "previewAlt": "Un bonnet en maille anthracite à quatre panneaux, patiné de gris, avec une ligne de fil barbelé écru au-dessus du bord. Faire glisser ou utiliser les flèches pour le tourner.",
     "pause": "pause",
-    "play": "lancer"
+    "play": "lancer",
+    "fitCaption": "aperçu porté",
+    "wornAlt": "Aperçu en noir et blanc de Ramsey portant le bonnet patiné bas sur le front, avec les coutures des panneaux visibles et un pull sombre uni."
   }
 }

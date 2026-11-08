@@ -43,8 +43,49 @@ async function init() {
   const cloth = new T.MeshPhysicalMaterial({color: 0x848484, map: knit, bumpMap: bump,
     bumpScale: 0.016, roughness: 1, metalness: 0, sheen: 0.8, sheenColor: new T.Color(0x777777),
     sheenRoughness: 0.9, side: T.DoubleSide});
+  // Brush-applied matte pigment follows the cloth in object space as it turns.
+  // Keep the original knit bump: the finish adds color without filling its loops.
+  const finishedCloth = cloth.clone();
+  finishedCloth.onBeforeCompile = shader => {
+    shader.uniforms.capPigment = {value: new T.Color(0x777777)};
+    shader.vertexShader = shader.vertexShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vCapClothPosition;')
+      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvCapClothPosition = position;');
+    shader.fragmentShader = shader.fragmentShader
+      .replace('#include <common>', `#include <common>
+        varying vec3 vCapClothPosition;
+        uniform vec3 capPigment;
+        float capGrain(vec3 p) {
+          p = fract(p * 0.1031);
+          p += dot(p, p.yzx + 33.33);
+          return fract((p.x + p.y) * p.z);
+        }
+        float capNoise(vec3 p) {
+          vec3 cell = floor(p), f = fract(p);
+          f = f * f * (3.0 - 2.0 * f);
+          return mix(
+            mix(mix(capGrain(cell), capGrain(cell + vec3(1,0,0)), f.x),
+                mix(capGrain(cell + vec3(0,1,0)), capGrain(cell + vec3(1,1,0)), f.x), f.y),
+            mix(mix(capGrain(cell + vec3(0,0,1)), capGrain(cell + vec3(1,0,1)), f.x),
+                mix(capGrain(cell + vec3(0,1,1)), capGrain(cell + vec3(1,1,1)), f.x), f.y), f.z);
+        }
+      `)
+      .replace('#include <map_fragment>', `#include <map_fragment>
+        vec3 brushPoint = vCapClothPosition * vec3(2.3, 2.8, 2.3) + vec3(3.2, 1.9, 7.5);
+        float cloud = 0.58 * capNoise(brushPoint)
+                    + 0.28 * capNoise(brushPoint * 2.13 + 4.7)
+                    + 0.14 * capNoise(brushPoint * 4.31 + 8.2);
+        float ridge = smoothstep(0.10, 0.33, texture2D(bumpMap, vBumpMapUv).r);
+        float coverage = mix(0.025, 0.38, smoothstep(0.30, 0.70, cloud));
+        coverage *= mix(0.45, 1.0, ridge);
+        coverage *= mix(0.82, 1.12, capNoise(brushPoint * 28.0));
+        coverage *= smoothstep(0.01, 0.06, vCapClothPosition.y);
+        diffuseColor.rgb = mix(diffuseColor.rgb, capPigment, coverage);
+      `);
+  };
+  finishedCloth.customProgramCacheKey = () => 'cap-brushed-pigment-v1';
   const thread = new T.MeshStandardMaterial({color: 0xe3d8c2, roughness: 1});
-  const seamThread = new T.MeshStandardMaterial({color: 0x202020, roughness: 1});
+  const seamThread = new T.MeshStandardMaterial({color: 0x333333, roughness: 1});
   const cap = new T.Group();
   cap.rotation.y = 0.35;
   scene.add(cap);
@@ -59,14 +100,17 @@ async function init() {
     const crown = Math.max(0, t - 0.18) / 0.82;
     const base = Math.pow(Math.max(0, 1 - Math.pow(crown, 2.2)), 1 / 2.2);
     const body = Math.sin(t * Math.PI);
-    const seam = 0.024 * Math.exp(-Math.pow(Math.sin(2 * (a - Math.PI / 4)) / 0.11, 2)) * body;
+    const seamPhase = Math.sin(2 * (a - Math.PI / 4));
+    const seam = 0.022 * Math.exp(-Math.pow(seamPhase / 0.065, 2)) * body;
+    // A shallow join with soft fabric lips, as the pressed seams in the tutorial.
+    const seamLips = 0.008 * Math.exp(-Math.pow((Math.abs(seamPhase) - 0.08) / 0.055, 2)) * body;
     const panels = 0.016 * Math.cos(4 * a + 0.12) * Math.pow(body, 1.2);
     const ripple = (0.011 * Math.sin(a * 9 + t * 14) + 0.007 * Math.cos(a * 4)) * Math.pow(1 - t, 2);
     // Shallow unequal folds interrupt the smooth dome, like soft sewn knit.
     const frontFold = Math.exp(-Math.pow(angleDistance(a, 0.58) / 0.17, 2));
     const backFold = Math.exp(-Math.pow(angleDistance(a, 3.55) / 0.21, 2));
     const folds = (0.046 * frontFold + 0.036 * backFold) * Math.exp(-Math.pow((t - 0.64) / 0.27, 2)) * body;
-    const r = base * (0.982 + 0.018 * body) - seam - folds + panels + ripple + lift;
+    const r = base * (0.982 + 0.018 * body) - seam + seamLips - folds + panels + ripple + lift;
     const hemWave = (0.011 * Math.sin(a * 3 + 0.4) + 0.006 * Math.cos(a * 7)) * Math.pow(1 - t, 3);
     const uneven = (0.016 * Math.sin(a * 3 + 0.4) + 0.009 * Math.cos(a * 5)) * body;
     const crownDip = 0.042 * Math.exp(-Math.pow(base / 0.25, 2));
@@ -93,7 +137,7 @@ async function init() {
   geometry.setAttribute('uv', new T.Float32BufferAttribute(uvs, 2));
   geometry.setIndex(indices);
   geometry.computeVertexNormals();
-  cap.add(new T.Mesh(geometry, cloth));
+  cap.add(new T.Mesh(geometry, finishedCloth));
 
   // A narrow soft edge, rather than a turned-up ribbed cuff.
   const hem = [];
@@ -112,7 +156,7 @@ async function init() {
   for (let k = 0; k < 4; k++) {
     const points = [];
     for (let i = 0; i <= 65; i++) points.push(surface(Math.PI / 4 + k * Math.PI / 2, i / 65 * 0.998, 0.001));
-    cord(points, 0.0025, seamThread, 70);
+    cord(points, 0.0018, seamThread, 70);
   }
 
   // Larger, uneven machine-darned barbs; each crossed stitch has its own angle.

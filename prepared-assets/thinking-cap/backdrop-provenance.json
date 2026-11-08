@@ -11,11 +11,11 @@
   "web_asset": "site/assets/thinking-cap/fashion-army-pastel-backdrop.webp",
   "master_sha256": "878e0311c547a3262d7430671f1c3b3dc4e70ba5a4a1de1606470489c16f1813",
   "web_sha256": "9e700c9499678720c2619b877be0cf8829a973c635f8f10eb304f691c0b4dec8",
-  "fallback": "site/assets/thinking-cap/cap-preview-v5.webp",
+  "fallback": "site/assets/thinking-cap/cap-preview-v6.webp",
   "fallback_dimensions": [
     600,
     556
   ],
-  "fallback_sha256": "4af9b871c6450c17903988e0c260d316b962e037a03656f1d83b79a40bd18269",
+  "fallback_sha256": "67502284d9721eee47f740e8fc481503360cfe0cc93e588b049fbeedc13adf99",
   "color_refinement": "The background image supplies luminance only using CSS background-blend-mode:luminosity over a fixed cool blue-gray #c9d7df. This removes all source red/mauve hues, retaining the photographed light, grain and separate square grid. The cap and embroidery keep their original colors."
 }
