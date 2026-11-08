@@ -1,16 +1,16 @@
 {
   "mode": "built-in imagegen",
-  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-973f7d8f-c955-493f-9ae1-6c8da5758661.png",
-  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-taller-fisherman-fold-bw.png",
+  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-3b110e78-dd7c-4331-bc78-10e8bc5d7357.png",
+  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-plain-background-bw.png",
   "construction_reference": "https://www.youtube.com/watch?v=K_tRLtpuhns&t=495s",
-  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-fisherman-clean-ears-bw.png",
-  "web_asset": "site/assets/skull-cap/worn-preview-fisherman-v2-bw.jpg",
+  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-front-nudged-bw.png",
+  "web_asset": "site/assets/skull-cap/worn-preview-front-nudged-bw.jpg",
   "dimensions": [
     1088,
     1445
   ],
-  "sha256": "4e8f0024adbe97d1caa07f178de280374ccfcdb5f30ba2cdaf375391fa0fe0bb",
-  "prompt_file": "output/imagegen/skull-cap-portrait/fisherman-clean-ears-bw-prompt.txt",
-  "changes": "Cleaned the ear-side cuff transitions into one continuous beanie edge, removing the second-inner-cap illusion. Taller fisherman fold and subtly unequal X arms preserved with the existing motif on the outward fold.",
+  "sha256": "18c5e1803d2103d169f1fd6d619f5a2355c1166b113b36e0e577dfcd62278fd9",
+  "prompt_file": "output/imagegen/skull-cap-portrait/front-nudged-bw-prompt.txt",
+  "changes": "Front hem gently nudged upward with a smooth rise over the forehead; ear coverage and low side edges retained, with the embroidery following the raised front hem. Plain background, faint shadow and monochrome portrait preserved.",
   "fit_reference": "/var/folders/rj/0x7v_c8n7ss_klq9scfrjhyr0000gn/T/codex-clipboard-51fd17a0-af20-41a3-b0d2-2fd8b2d6fc85.png"
 }
