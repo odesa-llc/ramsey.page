@@ -1,16 +1,17 @@
 {
   "mode": "built-in imagegen",
-  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-3b110e78-dd7c-4331-bc78-10e8bc5d7357.png",
-  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-plain-background-bw.png",
+  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-12c2e673-46f7-4bf6-976d-8a7ded48a42d.png",
+  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-detached-white-outline-bw.png",
   "construction_reference": "https://www.youtube.com/watch?v=K_tRLtpuhns&t=495s",
-  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-front-nudged-bw.png",
-  "web_asset": "site/assets/skull-cap/worn-preview-front-nudged-bw.jpg",
+  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-white-hand-outline-bw.png",
+  "web_asset": "site/assets/skull-cap/worn-preview-white-hand-outline-bw.jpg",
   "dimensions": [
     1088,
     1445
   ],
-  "sha256": "18c5e1803d2103d169f1fd6d619f5a2355c1166b113b36e0e577dfcd62278fd9",
-  "prompt_file": "output/imagegen/skull-cap-portrait/front-nudged-bw-prompt.txt",
-  "changes": "Front hem gently nudged upward with a smooth rise over the forehead; ear coverage and low side edges retained, with the embroidery following the raised front hem. Plain background, faint shadow and monochrome portrait preserved.",
-  "fit_reference": "/var/folders/rj/0x7v_c8n7ss_klq9scfrjhyr0000gn/T/codex-clipboard-51fd17a0-af20-41a3-b0d2-2fd8b2d6fc85.png"
+  "sha256": "5323f28a871b4b4e28318838175326a4800409552cc49178a9e2369bae635b86",
+  "prompt_file": "output/imagegen/skull-cap-portrait/white-hand-outline-prompts.txt",
+  "changes": "Added a detached white silhouette contour with a visible gray gap, then increased the line by approximately 1px and introduced restrained hand-drawn variation. Approved no-cuff skull cap, plain background, pose and monochrome styling retained.",
+  "fit_reference": "/var/folders/rj/0x7v_c8n7ss_klq9scfrjhyr0000gn/T/codex-clipboard-51fd17a0-af20-41a3-b0d2-2fd8b2d6fc85.png",
+  "original_portrait": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-front-nudged-bw.png"
 }
