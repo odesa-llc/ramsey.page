@@ -1,0 +1,101 @@
+{
+  "source": "https://www.youtube.com/watch?v=K_tRLtpuhns",
+  "source_frames_seconds": [
+    75,
+    77
+  ],
+  "method": "Perspective correction against numbered cutting-mat grid; 12.7 mm grid spacing. Printed outline traced and symmetrized; degree-6 least-squares smoothing preserves measured width and height.",
+  "status": "Video reconstruction; not an original exported pattern.",
+  "cross_frame_size3_width_difference_percent": 1.87,
+  "grid_calibrations": [
+    {
+      "source_frame_seconds": 75,
+      "grid_interval_mm": 12.7,
+      "grid_checks": 376,
+      "grid_residual_median_mm": 0.4055880904197693,
+      "grid_residual_95pct_mm": 0.619866132736206
+    },
+    {
+      "source_frame_seconds": 77,
+      "grid_interval_mm": 12.7,
+      "initial_image_points": [
+        [
+          617.7660522460938,
+          105.13508605957031
+        ],
+        [
+          1214.8212890625,
+          152.0853271484375
+        ],
+        [
+          1211.9400634765625,
+          798.1934204101562
+        ],
+        [
+          436.81036376953125,
+          724.140869140625
+        ]
+      ],
+      "initial_world_points_mm": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          266.70001220703125,
+          0.0
+        ],
+        [
+          266.70001220703125,
+          317.5
+        ],
+        [
+          0.0,
+          317.5
+        ]
+      ],
+      "grid_checks": 636,
+      "grid_residual_median_mm": 0.3473510146141052,
+      "grid_residual_95pct_mm": 0.6204994916915894
+    }
+  ],
+  "sizes": [
+    {
+      "size": 1,
+      "width_mm": 124.397,
+      "height_mm": 190.818,
+      "source_seconds": 75,
+      "curve_fit_rms_mm": 0.221
+    },
+    {
+      "size": 2,
+      "width_mm": 136.356,
+      "height_mm": 196.174,
+      "source_seconds": 75,
+      "curve_fit_rms_mm": 0.14
+    },
+    {
+      "size": 3,
+      "width_mm": 149.055,
+      "height_mm": 200.409,
+      "source_seconds": 77,
+      "curve_fit_rms_mm": 0.32
+    },
+    {
+      "size": 4,
+      "width_mm": 163.287,
+      "height_mm": 211.612,
+      "source_seconds": 77,
+      "curve_fit_rms_mm": 0.339
+    }
+  ],
+  "pdf": {
+    "file": "thinking-cap-pattern.pdf",
+    "pages": 5,
+    "page_size": "A4; content fits US Letter at Actual size",
+    "print_scaling": "None / 100%",
+    "calibration_square_mm": 50,
+    "seam_allowance_mm": 6.35,
+    "geometry": "Vector paths at measured physical dimensions"
+  }
+}
