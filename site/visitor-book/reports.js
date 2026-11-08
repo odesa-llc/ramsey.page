@@ -41,7 +41,7 @@
   }
   function pageName(path) {
     var route = path.replace(/^\/(en|fr)(?=\/)/, '').replace(/\/index\.html$/, '/');
-    return {'/':'selected work','/about/':'about me','/a-propos/':'about me','/handbag/':'the handbag','/sac-fait-main/':'the handbag','/tidle/':'Tidle','/restitch/':'Restitch','/fuzz/':'breadboard fuzz','/beirut/':'Beirut, in passing','/beyrouth/':'Beirut, in passing','/role-management/':'airline roles','/gestion-des-roles/':'airline roles','/thinking-cap/':'Thinking Cap'}[route] || route;
+    return {'/':'selected work','/about/':'about me','/a-propos/':'about me','/handbag/':'the handbag','/sac-fait-main/':'the handbag','/tidle/':'Tidle','/restitch/':'Restitch','/fuzz/':'breadboard fuzz','/beirut/':'Beirut, in passing','/beyrouth/':'Beirut, in passing','/role-management/':'airline roles','/gestion-des-roles/':'airline roles','/thinking-cap/':'Skull Cap','/skull-cap/':'Skull Cap'}[route] || route;
   }
   function sourceIdentity(row) {
     var source = (row.source || '').trim().toLowerCase();

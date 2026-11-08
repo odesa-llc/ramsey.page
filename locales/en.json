@@ -285,8 +285,8 @@
     "beirutDescription": "A personal photography project by Ramsey Hatoum. Sites and everyday scenes from Beirut: streets, workshops, cafés, quiet corners and nights out.",
     "roleTitle": "Role management — ramsey hatoum",
     "roleDescription": "At PwC, I designed a role-based access model for a Fortune 500 airline’s employee app, defining what 80,000+ employees across 40 roles could see and do.",
-    "thinkingCapTitle": "Thinking cap — ramsey hatoum",
-    "thinkingCapDescription": "A short, illustrated plan for sewing a fitted beanie from an old knit sweater, following wynunlimited’s Thinking Cap tutorial."
+    "skullCapTitle": "Skull cap — ramsey hatoum",
+    "skullCapDescription": "A short, illustrated plan for sewing a fitted beanie from an old knit sweater, following wynunlimited’s tutorial."
   },
   "analytics": {
     "title": "A little site analytics?",
@@ -342,8 +342,8 @@
     "exceptionLabel": "Two cases outside the standard mapping follow the exception path.",
     "moreWork": "More work"
   },
-  "thinkingCap": {
-    "title": "Thinking cap.",
+  "skullCap": {
+    "title": "Skull cap.",
     "intro": "An old sweater, turned into a fitted beanie. My plan for making one, following wynunlimited’s tutorial.",
     "tutorial": "watch the tutorial ↗",
     "pattern": "get the pattern PDF ↗",

@@ -131,8 +131,10 @@ async function init() {
   for (let k = 0; k < repeats; k++) {
     const a = k * tau / repeats + (random(k + 4) - 0.5) * 0.05;
     const center = bandCenter(a);
-    const wraps = 6 + Math.floor(random(k + 41) * 3);
-    const width = 0.043 + random(k + 81) * 0.025;
+    // Alternate loose and tight clusters while keeping each wrap densely stitched.
+    const widthPhase = (k * 0.61803398875 + random(k + 81) * 0.14) % 1;
+    const width = 0.026 + widthPhase * 0.104;
+    const wraps = Math.max(5, Math.round(width / 0.0065) + 1);
     for (let wrap = 0; wrap < wraps; wrap++) {
       const points = [];
       const seed = k * 23 + wrap * 3;
@@ -153,7 +155,7 @@ async function init() {
         const seed = k * 31 + side * 7 + slope * 3;
         const reach = 0.11 + random(seed + 7) * 0.055;
         const span = 0.049 + random(seed + 24) * 0.037;
-        const offset = side * (0.041 + random(seed + 52) * 0.017);
+        const offset = side * (width * 0.5 + 0.016 + random(seed + 52) * 0.012);
         const vertical = (random(seed + 14) - 0.5) * 0.022;
         const points = [];
         for (let j = 0; j <= 10; j++) {

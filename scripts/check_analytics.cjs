@@ -143,7 +143,7 @@ assert.equal(new URL(redirectedConfig.page_location).searchParams.has('extra'),f
 const settings = JSON.parse(fs.readFileSync(path.join(root, 'analytics.json'), 'utf8'));
 if (settings.measurement_id && fs.existsSync(path.join(root, 'dist/index.html'))) {
   assert.equal(fs.readFileSync(path.join(root, 'dist/index.html'), 'utf8').includes('portfolio:analytics'), false, 'The redirect must not emit a pageview');
-  const paths = ['en', 'fr', 'en/about', 'fr/a-propos', 'en/handbag', 'fr/sac-fait-main', 'en/tidle', 'fr/tidle', 'en/restitch', 'fr/restitch', 'en/fuzz', 'fr/fuzz', 'en/beirut', 'fr/beyrouth', 'en/role-management', 'fr/gestion-des-roles', 'en/thinking-cap', 'fr/thinking-cap'];
+  const paths = ['en', 'fr', 'en/about', 'fr/a-propos', 'en/handbag', 'fr/sac-fait-main', 'en/tidle', 'fr/tidle', 'en/restitch', 'fr/restitch', 'en/fuzz', 'fr/fuzz', 'en/beirut', 'fr/beyrouth', 'en/role-management', 'fr/gestion-des-roles', 'en/skull-cap', 'fr/skull-cap'];
   for (const route of paths) {
     const html = fs.readFileSync(path.join(root, 'dist', route, 'index.html'), 'utf8');
     assert.equal((html.match(/name="portfolio:analytics"/g) || []).length, 1, route);

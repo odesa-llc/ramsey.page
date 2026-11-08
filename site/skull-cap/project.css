@@ -30,7 +30,7 @@
 .cap-finish{padding-top:28px;border-top:1px solid #8faa9a55;align-items:start}
 .cap-stitch-reference{max-width:260px;margin-top:26px!important}
 .cap-stitch-reference .frame-link img{aspect-ratio:5/3;object-fit:cover;object-position:50% 61%}
-.cap-turntable{position:relative;width:100%;aspect-ratio:1.08;isolation:isolate;overflow:hidden;border:1px solid #8FAA9A;border-radius:18px 13px 20px 15px;background:#d1d8dc url("/assets/thinking-cap/fashion-army-pastel-backdrop.webp") center/cover no-repeat;container-type:inline-size;cursor:grab;touch-action:pan-y}
+.cap-turntable{position:relative;width:100%;aspect-ratio:1.08;isolation:isolate;overflow:hidden;border:1px solid #8FAA9A;border-radius:18px 13px 20px 15px;background:#d1d8dc;background-image:linear-gradient(rgba(184,214,229,.22),rgba(184,214,229,.22)),url("/assets/thinking-cap/fashion-army-pastel-backdrop.webp");background-position:center;background-size:cover;background-repeat:no-repeat;container-type:inline-size;cursor:grab;touch-action:pan-y}
 .cap-turntable.is-dragging{cursor:grabbing}
 .cap-turntable:focus-visible{outline:2px solid #0D2565;outline-offset:6px}
 .cap-turntable canvas,.cap-poster{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}

@@ -22,10 +22,10 @@ PAGES = {
     'fuzz': ('fuzz/index.html', {'en': 'fuzz/', 'fr': 'fuzz/'}),
     'beirut': ('beirut/index.html', {'en': 'beirut/', 'fr': 'beyrouth/'}),
     'role': ('role-management/index.html', {'en': 'role-management/', 'fr': 'gestion-des-roles/'}),
-    'thinkingCap': ('thinking-cap/index.html', {'en': 'thinking-cap/', 'fr': 'thinking-cap/'}),
+    'skullCap': ('skull-cap/index.html', {'en': 'skull-cap/', 'fr': 'skull-cap/'}),
 }
-UNLISTED_PAGES = {'thinkingCap'}
-ALIASES = {}
+UNLISTED_PAGES = {'skullCap'}
+ALIASES = {'/thinking-cap/': 'skullCap', '/en/thinking-cap/': 'skullCap', '/fr/thinking-cap/': 'skullCap'}
 SOURCE_ROUTES = {'/' + filename.removesuffix('index.html'): page for page, (filename, _) in PAGES.items()}
 SOURCE_ROUTES.update(ALIASES)
 TOKEN = re.compile(r'<!--i18n:([\w.]+)-->(.*?)<!--/i18n-->', re.S)
@@ -280,9 +280,10 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
     for alias, page in ALIASES.items():
         destination = output / alias.lstrip('/') / 'index.html'
         destination.parent.mkdir(parents=True, exist_ok=True)
-        target = page_path(page, 'en')
-        destination.write_text('<!doctype html><html lang="en"><head><meta charset="utf-8">'
-            + f'<title>{html.escape(catalogs["en"]["seo." + page + "Title"])}</title>'
+        alias_lang = 'fr' if alias.startswith('/fr/') else 'en'
+        target = page_path(page, alias_lang)
+        destination.write_text(f'<!doctype html><html lang="{alias_lang}"><head><meta charset="utf-8"><meta name="robots" content="noindex">'
+            + f'<title>{html.escape(catalogs[alias_lang]["seo." + page + "Title"])}</title>'
             + f'<link rel="canonical" href="{site_url + base_path.rstrip("/") + target}">'
             + f'<meta http-equiv="refresh" content="0;url={target}"></head>'
             + f'<body><script>location.replace({json.dumps(target)}+location.search+location.hash);</script></body></html>')

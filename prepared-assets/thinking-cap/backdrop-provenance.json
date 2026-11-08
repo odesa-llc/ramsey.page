@@ -11,10 +11,11 @@
   "web_asset": "site/assets/thinking-cap/fashion-army-pastel-backdrop.webp",
   "master_sha256": "878e0311c547a3262d7430671f1c3b3dc4e70ba5a4a1de1606470489c16f1813",
   "web_sha256": "9e700c9499678720c2619b877be0cf8829a973c635f8f10eb304f691c0b4dec8",
-  "fallback": "site/assets/thinking-cap/cap-preview-v3.webp",
+  "fallback": "site/assets/thinking-cap/cap-preview-v4.webp",
   "fallback_dimensions": [
-    927,
-    858
+    600,
+    556
   ],
-  "fallback_sha256": "3cd787c470585ea49902c73eb0935da6f8c7ba965142adf931501d428f0df700"
+  "fallback_sha256": "f0551d9f9137662681205557d32eec1724ea7c1f14c33c630c6fb270283f6e96",
+  "color_refinement": "A 22% pale cyan-blue CSS wash (RGB 184, 214, 229) reduces the red/lilac cast without changing the knit or cream thread. Original backdrop master preserved."
 }

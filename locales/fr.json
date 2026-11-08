@@ -285,8 +285,8 @@
     "beirutDescription": "Beyrouth à travers les photos de Ramsey Hatoum : scènes de rue, ateliers, cafés et ambiances nocturnes.",
     "roleTitle": "Gestion des rôles — ramsey hatoum",
     "roleDescription": "Chez PwC, j’ai conçu un modèle d’accès par rôle pour l’application des employés d’une compagnie aérienne du Fortune 500, définissant ce que plus de 80 000 personnes réparties sur 40 rôles pouvaient voir et faire.",
-    "thinkingCapTitle": "Thinking cap — ramsey hatoum",
-    "thinkingCapDescription": "Un plan illustré pour coudre un bonnet ajusté à partir d’un vieux pull en maille, d’après le tutoriel Thinking Cap de wynunlimited."
+    "skullCapTitle": "Skull cap — ramsey hatoum",
+    "skullCapDescription": "Un plan illustré pour coudre un bonnet ajusté à partir d’un vieux pull en maille, d’après le tutoriel de wynunlimited."
   },
   "analytics": {
     "title": "Quelques statistiques de visite ?",
@@ -342,8 +342,8 @@
     "exceptionLabel": "Deux cas hors des règles standard suivent le parcours d’exception.",
     "moreWork": "Autres projets"
   },
-  "thinkingCap": {
-    "title": "Thinking cap.",
+  "skullCap": {
+    "title": "Skull cap.",
     "intro": "Transformer un vieux pull en bonnet ajusté. Mon plan pour en faire un, d’après le tutoriel de wynunlimited.",
     "tutorial": "voir le tutoriel ↗",
     "pattern": "obtenir le patron PDF ↗",
