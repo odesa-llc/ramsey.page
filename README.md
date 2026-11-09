@@ -109,3 +109,11 @@ This is an acquisition/outcome summary, not an ordered
 funnel. `?preview=1` explicitly uses sample data without Google requests. The
 small dot chart uses CSS; Firebase, Cloudflare Workers and Chart.js are not
 needed for this version.
+
+## Agent access
+
+The build also generates Markdown versions of the public English and French
+pages, `/llms.txt`, and a portfolio-reading skill discovery index. The prepared
+Cloudflare Worker adds content negotiation and HTTP discovery headers after
+deployment. See [edge/README.md](edge/README.md) for the exact configuration,
+content-use preference, checks, publication order and rollback.

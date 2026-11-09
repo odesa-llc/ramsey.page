@@ -36,6 +36,8 @@ jobs:
           node scripts/check_languages.cjs
           node scripts/check_analytics.cjs
           node scripts/check_visitor_book.cjs
+          python scripts/check_agent_readiness.py dist --base-path "${PAGES_BASE_PATH:-/}" --site-url "${PAGES_ORIGIN:-https://odesa-llc.github.io}"
+          node scripts/check_agent_edge.mjs dist
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:

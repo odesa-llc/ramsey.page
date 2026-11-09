@@ -11,6 +11,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree as ET
 from project_arrows import project_link_arrows
+from agent_readiness import generate as generate_agent_resources
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ('en', 'fr')
@@ -315,6 +316,7 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
         ET.SubElement(entry, '{' + namespace + '}loc').text = site_url + base_path.rstrip('/') + route
     ET.ElementTree(sitemap).write(output / 'sitemap.xml', encoding='utf-8', xml_declaration=True)
     (output / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + site_url + base_path + 'sitemap.xml\n')
+    generate_agent_resources(ROOT, output, PAGES, LANGUAGES, UNLISTED_PAGES, catalogs, site_url, base_path)
     (output / '.nojekyll').touch()
     checked = verify(output, base_path)
     print(f'Built {len(PAGES) * len(LANGUAGES)} localized pages + language entry; checked {checked} local HTML references at {output}')
