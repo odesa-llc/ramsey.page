@@ -32,7 +32,8 @@
     "site/assets/skull-cap/worn-preview-taller-varied-barbs-bw.jpg",
     "site/assets/skull-cap/worn-preview-reviewed-barbs-bw.jpg",
     "site/assets/thinking-cap/cap-preview-v7.webp",
-    "site/assets/skull-cap/worn-preview-wider-framing-bw.jpg"
+    "site/assets/skull-cap/worn-preview-wider-framing-bw.jpg",
+    "site/assets/skull-cap/shiva-titanium-white.jpg"
   ],
   "animation": "Actual WebGL four-panel cap geometry with the generated knit texture and handmade thread geometry. A 42 second rotation about the vertical y axis. The current still fallback is captured from the revised 3D viewer.",
   "photo_treatment": "CSS grayscale(1) contrast(.88) brightness(1.04); original tutorial frames preserved.",
@@ -109,5 +110,6 @@
     "request": "Make the figure feel photographed from a little farther away by increasing the surrounding background space.",
     "treatment": "Expanded gray breathing room at the top and sides, smaller figure and scaled white contour, dark sweater continuing naturally to the bottom crop.",
     "portrait_provenance": "prepared-assets/thinking-cap/worn-preview-provenance.json"
-  }
+  },
+  "paintstik_reference": "prepared-assets/thinking-cap/paintstik-provenance.json"
 }

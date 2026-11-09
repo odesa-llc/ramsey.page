@@ -28,7 +28,8 @@
 
 /* Quiet monochrome references; a tactile finish study in the same paper frame. */
 .cap-finish{padding-top:28px;border-top:1px solid #8faa9a55;align-items:start}
-.cap-stitch-reference{max-width:260px;margin-top:26px!important}
+.cap-detail-references{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px;max-width:460px}
+.cap-stitch-reference{margin-top:0!important}
 .cap-stitch-reference .frame-link img{aspect-ratio:5/3;object-fit:cover;object-position:50% 61%}
 .cap-turntable{position:relative;width:100%;aspect-ratio:1.08;isolation:isolate;overflow:hidden;border:1px solid #8FAA9A;border-radius:18px 13px 20px 15px;background:#c9d7df;background-image:url("/assets/thinking-cap/fashion-army-pastel-backdrop.webp");background-blend-mode:luminosity;background-position:center;background-size:cover;background-repeat:no-repeat;container-type:inline-size;cursor:grab;touch-action:pan-y}
 .cap-turntable.is-dragging{cursor:grabbing}
@@ -40,8 +41,8 @@
 .cap-ground{position:absolute;left:20%;right:20%;bottom:8%;height:6%;border-radius:50%;background:#28282225;filter:blur(13px);z-index:-1}
 .cap-motion-button{font:inherit;color:inherit;line-height:1.3;padding:0 0 2px;background:none;border:0;border-bottom:1px solid #0d256555;cursor:pointer;white-space:nowrap}
 .cap-motion-button[hidden]{display:none}
-@media(max-width:999px){.cap-border-plan{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,210px);gap:26px;align-items:center}.cap-stitch-reference{margin-top:0!important}.cap-preview{width:100%;max-width:620px;justify-self:center}.cap-finish{gap:30px}.cap-turntable{aspect-ratio:1.15}}
-@media(max-width:600px){.cap-border-plan{display:block}.cap-stitch-reference{margin-top:24px!important;max-width:240px}.cap-finish{padding-top:32px}.cap-turntable{aspect-ratio:1}.cap-preview figcaption{gap:14px;font-size:15px;flex-wrap:wrap}}
+@media(max-width:999px){.cap-preview{width:100%;max-width:620px;justify-self:center}.cap-finish{gap:30px}.cap-turntable{aspect-ratio:1.15}}
+@media(max-width:600px){.cap-finish{padding-top:32px}.cap-turntable{aspect-ratio:1}.cap-preview figcaption{gap:14px;font-size:15px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.cap-poster,.cap-turntable canvas{transition:none}}
 
 .cap-turntable:not(.has-model) .cap-ground{opacity:0}
@@ -50,5 +51,11 @@
 /* Fine square screen texture, confined to the pastel background. */
 .cap-turntable::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(90deg,rgba(255,255,255,.14) 0 14%,rgba(80,100,116,.055) 14% 28%,transparent 28%),linear-gradient(0deg,rgba(255,255,255,.14) 0 14%,rgba(80,100,116,.055) 14% 28%,transparent 28%);background-size:6px 6px;background-size:1cqw 1cqw}
 
-.cap-border-plan .cap-finished-reference{margin-top:24px;max-width:460px;grid-column:1/-1}
+.cap-detail-references figcaption{font-size:15px;flex-wrap:wrap;gap:3px 10px}
+.cap-material{display:grid;grid-template-columns:120px minmax(0,1fr);gap:22px;align-items:start;margin-top:28px;max-width:580px;scroll-margin-top:30px}
+.cap-project .cap-product img{aspect-ratio:1}
+.cap-project .cap-product figcaption{font-size:15px;line-height:1.3}
+.cap-material-note{margin:0;font-size:20px;line-height:1.45;text-wrap:pretty}
+.cap-material-notes{display:inline-block;margin-top:12px;font-size:16px;line-height:1.4;border-bottom:1px solid #0d256555}
+@media(max-width:380px){.cap-material{grid-template-columns:100px minmax(0,1fr);gap:18px}.cap-material-note{font-size:19px}}
 .cap-project .cap-worn img{aspect-ratio:auto;object-fit:contain;filter:none}

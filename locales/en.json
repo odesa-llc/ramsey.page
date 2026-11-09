@@ -383,6 +383,10 @@
     "pause": "pause",
     "play": "play",
     "fitCaption": "fit preview",
-    "wornAlt": "Black-and-white preview of Ramsey wearing the washed skull cap low on the forehead, with visible panel joins and a plain dark sweater."
+    "wornAlt": "Black-and-white preview of Ramsey wearing the washed skull cap low on the forehead, with visible panel joins and a plain dark sweater.",
+    "paintstikAlt": "Jack Richeson Shiva Oilstik in Titanium White, product code 121201, shown in black and white.",
+    "paintstikCaption": "Shiva · Titanium White ↗",
+    "finishNote": "Matte Titanium White Shiva Paintstik is my choice for the chalky finish: lightly brushed over the knit, then dried and heat-set within the fabric’s care limits.",
+    "fabricNotes": "fabric notes ↗"
   }
 }

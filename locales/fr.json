@@ -383,6 +383,10 @@
     "pause": "pause",
     "play": "lancer",
     "fitCaption": "aperçu porté",
-    "wornAlt": "Aperçu en noir et blanc de Ramsey portant le bonnet patiné bas sur le front, avec les coutures des panneaux visibles et un pull sombre uni."
+    "wornAlt": "Aperçu en noir et blanc de Ramsey portant le bonnet patiné bas sur le front, avec les coutures des panneaux visibles et un pull sombre uni.",
+    "paintstikAlt": "Shiva Oilstik blanc de titane de Jack Richeson, référence 121201, présenté en noir et blanc.",
+    "paintstikCaption": "Shiva · blanc de titane ↗",
+    "finishNote": "Pour l’effet crayeux, j’ai choisi le Shiva Paintstik blanc de titane mat : une couche légère à la brosse, puis séchage et fixation au fer selon les limites du tissu.",
+    "fabricNotes": "notes sur le tissu ↗"
   }
 }
