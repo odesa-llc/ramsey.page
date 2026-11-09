@@ -63,6 +63,9 @@ Content Signal to robots.txt and the manifest; the Worker uses it as the
 response header. Without that file, this change makes no new content-use
 declaration. These signals express preferences; they do not enforce access.
 
+The approved policy is stored in `agent-preferences.json`: search and AI input
+are allowed; model training is disallowed.
+
 ## Checks and rollback
 
 ```sh

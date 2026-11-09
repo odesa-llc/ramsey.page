@@ -38,10 +38,18 @@ jobs:
           node scripts/check_visitor_book.cjs
           python scripts/check_agent_readiness.py dist --base-path "${PAGES_BASE_PATH:-/}" --site-url "${PAGES_ORIGIN:-https://odesa-llc.github.io}"
           node scripts/check_agent_edge.mjs dist
+      - name: Archive site with public discovery resources
+        run: |
+          tar --dereference --hard-dereference --directory dist --exclude=.git --exclude=.github --exclude=".[^/]*" -cf "$RUNNER_TEMP/artifact.tar" .
+          tar --dereference --hard-dereference --directory dist -rf "$RUNNER_TEMP/artifact.tar" .well-known
+          tar -tf "$RUNNER_TEMP/artifact.tar" .well-known/agent-skills/index.json
       - name: Upload site
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
-          path: dist
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
 
   deploy:
     needs: build
