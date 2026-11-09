@@ -7,13 +7,12 @@ the Worker. Unlisted projects, owner statistics and concept previews are absent.
 The existing HTML, language entry, artwork, interactions and analytics remain
 on the existing origin.
 
-## Configuration prepared for review
+## Production configuration
 
-Cloudflare's built-in Markdown for Agents requires an eligible plan. The
-dashboard opened at sign-in during this implementation, so the account's plan
-was not verified. This Worker is the prepared alternative: it serves the
-build's Markdown without an AI conversion service or a paid plan upgrade.
-Normal Workers quotas still apply.
+The Worker serves the build's Markdown on the existing Cloudflare Free plan,
+without an AI conversion service or a paid upgrade. Normal Workers quotas
+still apply. The route uses fail-open behavior so an unavailable Worker leaves
+the GitHub Pages portfolio accessible.
 
 The exact configuration is `edge/wrangler.jsonc`:
 
@@ -28,7 +27,7 @@ Inspect existing Worker routes first; do not overwrite another Worker attached
 to the same route. Merge the handler with that Worker if one exists. Do not
 enable automatic Markdown conversion on top of this Worker.
 
-After approving the source and edge change:
+For subsequent deployments:
 
 1. Publish the source through the existing GitHub Pages workflow. Confirm
    `/agent-content.json`, `/llms.txt` and the skill index return the generated
@@ -54,6 +53,16 @@ and Markdown. Origin asset requests retain their existing behavior. Public
 agent resources have explicit media types and permit cross-origin reads.
 Security headers are retained. Missing manifests or Markdown fall back to the
 original page. Owner tools and unlisted content receive no agent discovery.
+
+The initial production deployment on 2026-11-09 enabled Cloudflare's proxy on
+the eight existing apex A/AAAA records, preserving their GitHub Pages targets,
+TLS Full mode, the www record and verification records. The Workers URL and
+preview URLs are disabled. No CLI authentication was added.
+
+The observed audit improved from 20/100 (Level 1) to 47/100 (Level 4,
+Agent-Integrated). Markdown negotiation, discovery Link headers, the reading
+skill index and the content policy all passed. Remaining API/authentication and
+agent-server checks describe services this public portfolio does not provide.
 
 ## Content-use preference
 
