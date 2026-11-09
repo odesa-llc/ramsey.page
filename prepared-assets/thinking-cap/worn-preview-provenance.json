@@ -1,17 +1,17 @@
 {
   "mode": "built-in imagegen",
-  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-bbfbcd26-d595-4b65-8a30-22303453a77a.png",
-  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-white-hand-outline-bw.png",
+  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-997314f1-f0ce-4fcb-a695-a1598dde6745.png",
+  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-wavy-white-outline-bw.png",
   "construction_reference": "https://www.youtube.com/watch?v=K_tRLtpuhns&t=495s",
-  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-wavy-white-outline-bw.png",
-  "web_asset": "site/assets/skull-cap/worn-preview-wavy-white-outline-bw.jpg",
+  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-taller-varied-barbs-bw.png",
+  "web_asset": "site/assets/skull-cap/worn-preview-taller-varied-barbs-bw.jpg",
   "dimensions": [
     1088,
     1445
   ],
-  "sha256": "86b725854e53fa75adf3453acae8beee1cd70d07017e77b1cf9c1c4f879ed84b",
-  "prompt_file": "output/imagegen/skull-cap-portrait/wavy-white-outline-prompt.txt",
-  "changes": "Added selective, broad hand-drawn waviness to the detached white silhouette outline around the cap, shoulders and sleeves; preserved the visible gray gap and thicker stroke weight.",
+  "sha256": "0ac28788880726e6c42a8caa709d07828fb958d9a7b630d0dedfe80ad9eeae06",
+  "prompt_file": "output/imagegen/skull-cap-portrait/taller-varied-barbs-prompt.txt",
+  "changes": "Taller crossed barbs and taller dense scrunched thread wraps between them, with varied strand heights, endpoints, angles and cluster dimensions. Existing wavy detached white contour, gap and no-cuff portrait styling retained.",
   "fit_reference": "/var/folders/rj/0x7v_c8n7ss_klq9scfrjhyr0000gn/T/codex-clipboard-51fd17a0-af20-41a3-b0d2-2fd8b2d6fc85.png",
   "original_portrait": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-front-nudged-bw.png"
 }

@@ -28,7 +28,8 @@
     "site/assets/skull-cap/worn-preview-plain-bw.jpg",
     "site/assets/skull-cap/worn-preview-front-nudged-bw.jpg",
     "site/assets/skull-cap/worn-preview-white-hand-outline-bw.jpg",
-    "site/assets/skull-cap/worn-preview-wavy-white-outline-bw.jpg"
+    "site/assets/skull-cap/worn-preview-wavy-white-outline-bw.jpg",
+    "site/assets/skull-cap/worn-preview-taller-varied-barbs-bw.jpg"
   ],
   "animation": "Actual WebGL four-panel cap geometry with the generated knit texture and handmade thread geometry. A 42 second rotation about the vertical y axis. The current still fallback is captured from the revised 3D viewer.",
   "photo_treatment": "CSS grayscale(1) contrast(.88) brightness(1.04); original tutorial frames preserved.",
@@ -74,5 +75,10 @@
     "style": "Thin white contour with selective broad organic waves along the cap, shoulders and sleeves, preserving the requested thicker stroke and gap.",
     "gap": "Visible gray space between the silhouette and the line, approximately 25px in the full-resolution portrait.",
     "portrait_provenance": "prepared-assets/thinking-cap/worn-preview-provenance.json"
+  },
+  "portrait_barb_refinement": {
+    "crosses": "Slightly taller crossed barbs, retaining uneven arms.",
+    "middle_wraps": "Taller crowded thread wraps between the crossed barbs, with irregular strand heights and varied group dimensions.",
+    "preserved": "Existing arrangement, thin cream thread, charcoal knit and wavy white silhouette outline."
   }
 }
