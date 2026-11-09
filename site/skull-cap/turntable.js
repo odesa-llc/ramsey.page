@@ -23,8 +23,8 @@ async function init() {
   renderer.toneMappingExposure = 1.2;
   const scene = new T.Scene();
   const camera = new T.PerspectiveCamera(30, 1, 0.1, 30);
-  camera.position.set(0, 1.85, 5.2);
-  camera.lookAt(0, 0.74, 0);
+  camera.position.set(0, 1.55, 5.0);
+  camera.lookAt(0, 0.66, 0);
   scene.add(new T.HemisphereLight(0xffffff, 0x66645f, 3));
   const key = new T.DirectionalLight(0xfffcf6, 3.7);
   key.position.set(-3, 5, 4);
@@ -41,7 +41,7 @@ async function init() {
   const bump = knit.clone();
   bump.colorSpace = T.NoColorSpace;
   const cloth = new T.MeshPhysicalMaterial({color: 0x848484, map: knit, bumpMap: bump,
-    bumpScale: 0.016, roughness: 1, metalness: 0, sheen: 0.8, sheenColor: new T.Color(0x777777),
+    bumpScale: 0.016, roughness: 1, metalness: 0, sheen: 0.48, sheenColor: new T.Color(0x777777),
     sheenRoughness: 0.9, side: T.DoubleSide});
   // Brush-applied matte pigment follows the cloth in object space as it turns.
   // Keep the original knit bump: the finish adds color without filling its loops.
@@ -97,26 +97,35 @@ async function init() {
   const angleDistance = (a, b) => Math.atan2(Math.sin(a - b), Math.cos(a - b));
 
   function surface(a, t, lift = 0) {
-    const crown = Math.max(0, t - 0.18) / 0.82;
-    const base = Math.pow(Math.max(0, 1 - Math.pow(crown, 2.2)), 1 / 2.2);
+    // A fitted oval head form, rather than an inflated superellipsoid.
+    // The lower panels fall almost straight; the crown tapers earlier.
+    const crown = Math.max(0, t - 0.10) / 0.90;
+    const base = Math.sqrt(Math.max(0, 1 - Math.pow(crown, 1.65)));
     const body = Math.sin(t * Math.PI);
     const seamPhase = Math.sin(2 * (a - Math.PI / 4));
     const seam = 0.022 * Math.exp(-Math.pow(seamPhase / 0.065, 2)) * body;
     // A shallow join with soft fabric lips, as the pressed seams in the tutorial.
     const seamLips = 0.008 * Math.exp(-Math.pow((Math.abs(seamPhase) - 0.08) / 0.055, 2)) * body;
-    const panels = 0.016 * Math.cos(4 * a + 0.12) * Math.pow(body, 1.2);
+    const panels = 0.011 * Math.cos(4 * a + 0.12) * Math.pow(body, 1.2);
     const ripple = (0.011 * Math.sin(a * 9 + t * 14) + 0.007 * Math.cos(a * 4)) * Math.pow(1 - t, 2);
     // Shallow unequal folds interrupt the smooth dome, like soft sewn knit.
     const frontFold = Math.exp(-Math.pow(angleDistance(a, 0.58) / 0.17, 2));
     const backFold = Math.exp(-Math.pow(angleDistance(a, 3.55) / 0.21, 2));
-    const folds = (0.046 * frontFold + 0.036 * backFold) * Math.exp(-Math.pow((t - 0.64) / 0.27, 2)) * body;
-    const r = base * (0.982 + 0.018 * body) - seam + seamLips - folds + panels + ripple + lift;
-    const hemWave = (0.011 * Math.sin(a * 3 + 0.4) + 0.006 * Math.cos(a * 7)) * Math.pow(1 - t, 3);
+    const folds = (0.029 * frontFold + 0.033 * backFold) * Math.exp(-Math.pow((t - 0.68) / 0.23, 2)) * body;
+    const r = base * (0.974 + 0.012 * body) - seam + seamLips - folds + panels + ripple + lift;
+    const hemWave = (0.025 * Math.cos(a) + 0.009 * Math.sin(a * 3 + 0.4) + 0.005 * Math.cos(a * 7)) * Math.pow(1 - t, 3);
     const uneven = (0.016 * Math.sin(a * 3 + 0.4) + 0.009 * Math.cos(a * 5)) * body;
-    const crownDip = 0.042 * Math.exp(-Math.pow(base / 0.25, 2));
-    return new T.Vector3(r * Math.sin(a) + 0.065 * Math.pow(t, 3),
-      t * 1.5 - crownDip + hemWave + uneven,
-      r * Math.cos(a) * 0.84 - 0.035 * Math.pow(t, 3));
+    const crownDip = 0.034 * Math.exp(-Math.pow(base / 0.28, 2));
+    const upper = Math.max(0, (t - 0.42) / 0.58);
+    const settledCrown = 0.12 * upper * upper * (3 - 2 * upper);
+    const crownSag = 0.12 * body * Math.exp(-Math.pow((t - 0.83) / 0.17, 2)) * Math.exp(-Math.pow(angleDistance(a, 1.15) / 0.66, 2));
+    const crownLean = 0.052 * Math.sin(a - 0.35) * body * Math.exp(-Math.pow((t - 0.78) / 0.24, 2));
+    const sx = Math.sign(Math.sin(a)) * Math.pow(Math.abs(Math.sin(a)), 0.9);
+    const sz = Math.sign(Math.cos(a)) * Math.pow(Math.abs(Math.cos(a)), 0.94);
+    // Slightly longer front-to-back, with a relaxed lean at the seam meeting.
+    return new T.Vector3(r * sx * 0.91 + 0.060 * Math.pow(t, 3),
+      t * 1.36 - settledCrown - crownDip - crownSag + crownLean + hemWave + uneven,
+      r * sz * 1.06 - 0.080 * Math.pow(t, 3));
   }
 
   const positions = [], uvs = [], indices = [];
@@ -183,7 +192,7 @@ async function init() {
       const points = [];
       const seed = k * 23 + wrap * 3;
       const offset = (wrap / (wraps - 1) - 0.5) * width;
-      const height = 0.034 + random(seed + 12) * 0.024;
+      const height = 0.045 + random(seed + 12) * 0.035;
       const lean = (random(seed + 32) - 0.5) * 0.023;
       for (let j = 0; j <= 14; j++) {
         const s = j / 14;
@@ -197,7 +206,9 @@ async function init() {
     for (const side of [-1, 1]) {
       for (const slope of [-1, 1]) {
         const seed = k * 31 + side * 7 + slope * 3;
-        const reach = 0.11 + random(seed + 7) * 0.055;
+        const reach = 0.125 + random(seed + 7) * 0.06;
+        const lowerArm = reach * (0.40 + random(seed + 114) * 0.16);
+        const upperArm = reach * (0.40 + random(seed + 137) * 0.16);
         const span = 0.049 + random(seed + 24) * 0.037;
         const offset = side * (width * 0.5 + 0.016 + random(seed + 52) * 0.012);
         const vertical = (random(seed + 14) - 0.5) * 0.022;
@@ -205,8 +216,9 @@ async function init() {
         for (let j = 0; j <= 10; j++) {
           const s = j / 10 - 0.5;
           const wobble = Math.sin((s + 0.5) * Math.PI) * 0.002 * Math.sin(seed + s * 8);
+          const armHeight = s < 0 ? s * 2 * lowerArm : s * 2 * upperArm;
           points.push(surface(a + offset + s * span + wobble,
-            center + vertical + slope * s * reach,
+            center + vertical + slope * armHeight,
             0.005 + 0.003 * Math.sin((s + 0.5) * Math.PI)));
         }
         cord(points, 0.0024 + random(seed + 93) * 0.0005, thread, 12);

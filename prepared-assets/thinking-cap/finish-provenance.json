@@ -29,7 +29,9 @@
     "site/assets/skull-cap/worn-preview-front-nudged-bw.jpg",
     "site/assets/skull-cap/worn-preview-white-hand-outline-bw.jpg",
     "site/assets/skull-cap/worn-preview-wavy-white-outline-bw.jpg",
-    "site/assets/skull-cap/worn-preview-taller-varied-barbs-bw.jpg"
+    "site/assets/skull-cap/worn-preview-taller-varied-barbs-bw.jpg",
+    "site/assets/skull-cap/worn-preview-reviewed-barbs-bw.jpg",
+    "site/assets/thinking-cap/cap-preview-v7.webp"
   ],
   "animation": "Actual WebGL four-panel cap geometry with the generated knit texture and handmade thread geometry. A 42 second rotation about the vertical y axis. The current still fallback is captured from the revised 3D viewer.",
   "photo_treatment": "CSS grayscale(1) contrast(.88) brightness(1.04); original tutorial frames preserved.",
@@ -49,7 +51,7 @@
   },
   "backdrop": {
     "source": "prepared-assets/thinking-cap/backdrop-provenance.json",
-    "current_fallback": "site/assets/thinking-cap/cap-preview-v6.webp"
+    "current_fallback": "site/assets/thinking-cap/cap-preview-v7.webp"
   },
   "stitch_width_refinement": "Central darned wraps vary from narrow to wide, with thread count following the width and the two crossed ends positioned beside each cluster.",
   "brushed_finish": {
@@ -79,6 +81,27 @@
   "portrait_barb_refinement": {
     "crosses": "Slightly taller crossed barbs, retaining uneven arms.",
     "middle_wraps": "Taller crowded thread wraps between the crossed barbs, with irregular strand heights and varied group dimensions.",
-    "preserved": "Existing arrangement, thin cream thread, charcoal knit and wavy white silhouette outline."
+    "preserved": "Existing arrangement, thin cream thread, charcoal knit and wavy white silhouette outline.",
+    "review": "The earlier generation softened facial and knit detail. Retried from the sharper source, compared crop details, and removed unintended new intermediate stitch groups before selecting the replacement."
+  },
+  "fitted_shape_refinement": {
+    "primary_reference": "https://wynunlimited.com/products/thinking-cap-pattern",
+    "reviewed_product_images": [
+      "https://wynunlimited.com/cdn/shop/files/06B76434-5E05-4F59-97F8-33E34F3BDCB9.jpg?v=1766954254&width=1946",
+      "https://wynunlimited.com/cdn/shop/files/04117E29-CBF9-4846-B9AB-D6CC00E2B149.jpg?v=1766954254&width=1946"
+    ],
+    "secondary_reference": "https://www.buff.com/us/merino-lightweight-beanie-buff-solid-black-black-113013999.html",
+    "original_tutorial_frames_seconds": [
+      495,
+      533
+    ],
+    "geometry": "Lower settled crown; earlier taper; oval head opening elongated front-to-back; flatter forehead section; subtle asymmetric crown settling and seam lean. Crown pole remains closed.",
+    "material_and_camera": "Reduced broad sheen and lowered the viewing angle to avoid the inflated-shell appearance. Original knit, cloudy finish, cool tiled background and slow rotation retained.",
+    "stitch_refinement": "Taller middle wraps with varied strand heights; crossed barbs have independently varied upper and lower arms.",
+    "fallback": "site/assets/thinking-cap/cap-preview-v7.webp",
+    "fallback_dimensions": [
+      600,
+      556
+    ]
   }
 }
