@@ -1,17 +1,17 @@
 {
   "mode": "built-in imagegen",
-  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-ff7b1a94-033d-4dc5-acf6-35a5c738625f.png",
-  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-reviewed-barbs-draft.png",
+  "source": "/Users/ramsey/.codex/generated_images/01a1bb12-b96d-7ee1-beb4-c2750fa705cb/exec-85d119a5-7afe-45b8-962e-6b56b9b6b290.png",
+  "edit_target": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-reviewed-barbs-bw.png",
   "construction_reference": "https://www.youtube.com/watch?v=K_tRLtpuhns&t=495s",
-  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-reviewed-barbs-bw.png",
-  "web_asset": "site/assets/skull-cap/worn-preview-reviewed-barbs-bw.jpg",
+  "output": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-wider-framing-bw.png",
+  "web_asset": "site/assets/skull-cap/worn-preview-wider-framing-bw.jpg",
   "dimensions": [
     1088,
     1445
   ],
-  "sha256": "570efd4737401bbca6401321bf2e4c29c28a70c06edad593774069f6a85486df",
-  "prompt_file": "output/imagegen/skull-cap-portrait/reviewed-barbs-edit-prompts.txt",
-  "changes": "Retried the embroidery edit from the sharper pre-edit portrait after review of unwanted smoothing. Preserved the five existing main groups, removed newly generated stray intermediate tick clusters, kept taller uneven Xs and smaller scrunched wrap clusters. Compared close-ups with the source and prior published version before replacement.",
+  "sha256": "110f519b0140e6f7f69a4bdc89cbdba3d69613bbc5f0e78daa2e011313d6ebf1",
+  "prompt_file": "output/imagegen/skull-cap-portrait/wider-framing-prompt.txt",
+  "changes": "Wider portrait framing with more plain gray negative space above and beside the figure. Person and detached white contour appear smaller in the same portrait aspect ratio; outer arms and fingertips have side breathing room and the sweater continues to the bottom crop.",
   "fit_reference": "/var/folders/rj/0x7v_c8n7ss_klq9scfrjhyr0000gn/T/codex-clipboard-51fd17a0-af20-41a3-b0d2-2fd8b2d6fc85.png",
   "original_portrait": "/Users/ramsey/Documents/ChatGPT/Research/output/imagegen/skull-cap-portrait/skull-cap-front-nudged-bw.png",
   "review_comparison": "output/imagegen/skull-cap-portrait/reviewed-barbs-three-way.png"
