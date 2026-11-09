@@ -50,6 +50,8 @@ for (const [route, page] of Object.entries(manifest.routes)) {
   assert.match(response.headers.get('Link'), /rel="alternate"; type="text\/markdown"/);
   assert.equal(await response.text(), await fs.readFile(path.join(root, page.markdown.slice(base.length)), 'utf8'));
   const internal = calls.at(-1);
+  assert.equal(calls.at(-2).redirect, 'manual', 'manifest reads must use a Workers-supported redirect mode');
+  assert.equal(internal.redirect, 'manual', 'Markdown reads must use a Workers-supported redirect mode');
   assert.equal(new URL(internal.url).search, '');
   for (const header of ['Cookie', 'Range', 'If-None-Match']) assert.equal(internal.headers.get(header), null);
   const html = await handleRequest(new Request(origin + route, {headers: {Accept: 'text/html,*/*;q=.8'}}), originFetch, base);
@@ -84,4 +86,10 @@ const offlineManifest = async request => new URL(request.url).pathname.endsWith(
   ? new Response('Unavailable', {status: 503}) : originFetch(request);
 const failOpen = await handleRequest(new Request(home), offlineManifest, base);
 assert.match(await failOpen.text(), /<!doctype html>/i);
+for (const target of ['agent-content.json', '.md']) {
+  const redirectingOrigin = async request => new URL(request.url).pathname.endsWith(target)
+    ? new Response(null, {status: 302, headers: {Location: 'https://example.com/unexpected'}}) : originFetch(request);
+  const redirectFallback = await handleRequest(new Request(home, {headers: {Accept: 'text/markdown'}}), redirectingOrigin, base);
+  assert.match(await redirectFallback.text(), /<!doctype html>/i, `${target} redirects must preserve the original page`);
+}
 console.log(`Passed Accept preferences, HTML/Markdown/HEAD for ${Object.keys(manifest.routes).length} routes, security headers, resource types, exclusions and origin fallbacks at ${base}`);

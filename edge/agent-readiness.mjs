@@ -37,7 +37,8 @@ export async function handleRequest(request, fetchOrigin = fetch, basePath = '/'
   let manifest;
   try {
     const manifestResponse = await fetchOrigin(new Request(new URL(basePath + 'agent-content.json', url), {
-      headers: {Accept: 'application/json'}, redirect: 'error',
+      // Workers supports manual/follow only; reject redirects through the status check.
+      headers: {Accept: 'application/json'}, redirect: 'manual',
     }));
     if (!manifestResponse.ok) return fetchOrigin(request);
     manifest = await manifestResponse.json();
@@ -59,7 +60,7 @@ export async function handleRequest(request, fetchOrigin = fetch, basePath = '/'
     if (markdownUrl.origin === url.origin && markdownUrl.pathname.startsWith(basePath)) {
       try {
         const markdownResponse = await fetchOrigin(new Request(markdownUrl, {
-          headers: {Accept: 'text/markdown'}, redirect: 'error',
+          headers: {Accept: 'text/markdown'}, redirect: 'manual',
         }));
         if (markdownResponse.status === 200) {
           response = markdownResponse;
