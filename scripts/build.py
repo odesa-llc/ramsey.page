@@ -10,6 +10,7 @@ import re
 import shutil
 from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree as ET
+from project_arrows import project_link_arrows
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ('en', 'fr')
@@ -150,6 +151,9 @@ def bootstrap(messages):
 
 def render(source, page, lang, messages, site_url, base_path, gateway=False, analytics=None):
     source = clean_seo(localize_links(translate(source, messages), lang))
+    if page not in ('home', 'about'):
+        source = project_link_arrows(source)
+        source = source.replace('</head>', '<link rel="stylesheet" href="/project-links.css?v=1">\n</head>', 1)
     source = re.sub(r'<html\b[^>]*>', '<html lang="' + lang + '">', source, count=1, flags=re.I)
     absolute = lambda path: site_url + base_path.rstrip('/') + path
     canonical = absolute('/') if gateway else absolute(page_path(page, lang))

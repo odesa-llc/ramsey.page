@@ -109,19 +109,25 @@
     "footnote": "Plusieurs réponses possibles · oct. 2026"
   },
   "restitch": {
-    "intro": "Restitch vous guide pas à pas pour faire un ourlet de jean ou une fleur en tissu. Des étapes illustrées pour se lancer avec ce que vous avez, à votre rythme.",
+    "intro": "J’ai conçu une application de couture autour de petits projets : faire un ourlet de jean ou une fleur en tissu. Restitch décompose le travail en étapes illustrées, à suivre et à reprendre à son rythme.",
     "prototype": "Essayer le prototype ↗",
     "researchDate": "Enquête exploratoire · 2–14 octobre 2026",
-    "sampleTitle": "À propos de l’échantillon",
+    "sampleTitle": "À propos du questionnaire",
     "sampleBody": "L’enquête a recueilli 36 réponses, avec un recrutement par bouche-à-oreille et sur les réseaux sociaux. Sur les 33 personnes ayant indiqué leur âge, 4 avaient entre 18 et 24 ans et 29 entre 25 et 34 ans. Trois personnes n’ont pas renseigné leur âge.",
     "sampleLimits": "Le résultat sur le manque de temps porte sur 19 personnes qui avaient déjà cousu. Toutes avaient entre 18 et 34 ans, dont 17 entre 25 et 34 ans. Plusieurs réponses étaient possibles. Cet échantillon exploratoire, majoritairement âgé de 25 à 34 ans, décrit des difficultés déclarées ; il ne mesure pas l’utilisation de Restitch.",
     "features": "À propos du concept",
-    "makeTitle": "Deux projets pour se lancer",
-    "makeBody": "Pour commencer, deux réalisations : un ourlet à double pli pour un jean, ou une fleur en similicuir cousue à la main, composée de six pétales et d’un bouton.",
-    "stepsTitle": "Une étape à la fois",
-    "stepsBody": "Chaque projet commence par la liste du matériel à réunir, puis se poursuit avec six étapes illustrées. Pour le jean, de courtes animations permettent de revoir les gestes, de faire une pause ou de revenir à un passage précis. Pour la fleur, chaque étape est montrée en photo.",
-    "progressTitle": "Reprenez là où vous en étiez",
-    "progressBody": "Le navigateur mémorise le matériel que vous avez coché et les étapes terminées. Vous pouvez reprendre votre projet là où vous en étiez, ou revoir une étape précédente."
+    "makeTitle": "02. J’ai commencé par de petits projets.",
+    "makeBody": "Le prototype propose un ourlet de jean à double rempli et une fleur en similicuir cousue à la main. Chaque projet commence par une liste de matériel, pour savoir de quoi on a besoin avant de se lancer.",
+    "stepsTitle": "03. J’ai montré les gestes, pas à pas.",
+    "stepsBody": "Les leçons pour le jean utilisent de courtes animations que l’on peut mettre en pause, parcourir et revoir. La fleur est expliquée en photos. Chaque leçon se concentre sur une partie du travail, pour pouvoir y revenir pendant que l’on coud.",
+    "progressTitle": "04. J’ai prévu de pouvoir reprendre.",
+    "progressBody": "Le matériel coché et les étapes terminées restent enregistrés dans le navigateur. On peut s’arrêter entre deux leçons, reprendre là où l’on en était ou revoir une étape précédente.",
+    "follow": "suivre le projet ↓",
+    "researchTitle": "01. Je suis parti du temps disponible.",
+    "researchBody": "Dans un premier questionnaire, 11 des 19 personnes ayant déjà cousu ont indiqué qu’il était difficile de trouver du temps pour coudre. Ce constat m’a servi de point de départ pour un prototype organisé en courtes leçons, avec une progression enregistrée.",
+    "sampleNote": "Questionnaire exploratoire · 36 réponses au total · octobre 2026.",
+    "lessonAlt": "Une pile de fiches Restitch montrant un ourlet de jean à l’étape du pliage et du repassage, avec les commandes de lecture et de progression.",
+    "lessonCaption": "un petit projet, une étape à la fois"
   },
   "fuzz": {
     "title": "Circuit de fuzz.",

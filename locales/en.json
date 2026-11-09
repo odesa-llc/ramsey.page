@@ -109,19 +109,25 @@
     "footnote": "Multiple choices allowed · Oct 2026"
   },
   "restitch": {
-    "intro": "Small sewing projects, broken into visual steps. Restitch helps you hem a pair of jeans or make a fabric flower, using what you have and moving at your own pace.",
+    "intro": "I designed a sewing app for small projects: hemming a pair of jeans or making a fabric flower. Restitch breaks the work into visual steps you can pause and return to.",
     "prototype": "Try the prototype ↗",
     "researchDate": "Early research · 2–14 October 2026",
-    "sampleTitle": "About the sample",
+    "sampleTitle": "Survey notes",
     "sampleBody": "36 people responded through word of mouth and social channels. Of the 33 who reported their age, 4 were 18–24 and 29 were 25–34; 3 did not provide an age.",
     "sampleLimits": "The time finding uses 19 answers from people who had sewn before. All were aged 18–34, with 17 aged 25–34. Multiple choices were allowed. This exploratory sample is concentrated in ages 25–34 and describes reported difficulties, rather than measured use of Restitch.",
     "features": "About the concept",
-    "makeTitle": "Something to make",
-    "makeBody": "Two projects to start with: a clean double-fold hem for your jeans, or a hand-sewn faux-leather flower made from six petals and a button.",
-    "stepsTitle": "One step at a time",
-    "stepsBody": "Each project begins with a materials checklist, followed by six visual lessons. Jeans lessons include short animations you can pause, scrub, and replay; the flower uses step-by-step photographs.",
-    "progressTitle": "Pick up where you left off",
-    "progressBody": "Materials readiness and completed steps stay saved in your browser. Return to an earlier lesson or continue a project at your own pace."
+    "makeTitle": "02. I kept the first projects small.",
+    "makeBody": "The prototype starts with a double-fold jeans hem and a hand-sewn faux-leather flower. Each project opens with a materials checklist, so you can see what you need before you begin.",
+    "stepsTitle": "03. I showed the work, step by step.",
+    "stepsBody": "The jeans lessons use short animations you can pause, scrub and replay. The flower uses step-by-step photographs. Each lesson focuses on one part of the work, so you can revisit it while you sew.",
+    "progressTitle": "04. I made it easy to return.",
+    "progressBody": "Checked materials and completed steps stay saved in your browser. You can stop between lessons, come back to where you left off, or revisit an earlier step.",
+    "follow": "follow the project ↓",
+    "researchTitle": "01. I started with finding time.",
+    "researchBody": "In an early survey, 11 of 19 people who had sewn before said finding time for sewing was a challenge. I used that as a starting point for a prototype built around short lessons and saved progress.",
+    "sampleNote": "Exploratory survey · 36 responses overall · October 2026.",
+    "lessonAlt": "A stack of Restitch lesson cards showing a jeans hem at the fold and press step, with playback and progress controls.",
+    "lessonCaption": "a small project, one step at a time"
   },
   "fuzz": {
     "title": "Breadboard fuzz.",
