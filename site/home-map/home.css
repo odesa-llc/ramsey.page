@@ -283,7 +283,7 @@
 .bag-preview-page .bag-preview-host,.bag-preview-page .bag-preview-host>section{min-height:410px}
 .bag-preview-page .bag-preview-host>section{display:flex;align-items:center}
 
-/* The diagram sits immediately before the breadboard in the object row. */
+/* An enlarged grayscale schematic fades underneath the breadboard. */
 .bag-preview-page .object-shelf{
  display:grid;
  grid-template-columns:minmax(0,1.8fr) minmax(0,1.1fr) minmax(0,.95fr) minmax(0,.5fr);
@@ -294,18 +294,21 @@
 .bag-preview-page .object-shelf .bag-preview-host{width:100%;max-width:390px}
 .bag-preview-page .object-shelf .object-diagram{
  position:relative;
- width:100%;max-width:250px;height:155px;
+ width:165%;max-width:380px;height:235px;
  justify-self:end;
  margin-top:30px;
- transform:translateX(clamp(8px,1.4vw,20px)) rotate(7deg);
+ transform:translate(clamp(100px,9vw,150px),-12px) rotate(7deg);
+ z-index:2;
 }
 .bag-preview-page .object-diagram a{display:block;width:100%;height:100%}
 .bag-preview-page .object-diagram img{
- filter:none;
- -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 62%,rgba(0,0,0,.85) 80%,rgba(0,0,0,.35) 94%,transparent 100%);
- mask-image:linear-gradient(90deg,#000 0%,#000 62%,rgba(0,0,0,.85) 80%,rgba(0,0,0,.35) 94%,transparent 100%);
+ filter:grayscale(1);
+ opacity:.8;
+ mix-blend-mode:multiply;
+ -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 48%,rgba(0,0,0,.9) 66%,rgba(0,0,0,.35) 86%,transparent 100%);
+ mask-image:linear-gradient(90deg,#000 0%,#000 48%,rgba(0,0,0,.9) 66%,rgba(0,0,0,.35) 86%,transparent 100%);
 }
-.bag-preview-page .object-shelf .object-board{width:100%;max-width:205px;justify-self:start}
+.bag-preview-page .object-shelf .object-board{width:100%;max-width:205px;justify-self:start;transform:translateX(-22px) rotate(7deg);z-index:3}
 .bag-preview-page .object-shelf .object-camera{width:100%;max-width:108px}
 @media(max-width:1000px){
  .bag-preview-page .human-hero{height:940px;min-height:0}
@@ -315,8 +318,8 @@
   height:auto;bottom:102px;gap:26px 16px;
  }
  .bag-preview-page .object-shelf .bag-preview-host{grid-column:1/-1;margin:auto}
- .bag-preview-page .object-shelf .object-diagram{height:125px;margin:0}
- .bag-preview-page .object-shelf .object-board{max-width:140px;height:125px;margin:0}
+ .bag-preview-page .object-shelf .object-diagram{height:150px;margin:0;transform:translate(clamp(78px,26vw,126px),-12px) rotate(7deg)}
+ .bag-preview-page .object-shelf .object-board{max-width:140px;height:125px;margin:0;transform:translateX(-14px) rotate(7deg)}
  .bag-preview-page .object-shelf .object-camera{max-width:80px;height:145px;margin:0}
 }
 /* The published home contains one process map and ordinary project links. */
@@ -332,3 +335,41 @@
  html[lang="fr"] .human-hero-copy h1{font-size:clamp(32px,10.6vw,62px)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Week one balances pattern papers and small hardware across an unmarked center. */
+.bag-demo .bp-note-piece[data-stage="pattern"]{flex:1.25}
+.bag-demo .bp-note-piece .bp-art[data-stage="pattern"] .bp-pattern-papers{
+ position:absolute;left:0;top:50%;width:50%;height:auto;max-height:88%;transform:translateY(-50%);
+}
+.bag-demo .bp-pattern-hardware{
+ position:absolute;left:54%;right:0;top:19%;height:65%;display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));
+ gap:0 2px;align-items:center;justify-items:center;pointer-events:none;
+}
+.bag-demo .bp-note-piece .bp-art[data-stage="pattern"] .bp-pattern-hardware img{
+ width:var(--hardware-width,100%);height:auto;min-width:0;min-height:0;max-width:none;max-height:none;object-fit:contain;filter:none;
+}
+
+/* Calibrated to the leather tab's sewn edge, rather than the whole assembly. */
+.bag-demo .bp-pattern-hardware img:nth-child(1){--hardware-width:82%}
+.bag-demo .bp-pattern-hardware img:nth-child(2){--hardware-width:90%}
+.bag-demo .bp-pattern-hardware img:nth-child(3){--hardware-width:178%}
+.bag-demo .bp-pattern-hardware img:nth-child(4){--hardware-width:139%;translate:1px 5px}
+
+/* A tighter introduction, with the contact address tucked under about. */
+.portrait-about-group{justify-self:end;display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+.portrait-about-group .portrait-about{padding-bottom:2px}
+.portrait-email{font-size:12px;line-height:1.4;white-space:nowrap;opacity:.8;padding:0}
+.portrait-email:hover{opacity:1;text-decoration:underline;text-underline-offset:3px}
+.bag-preview-page .human-hero{height:660px;min-height:calc(100vh - 184px)}
+.bag-preview-page .human-hero-copy{top:19.5%}
+@media(max-width:1000px){
+ .bag-preview-page .human-hero{height:900px;min-height:0}
+ .bag-preview-page .human-hero-copy{top:11%}
+}
+@media(max-width:700px){.portrait-email{font-size:10.5px}}
+
+/* A project label above the joined schematic and breadboard. */
+.fuzz-project-title{position:absolute;grid-column:2/4;justify-self:center;top:0;margin:0;font-size:17px;line-height:1.35;font-weight:400;transform:rotate(-1.3deg);z-index:4}
+.fuzz-project-title a:hover{text-decoration:underline;text-underline-offset:5px}
+@media(max-width:1000px){.bag-preview-page .object-shelf{row-gap:66px}.fuzz-project-title{grid-column:1/3;top:auto;bottom:195px}}

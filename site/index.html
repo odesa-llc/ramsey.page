@@ -8,8 +8,8 @@
   <script src="/support.js"></script>
   <link rel="preload" href="/assets/fonts/NotebookHand-QuietJoins-Regular.woff2?v=1.100" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/typography.css?v=quiet-joins-1.100">
-  <link rel="stylesheet" href="/home-map/home.css?v=paper-map-2">
-  <script src="/home-map/making.js?v=1" defer></script>
+  <link rel="stylesheet" href="/home-map/home.css?v=home-refinements-5">
+  <script src="/home-map/making.js?v=3-hardware" defer></script>
   <script src="/cutout-interaction.js?v=8" defer></script>
   <noscript><style>.bp-note-footer{display:none}</style></noscript>
 </head>
@@ -24,7 +24,10 @@
           <img class="portrait-face" src="/assets/home-map/portrait-header.webp" alt="" draggable="false">
           <span class="portrait-outline" aria-hidden="true"></span>
         </a>
-        <a class="portrait-about hand" href="/about/"><!--i18n:nav.about-->about<!--/i18n--></a>
+        <div class="portrait-about-group">
+          <a class="portrait-about hand" href="/about/"><!--i18n:nav.about-->about<!--/i18n--></a>
+          <a class="portrait-email hand" href="mailto:ramseyhat@gmail.com">ramseyhat@gmail.com</a>
+        </div>
       </nav>
     </header>
     <main>
@@ -36,19 +39,27 @@
               <div class="bag-demo bag-annotation" data-kind="map">
                 <div class="bp-note-diagram">
                   <svg class="bp-pencil-lines" aria-hidden="true" focusable="false"></svg>
-                  <h2 class="bp-note-heading"><a href="/handbag/"><!--i18n:home.mapHeading-->a little anatomy of making<!--/i18n--></a></h2>
+                  <h2 class="bp-note-heading"><a href="/handbag/"><!--i18n:home.mapHeading-->faux leather bag<!--/i18n--></a></h2>
                   <div class="bp-notes-row" data-count="3"><button type="button" class="bp-note-piece" data-stage="pattern" aria-pressed="true" aria-label="Read about the pattern papers" data-i18n-aria-label="home.mapPatternRead" data-note="paper guides, held together with little red clips." data-i18n-data-note="home.mapPatternNote">
               <span class="bp-callout"><!--i18n:home.mapPatternFeature-->paper + clips<!--/i18n--></span>
-              <span class="bp-art" data-stage="pattern"><img src="/assets/home-map/pattern-papers.webp" alt="Handbag pattern papers with red clips and a black swatch" data-i18n-alt="home.mapPatternAlt" draggable="false"></span>
-              <span class="bp-stage-caption"><!--i18n:home.mapPatternLabel-->pattern papers<!--/i18n--></span>
+              <span class="bp-art bp-pattern-assembly" data-stage="pattern">
+                <img class="bp-pattern-papers" src="/assets/home-map/pattern-papers.webp" alt="Handbag pattern papers with red clips and a black swatch" data-i18n-alt="home.mapPatternAlt" draggable="false">
+                <span class="bp-pattern-hardware" role="img" aria-label="Two faux-leather tabs with D-rings and two with clasps and rings" data-i18n-aria-label="home.mapHardwareAlt">
+                  <img src="/assets/home-map/hardware/01-leather-ring-left.png" width="1262" height="1246" alt="" draggable="false">
+                  <img src="/assets/home-map/hardware/02-leather-ring-right.png" width="1315" height="1196" alt="" draggable="false">
+                  <img src="/assets/home-map/hardware/03-leather-clasp-upper.png" width="1733" height="907" alt="" draggable="false">
+                  <img src="/assets/home-map/hardware/04-leather-clasp-lower.png" width="1312" height="1199" alt="" draggable="false">
+                </span>
+              </span>
+              <span class="bp-stage-caption"><!--i18n:home.mapPatternLabel-->week 1<!--/i18n--></span>
             </button><button type="button" class="bp-note-piece" data-stage="wip" aria-pressed="false" aria-label="Read about the unfinished handbag" data-i18n-aria-label="home.mapWipRead" data-note="the lining, the seams, and a few unfinished edges." data-i18n-data-note="home.mapWipNote">
               <span class="bp-callout"><!--i18n:home.mapWipFeature-->raw edges<!--/i18n--></span>
               <span class="bp-art" data-stage="wip"><img src="/assets/home-map/wip-handbag.webp" alt="Unfinished cream and black handbag" data-i18n-alt="home.mapWipAlt" draggable="false" class="bp-wip"></span>
-              <span class="bp-stage-caption"><!--i18n:home.mapWipLabel-->in the making<!--/i18n--></span>
+              <span class="bp-stage-caption"><!--i18n:home.mapWipLabel-->week 2<!--/i18n--></span>
             </button><button type="button" class="bp-note-piece" data-stage="finished" aria-pressed="false" aria-label="Read about the finished handbag" data-i18n-aria-label="home.mapFinishedRead" data-note="black fabric, silver details, and a bag to take out." data-i18n-data-note="home.mapFinishedNote">
               <span class="bp-callout"><!--i18n:home.mapFinishedFeature-->silver hardware<!--/i18n--></span>
               <span class="bp-art" data-stage="finished"><img src="/assets/home-map/handbag.webp" alt="Finished black handbag with silver hardware" data-i18n-alt="home.mapFinishedAlt" draggable="false"></span>
-              <span class="bp-stage-caption"><!--i18n:home.mapFinishedLabel-->a few good stitches<!--/i18n--></span>
+              <span class="bp-stage-caption"><!--i18n:home.mapFinishedLabel-->week 3<!--/i18n--></span>
             </button></div>
                 </div>
                 <p class="bp-note-detail" aria-live="polite" aria-atomic="true"><!--i18n:home.mapPatternNote-->paper guides, held together with little red clips.<!--/i18n--></p>
@@ -56,9 +67,10 @@
               </div>
             </section>
           </div>
+          <h2 class="fuzz-project-title hand"><a href="/fuzz/"><!--i18n:home.mapFuzzHeading-->fuzz circuit<!--/i18n--></a></h2>
           <figure class="loose-object object-diagram">
             <a href="/assets/home-map/fuzz-schematic-transparent.png" target="_blank" rel="noopener" aria-label="Open full-size fuzz circuit diagram" data-i18n-aria-label="home.mapDiagramOpen">
-              <img src="/assets/home-map/fuzz-schematic-transparent.png" width="1611" height="976" alt="Fuzz circuit simulation diagram with blue connections and black component labels" data-i18n-alt="home.mapDiagramAlt" draggable="false" data-widget-cutout="true">
+              <img src="/assets/home-map/fuzz-schematic-transparent.png" width="1611" height="976" alt="Grayscale fuzz circuit simulation diagram with component labels" data-i18n-alt="home.mapDiagramAlt" draggable="false" data-widget-cutout="true">
             </a>
           </figure>
           <figure class="loose-object object-board">
@@ -75,7 +87,6 @@
     </main>
     <footer class="human-footer" id="more">
       <p class="hand"><!--i18n:home.mapThanks-->thanks for looking around.<!--/i18n--></p>
-      <a class="hand" href="mailto:ramseyhat@gmail.com"><!--i18n:home.mapContact-->say hi: ramseyhat@gmail.com<!--/i18n--></a>
     </footer>
   </div>
 </body>
