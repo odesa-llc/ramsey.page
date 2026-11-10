@@ -1,8 +1,8 @@
 /* Shared portfolio typography, traced from the supplied notebook photograph. */
 @font-face {
   font-family: 'Notebook Hand';
-  src: url('/assets/fonts/NotebookHand-Regular.woff2?v=1.110') format('woff2'),
-       url('/assets/fonts/NotebookHand-Regular.ttf?v=1.110') format('truetype');
+  src: url('/assets/fonts/NotebookHand-QuietJoins-Regular.woff2?v=1.100') format('woff2'),
+       url('/assets/fonts/NotebookHand-QuietJoins-Regular.ttf?v=1.100') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -27,8 +27,8 @@ body ::before,
 body ::after {
   font-family: var(--portfolio-font) !important;
   font-synthesis: none;
-  /* Keep the pen shapes and contextual alternates; photo joins remain optional. */
-  font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1, 'dlig' 0;
+  /* Approved photographed joins, with the original contextual letter forms. */
+  font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1, 'dlig' 1;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
 }
