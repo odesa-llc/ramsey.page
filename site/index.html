@@ -6,9 +6,9 @@
   <title><!--i18n:seo.homeTitle-->ramsey hatoum — Selected Work<!--/i18n--></title>
   <script src="/i18n-preview.js?v=1"></script><script src="/i18n.js?v=1"></script>
   <script src="/support.js"></script>
-  <link rel="preload" href="/assets/fonts/NotebookHand-QuietJoins-Regular.woff2?v=1.100" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/typography.css?v=quiet-joins-1.100">
-  <link rel="stylesheet" href="/home-map/home.css?v=home-refinements-5">
+  <link rel="preload" href="/assets/fonts/NotebookHand-QuietJoins-Regular.woff2?v=1.102" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/typography.css?v=quiet-joins-1.102">
+  <link rel="stylesheet" href="/home-map/home.css?v=about-email-bag-up-1">
   <script src="/home-map/making.js?v=3-hardware" defer></script>
   <script src="/cutout-interaction.js?v=8" defer></script>
   <noscript><style>.bp-note-footer{display:none}</style></noscript>
@@ -21,12 +21,11 @@
         <a class="portrait-work hand" href="#work" aria-current="page"><!--i18n:nav.work-->work<!--/i18n--></a>
         <a class="portrait-home" href="/" aria-label="ramsey hatoum home" data-i18n-aria-label="nav.home">
           <span class="portrait-name" aria-hidden="true">ramsey hatoum</span>
-          <img class="portrait-face" src="/assets/home-map/portrait-header.webp" alt="" draggable="false">
-          <span class="portrait-outline" aria-hidden="true"></span>
+          <img class="portrait-face portrait-receipt" src="/assets/home-map/portrait-receipt-top-corner-bw20-ascii.webp?v=2" width="370" height="450" alt="" draggable="false">
         </a>
         <div class="portrait-about-group">
           <a class="portrait-about hand" href="/about/"><!--i18n:nav.about-->about<!--/i18n--></a>
-          <a class="portrait-email hand" href="mailto:ramseyhat@gmail.com">ramseyhat@gmail.com</a>
+          <a class="portrait-email hand" href="mailto:work@ramsey.page">work@ramsey.page</a>
         </div>
       </nav>
     </header>
@@ -67,7 +66,8 @@
               </div>
             </section>
           </div>
-          <h2 class="fuzz-project-title hand"><a href="/fuzz/"><!--i18n:home.mapFuzzHeading-->fuzz circuit<!--/i18n--></a></h2>
+          <section class="fuzz-project-group" aria-labelledby="fuzz-project-title">
+          <h2 class="fuzz-project-title hand" id="fuzz-project-title"><a href="/fuzz/"><!--i18n:home.mapFuzzHeading-->fuzz circuit<!--/i18n--></a></h2>
           <figure class="loose-object object-diagram">
             <a href="/assets/home-map/fuzz-schematic-transparent.png" target="_blank" rel="noopener" aria-label="Open full-size fuzz circuit diagram" data-i18n-aria-label="home.mapDiagramOpen">
               <img src="/assets/home-map/fuzz-schematic-transparent.png" width="1611" height="976" alt="Grayscale fuzz circuit simulation diagram with component labels" data-i18n-alt="home.mapDiagramAlt" draggable="false" data-widget-cutout="true">
@@ -75,8 +75,14 @@
           </figure>
           <figure class="loose-object object-board">
             <a href="/fuzz/"><img src="/assets/home-map/breadboard.webp" alt="Breadboard circuit with colorful jumper wires" data-i18n-alt="home.fuzzAlt" draggable="false" data-breadboard-cutout="true"></a>
-            <figcaption class="hand"><a href="/fuzz/"><!--i18n:home.mapBoardNote-->a little noise<!--/i18n--></a></figcaption>
+            <svg class="fuzz-build-arrow" viewBox="0 0 36 22" aria-hidden="true" focusable="false"><path d="M2 15C10 13 19 8 32 10M26 4L33 10L26 17" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <figcaption class="hand"><a href="/fuzz/"><!--i18n:home.mapBoardNote-->breadboard<!--/i18n--></a></figcaption>
           </figure>
+          <figure class="loose-object object-prototype">
+            <a href="/fuzz/"><img src="/assets/home-map/soldered-prototype-cutout.png?v=top-view-2" width="1536" height="1024" alt="Soldered fuzz circuit on orange perfboard with blue screw terminals" data-i18n-alt="home.mapPrototypeAlt" draggable="false" data-widget-cutout="true"></a>
+            <figcaption class="hand"><a href="/fuzz/"><!--i18n:home.mapPrototypeNote-->soldered circuit<!--/i18n--></a></figcaption>
+          </figure>
+          </section>
           <figure class="loose-object object-camera">
             <a href="/beirut/"><img src="/assets/home-map/camera.webp" alt="Silver Sony digital camera showing a sunlit graffiti wall, with wrist strap" data-i18n-alt="home.cameraAlt" draggable="false" data-widget-cutout="true"></a>
             <figcaption class="hand"><a href="/beirut/"><!--i18n:home.mapCameraNote-->looking around<!--/i18n--></a></figcaption>
@@ -86,7 +92,7 @@
       </section>
     </main>
     <footer class="human-footer" id="more">
-      <p class="hand"><!--i18n:home.mapThanks-->thanks for looking around.<!--/i18n--></p>
+      <p class="hand"><!--i18n:home.mapThanks-->thanks for your attention.<!--/i18n--></p>
     </footer>
   </div>
 </body>

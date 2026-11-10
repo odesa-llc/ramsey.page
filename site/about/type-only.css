@@ -21,6 +21,12 @@ button:focus-visible, a:focus-visible { outline: 1px solid currentColor; outline
   text-underline-offset: 5px;
 }
 
+.about-nav-contact { position: relative; justify-self: center; }
+.about-nav-contact > a:first-child { white-space: nowrap; }
+.about-nav-email { position: absolute; top: calc(100% + 2px); right: 0; font-size: 15px; line-height: 1.4; white-space: nowrap; opacity: .8; }
+.about-nav-email:hover { opacity: 1; }
+@media (max-width: 700px) { .about-nav-email { font-size: 13px; } }
+
 .about-main {
   width: 100%;
   max-width: 1120px;

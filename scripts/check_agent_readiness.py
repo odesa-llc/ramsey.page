@@ -35,8 +35,9 @@ def check(output, base_path, site_url):
             assert len(body.strip()) > 100
             assert '<script' not in body and '<!--i18n:' not in source and '{{' not in source
             if page == 'about':
-                assert site_url + base_path.rstrip('/') + catalogs[lang]['about.cvHref'] in body
-                assert 'mailto:ramseyhat@gmail.com' in body
+                assert site_url + base_path.rstrip('/') + catalogs[lang]['about.cvHref'] not in body
+                assert 'ramseyhat@gmail.com' not in body
+                assert 'mailto:work@ramsey.page' in (output / (route.lstrip('/') + 'index.html')).read_text()
     assert {entry['markdown'] for entry in manifest['routes'].values()} == expected_md
     llms = (output / 'llms.txt').read_text()
     assert all(site_url + path in llms for path in expected_md if path != base_path + 'index.md')

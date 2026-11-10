@@ -57,7 +57,9 @@ def check(output, base_path, site_url):
             assert any(a.get('name') == 'description' and a.get('content') == catalogs[lang]['seo.'+page+'Description'] for _, a in doc.tags)
             if page == 'about':
                 cv_href = base_path.rstrip('/') + catalogs[lang]['about.cvHref']
-                assert any(tag == 'a' and attrs.get('href') == cv_href for tag, attrs in doc.tags), (lang, cv_href)
+                assert not any(tag == 'a' and attrs.get('href') == cv_href for tag, attrs in doc.tags), (lang, cv_href)
+                assert not any('data-copy-email' in attrs for _, attrs in doc.tags), lang
+                assert any(tag == 'a' and attrs.get('href') == 'mailto:work@ramsey.page' for tag, attrs in doc.tags), lang
     source = (output / 'index.html').read_text()
     doc = Document(source)
     entries = [a for tag, a in doc.tags if tag == 'script' and 'language-entry.js' in a.get('src', '')]

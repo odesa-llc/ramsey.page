@@ -410,12 +410,14 @@
   "home.mapNext": "look a little closer →",
   "home.mapDiagramOpen": "Open full-size fuzz circuit diagram",
   "home.mapDiagramAlt": "Grayscale fuzz circuit simulation diagram with component labels",
-  "home.mapBoardNote": "a little noise",
+  "home.mapBoardNote": "breadboard",
   "home.mapCameraNote": "looking around",
   "home.mapMore": "see more ↓",
-  "home.mapThanks": "thanks for looking around.",
+  "home.mapThanks": "thanks for your attention.",
   "home.mapContact": "say hi: ramseyhat@gmail.com",
   "home.mapSkip": "Skip to work",
   "home.mapHardwareAlt": "Two faux-leather tabs with D-rings and two with clasps and rings",
-  "home.mapFuzzHeading": "fuzz circuit"
+  "home.mapFuzzHeading": "fuzz circuit",
+  "home.mapPrototypeAlt": "Soldered fuzz circuit on orange perfboard with blue screw terminals",
+  "home.mapPrototypeNote": "soldered circuit"
 }

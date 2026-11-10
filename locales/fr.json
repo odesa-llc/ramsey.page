@@ -410,12 +410,14 @@
   "home.mapNext": "regarder de plus près →",
   "home.mapDiagramOpen": "Ouvrir le schéma du circuit fuzz en grand",
   "home.mapDiagramAlt": "Schéma de simulation du circuit fuzz en niveaux de gris avec les composants légendés",
-  "home.mapBoardNote": "un peu de bruit",
+  "home.mapBoardNote": "plaque d’essai",
   "home.mapCameraNote": "regarder autour",
   "home.mapMore": "voir plus ↓",
-  "home.mapThanks": "merci pour la visite.",
+  "home.mapThanks": "merci pour votre attention.",
   "home.mapContact": "un petit bonjour : ramseyhat@gmail.com",
   "home.mapSkip": "Aller aux projets",
   "home.mapHardwareAlt": "Deux pattes en simili cuir avec anneaux en D et deux avec mousquetons et anneaux",
-  "home.mapFuzzHeading": "circuit fuzz"
+  "home.mapFuzzHeading": "circuit fuzz",
+  "home.mapPrototypeAlt": "Circuit fuzz soudé sur une plaque orange avec des borniers à vis bleus",
+  "home.mapPrototypeNote": "circuit soudé"
 }
