@@ -177,9 +177,7 @@
     "transistor": "du transistor",
     "removable": "amovible",
     "closing": "Un montage qu’on peut examiner, modifier et faire évoluer.",
-    "removableConnections": "connexions démontables",
-    "simulationLabel": "Ouvrir le schéma de simulation du circuit fuzz en plein format",
-    "simulationAlt": "Schéma de simulation du circuit fuzz avec les connexions en bleu et les noms des composants en noir"
+    "removableConnections": "connexions démontables"
   },
   "beirut": {
     "title": "Beyrouth, au fil des rues.",

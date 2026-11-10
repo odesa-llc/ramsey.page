@@ -177,9 +177,7 @@
     "transistor": "the transistor",
     "removable": "removable",
     "closing": "A build you can inspect, adjust, and keep working on.",
-    "removableConnections": "removable connections",
-    "simulationLabel": "Open full-size fuzz circuit simulation diagram",
-    "simulationAlt": "Fuzz circuit simulation diagram with blue signal paths and black component labels"
+    "removableConnections": "removable connections"
   },
   "beirut": {
     "title": "Beirut, in passing.",
