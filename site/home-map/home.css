@@ -260,7 +260,7 @@
 :is(.has-bag-story,.bag-preview-page) .bag-preview-host>section{min-height:334px}
 :is(.has-bag-story,.bag-preview-page) .object-board{margin-top:30px}
 :is(.has-bag-story,.bag-preview-page) .object-camera{margin-top:30px}
-:is(.has-bag-story,.bag-preview-page) .human-scroll{bottom:28px}
+:is(.has-bag-story,.bag-preview-page) .human-scroll{bottom:28px;transform:translateX(-50%)}
 /* A small reduction above and below the main page's title. */
 .has-bag-story .human-hero{height:680px;min-height:calc(100vh - 164px)}
 .has-bag-story .human-hero-copy{top:22%}
