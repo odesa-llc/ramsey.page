@@ -35,11 +35,11 @@ ATTRIBUTE = re.compile(r'\s+data-i18n-([\w-]+)="([\w.]+)"')
 TAG = re.compile(r'<[^>]+>')
 QUOTED_PATH = re.compile(r'''(?P<quote>["'])(?P<url>/(?!/)[^"'\s<>\\]*)(?=(?P=quote))''')
 CSS_PATH = re.compile(r'''(?P<start>url\(\s*)(?P<url>/(?!/)[^\s)'"\\]+)''')
-FAVICON_LINKS = '''<link rel="icon" href="/favicon-receipt.ico?v=20261110-soft1" sizes="16x16 32x32 48x48">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/avatar-receipt-16.png?v=20261110-soft1">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/avatar-receipt-32.png?v=20261110-soft1">
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/avatar-receipt-48.png?v=20261110-soft1">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/avatar-receipt-180.png?v=20261110-soft1">'''
+FAVICON_LINKS = '''<link rel="icon" href="/favicon-receipt.ico?v=20261110-torn1" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/avatar-receipt-16.png?v=20261110-torn1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/avatar-receipt-32.png?v=20261110-torn1">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/avatar-receipt-48.png?v=20261110-torn1">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/avatar-receipt-180.png?v=20261110-torn1">'''
 
 
 def flatten(value, prefix=''):
