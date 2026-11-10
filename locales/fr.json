@@ -390,6 +390,8 @@
     "fabricNotes": "notes sur le tissu ↗"
   },
   "home.mapHeadline": "physique x numérique",
+  "home.mapPhysical": "physique",
+  "home.mapDigital": "numérique",
   "home.mapMakingLabel": "Du patron au sac terminé",
   "home.mapHeading": "sac en simili cuir",
   "home.mapPatternFeature": "papier + pinces",

@@ -390,6 +390,8 @@
     "fabricNotes": "fabric notes ↗"
   },
   "home.mapHeadline": "physical x digital",
+  "home.mapPhysical": "physical",
+  "home.mapDigital": "digital",
   "home.mapMakingLabel": "From pattern papers to finished handbag",
   "home.mapHeading": "faux leather bag",
   "home.mapPatternFeature": "paper + clips",

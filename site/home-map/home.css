@@ -412,6 +412,7 @@
 /* Photography starts a separate row, with the hero growing around its content. */
 .bag-preview-page .human-hero{height:auto;max-height:none;min-height:calc(100vh - 184px);padding:85px 0 92px}
 .bag-preview-page .human-hero-copy{position:relative;left:auto;top:auto;width:100%;margin:0 auto;transform:none}
+.bag-preview-page .human-hero-copy h1 .hero-separator{display:inline-block;font-size:calc(.62em + 4px);line-height:1;vertical-align:.12em;transform:none}
 .bag-preview-page .object-shelf{position:relative;left:auto;right:auto;bottom:auto;width:88%;height:auto;margin:136px auto 0;row-gap:64px}
 @media(min-width:1001px){.bag-preview-page .object-shelf .bag-preview-host{transform:translateY(-32px)}}
 .bag-preview-page .object-shelf .object-camera{grid-column:1/-1;justify-self:end;margin-top:0}
