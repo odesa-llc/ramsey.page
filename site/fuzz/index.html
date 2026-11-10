@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/centered-nav.css?v=22">
 <link rel="stylesheet" href="/typography.css?v=notebook-hand-1.110">
 <link rel="stylesheet" href="/portfolio-cursor.css?v=little-pencil-sage-2">
-<link rel="stylesheet" href="/fuzz/integration.css?v=6">
+<link rel="stylesheet" href="/fuzz/integration.css?v=7-schematic">
 <script src="/project-visibility.js?v=5-role"></script>
 <script src="/palette-settings.js?v=2"></script>
 <script src="/concepts/color-studies/palette-preview.js?v=3"></script>
@@ -24,7 +24,14 @@
 </section>
 <section class="artboard breadboard" id="breadboard" aria-labelledby="breadboard-title">
   <h2 class="chapter-label reference-title" id="breadboard-title"><!--i18n:fuzz.reference-->01. Reference and simulation<!--/i18n--></h2>
-  <div class="reveal-stage" data-view="overlay" aria-describedby="circuit-reference-values circuit-reference-note"><div class="drawing-layer"><svg class="reference-drawing" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img" aria-labelledby="title desc">
+  <div class="reference-build-row">
+    <figure class="simulation-reference">
+      <a class="image-link" href="/assets/fuzz/schematic-transparent.png" target="_blank" rel="noopener" aria-label="Open full-size fuzz circuit simulation diagram" data-i18n-aria-label="fuzz.simulationLabel">
+        <img src="/assets/fuzz/schematic-transparent.png" width="1611" height="976" loading="lazy" decoding="async" alt="Fuzz circuit simulation diagram with blue signal paths and black component labels" data-i18n-alt="fuzz.simulationAlt">
+      </a>
+    </figure>
+    <div class="reference-build-preview">
+      <div class="reveal-stage" data-view="overlay" aria-describedby="circuit-reference-values circuit-reference-note"><div class="drawing-layer"><svg class="reference-drawing" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img" aria-labelledby="title desc">
   <title id="title"><!--i18n:fuzz.diagramTitle-->Proposed Bazz Fuss circuit underlay<!--/i18n--></title>
   <desc id="desc"><!--i18n:fuzz.diagramDescription-->A footprint-sized Bazz Fuss reference schematic. MPSA14 transistor, BAT41 collector-to-base diode, 10 kilohm collector resistor, 470 nanofarad input capacitor, 100 nanofarad output capacitor, and 100 kilohm volume potentiometer. These reference values and connections have not been verified against the photographed breadboard.<!--/i18n--></desc>
   <defs>
@@ -109,10 +116,13 @@
   
 </svg>
 </div><img class="board-photo" src="/assets/breadboard-cutout.png" alt="Original breadboard photograph" data-i18n-alt="fuzz.photoAlt"></div>
+      <p class="board-caption"><!--i18n:fuzz.boardCaption-->Breadboard + circuit reference<!--/i18n--></p>
+  <div class="view-controls"><div class="toggle" role="group" aria-label="Breadboard view" data-i18n-aria-label="fuzz.viewLabel"><button type="button" data-view="photo" aria-pressed="false"><!--i18n:fuzz.photo-->Photo<!--/i18n--></button><button type="button" data-view="overlay" aria-pressed="true"><!--i18n:fuzz.overlay-->Overlay<!--/i18n--></button><button type="button" data-view="diagram" aria-pressed="false"><!--i18n:fuzz.diagram-->Diagram<!--/i18n--></button></div><span class="view-hint"><!--i18n:fuzz.tap-->Tap the build to compare<!--/i18n--></span></div>
+    </div>
+  </div>
   <aside class="note exposed-note"><!--i18n:fuzz.leave-->leave the<!--/i18n--><br><!--i18n:fuzz.connections--> connections<!--/i18n--><br><!--i18n:fuzz.exposed--> exposed<!--/i18n--></aside><aside class="note signal-note"><!--i18n:fuzz.followSignal-->follow<!--/i18n--><br><!--i18n:fuzz.signal--> the signal<!--/i18n--></aside>
   <svg class="arrows" viewBox="0 0 1536 1024" aria-hidden="true"><defs><marker id="arrow-breadboard" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto"><path d="M2 2L10 6 2 10"/></marker></defs><path d="M238 327C340 270 418 287 499 359" marker-end="url(#arrow-breadboard)"/><path d="M1372 444Q1318 492 1230 497" marker-end="url(#arrow-breadboard)"/></svg>
-  <p class="board-caption"><!--i18n:fuzz.boardCaption-->Breadboard + circuit reference<!--/i18n--></p>
-  <div class="view-controls"><div class="toggle" role="group" aria-label="Breadboard view" data-i18n-aria-label="fuzz.viewLabel"><button type="button" data-view="photo" aria-pressed="false"><!--i18n:fuzz.photo-->Photo<!--/i18n--></button><button type="button" data-view="overlay" aria-pressed="true"><!--i18n:fuzz.overlay-->Overlay<!--/i18n--></button><button type="button" data-view="diagram" aria-pressed="false"><!--i18n:fuzz.diagram-->Diagram<!--/i18n--></button></div><span class="view-hint"><!--i18n:fuzz.tap-->Tap the build to compare<!--/i18n--></span></div>
+
   <dl class="circuit-values" id="circuit-reference-values" aria-label="Reference component values" data-i18n-aria-label="fuzz.values"><div><dt>R1</dt><dd>10 kΩ</dd></div><div><dt>C1</dt><dd>470 nF</dd></div><div><dt>C2</dt><dd>100 nF</dd></div><div><dt>D1</dt><dd>BAT41</dd></div><div><dt>Q1</dt><dd>MPSA14</dd></div><div><dt>VR1</dt><dd>100 kΩ · volume</dd></div></dl>
   <aside class="note perspective-note"><!--i18n:fuzz.different-->a different way to see it<!--/i18n--></aside>
   <p class="build-copy"><!--i18n:fuzz.build-->A circuit assembled on a solderless breadboard, with components and jumper wires left accessible.<!--/i18n--></p><p class="reference-note" id="circuit-reference-note"><!--i18n:fuzz.note-->Bazz Fuss reference values · schematic layout, not a hole-by-hole wiring map.<!--/i18n--></p>
