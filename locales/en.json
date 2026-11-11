@@ -393,7 +393,7 @@
   "home.mapPhysical": "physical",
   "home.mapDigital": "digital",
   "home.mapMakingLabel": "From pattern papers to finished handbag",
-  "home.mapHeading": "faux leather bag",
+  "home.mapHeading": "leather bag #1",
   "home.mapPatternFeature": "paper + clips",
   "home.mapWipFeature": "raw edges",
   "home.mapFinishedFeature": "silver hardware",
@@ -419,7 +419,7 @@
   "home.mapContact": "say hi: ramseyhat@gmail.com",
   "home.mapSkip": "Skip to work",
   "home.mapHardwareAlt": "Two faux-leather tabs with D-rings and two with clasps and rings",
-  "home.mapFuzzHeading": "fuzz circuit",
+  "home.mapFuzzHeading": "guitar effect module",
   "home.mapPrototypeAlt": "Soldered fuzz circuit on orange perfboard with blue screw terminals",
   "home.mapPrototypeNote": "soldered circuit"
 }
