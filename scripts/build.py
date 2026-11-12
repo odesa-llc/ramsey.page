@@ -19,6 +19,7 @@ PAGES = {
     'home': ('index.html', {'en': '', 'fr': ''}),
     'about': ('about/index.html', {'en': 'about/', 'fr': 'a-propos/'}),
     'handbag': ('handbag/index.html', {'en': 'handbag/', 'fr': 'sac-fait-main/'}),
+    'handbagTwo': ('handbag-2/index.html', {'en': 'handbag-2/', 'fr': 'sac-fait-main-2/'}),
     'tidle': ('tidle/index.html', {'en': 'tidle/', 'fr': 'tidle/'}),
     'restitch': ('restitch/index.html', {'en': 'restitch/', 'fr': 'restitch/'}),
     'fuzz': ('fuzz/index.html', {'en': 'fuzz/', 'fr': 'fuzz/'}),

@@ -76,3 +76,8 @@ a:focus-visible { outline: 1px solid currentColor; outline-offset: 5px; }
   .handbag-project { padding-left: 16px; padding-right: 16px; }
   .handbag-footer { font-size: 16px; gap: 10px; }
 }
+
+.handbag-two-project .handbag-two-hero{max-width:440px}
+.handbag-two-hero img{display:block;width:100%;height:auto}
+.handbag-two-process{padding:30px 0 0;border-top:1px solid color-mix(in srgb,currentColor 20%,transparent)}
+.handbag-two-process .bag-two-map{max-width:560px}
