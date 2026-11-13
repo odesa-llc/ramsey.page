@@ -361,7 +361,7 @@
 .bag-demo .bp-pattern-hardware img:nth-child(4){--hardware-width:139%;translate:1px 5px}
 
 /* A tighter introduction, with the contact address tucked under about. */
-.portrait-about-group{justify-self:end;display:flex;flex-direction:column;align-items:flex-end;text-align:right;padding-top:54px}
+.portrait-about-group{justify-self:end;display:flex;flex-direction:column;align-items:flex-end;text-align:right;padding-top:28px}
 .portrait-email{font-size:15px;line-height:1.4;white-space:nowrap;opacity:.8;padding:0}
 .portrait-email:hover{opacity:1;text-decoration:underline;text-underline-offset:3px}
 .bag-preview-page .human-hero{height:660px;min-height:calc(100vh - 184px)}
@@ -370,7 +370,7 @@
  .bag-preview-page .human-hero{height:900px;min-height:0}
  .bag-preview-page .human-hero-copy{top:8.5%}
 }
-@media(max-width:700px){.portrait-about-group{padding-top:48px}.portrait-email{font-size:13px}}
+@media(max-width:700px){.portrait-about-group{padding-top:24px}.portrait-email{font-size:13px}}
 
 /* Keep the title, reference, breadboard, and soldered board on one tilted plane. */
 .bag-preview-page .object-shelf{grid-template-columns:minmax(0,1.8fr) minmax(0,2.65fr) minmax(0,.5fr)}
