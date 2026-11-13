@@ -465,3 +465,6 @@
 }
 
 .bag-preview-page #work{scroll-margin-top:24px}
+.email-footer{padding:64px 24px 48px;text-align:center;font-size:18px;line-height:1.4}
+.email-footer a{display:inline-block;padding:10px 0}
+.email-footer a:hover{text-decoration:underline;text-underline-offset:4px}
