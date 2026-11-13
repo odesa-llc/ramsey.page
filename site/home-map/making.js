@@ -28,12 +28,14 @@ document.querySelectorAll('.bag-demo[data-kind="map"]').forEach(demo => {
     const base=diagram.getBoundingClientRect(),bounds=node=>{const r=node.getBoundingClientRect();return{x:r.x-base.x,y:r.y-base.y,w:r.width,h:r.height,cx:r.x-base.x+r.width/2,cy:r.y-base.y+r.height/2};};
     const images=pieces.map(p=>bounds(p.querySelector('.bp-art'))),notes=labels.map(bounds);
     const targets=pieces.map(p=>bounds(p.querySelector('.bp-pattern-papers,.bp-final-preview')||p.querySelector('.bp-art')));
-    const cutoutAnchors={pattern:[.66,.05],wip:[.36,.06],fitting:[.55,.24],final:[.49,.023]};
+    const cutoutAnchors=demo.classList.contains('bag-two-map')
+      ? {pattern:[.66,.05],wip:[.36,.06],fitting:[.55,.24],final:[.49,.023]}
+      : {hardware:[.66,.12],finished:[.54,.16]};
     function target(i){
       const box=targets[i],stage=list[i].id;
-      if(demo.classList.contains('bag-two-map')){
+      if(cutoutAnchors[stage]){
         const img=pieces[i].querySelector('.bp-final-outline')||pieces[i].querySelector('.bp-art img');
-        if(img?.naturalWidth&&cutoutAnchors[stage]){
+        if(img?.naturalWidth){
           // The image fills a box with object-fit: contain. Aim at the visible cutout.
           const scale=Math.min(box.w/img.naturalWidth,box.h/img.naturalHeight);
           const [x,y]=cutoutAnchors[stage];

@@ -446,14 +446,14 @@
 .bag-demo.bag-two-map .bp-note-piece .bp-art img{width:100%;height:100%}
 .bag-demo.bag-two-map .bp-note-piece[data-stage="pattern"] img{transform:rotate(-3deg)}
 .bag-demo.bag-two-map .bp-note-piece[data-stage="fitting"] img{transform:rotate(2deg)}
-.bag-demo.bag-two-map .bp-notes-row[data-count="4"]{gap:8px}
+.bag-demo .bp-notes-row[data-count="4"]{gap:8px}
 .bag-demo.bag-two-map .bp-final-preview{display:block;position:relative;width:min(100%,128px);aspect-ratio:960/1136}
 .bag-demo.bag-two-map .bp-note-piece .bp-final-preview img{position:absolute;left:0;filter:none}
 .bag-demo.bag-two-map .bp-note-piece .bp-final-preview .bp-final-shell{bottom:0;height:auto;opacity:.85}
 .bag-demo.bag-two-map .bp-note-piece .bp-final-preview .bp-final-outline{inset:0}
 .bag-demo.bag-two-map .bp-note-piece[data-stage="final"] .bp-stage-caption{color:#657460}
 @media(max-width:440px){
- .bag-demo.bag-two-map .bp-notes-row[data-count="4"]{gap:6px}
+ .bag-demo .bp-notes-row[data-count="4"]{gap:6px}
  .bag-demo.bag-two-map .bp-note-piece .bp-art{height:136px}
 }
 @media(min-width:1001px){
