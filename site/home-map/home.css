@@ -86,6 +86,9 @@
   width: calc(var(--face-height) * 1.18 * 185 / 225);
   height: calc(var(--face-height) * 1.18);
 }
+.portrait-paper {
+  transform: translateX(-50%) scaleX(1.12);
+}
 .portrait-outline {
   background: #8faa9a;
   -webkit-mask: url('/assets/home-map/portrait-outline.svg') center / contain no-repeat;

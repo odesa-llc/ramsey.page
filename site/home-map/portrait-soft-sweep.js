@@ -1,9 +1,7 @@
 (() => {
-  const portrait = document.querySelector('[data-portrait-soft-sweep]');
-  if (!portrait) return;
+  const ink = document.querySelector('[data-portrait-soft-sweep]');
+  if (!ink) return;
 
-  const scriptURL = document.currentScript.src;
-  const assets = new URL('../assets/home-map/', scriptURL);
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
@@ -14,12 +12,11 @@
   const height = 285;
   canvas.width = width;
   canvas.height = height;
-  canvas.className = portrait.className;
+  canvas.className = ink.className;
   canvas.setAttribute('aria-hidden', 'true');
 
-  let paper;
-  let ink;
   let loading = false;
+  let ready = false;
   let onScreen = !('IntersectionObserver' in window);
   let frame = null;
   let start = null;
@@ -65,38 +62,22 @@
     start = null;
   }
 
-  function loadImage(file) {
-    const image = new Image(width, height);
-    image.src = new URL(file, assets).href;
-    return image.decode().then(() => image);
-  }
-
-  async function loadLayers() {
+  async function prepareInk() {
     loading = true;
     try {
-      [paper, ink] = await Promise.all([
-        loadImage('portrait-soft-sweep-paper.webp'),
-        loadImage('portrait-soft-sweep-ink.webp')
-      ]);
+      await ink.decode();
     } catch {
-      // The original portrait remains visible if either layer fails to load.
       return;
     }
-    paper.className = portrait.className;
-    paper.alt = '';
-    paper.draggable = false;
-    paper.setAttribute('aria-hidden', 'true');
+    ready = true;
     syncPlayback();
   }
 
   function syncPlayback() {
     if (reducedMotion.matches) {
       pause();
-      if (paper?.isConnected) {
-        paper.remove();
-        canvas.remove();
-        portrait.style.visibility = '';
-      }
+      canvas.remove();
+      ink.style.visibility = '';
       return;
     }
 
@@ -104,13 +85,13 @@
       pause();
       return;
     }
-    if (!loading) void loadLayers();
-    if (!ink) return;
+    if (!loading) void prepareInk();
+    if (!ready) return;
 
-    if (!paper.isConnected) {
+    if (!canvas.isConnected) {
       paint(elapsed / 1000);
-      portrait.after(paper, canvas);
-      portrait.style.visibility = 'hidden';
+      ink.after(canvas);
+      ink.style.visibility = 'hidden';
     }
     if (frame === null) frame = requestAnimationFrame(animate);
   }
@@ -120,7 +101,7 @@
       onScreen = entry.isIntersecting;
       syncPlayback();
     });
-    observer.observe(portrait);
+    observer.observe(ink);
   }
 
   reducedMotion.addEventListener('change', syncPlayback);
