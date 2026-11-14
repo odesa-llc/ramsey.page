@@ -1,0 +1,27 @@
+.tilted-frieze {
+  --frieze-angle: -2.6deg;
+  position: relative;
+  width: 100%;
+  height: clamp(142px, 17vw, 230px);
+  overflow: hidden;
+  clip-path: polygon(0 31%, 100% 0, 100% 100%, 0 100%);
+}
+
+.tilted-frieze img {
+  position: absolute;
+  top: -36%;
+  left: -6%;
+  width: 112%;
+  height: 172%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 58%;
+  transform: rotate(var(--frieze-angle));
+  filter: saturate(.89) brightness(1.06);
+}
+
+@media (max-width: 540px) {
+  .tilted-frieze {
+    --frieze-angle: -5deg;
+  }
+}
