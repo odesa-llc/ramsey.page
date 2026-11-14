@@ -431,7 +431,7 @@
   "handbagTwo.intro": "A second baguette bag in lightweight faux snakeskin, shaped with a curved gusset and a Decovil Light lining.",
   "handbagTwo.process": "Making the bag",
   "seo.handbagTwoTitle": "Leather Bag #2 — ramsey hatoum",
-  "seo.handbagTwoDescription": "A handmade faux-snakeskin baguette bag, from paper pattern to structured lining and shell fitting.",
+  "seo.handbagTwoDescription": "A handmade faux-snakeskin baguette bag with a curved gusset, structured lining, and zip closure.",
   "nav.handbagTwoPrevious": "← Leather bag #1",
   "handbagTwo.patternFeature": "cut pattern",
   "handbagTwo.patternStage": "week 1",
@@ -449,7 +449,9 @@
   "handbagTwo.fittingAlt": "Open black faux-snakeskin bag with its lining in place and unfinished rim",
   "handbagTwo.fittingNote": "I fitted the lining into the faux-snakeskin shell, leaving the top open for the zipper.",
   "handbagTwo.finalFeature": "finished bag",
-  "handbagTwo.finalStage": "in progress",
-  "handbagTwo.finalRead": "Finished bag, in progress",
-  "handbagTwo.finalNote": "I sketched in the strap and zipper to show where they’ll go."
+  "handbagTwo.finalStage": "complete",
+  "handbagTwo.finalRead": "Read about the finished bag",
+  "handbagTwo.finalNote": "I added the zipper and shoulder strap to finish the bag.",
+  "handbagTwo.finishedAlt": "Finished black faux-snakeskin bag hanging by its shoulder strap",
+  "handbagTwo.finishedZipperAlt": "Three-quarter view of the black bag showing its silver zipper, strap and textured fabric"
 }

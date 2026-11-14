@@ -431,7 +431,7 @@
   "handbagTwo.intro": "Un deuxième sac baguette en simili serpent léger, avec un soufflet arrondi et une doublure renforcée de Decovil Light.",
   "handbagTwo.process": "La fabrication du sac",
   "seo.handbagTwoTitle": "Sac en cuir n° 2 — ramsey hatoum",
-  "seo.handbagTwoDescription": "Un sac baguette fait main en simili serpent, du patron papier à la pose de la doublure renforcée.",
+  "seo.handbagTwoDescription": "Un sac baguette fait main en simili serpent, avec un soufflet arrondi, une doublure renforcée et une fermeture éclair.",
   "nav.handbagTwoPrevious": "← Sac en cuir n° 1",
   "handbagTwo.patternFeature": "patron découpé",
   "handbagTwo.patternStage": "semaine 1",
@@ -449,7 +449,9 @@
   "handbagTwo.fittingAlt": "Sac ouvert en simili serpent noir avec sa doublure en place et le bord encore brut",
   "handbagTwo.fittingNote": "J’ai placé la doublure dans le sac en simili serpent, en laissant le haut ouvert pour poser la fermeture éclair.",
   "handbagTwo.finalFeature": "sac fini",
-  "handbagTwo.finalStage": "en cours",
-  "handbagTwo.finalRead": "Sac fini, en cours",
-  "handbagTwo.finalNote": "J’ai dessiné la bandoulière et la fermeture éclair pour montrer où elles seront posées."
+  "handbagTwo.finalStage": "terminé",
+  "handbagTwo.finalRead": "Lire la note sur le sac fini",
+  "handbagTwo.finalNote": "J’ai posé la fermeture éclair et cousu la bandoulière pour terminer le sac.",
+  "handbagTwo.finishedAlt": "Sac fini en simili serpent noir, suspendu par sa bandoulière",
+  "handbagTwo.finishedZipperAlt": "Vue de trois quarts du sac noir montrant sa fermeture éclair argentée, sa bandoulière et sa matière texturée"
 }
