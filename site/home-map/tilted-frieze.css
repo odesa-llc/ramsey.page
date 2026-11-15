@@ -2,7 +2,7 @@
   --frieze-angle: -2.6deg;
   position: relative;
   width: 100%;
-  height: clamp(142px, 17vw, 230px);
+  height: clamp(192px, 23vw, 310px);
   overflow: hidden;
   /* Fade into the page's paper color and grain before the rotated artwork. */
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 38%);
@@ -11,7 +11,7 @@
 
 .tilted-frieze img {
   position: absolute;
-  top: -36%;
+  top: -26%;
   left: -6%;
   width: 112%;
   height: 172%;
