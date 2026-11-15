@@ -1,5 +1,5 @@
 .tilted-frieze {
-  --frieze-angle: -2.6deg;
+  --frieze-angle: -1.5deg;
   position: relative;
   width: 100%;
   height: clamp(192px, 23vw, 310px);
@@ -23,6 +23,6 @@
 
 @media (max-width: 540px) {
   .tilted-frieze {
-    --frieze-angle: -5deg;
+    --frieze-angle: -3deg;
   }
 }
