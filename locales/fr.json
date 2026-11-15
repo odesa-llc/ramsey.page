@@ -73,7 +73,7 @@
     "parisAlt": "Rue parisienne"
   },
   "tidle": {
-    "intro": "J’ai créé Tidle pour garder le fil des tâches du quotidien. L’ajout rapide, les catégories et les sous-tâches facilitent l’organisation ; les rappels et les tâches récurrentes aident à ne rien oublier.",
+    "intro": "J’ai créé Tidle pour voir d’un coup d’œil ce que j’ai à faire chaque jour. On peut ajouter des tâches rapidement, les classer par catégorie et les diviser en sous-tâches. Les rappels et les tâches récurrentes aident à avancer comme prévu.",
     "appStore": "Voir sur l’App Store",
     "previousProject": "Sac fait main",
     "allProjects": "Tous les projets",
@@ -91,8 +91,11 @@
     "routineBody": "La liste reste claire et facile à parcourir. Les statistiques de tâches terminées permettent de repérer vos habitudes d’une semaine à l’autre et de trouver votre rythme.",
     "gallery": "Dans Tidle",
     "screen1": "Organisation des tâches quotidiennes dans Tidle",
-    "screen2": "Interface des tâches de Tidle",
-    "screen3": "Interface de suivi des tâches de Tidle"
+    "screen1Src": "/assets/tidle/fr/app-screen-1.jpg",
+    "screen2": "Widget Tidle affichant les tâches du jour et leur progression",
+    "screen2Src": "/assets/tidle/fr/app-screen-2.jpg",
+    "screen3": "Détail d’une tâche et de ses sous-tâches dans Tidle",
+    "screen3Src": "/assets/tidle/fr/app-screen-3.jpg"
   },
   "survey": {
     "label": "58 % des personnes ayant déjà cousu ont cité le manque de temps parmi leurs difficultés : 11 sur 19. Chaque bulle représente une personne : 11 ont retenu cette réponse, en bleu foncé, et 8 ne l’ont pas retenue, en bleu clair. Plusieurs réponses étaient possibles. Enquête exploratoire menée en octobre 2026 ; recrutement par bouche-à-oreille et sur les réseaux sociaux.",

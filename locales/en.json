@@ -91,8 +91,11 @@
     "routineBody": "A focused task list keeps the interface clear. Completion analytics help reveal weekly patterns and support a steady routine.",
     "gallery": "Inside Tidle",
     "screen1": "Tidle daily task organization",
+    "screen1Src": "/assets/tidle/app-screen-1.jpg",
     "screen2": "Tidle task interface",
-    "screen3": "Tidle productivity interface"
+    "screen2Src": "/assets/tidle/app-screen-2.jpg",
+    "screen3": "Tidle productivity interface",
+    "screen3Src": "/assets/tidle/app-screen-3.jpg"
   },
   "survey": {
     "label": "58 percent of users with prior sewing experience said finding time for sewing was a challenge: 11 of 19 respondents. Each bubble is one respondent: 11 navy bubbles selected this difficulty and eight pale blue bubbles did not. Multiple choices were allowed. Exploratory survey, October 2026, recruited through word of mouth and social channels.",
