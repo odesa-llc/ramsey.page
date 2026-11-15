@@ -1,5 +1,10 @@
 .tidle-widget-svg { display: block; width: 100%; height: 100%; pointer-events: none; }
-.tidle-widget-count { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; font-size: 68px; font-weight: 400; letter-spacing: 0; }
+.tidle-widget-count, .tidle-widget-heading, .tidle-widget-checked { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; font-weight: 400; letter-spacing: 0; }
+.tidle-widget-count { font-size: 68px; }
+.tidle-widget-heading { font-size: 74px; font-weight: 600; }
+.tidle-widget-checked { font-size: 58px; }
+.tidle-widget-translation:lang(fr) { display: inline; }
+.tidle-widget-count-background:lang(fr) { display: none; }
 .tidle-widget-fill { fill: #fff; transition: width .65s cubic-bezier(.2,.65,.35,1); }
 @media (min-width: 1100px) {
   [data-screen-label="Home"] [data-tidle-widget] { --tidle-preview-width: 90%; }
@@ -8,6 +13,12 @@
 
 .tidle-project { min-height: 100vh; display: flex; flex-direction: column; background: #F8F8F6; color: #0D2565; font-family: 'Notebook Hand', sans-serif; }
 .tidle-project * { box-sizing: border-box; }
+.tidle-project .direction-nav-centered { --tidle-portrait-width: 128px; padding-block: 8px; }
+.tidle-project .direction-center-links { grid-template-columns: 70px var(--tidle-portrait-width) 70px; }
+.tidle-portrait { position: relative; display: block; width: var(--tidle-portrait-width); aspect-ratio: 250 / 211; }
+.tidle-portrait .portrait-name { position: absolute; inset: 0; overflow: hidden; font-size: 0; background: currentColor; pointer-events: none; mask: url('/assets/home-map/portrait-name-arc.svg') center / contain no-repeat; }
+.tidle-portrait .portrait-face { position: absolute; left: 50%; top: 27%; height: 74%; width: auto; transform: translateX(-50%); object-fit: contain; pointer-events: none; }
+.tidle-portrait .portrait-paper { transform: translateX(-50%) scaleX(1.12); }
 .tidle-project-header { height: 58px; flex: 0 0 58px; padding: 0 24px; border-bottom: 1px solid #0D2565; display: flex; align-items: center; justify-content: space-between; }
 .tidle-project-brand { font-family: 'Notebook Hand', cursive; font-size: 29px; }
 .tidle-project-nav { display: flex; gap: 28px; text-transform: uppercase; font-size: 18px; }
@@ -30,6 +41,8 @@
 .tidle-screens img { display: block; width: 100%; height: auto; }
 @media (max-width: 900px) { .tidle-project-hero { gap: 32px; padding: 36px 24px; } .tidle-features,.tidle-gallery { padding-left: 24px; padding-right: 24px; } }
 @media (max-width: 700px) {
+  .tidle-project .direction-nav-centered { --tidle-portrait-width: 112px; }
+  .tidle-project .direction-center-links { grid-template-columns: 60px var(--tidle-portrait-width) 60px; }
   .tidle-project-header { padding: 0 16px; }
   .tidle-project-nav { display: none; }
   .tidle-project-hero { grid-template-columns: minmax(0,1fr); padding: 32px 16px 24px; gap: 28px; }
