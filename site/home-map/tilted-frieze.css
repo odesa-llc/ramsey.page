@@ -4,7 +4,9 @@
   width: 100%;
   height: clamp(142px, 17vw, 230px);
   overflow: hidden;
-  clip-path: polygon(0 31%, 100% 0, 100% 100%, 0 100%);
+  /* Fade into the page's paper color and grain before the rotated artwork. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 38%);
+  mask-image: linear-gradient(to bottom, transparent, #000 38%);
 }
 
 .tilted-frieze img {
@@ -17,7 +19,6 @@
   object-fit: cover;
   object-position: center 58%;
   transform: rotate(var(--frieze-angle));
-  filter: saturate(.89) brightness(1.06);
 }
 
 @media (max-width: 540px) {
