@@ -8,7 +8,7 @@
   <script src="/support.js"></script>
   <link rel="preload" href="/assets/fonts/NotebookHand-Contextual-Regular.woff2?v=1.104" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/typography.css?v=contextual-1.104">
-  <link rel="stylesheet" href="/home-map/home.css?v=handbag-2-zipper">
+  <link rel="stylesheet" href="/home-map/home.css?v=skull-cap-collage">
   <link rel="stylesheet" href="/home-map/tilted-frieze.css?v=extended-tiles-1">
   <script src="/home-map/making.js?v=handbag-2-zipper" defer></script>
   <script src="/home-map/portrait-soft-sweep.js?v=2" defer></script>
@@ -128,6 +128,36 @@
             <a href="/fuzz/"><img src="/assets/home-map/soldered-prototype-cutout.png?v=top-view-2" width="1536" height="1024" alt="Soldered fuzz circuit on orange perfboard with blue screw terminals" data-i18n-alt="home.mapPrototypeAlt" draggable="false" data-widget-cutout="true"></a>
             <figcaption class="hand"><a href="/fuzz/"><!--i18n:home.mapPrototypeNote-->soldered circuit<!--/i18n--></a></figcaption>
           </figure>
+          </section>
+          <section class="skull-cap-project" aria-labelledby="skull-cap-project-title">
+            <div class="skull-cap-display">
+              <div>
+                <h2 class="hand" id="skull-cap-project-title"><!--i18n:home.skullCapHeading-->Skull Cap #1<!--/i18n--></h2>
+                <p class="skull-cap-status"><!--i18n:home.skullCapStatus-->coming soon<!--/i18n--></p>
+              </div>
+              <span class="skull-cap-art">
+                <img class="skull-cap-cover" src="/assets/skull-cap/cover-photo.png" width="809" height="1082" alt="Black-and-white booklet cover with handwritten lettering" data-i18n-alt="home.skullCapArtAlt" loading="lazy" decoding="async">
+                <img class="skull-cap-swatch" src="/assets/skull-cap/black-jersey-swatch.webp" width="384" height="307" alt="Black jersey swatch held by a silver sewing pin" data-i18n-alt="home.skullCapSwatchAlt" loading="lazy" decoding="async" draggable="false">
+                <svg class="skull-cap-wire" viewBox="0 0 750 750" aria-hidden="true" focusable="false">
+                  <defs>
+                    <filter id="skull-cap-wire-key" color-interpolation-filters="sRGB">
+                      <!-- Turn the almost-white background transparent while keeping the metal's tones. -->
+                      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1.329 -4.470 -0.451 0 6.156"/>
+                    </filter>
+                  </defs>
+                  <image href="/assets/skull-cap/barbed-wire.png" width="750" height="750" filter="url(#skull-cap-wire-key)"/>
+                </svg>
+                <img class="skull-cap-cutout" src="/assets/skull-cap/gray-hoodie-cutout.webp" width="640" height="499" alt="Man in a gray hoodie and black beanie leaning forward" data-i18n-alt="home.skullCapCutoutAlt" loading="lazy" decoding="async" draggable="false">
+              </span>
+            </div>
+            <details class="skull-cap-credits">
+              <summary><!--i18n:home.skullCapCredits-->Image credits<!--/i18n--></summary>
+              <dl>
+                <div><dt><!--i18n:home.skullCapCoverCredit-->Magazine cover<!--/i18n--></dt><dd>Analog Delinquents</dd></div>
+                <div><dt><!--i18n:home.skullCapWireCredit-->Barbed wire image<!--/i18n--></dt><dd><a href="https://apchangming.m.en.alibaba.com/?spm=a2700.details.0.0.7c522304uGZWrL&amp;wx_navbar_transparent=true&amp;wx_screen_direc=portrait&amp;productId=1600125180846&amp;from=detail_company_card">Chang Ming</a></dd></div>
+                <div><dt><!--i18n:home.skullCapHoodieCredit-->Hoodie photo<!--/i18n--></dt><dd><a href="https://www.etsy.com/shop/Art4theculture1">Joseph Jackson</a></dd></div>
+              </dl>
+            </details>
           </section>
         </div>
       </section>
