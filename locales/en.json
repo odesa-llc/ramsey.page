@@ -468,5 +468,9 @@
   "handbagTwo.finalRead": "Read about the finished bag",
   "handbagTwo.finalNote": "I added the zipper and shoulder strap to finish the bag.",
   "handbagTwo.finishedAlt": "Finished black faux-snakeskin bag hanging by its shoulder strap",
-  "handbagTwo.finishedZipperAlt": "Three-quarter view of the black bag showing its silver zipper, strap and textured fabric"
+  "handbagTwo.finishedZipperAlt": "Three-quarter view of the black bag showing its silver zipper, strap and textured fabric",
+  "handbagTwo.zipperRead": "Read about the zipper",
+  "handbagTwo.zipperFeature": "zipper",
+  "handbagTwo.zipperNote": "A black zipper with silver teeth for the bag’s opening.",
+  "handbagTwo.zipperAlt": "Black zipper with silver teeth and pull"
 }

@@ -468,5 +468,9 @@
   "handbagTwo.finalRead": "Lire la note sur le sac fini",
   "handbagTwo.finalNote": "J’ai posé la fermeture éclair et cousu la bandoulière pour terminer le sac.",
   "handbagTwo.finishedAlt": "Sac fini en simili serpent noir, suspendu par sa bandoulière",
-  "handbagTwo.finishedZipperAlt": "Vue de trois quarts du sac noir montrant sa fermeture éclair argentée, sa bandoulière et sa matière texturée"
+  "handbagTwo.finishedZipperAlt": "Vue de trois quarts du sac noir montrant sa fermeture éclair argentée, sa bandoulière et sa matière texturée",
+  "handbagTwo.zipperRead": "En savoir plus sur la fermeture éclair",
+  "handbagTwo.zipperFeature": "fermeture éclair",
+  "handbagTwo.zipperNote": "Une fermeture éclair noire à dents argentées pour l’ouverture du sac.",
+  "handbagTwo.zipperAlt": "Fermeture éclair noire avec dents et tirette argentées"
 }
