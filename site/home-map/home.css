@@ -566,12 +566,11 @@ body .skull-cap-credits :is(summary, dt, dd, a) {
 .email-footer a{display:inline-block;padding:10px 0}
 .email-footer a:hover{text-decoration:underline;text-underline-offset:4px}
 
-/* A small zipper between the pattern and structured lining. */
-.bag-demo.bag-two-map .bp-notes-row[data-count="5"]{gap:8px}
-.bag-demo.bag-two-map .bp-note-piece[data-stage="zipper"]{flex:.6}
-.bag-demo.bag-two-map .bp-note-piece[data-stage="zipper"] .bp-art > img{
- width:auto;height:70%;max-width:70%;object-fit:contain;transform:rotate(-18deg)
+/* Keep the small zipper beside the pattern under its shared annotation. */
+.bag-demo.bag-two-map .handbag-two-pattern > img:first-child{
+ width:86%;justify-self:start
 }
-@media(max-width:440px){
- .bag-demo.bag-two-map .bp-notes-row[data-count="5"]{gap:6px}
+.bag-demo.bag-two-map .bp-note-piece[data-stage="pattern"] .handbag-two-pattern-zipper{
+ position:absolute;right:2%;bottom:12%;width:auto;height:44%;max-width:20%;
+ object-fit:contain;transform:rotate(18deg)
 }
