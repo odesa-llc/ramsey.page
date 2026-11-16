@@ -571,6 +571,6 @@ body .skull-cap-credits :is(summary, dt, dd, a) {
  width:86%;justify-self:start
 }
 .bag-demo.bag-two-map .bp-note-piece[data-stage="pattern"] .handbag-two-pattern-zipper{
- position:absolute;right:2%;bottom:12%;width:auto;height:44%;max-width:20%;
+ position:absolute;right:2%;bottom:calc(12% + 4px);width:auto;height:calc(44% - 1px);max-width:20%;
  object-fit:contain;transform:rotate(18deg)
 }
