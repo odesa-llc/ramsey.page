@@ -1,0 +1,46 @@
+/* Soft beam: lift the detail inside the light and soften the surrounding shadows. */
+.skull-cap-art[data-lighting="soft"] {
+  isolation: isolate;
+  opacity: 1;
+}
+
+.skull-cap-art[data-lighting="soft"]::before {
+  content: '';
+  position: absolute;
+  inset: -14% -37% -10%;
+  background: radial-gradient(ellipse 50% 49% at 49% 49%,
+    rgb(30 30 27 / .31) 30%,
+    rgb(35 34 30 / .248) 54%,
+    rgb(48 44 36 / .0899) 77%, transparent 100%);
+  pointer-events: none;
+}
+
+.collage-exposure {
+  display: block;
+  position: relative;
+}
+
+.collage-ambient {
+  filter: brightness(.62) saturate(.76) blur(1.15px);
+  opacity: .96;
+}
+
+.collage-light {
+  position: absolute;
+  inset: -5% -25%;
+  filter: brightness(1.19) sepia(.16) saturate(.78);
+  mask-image:
+    radial-gradient(ellipse 33% 44% at 46% 29%,
+      #000 13%, #000e 30%, #0008 57%, transparent 100%),
+    radial-gradient(ellipse 35% 35% at 59% 72%,
+      #000 15%, #000e 33%, #0008 59%, transparent 100%),
+    radial-gradient(ellipse 21% 24% at 69% 23%,
+      rgb(0 0 0 / .36), transparent 100%);
+  pointer-events: none;
+}
+
+.collage-light > .collage-exposure {
+  position: absolute;
+  inset: 4.54545% 16.66667%;
+}
+
