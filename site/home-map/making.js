@@ -1,5 +1,5 @@
 /* Process maps: each has its own notes and measured pencil annotations. */
-document.querySelectorAll('.bag-demo[data-kind="map"]').forEach(demo => {
+document.querySelectorAll('.bag-demo[data-kind="map"]').forEach((demo, mapIndex) => {
  'use strict';
  const diagram = demo.querySelector('.bp-note-diagram');
  const graphic = demo.querySelector('.bp-pencil-lines');
@@ -16,21 +16,53 @@ document.querySelectorAll('.bag-demo[data-kind="map"]').forEach(demo => {
         {shape:0,flip:-1,reach:.9}, {shape:2,reach:.94}]
      : [{shape:2,flip:-1,reach:.86}, {shape:0,reach:.88},
         {shape:3,flip:-1}, {shape:1,reach:.92}];
- let current = 0;
+ let current = -1;
+ let selected = 0;
+ let hovered = null;
+ let focused = null;
+ detail.id ||= `making-detail-${mapIndex}`;
  const svg = (tag, attrs) => {
    const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
    Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, value));
    return node;
  };
- function select(index) {
+ function show(index) {
+   if (current === index) return;
    current = index;
    demo.dataset.current = index;
-   pieces.forEach((piece, i) => piece.setAttribute('aria-pressed', i === index));
+   pieces.forEach((piece, i) => { piece.dataset.active = i === index; });
    detail.textContent = list[index].note;
    draw();
  }
- pieces.forEach((piece, index) => piece.addEventListener('click', () => select(index)));
- demo.querySelector('[data-making-next]').addEventListener('click', () => select((current + 1) % pieces.length));
+ const preview = () => show(hovered ?? focused ?? selected);
+ pieces.forEach((piece, index) => {
+   piece.setAttribute('aria-describedby', detail.id);
+   piece.addEventListener('pointerenter', event => {
+     if (event.pointerType === 'touch') return;
+     hovered = index;
+     preview();
+   });
+   const leave = () => {
+     if (hovered === index) hovered = null;
+     preview();
+   };
+   piece.addEventListener('pointerleave', leave);
+   piece.addEventListener('pointercancel', leave);
+   piece.addEventListener('focus', () => {
+     focused = index;
+     hovered = null;
+     preview();
+   });
+   piece.addEventListener('blur', () => {
+     focused = null;
+     preview();
+   });
+   piece.addEventListener('click', () => {
+     selected = index;
+     pieces.forEach((item, i) => item.setAttribute('aria-pressed', i === selected));
+     show(selected);
+   });
+ });
    function draw(){
     const width=diagram.clientWidth,height=diagram.clientHeight;if(!width||!height)return;
     graphic.setAttribute('viewBox',`0 0 ${width} ${height}`);graphic.replaceChildren();
@@ -84,5 +116,5 @@ document.querySelectorAll('.bag-demo[data-kind="map"]').forEach(demo => {
    if(event.target.classList.contains('bp-art'))draw();
  });
  document.fonts.ready.then(draw);
- select(0);
+ show(selected);
 });
