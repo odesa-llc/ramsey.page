@@ -250,7 +250,7 @@
 .bag-demo .bp-pencil-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:2}
 .bag-demo .bp-pencil{stroke:#788773;stroke-width:var(--bp-pencil-weight,1.05);stroke-linecap:round;stroke-linejoin:round}
 .bag-demo .bp-guide{stroke:#909b86;opacity:.46;stroke-dasharray:5 7}
-.bag-demo .bp-leader{stroke:#788773;opacity:.65}.bag-demo .bp-current-line{stroke:var(--bp-ink);opacity:1}
+.bag-demo .bp-leader{stroke:#788773;stroke-width:calc(var(--bp-pencil-weight,1.05) * var(--bp-leader-scale,1));opacity:.65}.bag-demo .bp-current-line{stroke:var(--bp-ink);opacity:1}
 .bag-demo .bp-faint{opacity:.4}.bag-demo .bp-pencil-dot{fill:#87947b}.bag-demo .bp-knot{fill:var(--bp-ink);r:3}
 .bag-demo .bp-thread-base{opacity:.24}.bag-demo .bp-thread-active{stroke:#657b61;transition:stroke-dashoffset .7s ease}
 .bag-demo .bp-stitches{stroke:var(--bp-ink);stroke-width:1.6}
@@ -261,9 +261,10 @@
 .bag-demo .bp-note-piece .bp-art[data-stage="pattern"] img{width:74%;height:74%}
 .bag-demo .bp-note-piece .bp-art[data-stage="wip"] img{width:78%;height:78%}
 .bag-demo .bp-note-piece[aria-pressed="true"] .bp-art{translate:0 -3px}
-.bag-demo .bp-callout{display:block;min-height:34px;max-width:100%;font-size:14px;line-height:1.2;text-align:center;transform:rotate(-2deg);color:#5d6b56}
-.bag-demo .bp-note-piece:nth-child(2) .bp-callout{transform:rotate(2.2deg)}
-.bag-demo .bp-note-piece:nth-child(3) .bp-callout{transform:rotate(-1deg)}
+.bag-demo .bp-callout{display:block;min-height:34px;max-width:100%;font-size:14px;line-height:1.2;text-align:center;transform:rotate(-1.8deg);color:#5d6b56}
+.bag-demo .bp-note-piece:nth-child(2) .bp-callout{transform:rotate(1.2deg)}
+.bag-demo .bp-note-piece:nth-child(3) .bp-callout{transform:rotate(-.6deg)}
+.bag-demo .bp-note-piece:nth-child(4) .bp-callout{transform:rotate(1.9deg)}
 .bag-demo .bp-note-piece .bp-stage-caption{font-size:14px;line-height:1.3;min-height:36px;margin-top:13px}
 .bag-demo .bp-note-detail{font-size:15px;line-height:1.4;min-height:43px;margin:17px auto 0;text-align:center;max-width:340px;color:#59624f}
 .bag-demo .bp-note-footer{text-align:center;min-height:44px;margin-top:0}

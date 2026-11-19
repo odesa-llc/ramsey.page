@@ -7,6 +7,15 @@ document.querySelectorAll('.bag-demo[data-kind="map"]').forEach(demo => {
  const labels = pieces.map(piece => piece.querySelector('.bp-callout'));
  const list = pieces.map(piece => ({id: piece.dataset.stage, note: piece.dataset.note}));
  const detail = demo.querySelector('.bp-note-detail');
+ // Fixed per-project gestures vary the sequence, reach, and direction while
+ // keeping the same pen on every redraw and at every viewport size.
+ const leaderStyles = demo.classList.contains('bag-two-map')
+   ? [{shape:0}, {shape:1}, {shape:2}, {shape:3}]
+   : demo.classList.contains('skull-cap-map')
+     ? [{shape:1,flip:-1,reach:.92}, {shape:3,reach:.86},
+        {shape:0,flip:-1,reach:.9}, {shape:2,reach:.94}]
+     : [{shape:2,flip:-1,reach:.86}, {shape:0,reach:.88},
+        {shape:3,flip:-1}, {shape:1,reach:.92}];
  let current = 0;
  const svg = (tag, attrs) => {
    const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
@@ -50,12 +59,30 @@ document.querySelectorAll('.bag-demo[data-kind="map"]').forEach(demo => {
     const first=images[0];
 
      [first.y+26,first.y+first.h-20].forEach(y=>{wave(10,y,width-10,'bp-pencil bp-guide',.8);arrow(width-10,y,'bp-pencil bp-guide');});
-     notes.forEach((note,i)=>{const [tx,ty]=target(i),sx=note.cx-25,sy=note.y+note.h+3;path(`M ${sx} ${sy} Q ${sx+18} ${sy-1} ${sx+35} ${sy+.8} C ${sx+51} ${sy+1} ${tx-15} ${ty-3} ${tx} ${ty}`,`bp-pencil bp-leader ${i===current?'bp-current-line':''}`);});
+     notes.forEach((note,i)=>{
+      const [tx,ty]=target(i),cx=note.cx,sy=note.y+note.h+5,dy=ty-sy;
+      const style=leaderStyles[i%leaderStyles.length];
+      // Limit sideways gestures on small screens without moving their targets.
+      const reach=Math.min(1,images[i].w/82)*(style.reach??1);
+      const x=offset=>cx+offset*reach*(style.flip??1);
+      const entry=offset=>tx+offset*reach*(style.flip??1);
+      const gestures=[
+       `M ${x(-28)} ${sy} Q ${x(-10)} ${sy-1.6} ${x(4)} ${sy+.4} C ${x(23)} ${sy+1.2} ${entry(-9)} ${ty-dy*.28} ${tx} ${ty}`,
+       `M ${x(9)} ${sy+1} C ${x(15)} ${sy+dy*.32} ${entry(-11)} ${ty-dy*.38} ${tx} ${ty}`,
+       `M ${x(-15)} ${sy} Q ${x(-2)} ${sy+1.1} ${x(12)} ${sy-.3} C ${x(27)} ${sy+dy*.09} ${entry(13)} ${ty-dy*.25} ${tx} ${ty}`,
+       `M ${x(-3)} ${sy+.5} C ${x(-16)} ${sy+dy*.4} ${entry(17)} ${ty-dy*.38} ${tx} ${ty}`
+      ];
+      const leader=path(gestures[style.shape],`bp-pencil bp-leader ${i===current?'bp-current-line':''}`);
+      leader.style.setProperty('--bp-leader-scale',[1,.96,1.04,1.02][style.shape]);
+     });
 
    }
 
  new ResizeObserver(draw).observe(diagram);
  diagram.querySelectorAll('img').forEach(image => image.addEventListener('load', draw, {once: true}));
+ diagram.addEventListener('transitionend', event => {
+   if(event.target.classList.contains('bp-art'))draw();
+ });
  document.fonts.ready.then(draw);
  select(0);
 });
