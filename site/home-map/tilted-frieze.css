@@ -1,28 +1,24 @@
 .tilted-frieze {
-  --frieze-angle: -1.5deg;
   position: relative;
   width: 100%;
-  height: clamp(192px, 23vw, 310px);
+  height: clamp(192px, 19.5508vw, 383px);
   overflow: hidden;
-  /* Fade into the page's paper color and grain before the rotated artwork. */
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 38%);
-  mask-image: linear-gradient(to bottom, transparent, #000 38%);
+  /* The approved image already includes its angled paper edge and shadow. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 24%);
+  mask-image: linear-gradient(to bottom, transparent, #000 24%);
 }
 
 .tilted-frieze img {
-  position: absolute;
-  top: -26%;
-  left: -6%;
-  width: 112%;
-  height: 172%;
+  display: block;
+  width: 100%;
+  height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: center 58%;
-  transform: rotate(var(--frieze-angle));
+  object-position: center bottom;
 }
 
 @media (max-width: 540px) {
-  .tilted-frieze {
-    --frieze-angle: -3deg;
+  .tilted-frieze img {
+    object-position: 80% bottom;
   }
 }

@@ -1,0 +1,15 @@
+{
+  "selected_concept": "cutting mat and tools",
+  "source_mockup": "01-cutting-mat-and-tools.png",
+  "source_sha256": "0615631c0cc28dbfdf0a331bc466cc4a9e4dd3f20b2d0019166bf4e0ca7fb5df",
+  "crop": {
+    "left": 0,
+    "top": 420,
+    "width": 1959,
+    "height": 383
+  },
+  "output": "site/assets/home-map/cutting-mat-footer.webp",
+  "output_sha256": "def94c918578dee4c2eab727734f7cce4e3202eca4bdc3db13ca73fadf7e6000",
+  "encoding": "WebP quality 90, 104312 bytes",
+  "method": "Crop the approved generated concept to its footer photograph, excluding the baked-in email and project artwork. The contact link remains live HTML. Mobile focuses on the tools."
+}
