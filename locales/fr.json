@@ -56,7 +56,8 @@
     "cameraDrag": "Faites glisser l’appareil photo",
     "things": "objets",
     "roleTitle": "Gestion des rôles",
-    "roleToggle": "Comparer les employés avant et après regroupement"
+    "roleToggle": "Comparer les employés avant et après regroupement",
+    "avatarPatternCut": "couper 1"
   },
   "about": {
     "location": "actuellement à paris",

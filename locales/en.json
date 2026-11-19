@@ -56,7 +56,8 @@
     "cameraDrag": "Drag the camera",
     "things": "things",
     "roleTitle": "Role management",
-    "roleToggle": "Compare the employee pool before and after grouping"
+    "roleToggle": "Compare the employee pool before and after grouping",
+    "avatarPatternCut": "cut 1"
   },
   "about": {
     "location": "currently in paris.",
