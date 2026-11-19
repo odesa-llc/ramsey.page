@@ -26,7 +26,7 @@
 .portrait-header {
   --portrait-width: 128px;
   --portrait-height: calc(var(--portrait-width) * 211 / 250);
-  --face-height: calc(var(--portrait-width) * 132 / 250);
+  --face-height: calc(var(--portrait-width) * 158.4 / 250);
   --face-top: calc(var(--portrait-width) * 57 / 250);
   padding: 20px 24px 16px;
   min-height: 144px;
@@ -430,7 +430,7 @@
 }
 
 /* Photography starts a separate row, with the hero growing around its content. */
-.bag-preview-page .human-hero{height:auto;max-height:none;min-height:calc(100vh - 184px);padding:85px 0 92px}
+.bag-preview-page .human-hero{height:auto;max-height:none;min-height:calc(100vh - 184px);padding:68px 0 92px}
 .bag-preview-page .human-hero-copy{position:relative;left:auto;top:auto;width:100%;margin:0 auto;transform:none}
 .bag-preview-page .human-hero-copy h1 :is(.hero-separator, .hero-works) {
   font-size: calc(.62em + 4px);
@@ -448,7 +448,7 @@
   letter-spacing: normal;
   color: #62685f;
 }
-.bag-preview-page .object-shelf{position:relative;left:auto;right:auto;bottom:auto;width:88%;height:auto;margin:112px auto 0;row-gap:64px}
+.bag-preview-page .object-shelf{position:relative;left:auto;right:auto;bottom:auto;width:88%;height:auto;margin:88px auto 0;row-gap:64px}
 @media(min-width:1001px){.bag-preview-page .object-shelf .bag-preview-host{transform:translateY(-32px)}}
 .bag-preview-page .object-shelf .object-camera{grid-column:1/-1;justify-self:end;margin-top:0}
 .skull-cap-project {
@@ -546,12 +546,12 @@ body .skull-cap-credits :is(summary, dt, dd, a) {
   outline-offset: 2px;
 }
 @media(max-width:1000px){
- .bag-preview-page .human-hero{padding-top:76px}
- .bag-preview-page .object-shelf{grid-template-columns:minmax(0,1fr);margin-top:88px;row-gap:50px}
+ .bag-preview-page .human-hero{padding-top:62px}
+ .bag-preview-page .object-shelf{grid-template-columns:minmax(0,1fr);margin-top:70px;row-gap:50px}
 }
 @media(max-width:700px){
- .bag-preview-page .human-hero{padding-top:60px}
- .bag-preview-page .object-shelf{margin-top:72px}
+ .bag-preview-page .human-hero{padding-top:48px}
+ .bag-preview-page .object-shelf{margin-top:58px}
 }
 
 /* The second bag ends with two views of the finished piece. */
