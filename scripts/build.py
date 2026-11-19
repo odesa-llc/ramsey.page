@@ -27,7 +27,8 @@ PAGES = {
     'role': ('role-management/index.html', {'en': 'role-management/', 'fr': 'gestion-des-roles/'}),
     'skullCap': ('skull-cap/index.html', {'en': 'skull-cap/', 'fr': 'skull-cap/'}),
 }
-UNLISTED_PAGES = {'skullCap'}
+# Preserve direct links to earlier work without listing it in the sewing portfolio.
+UNLISTED_PAGES = {'tidle', 'restitch', 'fuzz', 'beirut', 'role'}
 ALIASES = {'/thinking-cap/': 'skullCap', '/en/thinking-cap/': 'skullCap', '/fr/thinking-cap/': 'skullCap'}
 SOURCE_ROUTES = {'/' + filename.removesuffix('index.html'): page for page, (filename, _) in PAGES.items()}
 SOURCE_ROUTES.update(ALIASES)

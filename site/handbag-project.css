@@ -80,3 +80,5 @@ a:focus-visible { outline: 1px solid currentColor; outline-offset: 5px; }
 .handbag-two-project .handbag-two-hero{max-width:490px}
 .handbag-two-process{padding:30px 0 0;border-top:1px solid color-mix(in srgb,currentColor 20%,transparent)}
 .handbag-two-process .bag-two-map{max-width:560px}
+
+.handbag-footer:has(> a:nth-child(2):last-child) { grid-template-columns: 1fr 1fr; }

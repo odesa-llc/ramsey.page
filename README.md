@@ -1,8 +1,8 @@
 # Ramsey Hatoum — portfolio
 
-An English and French portfolio of apps, objects, research, and photography.
-The selected projects are Handmade Handbag, Tidle, Restitch, Breadboard Fuzz,
-and Beirut, in passing. The homepage headline is “made for use.”
+An English and French sewing portfolio. The “sewing notes” homepage follows
+the making of Leather Bag #1, Leather Bag #2, and Skull Cap #1. Earlier
+projects remain accessible by their existing URLs.
 
 ## Edit and preview
 

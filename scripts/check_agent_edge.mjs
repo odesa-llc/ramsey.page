@@ -74,7 +74,7 @@ for (const [resource, type] of Object.entries(manifest.resources)) {
   assert.equal(response.headers.get('Access-Control-Allow-Origin'), '*');
   assert.equal(response.headers.get('Content-Signal'), manifest.contentSignal);
 }
-for (const route of ['visitors/', 'visitor-book/', 'en/skull-cap/', 'concepts/tile-layout-1.html', 'unknown/']) {
+for (const route of ['visitors/', 'visitor-book/', 'en/fuzz/', 'concepts/tile-layout-1.html', 'unknown/']) {
   const response = await handleRequest(new Request(origin + base + route, {headers: {Accept: 'text/markdown'}}), originFetch, base);
   assert.equal(response.headers.get('Link'), null, route);
 }

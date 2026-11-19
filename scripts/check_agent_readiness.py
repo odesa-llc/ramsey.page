@@ -41,8 +41,10 @@ def check(output, base_path, site_url):
     assert {entry['markdown'] for entry in manifest['routes'].values()} == expected_md
     llms = (output / 'llms.txt').read_text()
     assert all(site_url + path in llms for path in expected_md if path != base_path + 'index.md')
+    excluded_routes = {page_path(page, lang) for page in UNLISTED_PAGES for lang in LANGUAGES}
+    excluded_routes.update({'/thinking-cap/', '/visitors/', '/visitor-book/', '/concepts/'})
     for data in [json.dumps(manifest), llms]:
-        assert not any(path in data for path in ['/skull-cap/', '/thinking-cap/', '/visitors/', '/visitor-book/', '/concepts/'])
+        assert not any(route in data for route in excluded_routes)
     for relative in manifest['resources']:
         assert relative.startswith(base_path)
         assert (output / relative[len(base_path):]).is_file(), relative
