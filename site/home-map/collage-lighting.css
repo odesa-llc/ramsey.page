@@ -1,0 +1,47 @@
+/* Wide glow: spread the light across the collage with a soft falloff. */
+.skull-cap-art[data-lighting="wide"] {
+  isolation: isolate;
+  opacity: 1;
+}
+
+.skull-cap-art[data-lighting="wide"]::before {
+  content: '';
+  position: absolute;
+  inset: -14% -37% -10%;
+  background: radial-gradient(ellipse 50% 49% at 49% 49%,
+    rgb(30 30 27 / .12) 30%,
+    rgb(35 34 30 / .096) 54%,
+    rgb(48 44 36 / .0348) 77%, transparent 100%);
+  pointer-events: none;
+}
+
+.collage-exposure {
+  display: block;
+  position: relative;
+}
+
+.collage-ambient {
+  filter: brightness(.78) saturate(.86) blur(.65px);
+  opacity: .91;
+}
+
+.collage-light {
+  position: absolute;
+  inset: -5% -25%;
+  filter: brightness(1.1) sepia(.1) saturate(.78);
+  opacity: .89;
+  mask-image:
+    radial-gradient(ellipse 39% 44% at 48% 29%,
+      #000 13%, #000e 30%, #0008 57%, transparent 100%),
+    radial-gradient(ellipse 43% 35% at 57% 72%,
+      #000 15%, #000e 33%, #0008 59%, transparent 100%),
+    radial-gradient(ellipse 21% 24% at 69% 23%,
+      rgb(0 0 0 / .37), transparent 100%);
+  pointer-events: none;
+}
+
+.collage-light > .collage-exposure {
+  position: absolute;
+  inset: 4.54545% 16.66667%;
+}
+
