@@ -98,10 +98,11 @@ document.querySelectorAll('.bag-demo[data-kind="map"]').forEach((demo, mapIndex)
       const reach=Math.min(1,images[i].w/82)*(style.reach??1);
       const x=offset=>cx+offset*reach*(style.flip??1);
       const entry=offset=>tx+offset*reach*(style.flip??1);
+      // Every gesture descends immediately, keeping the label free of underlines.
       const gestures=[
-       `M ${x(-28)} ${sy} Q ${x(-10)} ${sy-1.6} ${x(4)} ${sy+.4} C ${x(23)} ${sy+1.2} ${entry(-9)} ${ty-dy*.28} ${tx} ${ty}`,
+       `M ${x(4)} ${sy} C ${x(14)} ${sy+dy*.3} ${entry(-9)} ${ty-dy*.32} ${tx} ${ty}`,
        `M ${x(9)} ${sy+1} C ${x(15)} ${sy+dy*.32} ${entry(-11)} ${ty-dy*.38} ${tx} ${ty}`,
-       `M ${x(-15)} ${sy} Q ${x(-2)} ${sy+1.1} ${x(12)} ${sy-.3} C ${x(27)} ${sy+dy*.09} ${entry(13)} ${ty-dy*.25} ${tx} ${ty}`,
+       `M ${x(-4)} ${sy} C ${x(-10)} ${sy+dy*.28} ${entry(13)} ${ty-dy*.25} ${tx} ${ty}`,
        `M ${x(-3)} ${sy+.5} C ${x(-16)} ${sy+dy*.4} ${entry(17)} ${ty-dy*.38} ${tx} ${ty}`
       ];
       const leader=path(gestures[style.shape],`bp-pencil bp-leader ${i===current?'bp-current-line':''}`);
