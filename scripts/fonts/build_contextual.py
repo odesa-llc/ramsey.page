@@ -1,4 +1,4 @@
-"""Add stable, photographed a/al alternates without replacing existing outlines."""
+"""Build contextual notebook handwriting with the approved, tail-free ys pair."""
 from pathlib import Path
 from copy import deepcopy
 import io
@@ -28,6 +28,31 @@ font = TTFont(SOURCE)
 baseline = TTFont(SOURCE)
 old_order = list(font.getGlyphOrder())
 order = list(old_order)
+
+# Approved option 01: lift the pen between y and s, remove the s's lower-left
+# tail, and move s and the following letters left by 118 units. Keep y exact.
+YS_SHIFT = -118
+ys = font['glyf']['y_s']
+original_ys = deepcopy(ys)
+assert original_ys.endPtsOfContours == [100, 141, 215, 224]
+assert list(original_ys.coordinates[216:]) == [
+    (620, 28), (669, 28), (712, 51), (721, 57), (718, 73),
+    (712, 83), (704, 78), (660, 64), (620, 70),
+], 'Review the source ys pair before applying the approved terminal'
+s_points = list(font['glyf']['s.alt'].coordinates)
+trimmed_s = s_points[:17] + [
+    (176, 65), (159, 76), (149, 73), (141, 66), (143, 56), (151, 44),
+] + s_points[38:]
+ys.coordinates = GlyphCoordinates(
+    list(original_ys.coordinates[:142])
+    + [(x + 670 + YS_SHIFT, y) for x, y in trimmed_s]
+)
+ys.flags = original_ys.flags[:142] + bytearray(len(trimmed_s))
+ys.endPtsOfContours = list(original_ys.endPtsOfContours[:2]) + [len(ys.coordinates) - 1]
+ys.numberOfContours = 3
+ys.recalcBounds(font['glyf'])
+ys_advance, ys_lsb = font['hmtx']['y_s']
+font['hmtx']['y_s'] = (ys_advance + YS_SHIFT, ys_lsb)
 
 def add(name, glyph, metrics, kind=1):
     font['glyf'][name] = glyph
@@ -168,8 +193,8 @@ for lookup in font['GPOS'].table.LookupList.Lookup:
 
 font['maxp'].numGlyphs = len(order)
 font['glyf'].glyphOrder = order
-font['head'].fontRevision = 1.104
-for name_id, value in {3: 'NotebookHandQuietJoins-Regular-1.104', 5: 'Version 1.104'}.items():
+font['head'].fontRevision = 1.105
+for name_id, value in {3: 'NotebookHandQuietJoins-Regular-1.105', 5: 'Version 1.105'}.items():
     font['name'].setName(value, name_id, 3, 1, 0x409)
     font['name'].setName(value, name_id, 1, 0, 0)
 font.flavor = None
@@ -188,7 +213,7 @@ def shape(path, text, calt=1):
     return [(f.getGlyphName(i.codepoint), p.x_advance, p.x_offset, p.y_offset)
             for i, p in zip(buffer.glyph_infos, buffer.glyph_positions)]
 
-phrases = ['physical', 'digital', 'physical x digital', 'a a a a',
+phrases = ['physical', 'physique', 'days', 'digital', 'physical x digital', 'a a a a',
            'natural analog data', 'a l', 'à à à', 'à la carte à paris',
            'ramsey hatoum', 'handmade handbag', 'paper + clips',
            'thanks for your attention :)', 'and we would share fondly',
@@ -202,7 +227,11 @@ assert 'a_l' in names('physical') and 'a_l.vary' in names('digital')
 assert [g for g in names('a a a a') if g != 'space'] == ['a', 'a.vary', 'a', 'a.vary']
 assert 'a_l' not in names('a l') and 'a_l.vary' not in names('a l')
 for phrase in ['physical', 'digital', 'physical x digital']:
-    assert sum(p[1] for p in checks[phrase]) == sum(p[1] for p in shape(SOURCE, phrase))
+    expected_width = sum(p[1] + (YS_SHIFT if p[0] == 'y_s' else 0)
+                         for p in shape(SOURCE, phrase))
+    assert sum(p[1] for p in checks[phrase]) == expected_width
+for phrase in ['physical', 'physique', 'days']:
+    assert 'y_s' in names(phrase)
 for letter in repeat_letters:
     assert [g[0] for g in checks[' '.join([letter] * 4)] if g[0] != 'space'] == [letter, letter+'.alt', letter, letter+'.alt']
 for updated, original in zip(font['GPOS'].table.LookupList.Lookup,
@@ -214,19 +243,26 @@ for updated, original in zip(font['GPOS'].table.LookupList.Lookup,
             kept = [r for r in current_pairs.PairValueRecord if r.SecondGlyph in original_names]
             assert [r.__dict__ for r in kept] == [r.__dict__ for r in old_pairs.PairValueRecord]
 for name in old_order:
-    assert font['glyf'][name].compile(font['glyf']) == baseline['glyf'][name].compile(baseline['glyf']), name
-    assert font['hmtx'][name] == baseline['hmtx'][name], name
+    if name == 'y_s':
+        assert list(ys.coordinates[:142]) == list(original_ys.coordinates[:142])
+        assert ys.numberOfContours == 3
+        assert font['hmtx'][name] == (baseline['hmtx'][name][0] + YS_SHIFT,
+                                     baseline['hmtx'][name][1])
+    else:
+        assert font['glyf'][name].compile(font['glyf']) == baseline['glyf'][name].compile(baseline['glyf']), name
+        assert font['hmtx'][name] == baseline['hmtx'][name], name
 assert font.getBestCmap() == baseline.getBestCmap()
 for path in DEST.glob('*'):
     f = TTFont(path, checkChecksums=2)
     f.ensureDecompiled()
     assert f.getBestCmap() == baseline.getBestCmap()
 assert not any('.vary' in g[0] for g in shape(target, 'a a digital', calt=0))
-report = {'version': '1.104', 'new_glyphs': order[len(old_order):],
-          'provenance': 'Existing photographed a.alt from and; original photographed l stroke. No generated outlines.',
-          'lookback': 16, 'headline_advance_preserved': True,
+report = {'version': '1.105', 'new_glyphs': order[len(old_order):],
+          'provenance': 'Photographed a.alt and l; approved ys option 01 removes the s tail and connector, with a rounded terminal and closer spacing.',
+          'lookback': 16, 'ys_advance_adjustment': YS_SHIFT,
+          'ys_y_outline_unchanged': True, 'ys_s_tail_removed': True,
           'other_letters': repeat_letters, 'other_letter_repeat_lookback': 3,
-          'original_outlines_metrics_and_kerning_unchanged': True,
+          'original_outlines_metrics_and_kerning_unchanged_except_ys': True,
           'shaping': checks}
 (ROOT / 'validation.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
 

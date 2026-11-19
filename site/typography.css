@@ -1,8 +1,8 @@
 /* Shared portfolio typography, traced from the supplied notebook photograph. */
 @font-face {
   font-family: 'Notebook Hand';
-  src: url('/assets/fonts/NotebookHand-Contextual-Regular.woff2?v=1.104') format('woff2'),
-       url('/assets/fonts/NotebookHand-Contextual-Regular.ttf?v=1.104') format('truetype');
+  src: url('/assets/fonts/NotebookHand-Contextual-Regular.woff2?v=1.105') format('woff2'),
+       url('/assets/fonts/NotebookHand-Contextual-Regular.ttf?v=1.105') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
