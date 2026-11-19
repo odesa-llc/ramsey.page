@@ -15,6 +15,7 @@
   max-width: none;
   object-fit: cover;
   object-position: center bottom;
+  filter: saturate(0.76) contrast(0.94) brightness(1.025);
 }
 
 @media (max-width: 540px) {
