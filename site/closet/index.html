@@ -81,8 +81,19 @@
     --crawler-clearance: clamp(2rem, 5cqw, 5rem);
     position: relative;
     overflow: hidden;
-    min-height: calc(var(--crawler-rest) + var(--crawler-drop) + var(--crawler-height) + var(--crawler-clearance));
     background: url('/assets/closet/closet-floor-desktop.webp') center bottom / 100% calc(100% - var(--wall-height)) no-repeat;
+  }
+  #ramsey-closet .closet-scene:has(> .closet-crawler:not([hidden])) {
+    min-height: calc(var(--crawler-rest) + var(--crawler-drop) + var(--crawler-height) + var(--crawler-clearance));
+  }
+  #ramsey-closet .closet-scene-description {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    margin: 0;
+    white-space: nowrap;
   }
   #ramsey-closet .closet-photo {
     display: block;
@@ -366,6 +377,7 @@
     </a>
   </nav>
   <main class="closet-scene" aria-label="Projects in the closet" data-i18n-aria-label="closet.sceneLabel">
+    <p class="closet-scene-description"><!--i18n:closet.sceneDescription-->A cropped faux leather jacket hangs beside two handmade leather bags and a ribbed skull cap on a metal clothes rail.<!--/i18n--></p>
     <svg class="closet-svg-defs" width="0" height="0" aria-hidden="true">
       <defs>
         <filter id="closet-crawler-floor-shadow" x="-20%" y="-5%" width="155%" height="120%"
@@ -428,7 +440,7 @@
       <source media="(max-width: 560px)" srcset="/assets/closet/closet-wall-mobile.jpg">
       <img class="closet-photo" src="/assets/closet/closet-wall-desktop.jpg" alt="" width="1671" height="941" draggable="false">
     </picture>
-    <div class="closet-crawler" style="--crawler-paper-art: url('/assets/closet/crawler-paper-cuttings.webp')">
+    <div class="closet-crawler" hidden style="--crawler-paper-art: url('/assets/closet/crawler-paper-cuttings.webp')">
       <span class="closet-crawler-papers" aria-hidden="true"></span>
       <img class="closet-crawler-figure" src="/assets/closet/knotted-crawler-spread.webp" alt="Knotted crawler balloon sculpture on blank cut paper patterns" data-i18n-alt="closet.crawlerAlt" width="880" height="440" draggable="false">
       <span class="closet-crawler-top-strip" aria-hidden="true"></span>
@@ -480,10 +492,10 @@
             <use class="closet-clasp-chain" href="#closet-clasp-chain-art" transform="matrix(0.44382 0.00375 0.01255 0.56556 434.79886 223.68323)"></use>
             <use href="#closet-desktop-source" clip-path="url(#closet-desktop-piece-1-clip)" transform="translate(0 22)"></use>
           </g>
-          <a href="/handbag/" aria-label="leather bag #1" data-i18n-aria-label="closet.bagOne" data-project="leather bag #1" data-i18n-data-project="closet.bagOne" target="_blank">
+          <g role="img" focusable="false" aria-label="leather bag #1" data-i18n-aria-label="closet.bagOne" data-project="leather bag #1" data-i18n-data-project="closet.bagOne">
             <use class="closet-hit" href="#closet-desktop-piece-1" transform="translate(0 22)"></use>
             <use class="closet-hit" href="#closet-desktop-piece-1-strap"></use>
-          </a>
+          </g>
         </g>
       </g>
       <g data-swing data-pin="1003 233" data-depth="570" data-load-sway="-15" data-limit="11" data-stiffness="49">
@@ -496,10 +508,10 @@
           <use href="#closet-desktop-piece-2-strap" fill="url(#closet-desktop-strap-leather)"
                mask="url(#closet-desktop-strap-mask)"></use>
         </g>
-        <a href="/handbag-2/" aria-label="leather bag #2" data-i18n-aria-label="closet.bagTwo" data-project="leather bag #2" data-i18n-data-project="closet.bagTwo" target="_blank">
+        <g role="img" focusable="false" aria-label="leather bag #2" data-i18n-aria-label="closet.bagTwo" data-project="leather bag #2" data-i18n-data-project="closet.bagTwo">
           <use class="closet-hit" href="#closet-desktop-piece-2" clip-path="url(#closet-desktop-bag-photograph)"></use>
           <use class="closet-hit" href="#closet-desktop-piece-2-strap"></use>
-        </a>
+        </g>
       </g>
       <g class="closet-bag-hooks" aria-hidden="true">
         <use href="#closet-brushed-s-hook" transform="translate(649 162)"></use>
@@ -568,10 +580,10 @@
             <use class="closet-clasp-chain" href="#closet-clasp-chain-art" transform="matrix(0.44101 0.00281 0.00930 0.59511 53.61026 529.58623)"></use>
             <use href="#closet-mobile-source" clip-path="url(#closet-mobile-piece-1-clip)" transform="translate(0 22) translate(0 750) scale(1 .82) translate(0 -750)"></use>
           </g>
-          <a href="/handbag/" aria-label="leather bag #1" data-i18n-aria-label="closet.bagOne" data-project="leather bag #1" data-i18n-data-project="closet.bagOne" target="_blank">
+          <g role="img" focusable="false" aria-label="leather bag #1" data-i18n-aria-label="closet.bagOne" data-project="leather bag #1" data-i18n-data-project="closet.bagOne">
             <use class="closet-hit" href="#closet-mobile-piece-1" transform="translate(0 22) translate(0 750) scale(1 .82) translate(0 -750)"></use>
             <use class="closet-hit" href="#closet-mobile-piece-1-strap"></use>
-          </a>
+          </g>
         </g>
       </g>
       <g transform="translate(608 539) scale(.79) translate(-465 -539)">
@@ -585,10 +597,10 @@
             <use href="#closet-mobile-piece-2-strap" fill="url(#closet-mobile-strap-leather)"
                  mask="url(#closet-mobile-strap-mask)"></use>
           </g>
-          <a href="/handbag-2/" aria-label="leather bag #2" data-i18n-aria-label="closet.bagTwo" data-project="leather bag #2" data-i18n-data-project="closet.bagTwo" target="_blank">
+          <g role="img" focusable="false" aria-label="leather bag #2" data-i18n-aria-label="closet.bagTwo" data-project="leather bag #2" data-i18n-data-project="closet.bagTwo">
             <use class="closet-hit" href="#closet-mobile-piece-2" clip-path="url(#closet-mobile-bag-photograph)"></use>
             <use class="closet-hit" href="#closet-mobile-piece-2-strap"></use>
-          </a>
+          </g>
         </g>
       </g>
       <g class="closet-bag-hooks" aria-hidden="true">
