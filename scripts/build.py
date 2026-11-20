@@ -26,6 +26,7 @@ PAGES = {
     'beirut': ('beirut/index.html', {'en': 'beirut/', 'fr': 'beyrouth/'}),
     'role': ('role-management/index.html', {'en': 'role-management/', 'fr': 'gestion-des-roles/'}),
     'skullCap': ('skull-cap/index.html', {'en': 'skull-cap/', 'fr': 'skull-cap/'}),
+    'skullCapShop': ('skull-cap/shop/index.html', {'en': 'skull-cap/shop/', 'fr': 'skull-cap/boutique/'}),
 }
 # Preserve direct links to earlier work without listing it in the sewing portfolio.
 UNLISTED_PAGES = {'tidle', 'restitch', 'fuzz', 'beirut', 'role'}

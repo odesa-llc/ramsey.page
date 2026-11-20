@@ -296,7 +296,9 @@
     "roleTitle": "Role management — ramsey hatoum",
     "roleDescription": "At PwC, I designed a role-based access model for a Fortune 500 airline’s employee app, defining what 80,000+ employees across 40 roles could see and do.",
     "skullCapTitle": "Skull cap — ramsey hatoum",
-    "skullCapDescription": "How I made a fitted skull cap from an old knit sweater, from the four-panel construction to cream barbed-wire embroidery."
+    "skullCapDescription": "How I made a fitted skull cap from an old knit sweater, from the four-panel construction to cream barbed-wire embroidery.",
+    "skullCapShopTitle": "Skull cap n° 1 — ramsey hatoum",
+    "skullCapShopDescription": "A preview of skull cap n° 1, black ribbed knit tucked into a frosted zipper pouch."
   },
   "analytics": {
     "title": "A little site analytics?",
@@ -456,6 +458,8 @@
   "home.skullCapArtAlt": "Black-and-white booklet cover with handwritten lettering",
   "home.skullCapHeading": "skull cap n° 1",
   "home.skullCapStatus": "coming soon",
+  "skullCapShop.pouchAlt": "Black ribbed knit peeking out of a frosted silver-gray zipper pouch.",
+  "skullCapShop.process": "how I made it",
   "home.skullCapSwatchAlt": "Black jersey swatch held by a silver sewing pin",
   "home.skullCapCutoutAlt": "Man in a gray hoodie and black beanie leaning forward",
   "home.skullCapCredits": "Image credits",

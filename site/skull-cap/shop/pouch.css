@@ -1,0 +1,37 @@
+.pouch-opening .pouch-visual {
+  position: relative;
+  width: min(100%, 414px);
+}
+
+.pouch-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pouch-motion {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.pouch-opening .project-title {
+  margin-bottom: 12px;
+}
+
+.project-page .pouch-process {
+  display: inline-block;
+  margin-top: 18px;
+  padding-block: 8px;
+  font-size: 16px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pouch-motion {
+    display: none;
+  }
+}
