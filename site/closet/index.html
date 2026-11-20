@@ -451,8 +451,11 @@
         <filter id="closet-desktop-shadow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
           <feDropShadow dx="10" dy="24" stdDeviation="10" flood-color="#342e27" flood-opacity=".32"></feDropShadow>
         </filter>
-        <path id="closet-desktop-piece-1" d="M445 423 Q459 427 449 445 L439 460 Q444 474 437 489 L428 487 Q425 478 428 464 L425 456 Q427 444 445 423 Z M682 423 Q692 421 696 434 L705 451 L707 462 Q720 472 711 491 L702 490 L700 473 L693 461 L687 445 Z M443 445 Q560 457 694 460 Q701 462 701 476 L693 597 Q689 635 653 638 Q554 643 466 628 Q435 624 428 602 Q424 590 430 543 L435 468 Q436 448 443 445 Z"></path>
+        <path id="closet-desktop-piece-1" d="M437.5 462 C441 460 445 464 445 469 L441 487 C432 489 426 485 424.5 478 C423 470 429 465 437.5 462 Z M699 475.5 C709 476.5 716 481.5 716 490 C716 497 711 502.5 704 503 L696 503 L696 481 Z M448 444 Q560 457 693 460 Q698 462 699 476 L693 597 Q689 635 653 638 Q554 643 466 628 Q435 624 428 602 Q424 590 430 543 L441 468 Q445 457 448 444 Z"></path>
         <clipPath id="closet-desktop-piece-1-clip"><use href="#closet-desktop-piece-1"></use></clipPath>
+        <clipPath id="closet-desktop-piece-1-ring-rims">
+          <path d="M427 471 Q431 465 438 462 L441 463.5 Q433 466.5 429.5 472 Z M701 477.5 Q707 477 712 482.5 L713.5 485.5 L711 487 Q707.5 481.5 701 481 Z"></path>
+        </clipPath>
         <path id="closet-desktop-piece-2" d="M842 634 L968 271 Q978 252 991 247 Q1004 241 1018 247 L1026 254 L1037 290 L1143 596 L1128 604 L1018 263 Q1010 250 998 257 Q988 262 981 280 L859 637 Z M835 625 Q851 627 863 633 Q1027 617 1139 592 Q1144 591 1147 602 L1179 704 Q1190 743 1183 766 Q1179 780 1153 787 Q1072 800 918 807 Q868 812 843 808 Q817 801 819 780 Q817 753 823 715 Z"></path>
         <clipPath id="closet-desktop-piece-2-clip"><use href="#closet-desktop-piece-2"></use></clipPath>
         <clipPath id="closet-desktop-piece-2-body"><path d="M835 625 Q851 627 863 633 Q1027 617 1139 592 Q1144 591 1147 602 L1179 704 Q1190 743 1183 766 Q1179 780 1153 787 Q1072 800 918 807 Q868 812 843 808 Q817 801 819 780 Q817 753 823 715 Z"></path></clipPath>
@@ -475,7 +478,7 @@
           <stop offset=".42" stop-color="#413d39"></stop>
           <stop offset="1" stop-color="#252422"></stop>
         </linearGradient>
-        <path id="closet-desktop-piece-1-strap" d="M435 446 L544 228 Q557 213 570 228 L694 445 L676 457 L558 245 L454 457 Z"></path>
+        <path id="closet-desktop-piece-1-strap" d="M427 488 L543 227 Q557 212 571 227 L717 504 L700 513 L558 246 L444 496 Z"></path>
         <path id="closet-desktop-piece-2-strap" d="M936 367 C949 330 967 267 980 247 Q986 234 994 230 Q1002 224 1012 231 C1029 249 1042 311 1064 369 L1051 369 C1033 314 1019 253 1006 237 Q1003 231 997 238 Q990 246 985 258 C971 286 964 329 952 369 Z"></path>
       </defs>
       <g data-swing data-pin="296 162" data-depth="522" data-load-sway="-9" data-limit="5" data-stiffness="64">
@@ -489,8 +492,10 @@
       <g transform="translate(92 0)">
         <g data-swing data-pin="557 233" data-depth="425" data-load-sway="19" data-limit="13" data-stiffness="61">
           <g filter="url(#closet-desktop-shadow)" aria-hidden="true">
-            <use class="closet-clasp-chain" href="#closet-clasp-chain-art" transform="matrix(0.44382 0.00375 0.01255 0.56556 434.79886 223.68323)"></use>
             <use href="#closet-desktop-source" clip-path="url(#closet-desktop-piece-1-clip)" transform="translate(0 22)"></use>
+            <use class="closet-clasp-chain" href="#closet-clasp-chain-art" transform="matrix(0.50867 0.03060 0.03152 0.69130 416.73741 214.79007)"></use>
+            <!-- The front of each D-ring passes through the last chain link. -->
+            <use href="#closet-desktop-source" clip-path="url(#closet-desktop-piece-1-ring-rims)" transform="translate(0 22)"></use>
           </g>
           <g role="img" focusable="false" aria-label="leather bag #1" data-i18n-aria-label="closet.bagOne" data-project="leather bag #1" data-i18n-data-project="closet.bagOne">
             <use class="closet-hit" href="#closet-desktop-piece-1" transform="translate(0 22)"></use>
@@ -539,8 +544,11 @@
         <filter id="closet-mobile-shadow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
           <feDropShadow dx="10" dy="24" stdDeviation="15" flood-color="#342e27" flood-opacity=".32"></feDropShadow>
         </filter>
-        <path id="closet-mobile-piece-1" d="M63 738 Q77 741 71 756 L61 775 L61 791 Q57 811 47 810 L43 806 L43 788 L50 775 L47 768 Q51 755 63 738 Z M298 740 Q307 741 315 768 L320 780 Q326 790 321 814 L314 815 L309 793 L301 780 L292 762 Z M63 769 Q191 775 303 778 Q309 780 309 794 L304 900 Q303 940 277 952 Q267 958 223 956 L113 955 Q61 955 50 929 Q44 917 47 886 L53 805 Q55 783 63 769 Z"></path>
+        <path id="closet-mobile-piece-1" d="M53 783 C60 780.5 65 783 65 790 L60 810 L53 811 C43 810 41 803 41.5 796 C42 790 47 785.5 53 783 Z M309 791.5 Q316 791 321 798 Q325 805 321.5 812 Q319 818 310 819 L305 818 L305 796 Z M64 769 Q191 775 302 778 Q307 780 309 794 L304 900 Q303 940 277 952 Q267 958 223 956 L113 955 Q61 955 50 929 Q44 917 47 886 L53 805 Q55 783 63 769 Z"></path>
         <clipPath id="closet-mobile-piece-1-clip"><use href="#closet-mobile-piece-1"></use></clipPath>
+        <clipPath id="closet-mobile-piece-1-ring-rims">
+          <path d="M43 792 Q47 786 53.5 783 L57 784.5 Q50.5 786.5 46.5 792.5 Z M310.5 792 Q317 792 321 798 L321.5 801 L319.5 802 Q316.5 797 310.5 796 Z"></path>
+        </clipPath>
         <path id="closet-mobile-piece-2" d="M321 997 L412 665 Q425 611 434 581 Q443 559 461 557 Q473 553 482 560 L493 583 L511 627 L610 965 L593 971 L469 569 Q454 566 450 586 L437 626 L337 1001 Z M310 992 Q319 993 344 1000 Q501 989 599 959 Q606 956 612 959 Q635 1029 653 1084 Q663 1118 654 1135 Q650 1146 625 1150 Q500 1169 350 1175 Q312 1178 301 1168 Q289 1158 292 1130 L302 1041 Q305 1007 310 992 Z"></path>
         <clipPath id="closet-mobile-piece-2-clip"><use href="#closet-mobile-piece-2"></use></clipPath>
         <clipPath id="closet-mobile-piece-2-body"><path d="M310 992 Q319 993 344 1000 Q501 989 599 959 Q606 956 612 959 Q635 1029 653 1084 Q663 1118 654 1135 Q650 1146 625 1150 Q500 1169 350 1175 Q312 1178 301 1168 Q289 1158 292 1130 L302 1041 Q305 1007 310 992 Z"></path></clipPath>
@@ -563,7 +571,7 @@
           <stop offset=".42" stop-color="#413d39"></stop>
           <stop offset="1" stop-color="#252422"></stop>
         </linearGradient>
-        <path id="closet-mobile-piece-1-strap" d="M53 763 L162 534 Q175 519 188 534 L311 764 L291 775 L175 550 L71 775 Z"></path>
+        <path id="closet-mobile-piece-1-strap" d="M44 805 L161 533 Q175 518 189 533 L325 810 L306 820 L176 550 L63 812 Z"></path>
         <path id="closet-mobile-piece-2-strap" d="M402 687 C417 634 432 568 450 545 Q458 531 464 532 Q469 532 474 538 C492 560 508 619 531 688 L512 690 C493 627 480 569 467 544 Q465 539 460 545 Q455 553 451 562 C440 590 429 645 419 690 Z"></path>
       </defs>
       <g data-swing data-pin="60 468" data-depth="541" data-load-sway="-9" data-limit="5" data-stiffness="64">
@@ -577,8 +585,10 @@
       <g transform="translate(370 539) scale(.82 1) translate(-175 -539)">
         <g data-swing data-pin="175 539" data-depth="440" data-load-sway="19" data-limit="6" data-stiffness="61">
           <g filter="url(#closet-mobile-shadow)" aria-hidden="true">
-            <use class="closet-clasp-chain" href="#closet-clasp-chain-art" transform="matrix(0.44101 0.00281 0.00930 0.59511 53.61026 529.58623)"></use>
             <use href="#closet-mobile-source" clip-path="url(#closet-mobile-piece-1-clip)" transform="translate(0 22) translate(0 750) scale(1 .82) translate(0 -750)"></use>
+            <use class="closet-clasp-chain" href="#closet-clasp-chain-art" transform="matrix(0.49521 0.01188 0.01676 0.70280 38.61518 525.80006)"></use>
+            <!-- The front of each D-ring passes through the last chain link. -->
+            <use href="#closet-mobile-source" clip-path="url(#closet-mobile-piece-1-ring-rims)" transform="translate(0 22) translate(0 750) scale(1 .82) translate(0 -750)"></use>
           </g>
           <g role="img" focusable="false" aria-label="leather bag #1" data-i18n-aria-label="closet.bagOne" data-project="leather bag #1" data-i18n-data-project="closet.bagOne">
             <use class="closet-hit" href="#closet-mobile-piece-1" transform="translate(0 22) translate(0 750) scale(1 .82) translate(0 -750)"></use>
