@@ -3,6 +3,8 @@
   const scene = root.querySelector('.closet-scene');
   const detail = root.querySelector('.closet-detail');
   const title = detail.querySelector('h1');
+  const notesLink = root.querySelector('.closet-notes-callout a');
+  const notesDescription = notesLink.getAttribute('aria-describedby');
   const closetTitle = document.title;
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const projects = new Map(Array.from(scene.querySelectorAll('[data-swing]'), (element) => {
@@ -165,9 +167,11 @@
     scene.hidden = next;
     document.title = next ? `${title.textContent.trim()} — ramsey hatoum` : closetTitle;
     if (next) {
+      notesLink.removeAttribute('aria-describedby');
       root.dispatchEvent(new Event('pouch:open'));
       if (!initial) title.focus({ preventScroll: true });
     } else {
+      notesLink.setAttribute('aria-describedby', notesDescription);
       root.dispatchEvent(new Event('pouch:close'));
     }
     if (!initial) window.scrollTo(0, 0);
