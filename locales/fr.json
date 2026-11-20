@@ -296,9 +296,7 @@
     "roleTitle": "Gestion des rôles — ramsey hatoum",
     "roleDescription": "Chez PwC, j’ai conçu un modèle d’accès par rôle pour l’application des employés d’une compagnie aérienne du Fortune 500, définissant ce que plus de 80 000 personnes réparties sur 40 rôles pouvaient voir et faire.",
     "skullCapTitle": "Skull cap — ramsey hatoum",
-    "skullCapDescription": "Mon processus pour transformer un vieux pull en bonnet ajusté, de la construction à quatre panneaux à la broderie de fil barbelé écru.",
-    "skullCapShopTitle": "Bonnet n° 1 — ramsey hatoum",
-    "skullCapShopDescription": "Un aperçu du bonnet n° 1 en maille côtelée noire, glissé dans une pochette zippée translucide."
+    "skullCapDescription": "Mon processus pour transformer un vieux pull en bonnet ajusté, de la construction à quatre panneaux à la broderie de fil barbelé écru."
   },
   "analytics": {
     "title": "Quelques statistiques de visite ?",
@@ -458,9 +456,6 @@
   "home.skullCapArtAlt": "Couverture de livret en noir et blanc avec des lettres manuscrites",
   "home.skullCapHeading": "bonnet n° 1",
   "home.skullCapStatus": "bientôt disponible",
-  "skullCapShop.pouchAlt": "Maille côtelée noire dépassant d’une pochette zippée translucide gris argenté.",
-  "skullCapShop.skip": "Aller à l’aperçu",
-  "skullCapShop.process": "comment je l’ai fait",
   "home.skullCapSwatchAlt": "Échantillon de jersey noir maintenu par une épingle argentée",
   "home.skullCapCutoutAlt": "Homme en sweat à capuche gris et bonnet noir, penché en avant",
   "home.skullCapCredits": "Crédits images",

@@ -8,7 +8,6 @@ import json
 from pathlib import Path
 import re
 import shutil
-from textwrap import indent
 from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree as ET
 from project_arrows import project_link_arrows
@@ -27,7 +26,6 @@ PAGES = {
     'beirut': ('beirut/index.html', {'en': 'beirut/', 'fr': 'beyrouth/'}),
     'role': ('role-management/index.html', {'en': 'role-management/', 'fr': 'gestion-des-roles/'}),
     'skullCap': ('skull-cap/index.html', {'en': 'skull-cap/', 'fr': 'skull-cap/'}),
-    'skullCapShop': ('skull-cap/shop/index.html', {'en': 'skull-cap/shop/', 'fr': 'skull-cap/boutique/'}),
 }
 # Preserve direct links to earlier work without listing it in the sewing portfolio.
 UNLISTED_PAGES = {'tidle', 'restitch', 'fuzz', 'beirut', 'role'}
@@ -154,20 +152,7 @@ def bootstrap(messages):
     return '<script id="portfolio-messages" type="application/json">' + payload + '</script>\n<script src="/i18n.js?v=1"></script>'
 
 
-def include_portfolio_chrome(source, page):
-    for name in ('portrait-header', 'portfolio-footer'):
-        marker = f'    <!-- include:{name} -->'
-        if marker not in source:
-            continue
-        fragment = (ROOT / 'site' / '_includes' / f'{name}.html').read_text().rstrip()
-        if name == 'portrait-header' and page == 'home':
-            fragment = fragment.replace('href="/#work"', 'href="#work" aria-current="page"', 1)
-        source = source.replace(marker, indent(fragment, '    '), 1)
-    return source
-
-
 def render(source, page, lang, messages, site_url, base_path, gateway=False, analytics=None):
-    source = include_portfolio_chrome(source, page)
     source = clean_seo(localize_links(translate(source, messages), lang))
     if page not in ('home', 'about'):
         source = project_link_arrows(source)
@@ -283,7 +268,7 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
     preview_source = '// Generated from locales/en.json for direct authored-template previews.\nwindow.PORTFOLIO_PREVIEW_MESSAGES = ' + json.dumps(preview, ensure_ascii=False) + ';\n'
     (source / 'i18n-preview.js').write_text(preview_source)
     if output.exists(): shutil.rmtree(output)
-    shutil.copytree(source, output, ignore=shutil.ignore_patterns('.DS_Store', '_includes'))
+    shutil.copytree(source, output, ignore=shutil.ignore_patterns('.DS_Store'))
     # Retain studies locally but make every nonproduction HTML page nonindexable.
     for path in output.rglob('*.html'):
         text = translate(path.read_text(), catalogs['en'])
