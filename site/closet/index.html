@@ -177,7 +177,7 @@
   #ramsey-closet .closet-hotspots [data-held] .closet-hit { cursor: grabbing; }
 
   #ramsey-closet .closet-clasp-chain { filter: saturate(.45); }
-  #ramsey-closet .closet-cap-assembly { filter: brightness(1.1) contrast(.96); }
+  #ramsey-closet .closet-cap-assembly { filter: brightness(1.04) contrast(1.05); }
   #ramsey-closet .closet-jacket-art { opacity: .58; }
   #ramsey-closet .closet-jacket-status {
     position: absolute;
@@ -238,20 +238,18 @@
     align-items: start;
     width: min(calc(100% - 3rem), 58rem);
     margin-inline: auto;
-    padding-block: clamp(6.85rem, 9vw, 9.25rem) 2.25rem;
+    padding-block: clamp(5.9rem, 7.45vw, 8rem) 2.25rem;
   }
 
   #ramsey-closet .closet-detail-copy { padding-top: clamp(.35rem, 1.6vw, 1.4rem); }
 
-  #ramsey-closet .closet-detail-copy h1,
-  #ramsey-closet .closet-detail-copy p {
+  #ramsey-closet .closet-detail-copy h1 {
     font-family: 'Notebook Hand', 'Segoe Print', cursive;
     font-weight: 400;
     margin: 0 0 .75rem;
   }
 
   #ramsey-closet .closet-detail-copy h1 { font-size: clamp(2.45rem, 5.4vw, 4.4rem); }
-  #ramsey-closet .closet-detail-copy p { font-size: clamp(1.45rem, 2.7vw, 2rem); }
 
   #ramsey-closet .pouch-visual {
     position: relative;
@@ -330,8 +328,9 @@
     }
     #ramsey-closet .closet-detail-layout {
       grid-template-columns: minmax(0, 1fr);
-      gap: .85rem;
-      padding-top: 5.65rem;
+      align-content: start;
+      gap: .65rem;
+      padding-top: 4.85rem;
     }
     #ramsey-closet .pouch-visual { width: min(100%, 18rem); }
     #ramsey-closet .pouch-visual[data-paper] {
@@ -527,7 +526,7 @@
           </g>
           <use class="closet-cap-assembly" href="#closet-indented-cap" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"></use>
         </g>
-        <a href="#skull-cap" aria-label="&quot;barrotes&quot; cap, coming soon" data-i18n-aria-label="closet.capLabel" data-project="&quot;barrotes&quot; cap" data-i18n-data-project="closet.capName">
+        <a href="#skull-cap" aria-label="&quot;barrotes&quot; cap" data-i18n-aria-label="closet.capName" data-project="&quot;barrotes&quot; cap" data-i18n-data-project="closet.capName">
           <use class="closet-hit" href="#closet-desktop-piece-3"></use>
           <use class="closet-hit" href="#closet-desktop-piece-3-link" transform="translate(0 253) scale(1 2.2) translate(0 -253)"></use>
           <path class="closet-hit" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"
@@ -623,7 +622,7 @@
             </g>
             <use class="closet-cap-assembly" href="#closet-indented-cap" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"></use>
           </g>
-          <a href="#skull-cap" aria-label="&quot;barrotes&quot; cap, coming soon" data-i18n-aria-label="closet.capLabel" data-project="&quot;barrotes&quot; cap" data-i18n-data-project="closet.capName">
+          <a href="#skull-cap" aria-label="&quot;barrotes&quot; cap" data-i18n-aria-label="closet.capName" data-project="&quot;barrotes&quot; cap" data-i18n-data-project="closet.capName">
             <use class="closet-hit" href="#closet-mobile-piece-3"></use>
             <use class="closet-hit" href="#closet-mobile-piece-3-link" transform="translate(0 560) scale(1 1.95) translate(0 -560)"></use>
             <path class="closet-hit" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"
@@ -648,7 +647,6 @@
     <div class="closet-detail-layout">
       <div class="closet-detail-copy">
         <h1 id="closet-cap-title" tabindex="-1"><!--i18n:closet.capName-->"barrotes" cap<!--/i18n--></h1>
-        <p><!--i18n:closet.comingSoon-->coming soon<!--/i18n--></p>
         <span><!--i18n:closet.paris-->made in paris<!--/i18n--></span>
       </div>
       <figure class="pouch-visual" data-paper="three-panel-fold">
