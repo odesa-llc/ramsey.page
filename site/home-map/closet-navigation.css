@@ -1,7 +1,7 @@
 :root, body.human-variation { --paper: #f3ede4; background-color: var(--paper); }
 body.human-variation { --texture-opacity: 0; }
 body.v-almost-blank::after { opacity: 0; }
-.portrait-work, .portrait-email {
+.portrait-work, .portrait-email, .email-footer a {
   font-family: system-ui, sans-serif !important;
   font-feature-settings: normal;
   font-variant-ligatures: normal;
