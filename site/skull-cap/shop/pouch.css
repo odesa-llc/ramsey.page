@@ -1,5 +1,16 @@
-.pouch-opening .pouch-visual {
+.pouch-opening {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 48px;
+  width: min(calc(100% - 64px), 1056px);
+  margin-inline: auto;
+  padding-top: clamp(32px, 4vw, 64px);
+}
+
+.pouch-visual {
   position: relative;
+  justify-self: center;
   width: min(100%, 414px);
 }
 
@@ -17,17 +28,36 @@
   pointer-events: none;
 }
 
-.pouch-opening .project-title {
-  margin-bottom: 12px;
+.pouch-title {
+  font-size: clamp(46px, 5.1vw, 64px);
+  line-height: 1.13;
 }
 
-.project-page .pouch-process {
+.pouch-status {
+  margin-top: 12px;
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+.pouch-process {
   display: inline-block;
   margin-top: 18px;
   padding-block: 8px;
   font-size: 16px;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+@media (max-width: 999px) {
+  .pouch-opening {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    width: min(calc(100% - 48px), 712px);
+  }
+
+  .pouch-title {
+    font-size: clamp(38px, 8.8vw, 60px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
