@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from urllib.parse import urlsplit
 from xml.etree import ElementTree as ET
-from build import PAGES, LANGUAGES, UNLISTED_PAGES, page_path, load_catalogs
+from build import HOME_ALIASES, PAGES, LANGUAGES, UNLISTED_PAGES, page_path, load_catalogs
 
 
 class Document(HTMLParser):
@@ -55,6 +55,16 @@ def check(output, base_path, site_url):
                 if tag == 'a' and href.startswith('/') and not href.startswith('//') and '/assets/' not in href:
                     assert urlsplit(href).path.startswith(base_path + lang + '/'), (route, href)
             assert any(a.get('name') == 'description' and a.get('content') == catalogs[lang]['seo.'+page+'Description'] for _, a in doc.tags)
+            if page == 'home':
+                assert any(a.get('id') == 'ramsey-closet' for _, a in doc.tags), lang
+                notes_href = base_path.rstrip('/') + page_path('notes', lang)
+                assert any(tag == 'a' and a.get('href') == notes_href and a.get('aria-describedby') == 'closet-notes-note'
+                           for tag, a in doc.tags), lang
+            if page == 'notes':
+                assert any(tag == 'h1' and a.get('id') == 'home-headline' for tag, a in doc.tags), lang
+                home_href = base_path.rstrip('/') + page_path('home', lang)
+                assert any(tag == 'a' and a.get('href') == home_href and 'portrait-work' in a.get('class', '').split()
+                           for tag, a in doc.tags), lang
             if page == 'about':
                 cv_href = base_path.rstrip('/') + catalogs[lang]['about.cvHref']
                 assert not any(tag == 'a' and attrs.get('href') == cv_href for tag, attrs in doc.tags), (lang, cv_href)
@@ -64,8 +74,14 @@ def check(output, base_path, site_url):
     doc = Document(source)
     entries = [a for tag, a in doc.tags if tag == 'script' and 'language-entry.js' in a.get('src', '')]
     assert len(entries) == 1 and entries[0]['data-base-path'] == base_path, entries
-    assert source.index('language-entry.js') < source.index('/support.js')
-    assert '<noscript>' in source and 'English / Français' not in source
+    assert source.index('language-entry.js') < source.index('/i18n.js')
+    assert any(a.get('id') == 'ramsey-closet' for _, a in doc.tags)
+    assert 'English / Français' not in source
+    for route, lang in HOME_ALIASES.items():
+        redirect = (output / route.lstrip('/') / 'index.html').read_text()
+        target = base_path.rstrip('/') + page_path('home', lang)
+        assert f'content="0;url={target}"' in redirect, route
+        assert f'location.replace({json.dumps(target)}+location.search+location.hash)' in redirect, route
     tree = ET.parse(output / 'sitemap.xml')
     urls = {e.text for e in tree.findall('.//{*}loc')}
     assert urls == expected | {site_url + base_path}

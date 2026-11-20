@@ -1,8 +1,8 @@
 # Ramsey Hatoum — portfolio
 
-An English and French sewing portfolio. The “sewing notes” homepage follows
-the making of Leather Bag #1, Leather Bag #2, and Skull Cap #1. Earlier
-projects remain accessible by their existing URLs.
+An English and French sewing portfolio. The closet opens at `/en/` and `/fr/`.
+The notes pages at `/en/notes/` and `/fr/notes/` follow the making of the first
+two leather bags and the Barrotes cap.
 
 ## Edit and preview
 
@@ -35,7 +35,7 @@ For repository-path hosting, pass `--base-path /ramsey.page/` and
 
 Enable GitHub Pages with **Settings → Pages → Source → GitHub Actions**.
 The deployment workflow uses GitHub's actual origin and base path, builds and
-validates all fourteen localized pages, then publishes `dist/` on pushes to
+validates the localized pages, then publishes `dist/` on pushes to
 `main`. Configure `ramsey.page` in Pages settings after registering the domain.
 
 ## Analytics

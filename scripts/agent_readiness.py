@@ -105,7 +105,7 @@ def clean(text):
     return re.sub(r'\n{3,}', '\n\n', text).strip() + '\n'
 
 
-def generate(root, output, pages, languages, unlisted, catalogs, site_url, base_path):
+def generate(root, output, pages, languages, unlisted, catalogs, site_url, base_path, home_aliases):
     absolute = lambda path: site_url + base_path.rstrip('/') + path
     route = lambda page, lang: '/' + lang + '/' + pages[page][1][lang]
     public = [page for page in pages if page not in unlisted]
@@ -158,6 +158,16 @@ def generate(root, output, pages, languages, unlisted, catalogs, site_url, base_
                 alias = '/' + pages[page][0].removesuffix('index.html')
                 add_route(alias, md_path, lang)
                 add_route(alias + 'index.html', md_path, lang)
+
+    # Existing closet URLs share the new home Markdown, including direct links to localized files.
+    for alias, lang in home_aliases.items():
+        markdown_path = route('home', lang) + 'index.md'
+        add_route(alias, markdown_path, lang)
+        add_route(alias + 'index.html', markdown_path, lang)
+        if alias.startswith(f'/{lang}/'):
+            alias_path = alias + 'index.md'
+            (output / alias_path.lstrip('/')).write_bytes((output / markdown_path.lstrip('/')).read_bytes())
+            manifest['resources'][base_path.rstrip('/') + alias_path] = 'text/markdown; charset=utf-8'
 
     # The neutral root remains English for agents; browsers retain their existing language entry.
     neutral = (output / 'en/index.md').read_text().replace(

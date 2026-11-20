@@ -279,8 +279,10 @@
     "rolePeople": "{count} dots representing {employees} {department} employees"
   },
   "seo": {
-    "homeTitle": "ramsey hatoum — Selected Work",
-    "homeDescription": "Made for use. Selected apps, objects, and experiments by ramsey hatoum.",
+    "homeTitle": "Closet — ramsey hatoum",
+    "homeDescription": "A collection of handmade bags, clothing, and objects by Ramsey Hatoum.",
+    "notesTitle": "Sewer’s notes — ramsey hatoum",
+    "notesDescription": "Follow how Ramsey Hatoum made his first two leather bags and the Barrotes cap.",
     "aboutTitle": "about — ramsey hatoum",
     "aboutDescription": "hi there! i’m ramsey, and I’m drawn to sharp ideas, odd details, and things that just work.",
     "handbagTitle": "Handmade Handbag — ramsey hatoum",
@@ -492,9 +494,8 @@
   "handbagTwo.zipperFeature": "zipper",
   "handbagTwo.zipperNote": "A black zipper with silver teeth for the bag’s opening.",
   "handbagTwo.zipperAlt": "Black zipper with silver teeth and pull",
-  "seo.closetTitle": "Closet — ramsey hatoum",
-  "seo.closetDescription": "A collection of handmade bags, clothing, and objects by Ramsey Hatoum.",
   "closet.notes": "notes",
+  "closet.notesCallout": "check it",
   "closet.sceneLabel": "Projects in the closet",
   "closet.comingSoon": "coming soon",
   "closet.crawlerAlt": "Knotted crawler balloon sculpture on blank cut paper patterns",

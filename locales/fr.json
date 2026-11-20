@@ -279,8 +279,10 @@
     "rolePeople": "{count} points représentant {employees} employés : {department}"
   },
   "seo": {
-    "homeTitle": "ramsey hatoum — Projets",
-    "homeDescription": "Pensé pour le quotidien. Une sélection d’applications, d’objets et d’expérimentations par Ramsey Hatoum.",
+    "homeTitle": "Collection — ramsey hatoum",
+    "homeDescription": "Une collection de sacs, vêtements et objets faits main par Ramsey Hatoum.",
+    "notesTitle": "Notes de couture — ramsey hatoum",
+    "notesDescription": "Découvrez comment Ramsey Hatoum a réalisé ses deux premiers sacs en cuir et le bonnet Barrotes.",
     "aboutTitle": "à propos — ramsey hatoum",
     "aboutDescription": "salut, moi c’est ramsey, et je suis attiré par les idées affûtées, les détails singuliers et les choses qui fonctionnent, tout simplement.",
     "handbagTitle": "Sac fait main — ramsey hatoum",
@@ -492,9 +494,8 @@
   "handbagTwo.zipperFeature": "fermeture éclair",
   "handbagTwo.zipperNote": "Une fermeture éclair noire à dents argentées pour l’ouverture du sac.",
   "handbagTwo.zipperAlt": "Fermeture éclair noire avec dents et tirette argentées",
-  "seo.closetTitle": "Collection — ramsey hatoum",
-  "seo.closetDescription": "Une collection de sacs, vêtements et objets faits main par Ramsey Hatoum.",
   "closet.notes": "notes",
+  "closet.notesCallout": "à voir",
   "closet.sceneLabel": "Pièces de la collection",
   "closet.comingSoon": "à venir",
   "closet.crawlerAlt": "Sculpture de ballon noué sur des patrons en papier découpé",

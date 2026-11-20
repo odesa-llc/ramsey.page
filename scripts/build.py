@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ('en', 'fr')
 PAGES = {
     'home': ('index.html', {'en': '', 'fr': ''}),
-    'closet': ('closet/index.html', {'en': 'closet/', 'fr': 'collection/'}),
+    'notes': ('notes/index.html', {'en': 'notes/', 'fr': 'notes/'}),
     'about': ('about/index.html', {'en': 'about/', 'fr': 'a-propos/'}),
     'handbag': ('handbag/index.html', {'en': 'handbag/', 'fr': 'sac-fait-main/'}),
     'handbagTwo': ('handbag-2/index.html', {'en': 'handbag-2/', 'fr': 'sac-fait-main-2/'}),
@@ -30,7 +30,9 @@ PAGES = {
 }
 # Preserve direct links to earlier work without listing it in the sewing portfolio.
 UNLISTED_PAGES = {'tidle', 'restitch', 'fuzz', 'beirut', 'role'}
-ALIASES = {'/thinking-cap/': 'skullCap', '/en/thinking-cap/': 'skullCap', '/fr/thinking-cap/': 'skullCap'}
+HOME_ALIASES = {'/closet/': 'en', '/en/closet/': 'en', '/fr/collection/': 'fr'}
+ALIASES = {'/thinking-cap/': 'skullCap', '/en/thinking-cap/': 'skullCap', '/fr/thinking-cap/': 'skullCap',
+           **dict.fromkeys(HOME_ALIASES, 'home')}
 SOURCE_ROUTES = {'/' + filename.removesuffix('index.html'): page for page, (filename, _) in PAGES.items()}
 SOURCE_ROUTES.update(ALIASES)
 TOKEN = re.compile(r'<!--i18n:([\w.]+)-->(.*?)<!--/i18n-->', re.S)
@@ -155,7 +157,7 @@ def bootstrap(messages):
 
 def render(source, page, lang, messages, site_url, base_path, gateway=False, analytics=None):
     source = clean_seo(localize_links(translate(source, messages), lang))
-    if page not in ('home', 'about'):
+    if page not in ('notes', 'about'):
         source = project_link_arrows(source)
         source = source.replace('</head>', '<link rel="stylesheet" href="/project-links.css?v=1">\n</head>', 1)
     source = re.sub(r'<html\b[^>]*>', '<html lang="' + lang + '">', source, count=1, flags=re.I)
@@ -197,7 +199,7 @@ def render(source, page, lang, messages, site_url, base_path, gateway=False, ana
         tracking = (f'<meta name="portfolio:analytics" content="{payload}">\n'
                     '<script src="/analytics.js?v=2" defer></script>\n')
         source = source.replace('</head>', tracking + '</head>', 1)
-    if page == 'home':
+    if page == 'notes':
         # Keep text, images, and ordinary project links usable without the renderer.
         fallback = '<noscript><style>x-dc{display:block}.tile-study [data-grid]{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))!important}.tile-study .tile{min-height:360px}.project-filters{display:none}.tile-study .tile-caption{flex:auto!important}html,body{height:auto!important}</style></noscript>'
         source = source.replace('</head>', fallback + '\n</head>', 1)
@@ -290,10 +292,11 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
         destination.parent.mkdir(parents=True, exist_ok=True)
         alias_lang = 'fr' if alias.startswith('/fr/') else 'en'
         target = page_path(page, alias_lang)
+        hosted_target = base_path.rstrip('/') + target
         destination.write_text(f'<!doctype html><html lang="{alias_lang}"><head><meta charset="utf-8"><meta name="robots" content="noindex">'
             + f'<title>{html.escape(catalogs[alias_lang]["seo." + page + "Title"])}</title>'
-            + f'<link rel="canonical" href="{site_url + base_path.rstrip("/") + target}">'
-            + f'<meta http-equiv="refresh" content="0;url={target}"></head>'
+            + f'<link rel="canonical" href="{site_url + hosted_target}">'
+            + f'<meta http-equiv="refresh" content="0;url={hosted_target}"></head>'
             + f'<body><script>location.replace({json.dumps(target)}+location.search+location.hash);</script></body></html>')
     # Script-maintained project destinations follow the current page language.
     visibility = output / 'project-visibility.js'
@@ -319,7 +322,7 @@ def build(base_path='/', output=None, site_url='https://odesa-llc.github.io'):
         ET.SubElement(entry, '{' + namespace + '}loc').text = site_url + base_path.rstrip('/') + route
     ET.ElementTree(sitemap).write(output / 'sitemap.xml', encoding='utf-8', xml_declaration=True)
     (output / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + site_url + base_path + 'sitemap.xml\n')
-    generate_agent_resources(ROOT, output, PAGES, LANGUAGES, UNLISTED_PAGES, catalogs, site_url, base_path)
+    generate_agent_resources(ROOT, output, PAGES, LANGUAGES, UNLISTED_PAGES, catalogs, site_url, base_path, HOME_ALIASES)
     (output / '.nojekyll').touch()
     checked = verify(output, base_path)
     print(f'Built {len(PAGES) * len(LANGUAGES)} localized pages + language entry; checked {checked} local HTML references at {output}')
