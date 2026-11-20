@@ -295,7 +295,7 @@
     "beirutDescription": "Beyrouth à travers les photos de Ramsey Hatoum : scènes de rue, ateliers, cafés et ambiances nocturnes.",
     "roleTitle": "Gestion des rôles — ramsey hatoum",
     "roleDescription": "Chez PwC, j’ai conçu un modèle d’accès par rôle pour l’application des employés d’une compagnie aérienne du Fortune 500, définissant ce que plus de 80 000 personnes réparties sur 40 rôles pouvaient voir et faire.",
-    "skullCapTitle": "Skull cap — ramsey hatoum",
+    "skullCapTitle": "\"barrotes\" cap — ramsey hatoum",
     "skullCapDescription": "Mon processus pour transformer un vieux pull en bonnet ajusté, de la construction à quatre panneaux à la broderie de fil barbelé écru."
   },
   "analytics": {
@@ -353,7 +353,7 @@
     "moreWork": "Autres projets"
   },
   "skullCap": {
-    "title": "Skull cap.",
+    "title": "\"barrotes\" cap",
     "intro": "J’ai transformé un vieux pull en maille en bonnet ajusté, en partant de la construction à quatre panneaux de wynunlimited et en ajoutant une broderie de fil barbelé écru.",
     "tutorial": "référence de construction ↗",
     "pattern": "patron PDF ↗",
@@ -454,7 +454,7 @@
   "home.skullCapProcess.day2": "jour 2",
   "home.skullCapInspiration": "inspo",
   "home.skullCapArtAlt": "Couverture de livret en noir et blanc avec des lettres manuscrites",
-  "home.skullCapHeading": "bonnet n° 1",
+  "home.skullCapHeading": "\"barrotes\" cap",
   "home.skullCapStatus": "bientôt disponible",
   "home.skullCapSwatchAlt": "Échantillon de jersey noir maintenu par une épingle argentée",
   "home.skullCapCutoutAlt": "Homme en sweat à capuche gris et bonnet noir, penché en avant",
@@ -503,8 +503,8 @@
   "closet.jacketName": "veste courte",
   "closet.bagOne": "sac en cuir n° 1",
   "closet.bagTwo": "sac en cuir n° 2",
-  "closet.capName": "bonnet n° 1",
-  "closet.capLabel": "bonnet n° 1, à venir",
+  "closet.capName": "\"barrotes\" cap",
+  "closet.capLabel": "\"barrotes\" cap, à venir",
   "closet.paris": "fait à paris",
   "closet.patternAlt": "Patron du bonnet en papier avec deux plis horizontaux.",
   "closet.pouchAlt": "Maille côtelée noire et bobine de fil crème dans une pochette zippée translucide.",

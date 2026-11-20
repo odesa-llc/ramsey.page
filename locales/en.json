@@ -295,7 +295,7 @@
     "beirutDescription": "A personal photography project by Ramsey Hatoum. Sites and everyday scenes from Beirut: streets, workshops, cafés, quiet corners and nights out.",
     "roleTitle": "Role management — ramsey hatoum",
     "roleDescription": "At PwC, I designed a role-based access model for a Fortune 500 airline’s employee app, defining what 80,000+ employees across 40 roles could see and do.",
-    "skullCapTitle": "Skull cap — ramsey hatoum",
+    "skullCapTitle": "\"barrotes\" cap — ramsey hatoum",
     "skullCapDescription": "How I made a fitted skull cap from an old knit sweater, from the four-panel construction to cream barbed-wire embroidery."
   },
   "analytics": {
@@ -353,7 +353,7 @@
     "moreWork": "More work"
   },
   "skullCap": {
-    "title": "Skull cap.",
+    "title": "\"barrotes\" cap",
     "intro": "I turned an old knit sweater into a fitted skull cap, using wynunlimited’s four-panel construction and adding cream barbed-wire embroidery.",
     "tutorial": "construction reference ↗",
     "pattern": "pattern PDF ↗",
@@ -454,7 +454,7 @@
   "home.skullCapProcess.day2": "day 2",
   "home.skullCapInspiration": "inspo",
   "home.skullCapArtAlt": "Black-and-white booklet cover with handwritten lettering",
-  "home.skullCapHeading": "skull cap n° 1",
+  "home.skullCapHeading": "\"barrotes\" cap",
   "home.skullCapStatus": "coming soon",
   "home.skullCapSwatchAlt": "Black jersey swatch held by a silver sewing pin",
   "home.skullCapCutoutAlt": "Man in a gray hoodie and black beanie leaning forward",
@@ -503,8 +503,8 @@
   "closet.jacketName": "cropped jacket",
   "closet.bagOne": "leather bag #1",
   "closet.bagTwo": "leather bag #2",
-  "closet.capName": "skull cap n° 1",
-  "closet.capLabel": "skull cap n° 1, coming soon",
+  "closet.capName": "\"barrotes\" cap",
+  "closet.capLabel": "\"barrotes\" cap, coming soon",
   "closet.paris": "made in paris",
   "closet.patternAlt": "The skullcap crown pattern on crisp paper with two horizontal folds.",
   "closet.pouchAlt": "Black ribbed knit and a cream thread spool inside a frosted silver-gray zipper pouch.",
