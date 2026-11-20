@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ('en', 'fr')
 PAGES = {
     'home': ('index.html', {'en': '', 'fr': ''}),
+    'closet': ('closet/index.html', {'en': 'closet/', 'fr': 'collection/'}),
     'about': ('about/index.html', {'en': 'about/', 'fr': 'a-propos/'}),
     'handbag': ('handbag/index.html', {'en': 'handbag/', 'fr': 'sac-fait-main/'}),
     'handbagTwo': ('handbag-2/index.html', {'en': 'handbag-2/', 'fr': 'sac-fait-main-2/'}),

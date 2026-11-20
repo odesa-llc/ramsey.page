@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closet — ramsey hatoum</title>
+  <style>body { margin: 0; background: #b3afaa; }</style>
+</head>
+<body>
+<style>
+  @font-face {
+    font-family: 'Notebook Hand';
+    src: url('/assets/closet/NotebookHand-Contextual-Regular.woff2?v=1.106') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  #ramsey-closet {
+    position: relative;
+    isolation: isolate;
+    container-type: inline-size;
+    color: #222522;
+    background: #b3afaa;
+    font: 400 1rem/1.25 system-ui, sans-serif;
+    text-align: start;
+  }
+
+  #ramsey-closet .closet-nav {
+    position: absolute;
+    z-index: 2;
+    inset: 0 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: clamp(.5rem, 4.6vw, 4.75rem);
+    min-height: clamp(3.25rem, 6.2vw, 5.1rem);
+    padding: .15rem clamp(.625rem, 3.5vw, 2rem);
+    background: #f3ede4;
+  }
+
+  #ramsey-closet .closet-nav a {
+    display: grid;
+    align-items: center;
+    min-height: 44px;
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  #ramsey-closet .closet-nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: .26em;
+  }
+
+  #ramsey-closet .closet-nav > a:first-child { justify-self: end; }
+
+  #ramsey-closet .closet-signature {
+    font: 400 clamp(1.75rem, 3.15vw, 2.65rem)/1 'Notebook Hand', 'Segoe Print', cursive;
+    font-synthesis: none;
+    font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1, 'dlig' 1;
+  }
+
+  /* Shape the full wordmark in both layers so the original letterforms stay intact. */
+  #ramsey-closet .closet-signature { --signature-split: 6.253em; }
+  #ramsey-closet .closet-signature > span { grid-area: 1 / 1; }
+  #ramsey-closet .closet-signature-base {
+    clip-path: inset(-.35em calc(100% - var(--signature-split)) -.35em -.3em);
+  }
+  #ramsey-closet .closet-signature-final {
+    clip-path: inset(-.35em -.3em -.35em var(--signature-split));
+    transform: translate(-.061em, .050em);
+    user-select: none;
+  }
+
+  #ramsey-closet .closet-scene {
+    --wall-height: calc(100cqw * 941 / 1671);
+    --crawler-width: 32.44cqw;
+    --crawler-height: calc(var(--crawler-width) / 2);
+    --crawler-rest: calc(var(--wall-height) * .96);
+    --crawler-drop: clamp(.875rem, 2cqw, 1.5rem);
+    --crawler-clearance: clamp(2rem, 5cqw, 5rem);
+    position: relative;
+    overflow: hidden;
+    min-height: calc(var(--crawler-rest) + var(--crawler-drop) + var(--crawler-height) + var(--crawler-clearance));
+    background: url('/assets/closet/closet-floor-desktop.webp') center bottom / 100% calc(100% - var(--wall-height)) no-repeat;
+  }
+  #ramsey-closet .closet-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  #ramsey-closet .closet-crawler {
+    position: absolute;
+    bottom: var(--crawler-clearance);
+    left: calc(50% - var(--crawler-width) / 2);
+    width: var(--crawler-width);
+    pointer-events: none;
+    filter: url(#closet-crawler-floor-shadow);
+  }
+
+  #ramsey-closet .closet-crawler-papers,
+  #ramsey-closet .closet-crawler-top-strip {
+    position: absolute;
+    bottom: -.8%;
+    left: -8%;
+    width: 116%;
+    height: 29%;
+  }
+
+  #ramsey-closet .closet-crawler-papers,
+  #ramsey-closet .closet-crawler-top-strip::before {
+    background: var(--crawler-paper-art) center / 100% 100% no-repeat;
+  }
+
+  #ramsey-closet .closet-crawler-papers {
+    z-index: -1;
+    filter: saturate(.76);
+  }
+
+  #ramsey-closet .closet-crawler-top-strip {
+    z-index: 1;
+    filter: saturate(.76) drop-shadow(.3px 1px .8px #3c322a55);
+  }
+
+  #ramsey-closet .closet-crawler-top-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Bring the narrow strip back over the curved edge of the older papers. */
+    clip-path: polygon(39.4% 77.5%, 89.9% 54%, 91.9% 62.5%, 89.7% 70.7%, 40.2% 91.3%);
+  }
+
+  #ramsey-closet .closet-crawler-figure {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: url(#closet-crawler-ground-shadow);
+    user-select: none;
+  }
+
+  #ramsey-closet .closet-svg-defs { position: absolute; }
+  #ramsey-closet .closet-bag-hooks {
+    pointer-events: none;
+    filter: saturate(.28) contrast(1.12) brightness(1.04) drop-shadow(1px 2px 1px #302d2840);
+  }
+
+  #ramsey-closet .closet-hotspots {
+    position: absolute;
+    inset: 0 0 auto;
+    width: 100%;
+    height: var(--wall-height);
+    pointer-events: none;
+    touch-action: pan-y;
+  }
+
+  #ramsey-closet .closet-hotspots .closet-hit {
+    fill: transparent;
+    pointer-events: fill;
+    cursor: grab;
+    touch-action: pan-y;
+  }
+
+  #ramsey-closet .closet-hotspots [data-held] .closet-hit { cursor: grabbing; }
+
+  #ramsey-closet .closet-clasp-chain { filter: saturate(.45); }
+  #ramsey-closet .closet-cap-assembly { filter: brightness(1.1) contrast(.96); }
+  #ramsey-closet .closet-jacket-art { opacity: .58; }
+  #ramsey-closet .closet-jacket-status {
+    position: absolute;
+    z-index: 1;
+    left: 17.7%;
+    top: calc(var(--wall-height) * 702 / 941);
+    transform: translateX(-50%);
+    color: #443c35;
+    font: 400 1rem/1.25 'Notebook Hand', 'Segoe Print', cursive;
+    font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1, 'dlig' 1;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  #ramsey-closet .closet-hotspots a:focus-visible .closet-hit {
+    stroke: #fff8ef;
+    stroke-width: 2px;
+    vector-effect: non-scaling-stroke;
+    paint-order: stroke fill;
+    filter: drop-shadow(0 1px 1px #201e1a);
+  }
+
+  #ramsey-closet .closet-hotspots-mobile { display: none; }
+
+  #ramsey-closet .closet-cursor-label {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .42rem .73rem .45rem;
+    border-radius: 999px;
+    background: #242622;
+    color: #fff9f0;
+    box-shadow: 0 2px 8px #18161230;
+    font-size: .875rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    pointer-events: none;
+    text-decoration: none;
+  }
+
+  #ramsey-closet .closet-touch-label {
+    min-height: 44px;
+    box-sizing: border-box;
+    pointer-events: auto;
+  }
+
+  #ramsey-closet [hidden] { display: none; }
+  #ramsey-closet .closet-cursor-status { color: #d7d7cb; }
+  #ramsey-closet .closet-cursor-status::before { content: '·'; margin-right: .45rem; }
+
+  #ramsey-closet .closet-detail {
+    position: relative;
+    display: grid;
+    isolation: isolate;
+    min-height: max(35rem, 56.3vw);
+    background: #b3afaa;
+  }
+
+  #ramsey-closet .closet-detail[hidden] { display: none; }
+
+  #ramsey-closet .closet-detail-background,
+  #ramsey-closet .closet-detail-layout { grid-area: 1 / 1; }
+
+  #ramsey-closet .closet-detail-background {
+    position: relative;
+    z-index: -1;
+    align-self: start;
+    pointer-events: none;
+  }
+
+  #ramsey-closet .closet-detail-rail-patch {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 4.7%);
+    /* Inpaint only the rail. The wall and shelf shadows retain the main crop. */
+    mask-image: linear-gradient(transparent 14.8%, black 16.6%, black 22%, transparent 28%);
+  }
+
+  #ramsey-closet .closet-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 5vw, 4.5rem);
+    align-items: start;
+    width: min(calc(100% - 3rem), 58rem);
+    margin-inline: auto;
+    padding-block: clamp(6.85rem, 9vw, 9.25rem) 2.25rem;
+  }
+
+  #ramsey-closet .closet-detail-copy { padding-top: clamp(.35rem, 1.6vw, 1.4rem); }
+
+  #ramsey-closet .closet-detail-copy h1,
+  #ramsey-closet .closet-detail-copy p {
+    font-family: 'Notebook Hand', 'Segoe Print', cursive;
+    font-weight: 400;
+    margin: 0 0 .75rem;
+  }
+
+  #ramsey-closet .closet-detail-copy h1 { font-size: clamp(2.45rem, 5.4vw, 4.4rem); }
+  #ramsey-closet .closet-detail-copy p { font-size: clamp(1.45rem, 2.7vw, 2rem); }
+
+  #ramsey-closet .pouch-visual {
+    position: relative;
+    width: min(100%, 24rem);
+    margin: 0 auto;
+  }
+
+  #ramsey-closet .pouch-pack {
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(8px 16px 16px #201c1633);
+  }
+
+  #ramsey-closet .pouch-photo { display: block; width: 100%; height: auto; }
+  #ramsey-closet .pouch-motion { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  #ramsey-closet .pouch-visual.is-animating .pouch-photo { opacity: 0; }
+
+  #ramsey-closet .pouch-visual[data-paper] .pouch-pack {
+    transform: translateX(-7%) rotate(-4deg);
+    transform-origin: 66% 82%;
+  }
+
+  #ramsey-closet .pouch-visual[data-paper] { width: min(88%, 24rem); }
+
+  #ramsey-closet .closet-pattern-paper {
+    position: absolute;
+    z-index: 0;
+    top: var(--paper-top, -4%);
+    left: calc(var(--paper-left, 30%) - var(--paper-inset-adjust, 0%));
+    width: var(--paper-width, 88%);
+    height: auto;
+    transform: rotate(6deg);
+    transform-origin: 24% 83%;
+    filter: drop-shadow(6px 11px 10px #201c1640);
+    pointer-events: none;
+  }
+
+  #ramsey-closet [data-paper="open-fold"] {
+    --paper-left: 28%;
+    --paper-width: 92%;
+  }
+
+  #ramsey-closet [data-paper="three-panel-fold"] { --paper-top: -3%; }
+
+  #ramsey-closet [data-paper="cut-paper-template"] {
+    --paper-left: 36%;
+    --paper-top: -2%;
+    --paper-width: 83%;
+  }
+
+  @media (max-width: 560px) {
+    #ramsey-closet .closet-nav { gap: .6rem; font-size: .875rem; min-height: 3.55rem; }
+    #ramsey-closet .closet-signature { font-size: clamp(1.45rem, 7.1vw, 2.12rem); }
+    #ramsey-closet .closet-nav > a:first-child { justify-self: start; }
+    #ramsey-closet .closet-hotspots-desktop { display: none; }
+    #ramsey-closet .closet-hotspots-mobile { display: block; }
+    #ramsey-closet .closet-scene {
+      --wall-height: calc(100cqw * 1844 / 853);
+      --crawler-width: 75.73cqw;
+      --crawler-rest: calc(var(--wall-height) - var(--crawler-height));
+      --crawler-clearance: 1rem;
+      background-image: url('/assets/closet/closet-floor-mobile.png');
+    }
+    #ramsey-closet .closet-crawler {
+      left: 11.23%;
+    }
+    #ramsey-closet .closet-jacket-status {
+      left: 15%;
+      top: calc(var(--wall-height) * 1020 / 1844);
+    }
+    #ramsey-closet .closet-detail-rail-patch {
+      clip-path: none;
+      filter: brightness(.976);
+      mask-image: linear-gradient(transparent 24%, black 25.2%, black 27.85%, transparent 30.7%);
+    }
+    #ramsey-closet .closet-detail-layout {
+      grid-template-columns: minmax(0, 1fr);
+      gap: .85rem;
+      padding-top: 5.65rem;
+    }
+    #ramsey-closet .pouch-visual { width: min(100%, 18rem); }
+    #ramsey-closet .pouch-visual[data-paper] {
+      --paper-inset-adjust: 7%;
+      width: min(86%, 16.5rem);
+    }
+  }
+</style>
+<div id="ramsey-closet">
+  <nav class="closet-nav" aria-label="Main navigation" data-i18n-aria-label="nav.main">
+    <a href="/"><!--i18n:closet.notes-->notes<!--/i18n--></a>
+    <a class="closet-signature" href="#work" aria-label="ramsey hatoum">
+      <span class="closet-signature-base" aria-hidden="true">ramsey hatoum</span>
+      <span class="closet-signature-final" aria-hidden="true">ramsey hatoum</span>
+    </a>
+  </nav>
+  <main class="closet-scene" aria-label="Projects in the closet" data-i18n-aria-label="closet.sceneLabel">
+    <svg class="closet-svg-defs" width="0" height="0" aria-hidden="true">
+      <defs>
+        <filter id="closet-crawler-floor-shadow" x="-20%" y="-5%" width="155%" height="120%"
+                primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+          <feFlood x="-.16" y=".74" width="1.42" height=".29" flood-color="white" result="shelf-zone"></feFlood>
+          <feComposite in="SourceAlpha" in2="shelf-zone" operator="in" result="stack-footprint"></feComposite>
+          <feGaussianBlur in="stack-footprint" stdDeviation=".009 .014"></feGaussianBlur>
+          <feOffset dx=".006" dy=".011" result="shelf-offset"></feOffset>
+          <feFlood flood-color="#3d352b" flood-opacity=".24"></feFlood>
+          <feComposite in2="shelf-offset" operator="in" result="shelf-shadow"></feComposite>
+          <feGaussianBlur in="stack-footprint" stdDeviation=".002 .004"></feGaussianBlur>
+          <feOffset dy=".004" result="shelf-contact-offset"></feOffset>
+          <feFlood flood-color="#3c332a" flood-opacity=".18"></feFlood>
+          <feComposite in2="shelf-contact-offset" operator="in" result="shelf-contact"></feComposite>
+          <feMerge>
+            <feMergeNode in="shelf-shadow"></feMergeNode>
+            <feMergeNode in="shelf-contact"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+        <filter id="closet-crawler-ground-shadow" x="-15%" y="-5%" width="130%" height="120%"
+                primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+          <!-- Match the warm paper below the crawler to the newer cuttings. -->
+          <feColorMatrix in="SourceGraphic" x="0" y=".68" width="1" height=".32" result="paper-warmth"
+                         values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  14 0 -14 0 -.52"></feColorMatrix>
+          <feColorMatrix in="SourceGraphic" result="muted-paper-tone"
+                         values="1 0 0 0 -.046  0 1 0 0 -.037  0 0 1 0 -.027  0 0 0 1 0"></feColorMatrix>
+          <feComposite in="muted-paper-tone" in2="paper-warmth" operator="in" result="muted-paper"></feComposite>
+          <feComposite in="muted-paper" in2="SourceGraphic" operator="atop" result="matched-figure"></feComposite>
+          <feFlood x="0" y=".76" width="1" height=".24" flood-color="white" result="paper-zone"></feFlood>
+          <feComposite in="SourceAlpha" in2="paper-zone" operator="in" result="footprint"></feComposite>
+          <feGaussianBlur in="footprint" stdDeviation=".004 .005"></feGaussianBlur>
+          <feOffset dx=".002" dy=".006" result="contact-offset"></feOffset>
+          <feFlood flood-color="#3c332a" flood-opacity=".34"></feFlood>
+          <feComposite in2="contact-offset" operator="in" result="contact-shadow"></feComposite>
+          <feMerge>
+            <feMergeNode in="contact-shadow"></feMergeNode>
+            <feMergeNode in="matched-figure"></feMergeNode>
+          </feMerge>
+        </filter>
+        <clipPath id="closet-hook-rail-occlusion">
+          <path d="M-24 -16 H24 V83 H-24 V22 H-9.7 V0 H-24 Z"></path>
+        </clipPath>
+        <g id="closet-brushed-s-hook" clip-path="url(#closet-hook-rail-occlusion)" transform="scale(1.22 1)">
+          <image href="/assets/closet/brushed-s-hook.png" x="-31.09" y="-12.13" width="52.36" height="89.6" preserveAspectRatio="none"></image>
+        </g>
+        <image id="closet-cropped-jacket" href="/assets/closet/cropped-jacket-charcoal-hanger.webp" width="560" height="773" preserveAspectRatio="none"></image>
+        <clipPath id="closet-jacket-body-clip">
+          <rect x="0" y="105" width="560" height="668"></rect>
+        </clipPath>
+        <clipPath id="closet-jacket-hook-clip">
+          <!-- The rear tip disappears behind the rail at the top edge. -->
+          <path d="M225 0 H330 V105 H270 V12 H225 Z"></path>
+        </clipPath>
+        <image id="closet-clasp-chain-art" href="/assets/closet/clasp-bag-chain.webp" width="560" height="408"></image>
+        <image id="closet-indented-cap" href="/assets/closet/closet-cap-mixed-barbs.png" width="1478" height="1064" preserveAspectRatio="none"></image>
+      </defs>
+    </svg>
+    <picture>
+      <source media="(max-width: 560px)" srcset="/assets/closet/closet-wall-mobile.jpg">
+      <img class="closet-photo" src="/assets/closet/closet-wall-desktop.jpg" alt="" width="1671" height="941" draggable="false">
+    </picture>
+    <div class="closet-crawler" style="--crawler-paper-art: url('/assets/closet/crawler-paper-cuttings.webp')">
+      <span class="closet-crawler-papers" aria-hidden="true"></span>
+      <img class="closet-crawler-figure" src="/assets/closet/knotted-crawler-spread.webp" alt="Knotted crawler balloon sculpture on blank cut paper patterns" data-i18n-alt="closet.crawlerAlt" width="880" height="440" draggable="false">
+      <span class="closet-crawler-top-strip" aria-hidden="true"></span>
+    </div>
+    <svg class="closet-hotspots closet-hotspots-desktop" viewBox="0 0 1671 941" preserveAspectRatio="none">
+      <defs>
+        <image id="closet-desktop-source" href="/assets/closet/closet-desktop.jpg" width="1671" height="941"></image>
+        <filter id="closet-desktop-shadow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <feDropShadow dx="10" dy="24" stdDeviation="10" flood-color="#342e27" flood-opacity=".32"></feDropShadow>
+        </filter>
+        <path id="closet-desktop-piece-1" d="M445 423 Q459 427 449 445 L439 460 Q444 474 437 489 L428 487 Q425 478 428 464 L425 456 Q427 444 445 423 Z M682 423 Q692 421 696 434 L705 451 L707 462 Q720 472 711 491 L702 490 L700 473 L693 461 L687 445 Z M443 445 Q560 457 694 460 Q701 462 701 476 L693 597 Q689 635 653 638 Q554 643 466 628 Q435 624 428 602 Q424 590 430 543 L435 468 Q436 448 443 445 Z"></path>
+        <clipPath id="closet-desktop-piece-1-clip"><use href="#closet-desktop-piece-1"></use></clipPath>
+        <path id="closet-desktop-piece-2" d="M842 634 L968 271 Q978 252 991 247 Q1004 241 1018 247 L1026 254 L1037 290 L1143 596 L1128 604 L1018 263 Q1010 250 998 257 Q988 262 981 280 L859 637 Z M835 625 Q851 627 863 633 Q1027 617 1139 592 Q1144 591 1147 602 L1179 704 Q1190 743 1183 766 Q1179 780 1153 787 Q1072 800 918 807 Q868 812 843 808 Q817 801 819 780 Q817 753 823 715 Z"></path>
+        <clipPath id="closet-desktop-piece-2-clip"><use href="#closet-desktop-piece-2"></use></clipPath>
+        <clipPath id="closet-desktop-piece-2-body"><path d="M835 625 Q851 627 863 633 Q1027 617 1139 592 Q1144 591 1147 602 L1179 704 Q1190 743 1183 766 Q1179 780 1153 787 Q1072 800 918 807 Q868 812 843 808 Q817 801 819 780 Q817 753 823 715 Z"></path></clipPath>
+        <path id="closet-desktop-piece-3" d="M1351 158 Q1367 151 1374 164 Q1384 180 1372 198 L1355 225 Q1346 243 1357 249 Q1368 253 1371 239 Q1375 228 1360 213 L1349 200 L1352 195 L1364 210 Q1381 227 1376 243 Q1371 257 1357 255 Q1339 251 1347 232 L1369 193 Q1379 179 1371 167 Q1365 157 1354 162 Z"></path>
+        <path id="closet-desktop-piece-3-link" d="M1350 263 Q1350 253 1358 252 Q1370 252 1370 264 L1366 265 Q1366 256 1359 256 Q1355 257 1354 266 Z"></path>
+        <clipPath id="closet-desktop-piece-3-clip"><use href="#closet-desktop-piece-3"></use></clipPath>
+        <clipPath id="closet-desktop-piece-3-link-clip"><use href="#closet-desktop-piece-3-link"></use></clipPath>
+        <clipPath id="closet-desktop-bag-photograph">
+          <rect x="0" y="335" width="100%" height="100%"></rect>
+        </clipPath>
+        <linearGradient id="closet-desktop-strap-blend" gradientUnits="userSpaceOnUse" x1="0" x2="0" y1="337" y2="366">
+          <stop stop-color="white"></stop>
+          <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+        </linearGradient>
+        <mask id="closet-desktop-strap-mask" maskUnits="userSpaceOnUse" x="465" y="220" width="615" height="153">
+          <rect x="465" y="220" width="615" height="153" fill="url(#closet-desktop-strap-blend)"></rect>
+        </mask>
+        <linearGradient id="closet-desktop-strap-leather">
+          <stop stop-color="#292826"></stop>
+          <stop offset=".42" stop-color="#413d39"></stop>
+          <stop offset="1" stop-color="#252422"></stop>
+        </linearGradient>
+        <path id="closet-desktop-piece-1-strap" d="M435 446 L544 228 Q557 213 570 228 L694 445 L676 457 L558 245 L454 457 Z"></path>
+        <path id="closet-desktop-piece-2-strap" d="M936 367 C949 330 967 267 980 247 Q986 234 994 230 Q1002 224 1012 231 C1029 249 1042 311 1064 369 L1051 369 C1033 314 1019 253 1006 237 Q1003 231 997 238 Q990 246 985 258 C971 286 964 329 952 369 Z"></path>
+      </defs>
+      <g data-swing data-pin="296 162" data-depth="522" data-load-sway="-9" data-limit="5" data-stiffness="64">
+        <use class="closet-jacket-art" href="#closet-cropped-jacket" transform="translate(106 154) scale(.682 .683)"
+             clip-path="url(#closet-jacket-body-clip)" filter="url(#closet-desktop-shadow)" aria-hidden="true"></use>
+        <use class="closet-jacket-hook" href="#closet-cropped-jacket" transform="translate(106 154) scale(.682 .683)"
+             clip-path="url(#closet-jacket-hook-clip)" aria-hidden="true"></use>
+        <path class="closet-hit" data-project="cropped jacket" data-i18n-data-project="closet.jacketName" role="img" aria-label="Cropped faux leather jacket on a charcoal hanger" data-i18n-aria-label="closet.jacketAlt" aria-describedby="closet-jacket-status"
+              transform="translate(106 154) scale(.682 .683)" d="M235 118 Q280 102 326 118 L361 173 L475 244 Q523 282 551 519 Q564 632 553 756 Q533 773 472 767 L441 638 L118 638 L94 765 Q45 776 10 756 Q0 722 3 594 L49 346 Q64 280 94 248 L195 174 Z"></path>
+      </g>
+      <g transform="translate(92 0)">
+        <g data-swing data-pin="557 233" data-depth="425" data-load-sway="19" data-limit="13" data-stiffness="61">
+          <g filter="url(#closet-desktop-shadow)" aria-hidden="true">
+            <use class="closet-clasp-chain" href="#closet-clasp-chain-art" transform="matrix(0.44382 0.00375 0.01255 0.56556 434.79886 223.68323)"></use>
+            <use href="#closet-desktop-source" clip-path="url(#closet-desktop-piece-1-clip)" transform="translate(0 22)"></use>
+          </g>
+          <a href="/handbag/" aria-label="leather bag #1" data-i18n-aria-label="closet.bagOne" data-project="leather bag #1" data-i18n-data-project="closet.bagOne" target="_blank">
+            <use class="closet-hit" href="#closet-desktop-piece-1" transform="translate(0 22)"></use>
+            <use class="closet-hit" href="#closet-desktop-piece-1-strap"></use>
+          </a>
+        </g>
+      </g>
+      <g data-swing data-pin="1003 233" data-depth="570" data-load-sway="-15" data-limit="11" data-stiffness="49">
+        <g filter="url(#closet-desktop-shadow)" aria-hidden="true">
+          <g clip-path="url(#closet-desktop-bag-photograph)">
+            <use href="#closet-desktop-source" clip-path="url(#closet-desktop-piece-2-clip)"></use>
+            <image href="/assets/closet/leather-bag-2-four-strips.webp" x="705" y="510" width="600" height="400"
+                   clip-path="url(#closet-desktop-piece-2-body)"></image>
+          </g>
+          <use href="#closet-desktop-piece-2-strap" fill="url(#closet-desktop-strap-leather)"
+               mask="url(#closet-desktop-strap-mask)"></use>
+        </g>
+        <a href="/handbag-2/" aria-label="leather bag #2" data-i18n-aria-label="closet.bagTwo" data-project="leather bag #2" data-i18n-data-project="closet.bagTwo" target="_blank">
+          <use class="closet-hit" href="#closet-desktop-piece-2" clip-path="url(#closet-desktop-bag-photograph)"></use>
+          <use class="closet-hit" href="#closet-desktop-piece-2-strap"></use>
+        </a>
+      </g>
+      <g class="closet-bag-hooks" aria-hidden="true">
+        <use href="#closet-brushed-s-hook" transform="translate(649 162)"></use>
+        <use href="#closet-brushed-s-hook" transform="translate(1003 162)"></use>
+      </g>
+      <g data-swing data-pin="1357 160" data-depth="310" data-load-sway="8" data-limit="13" data-stiffness="80">
+        <g filter="url(#closet-desktop-shadow)" aria-hidden="true">
+          <use href="#closet-desktop-source" clip-path="url(#closet-desktop-piece-3-clip)"></use>
+          <g transform="translate(0 253) scale(1 2.2) translate(0 -253)">
+            <use href="#closet-desktop-source" clip-path="url(#closet-desktop-piece-3-link-clip)"></use>
+          </g>
+          <use class="closet-cap-assembly" href="#closet-indented-cap" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.125) translate(-739 -74)"></use>
+        </g>
+        <a href="#skull-cap" aria-label="skull cap n° 1, coming soon" data-i18n-aria-label="closet.capLabel" data-project="skull cap n° 1" data-i18n-data-project="closet.capName" data-status="coming soon" data-i18n-data-status="closet.comingSoon">
+          <use class="closet-hit" href="#closet-desktop-piece-3"></use>
+          <use class="closet-hit" href="#closet-desktop-piece-3-link" transform="translate(0 253) scale(1 2.2) translate(0 -253)"></use>
+          <path class="closet-hit" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.125) translate(-739 -74)"
+                d="M739 27 C769 27 792 53 792 83 C789 105 786 119 791 144 C795 170 785 192 787 218 Q814 222 814 259 C936 280 1046 340 1115 442 C1213 538 1253 657 1280 767 Q1298 830 1311 884 C1317 912 1240 943 1130 960 C895 1009 584 1009 359 971 C230 949 156 924 155 892 Q167 841 181 748 C198 639 250 532 332 437 C414 341 536 282 653 261 Q650 230 674 220 L674 194 C671 173 665 149 672 128 L670 87 C668 56 696 27 739 27 Z"></path>
+        </a>
+      </g>
+    </svg>
+    <svg class="closet-hotspots closet-hotspots-mobile" viewBox="0 0 853 1844" preserveAspectRatio="none">
+      <defs>
+        <image id="closet-mobile-source" href="/assets/closet/closet-mobile.jpg" width="853" height="1844"></image>
+        <filter id="closet-mobile-shadow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <feDropShadow dx="10" dy="24" stdDeviation="15" flood-color="#342e27" flood-opacity=".32"></feDropShadow>
+        </filter>
+        <path id="closet-mobile-piece-1" d="M63 738 Q77 741 71 756 L61 775 L61 791 Q57 811 47 810 L43 806 L43 788 L50 775 L47 768 Q51 755 63 738 Z M298 740 Q307 741 315 768 L320 780 Q326 790 321 814 L314 815 L309 793 L301 780 L292 762 Z M63 769 Q191 775 303 778 Q309 780 309 794 L304 900 Q303 940 277 952 Q267 958 223 956 L113 955 Q61 955 50 929 Q44 917 47 886 L53 805 Q55 783 63 769 Z"></path>
+        <clipPath id="closet-mobile-piece-1-clip"><use href="#closet-mobile-piece-1"></use></clipPath>
+        <path id="closet-mobile-piece-2" d="M321 997 L412 665 Q425 611 434 581 Q443 559 461 557 Q473 553 482 560 L493 583 L511 627 L610 965 L593 971 L469 569 Q454 566 450 586 L437 626 L337 1001 Z M310 992 Q319 993 344 1000 Q501 989 599 959 Q606 956 612 959 Q635 1029 653 1084 Q663 1118 654 1135 Q650 1146 625 1150 Q500 1169 350 1175 Q312 1178 301 1168 Q289 1158 292 1130 L302 1041 Q305 1007 310 992 Z"></path>
+        <clipPath id="closet-mobile-piece-2-clip"><use href="#closet-mobile-piece-2"></use></clipPath>
+        <clipPath id="closet-mobile-piece-2-body"><path d="M310 992 Q319 993 344 1000 Q501 989 599 959 Q606 956 612 959 Q635 1029 653 1084 Q663 1118 654 1135 Q650 1146 625 1150 Q500 1169 350 1175 Q312 1178 301 1168 Q289 1158 292 1130 L302 1041 Q305 1007 310 992 Z"></path></clipPath>
+        <path id="closet-mobile-piece-3" d="M694 465 Q706 459 716 468 Q730 480 720 500 L700 535 Q694 548 700 555 Q707 564 715 552 Q723 544 709 525 L696 507 L696 502 L699 502 L714 522 Q730 542 719 555 Q707 569 696 556 Q688 548 697 530 L715 499 Q725 481 714 472 Q706 464 698 469 Z"></path>
+        <path id="closet-mobile-piece-3-link" d="M699 575 Q698 563 706 560 Q719 557 719 577 L715 578 Q715 563 708 564 Q703 565 703 575 Z"></path>
+        <clipPath id="closet-mobile-piece-3-clip"><use href="#closet-mobile-piece-3"></use></clipPath>
+        <clipPath id="closet-mobile-piece-3-link-clip"><use href="#closet-mobile-piece-3-link"></use></clipPath>
+        <clipPath id="closet-mobile-bag-photograph">
+          <rect x="0" y="641" width="100%" height="100%"></rect>
+        </clipPath>
+        <linearGradient id="closet-mobile-strap-blend" gradientUnits="userSpaceOnUse" x1="0" x2="0" y1="643" y2="686">
+          <stop stop-color="white"></stop>
+          <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+        </linearGradient>
+        <mask id="closet-mobile-strap-mask" maskUnits="userSpaceOnUse" x="87" y="520" width="462" height="174">
+          <rect x="87" y="520" width="462" height="174" fill="url(#closet-mobile-strap-blend)"></rect>
+        </mask>
+        <linearGradient id="closet-mobile-strap-leather">
+          <stop stop-color="#292826"></stop>
+          <stop offset=".42" stop-color="#413d39"></stop>
+          <stop offset="1" stop-color="#252422"></stop>
+        </linearGradient>
+        <path id="closet-mobile-piece-1-strap" d="M53 763 L162 534 Q175 519 188 534 L311 764 L291 775 L175 550 L71 775 Z"></path>
+        <path id="closet-mobile-piece-2-strap" d="M402 687 C417 634 432 568 450 545 Q458 531 464 532 Q469 532 474 538 C492 560 508 619 531 688 L512 690 C493 627 480 569 467 544 Q465 539 460 545 Q455 553 451 562 C440 590 429 645 419 690 Z"></path>
+      </defs>
+      <g data-swing data-pin="60 468" data-depth="541" data-load-sway="-9" data-limit="5" data-stiffness="64">
+        <use class="closet-jacket-art" href="#closet-cropped-jacket" transform="translate(-136 460) scale(.7)"
+             clip-path="url(#closet-jacket-body-clip)" filter="url(#closet-mobile-shadow)" aria-hidden="true"></use>
+        <use class="closet-jacket-hook" href="#closet-cropped-jacket" transform="translate(-136 460) scale(.7)"
+             clip-path="url(#closet-jacket-hook-clip)" aria-hidden="true"></use>
+        <path class="closet-hit" data-project="cropped jacket" data-i18n-data-project="closet.jacketName" role="img" aria-label="Cropped faux leather jacket on a charcoal hanger" data-i18n-aria-label="closet.jacketAlt" aria-describedby="closet-jacket-status"
+              transform="translate(-136 460) scale(.7)" d="M235 118 Q280 102 326 118 L361 173 L475 244 Q523 282 551 519 Q564 632 553 756 Q533 773 472 767 L441 638 L118 638 L94 765 Q45 776 10 756 Q0 722 3 594 L49 346 Q64 280 94 248 L195 174 Z"></path>
+      </g>
+      <g transform="translate(370 539) scale(.82 1) translate(-175 -539)">
+        <g data-swing data-pin="175 539" data-depth="440" data-load-sway="19" data-limit="6" data-stiffness="61">
+          <g filter="url(#closet-mobile-shadow)" aria-hidden="true">
+            <use class="closet-clasp-chain" href="#closet-clasp-chain-art" transform="matrix(0.44101 0.00281 0.00930 0.59511 53.61026 529.58623)"></use>
+            <use href="#closet-mobile-source" clip-path="url(#closet-mobile-piece-1-clip)" transform="translate(0 22) translate(0 750) scale(1 .82) translate(0 -750)"></use>
+          </g>
+          <a href="/handbag/" aria-label="leather bag #1" data-i18n-aria-label="closet.bagOne" data-project="leather bag #1" data-i18n-data-project="closet.bagOne" target="_blank">
+            <use class="closet-hit" href="#closet-mobile-piece-1" transform="translate(0 22) translate(0 750) scale(1 .82) translate(0 -750)"></use>
+            <use class="closet-hit" href="#closet-mobile-piece-1-strap"></use>
+          </a>
+        </g>
+      </g>
+      <g transform="translate(608 539) scale(.79) translate(-465 -539)">
+        <g data-swing data-pin="465 539" data-depth="566" data-load-sway="-15" data-limit="9" data-stiffness="49">
+          <g filter="url(#closet-mobile-shadow)" aria-hidden="true">
+            <g clip-path="url(#closet-mobile-bag-photograph)">
+              <use href="#closet-mobile-source" clip-path="url(#closet-mobile-piece-2-clip)"></use>
+              <image href="/assets/closet/leather-bag-2-four-strips.webp" x="176" y="877" width="600" height="400"
+                     clip-path="url(#closet-mobile-piece-2-body)"></image>
+            </g>
+            <use href="#closet-mobile-piece-2-strap" fill="url(#closet-mobile-strap-leather)"
+                 mask="url(#closet-mobile-strap-mask)"></use>
+          </g>
+          <a href="/handbag-2/" aria-label="leather bag #2" data-i18n-aria-label="closet.bagTwo" data-project="leather bag #2" data-i18n-data-project="closet.bagTwo" target="_blank">
+            <use class="closet-hit" href="#closet-mobile-piece-2" clip-path="url(#closet-mobile-bag-photograph)"></use>
+            <use class="closet-hit" href="#closet-mobile-piece-2-strap"></use>
+          </a>
+        </g>
+      </g>
+      <g class="closet-bag-hooks" aria-hidden="true">
+        <use href="#closet-brushed-s-hook" transform="translate(370 468)"></use>
+        <use href="#closet-brushed-s-hook" transform="translate(608 468)"></use>
+      </g>
+      <g transform="translate(763 469) scale(.84) translate(-707 -469)">
+        <g data-swing data-pin="707 469" data-depth="285" data-load-sway="8" data-limit="8" data-stiffness="80">
+          <g filter="url(#closet-mobile-shadow)" aria-hidden="true">
+            <use href="#closet-mobile-source" clip-path="url(#closet-mobile-piece-3-clip)"></use>
+            <g transform="translate(0 560) scale(1 1.95) translate(0 -560)">
+              <use href="#closet-mobile-source" clip-path="url(#closet-mobile-piece-3-link-clip)"></use>
+            </g>
+            <use class="closet-cap-assembly" href="#closet-indented-cap" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.125) translate(-739 -74)"></use>
+          </g>
+          <a href="#skull-cap" aria-label="skull cap n° 1, coming soon" data-i18n-aria-label="closet.capLabel" data-project="skull cap n° 1" data-i18n-data-project="closet.capName" data-status="coming soon" data-i18n-data-status="closet.comingSoon">
+            <use class="closet-hit" href="#closet-mobile-piece-3"></use>
+            <use class="closet-hit" href="#closet-mobile-piece-3-link" transform="translate(0 560) scale(1 1.95) translate(0 -560)"></use>
+            <path class="closet-hit" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.125) translate(-739 -74)"
+                  d="M739 27 C769 27 792 53 792 83 C789 105 786 119 791 144 C795 170 785 192 787 218 Q814 222 814 259 C936 280 1046 340 1115 442 C1213 538 1253 657 1280 767 Q1298 830 1311 884 C1317 912 1240 943 1130 960 C895 1009 584 1009 359 971 C230 949 156 924 155 892 Q167 841 181 748 C198 639 250 532 332 437 C414 341 536 282 653 261 Q650 230 674 220 L674 194 C671 173 665 149 672 128 L670 87 C668 56 696 27 739 27 Z"></path>
+          </a>
+        </g>
+      </g>
+    </svg>
+    <span id="closet-jacket-status" class="closet-jacket-status"><!--i18n:closet.comingSoon-->coming soon<!--/i18n--></span>
+    <div class="closet-cursor-label" aria-hidden="true" hidden>
+      <span class="closet-cursor-name"></span>
+      <span class="closet-cursor-status" hidden></span>
+    </div>
+    <a class="closet-cursor-label closet-touch-label" hidden></a>
+  </main>
+  <main class="closet-detail" aria-labelledby="closet-cap-title" hidden>
+    <div class="closet-detail-background" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 560px)" srcset="/assets/closet/closet-wall-mobile.jpg">
+        <img class="closet-photo" src="/assets/closet/closet-wall-desktop.jpg" alt="" width="1671" height="941" draggable="false">
+      </picture>
+      <picture class="closet-detail-rail-patch">
+        <source media="(max-width: 560px)" srcset="/assets/closet/closet-rail-patch-mobile.jpg">
+        <img class="closet-photo" src="/assets/closet/closet-rail-patch-desktop.jpg" alt="" width="1671" height="941" draggable="false">
+      </picture>
+    </div>
+    <div class="closet-detail-layout">
+      <div class="closet-detail-copy">
+        <h1 id="closet-cap-title" tabindex="-1"><!--i18n:closet.capName-->skull cap n° 1<!--/i18n--></h1>
+        <p><!--i18n:closet.comingSoon-->coming soon<!--/i18n--></p>
+        <span><!--i18n:closet.paris-->made in paris<!--/i18n--></span>
+      </div>
+      <figure class="pouch-visual" data-paper="three-panel-fold">
+        <img class="closet-pattern-paper" src="/assets/closet/pattern-three-panel-fold.webp" alt="The skullcap crown pattern on crisp paper with two horizontal folds." data-i18n-alt="closet.patternAlt" width="1024" height="1536">
+        <div class="pouch-pack">
+          <img class="pouch-photo" src="/assets/closet/skull-cap-pouch-thread.webp" alt="Black ribbed knit and a cream thread spool inside a frosted silver-gray zipper pouch." data-i18n-alt="closet.pouchAlt" width="1024" height="1536">
+          <canvas class="pouch-motion" width="1024" height="1536" aria-hidden="true" hidden></canvas>
+        </div>
+      </figure>
+    </div>
+  </main>
+</div>
+<script src="/assets/closet/pattern-previews.js"></script>
+<script src="/assets/closet/pouch.js"></script>
+<script src="/assets/closet/motion.js?v=3"></script>
+</body>
+</html>

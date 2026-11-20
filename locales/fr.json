@@ -492,5 +492,20 @@
   "handbagTwo.zipperRead": "En savoir plus sur la fermeture éclair",
   "handbagTwo.zipperFeature": "fermeture éclair",
   "handbagTwo.zipperNote": "Une fermeture éclair noire à dents argentées pour l’ouverture du sac.",
-  "handbagTwo.zipperAlt": "Fermeture éclair noire avec dents et tirette argentées"
+  "handbagTwo.zipperAlt": "Fermeture éclair noire avec dents et tirette argentées",
+  "seo.closetTitle": "Collection — ramsey hatoum",
+  "seo.closetDescription": "Une collection de sacs, vêtements et objets faits main par Ramsey Hatoum.",
+  "closet.notes": "notes",
+  "closet.sceneLabel": "Pièces de la collection",
+  "closet.comingSoon": "à venir",
+  "closet.crawlerAlt": "Sculpture de ballon noué sur des patrons en papier découpé",
+  "closet.jacketAlt": "Veste courte en simili cuir sur un cintre anthracite",
+  "closet.jacketName": "veste courte",
+  "closet.bagOne": "sac en cuir n° 1",
+  "closet.bagTwo": "sac en cuir n° 2",
+  "closet.capName": "bonnet n° 1",
+  "closet.capLabel": "bonnet n° 1, à venir",
+  "closet.paris": "fait à paris",
+  "closet.patternAlt": "Patron du bonnet en papier avec deux plis horizontaux.",
+  "closet.pouchAlt": "Maille côtelée noire et bobine de fil crème dans une pochette zippée translucide."
 }

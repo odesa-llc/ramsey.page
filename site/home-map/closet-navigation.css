@@ -1,0 +1,46 @@
+:root, body.human-variation { --paper: #f3ede4; background-color: var(--paper); }
+body.human-variation { --texture-opacity: 0; }
+body.v-almost-blank::after { opacity: 0; }
+.portrait-work, .portrait-email {
+  font-family: system-ui, sans-serif !important;
+  font-feature-settings: normal;
+  font-variant-ligatures: normal;
+}
+.portrait-header {
+  --closet-nav-center: calc(clamp(3.25rem, 6.2vw, 5.1rem) / 2 + .15rem);
+  --closet-link-offset: calc(clamp(.5rem, 4.6vw, 4.75rem) + clamp(1.75rem, 3.15vw, 2.65rem) * 3.466);
+  position: relative;
+}
+.portrait-navigation { grid-template-columns: 1fr; justify-items: center; }
+.portrait-work, .portrait-about-group {
+  position: absolute;
+  top: var(--closet-nav-center);
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+}
+.portrait-work { right: calc(50% + var(--closet-link-offset)); }
+.portrait-about-group { left: calc(50% + var(--closet-link-offset)); }
+.portrait-work, .portrait-email {
+  display: grid;
+  align-items: center;
+  min-height: 44px;
+  font-size: 1rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  opacity: 1;
+  text-decoration: none;
+}
+.portrait-work:hover, .portrait-email:hover {
+  text-decoration: underline;
+  text-underline-offset: .26em;
+}
+@media (max-width: 560px) {
+  .portrait-header { --closet-nav-center: 1.925rem; --closet-nav-gutter: clamp(.625rem, 3.5vw, 2rem); }
+  .portrait-work { left: var(--closet-nav-gutter); right: auto; }
+  .portrait-about-group { right: var(--closet-nav-gutter); left: auto; }
+  .portrait-work, .portrait-email { font-size: .875rem; }
+}
+@media (max-width: 380px) {
+  .portrait-header { padding-top: 3rem; }
+}

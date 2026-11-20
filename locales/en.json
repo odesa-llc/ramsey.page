@@ -396,7 +396,7 @@
     "finishNote": "Matte Titanium White Shiva Paintstik is my choice for the chalky finish: lightly brushed over the knit, then dried and heat-set within the fabric’s care limits.",
     "fabricNotes": "fabric notes ↗"
   },
-  "home.mapHeadline": "sewing notes",
+  "home.mapHeadline": "sewer's notes",
   "home.mapPhysical": "physical",
   "home.mapDigital": "digital",
   "home.mapWorks": "works",
@@ -492,5 +492,20 @@
   "handbagTwo.zipperRead": "Read about the zipper",
   "handbagTwo.zipperFeature": "zipper",
   "handbagTwo.zipperNote": "A black zipper with silver teeth for the bag’s opening.",
-  "handbagTwo.zipperAlt": "Black zipper with silver teeth and pull"
+  "handbagTwo.zipperAlt": "Black zipper with silver teeth and pull",
+  "seo.closetTitle": "Closet — ramsey hatoum",
+  "seo.closetDescription": "A collection of handmade bags, clothing, and objects by Ramsey Hatoum.",
+  "closet.notes": "notes",
+  "closet.sceneLabel": "Projects in the closet",
+  "closet.comingSoon": "coming soon",
+  "closet.crawlerAlt": "Knotted crawler balloon sculpture on blank cut paper patterns",
+  "closet.jacketAlt": "Cropped faux leather jacket on a charcoal hanger",
+  "closet.jacketName": "cropped jacket",
+  "closet.bagOne": "leather bag #1",
+  "closet.bagTwo": "leather bag #2",
+  "closet.capName": "skull cap n° 1",
+  "closet.capLabel": "skull cap n° 1, coming soon",
+  "closet.paris": "made in paris",
+  "closet.patternAlt": "The skullcap crown pattern on crisp paper with two horizontal folds.",
+  "closet.pouchAlt": "Black ribbed knit and a cream thread spool inside a frosted silver-gray zipper pouch."
 }
