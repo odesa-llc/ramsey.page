@@ -547,7 +547,22 @@
           <path d="M225 0 H330 V105 H270 V12 H225 Z"></path>
         </clipPath>
         <image id="closet-clasp-chain-art" href="/assets/closet/clasp-bag-chain.webp" width="560" height="408"></image>
-        <image id="closet-indented-cap" href="/assets/closet/closet-cap-shorter-stitch.png" width="1478" height="1064" preserveAspectRatio="none"></image>
+        <clipPath id="closet-cap-left-clip-tip">
+          <path d="M348 118 H370 V147.8 Q364 148 359 146.4 Q355 145.4 351 144.6 H348 Z"></path>
+        </clipPath>
+        <clipPath id="closet-cap-right-clip-tip">
+          <path d="M426 118 H446 V143 H442 Q438 146.9 431 146.2 L426 145.5 Z"></path>
+        </clipPath>
+        <svg id="closet-indented-cap" width="1478" height="1064" viewBox="0 0 800 576" preserveAspectRatio="none">
+          <image id="closet-cap-art" href="/assets/closet/closet-cap-shorter-stitch.png" width="800" height="576"></image>
+          <!-- Stretch each jaw tip outward from its join with the clip body. -->
+          <g clip-path="url(#closet-cap-left-clip-tip)" transform="translate(370 0) scale(1.45 1) translate(-370 0)">
+            <use href="#closet-cap-art"></use>
+          </g>
+          <g clip-path="url(#closet-cap-right-clip-tip)" transform="translate(426 0) scale(1.45 1) translate(-426 0)">
+            <use href="#closet-cap-art"></use>
+          </g>
+        </svg>
       </defs>
     </svg>
     <picture>
@@ -652,7 +667,7 @@
           <use class="closet-hit" href="#closet-desktop-piece-3"></use>
           <use class="closet-hit" href="#closet-desktop-piece-3-link" transform="translate(0 253) scale(1 2.2) translate(0 -253)"></use>
           <path class="closet-hit" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"
-                d="M739 27 C769 27 792 53 792 83 C789 105 786 119 791 144 C795 170 785 192 787 218 Q814 222 814 259 C936 280 1046 340 1115 442 C1213 538 1253 657 1280 767 Q1298 830 1311 884 C1317 912 1240 943 1130 960 C895 1009 584 1009 359 971 C230 949 156 924 155 892 Q167 841 181 748 C198 639 250 532 332 437 C414 341 536 282 653 261 Q650 230 674 220 L674 194 C671 173 665 149 672 128 L670 87 C668 56 696 27 739 27 Z"></path>
+                d="M739 27 C769 27 792 53 792 83 C789 105 786 119 791 144 C795 170 785 192 787 218 Q828 222 828 259 C936 280 1046 340 1115 442 C1213 538 1253 657 1280 767 Q1298 830 1311 884 C1317 912 1240 943 1130 960 C895 1009 584 1009 359 971 C230 949 156 924 155 892 Q167 841 181 748 C198 639 250 532 332 437 C414 341 536 282 637 261 Q634 230 674 220 L674 194 C671 173 665 149 672 128 L670 87 C668 56 696 27 739 27 Z"></path>
         </a>
       </g>
     </svg>
@@ -752,7 +767,7 @@
             <use class="closet-hit" href="#closet-mobile-piece-3"></use>
             <use class="closet-hit" href="#closet-mobile-piece-3-link" transform="translate(0 560) scale(1 1.95) translate(0 -560)"></use>
             <path class="closet-hit" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"
-                  d="M739 27 C769 27 792 53 792 83 C789 105 786 119 791 144 C795 170 785 192 787 218 Q814 222 814 259 C936 280 1046 340 1115 442 C1213 538 1253 657 1280 767 Q1298 830 1311 884 C1317 912 1240 943 1130 960 C895 1009 584 1009 359 971 C230 949 156 924 155 892 Q167 841 181 748 C198 639 250 532 332 437 C414 341 536 282 653 261 Q650 230 674 220 L674 194 C671 173 665 149 672 128 L670 87 C668 56 696 27 739 27 Z"></path>
+                  d="M739 27 C769 27 792 53 792 83 C789 105 786 119 791 144 C795 170 785 192 787 218 Q828 222 828 259 C936 280 1046 340 1115 442 C1213 538 1253 657 1280 767 Q1298 830 1311 884 C1317 912 1240 943 1130 960 C895 1009 584 1009 359 971 C230 949 156 924 155 892 Q167 841 181 748 C198 639 250 532 332 437 C414 341 536 282 637 261 Q634 230 674 220 L674 194 C671 173 665 149 672 128 L670 87 C668 56 696 27 739 27 Z"></path>
           </a>
         </g>
       </g>
