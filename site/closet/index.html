@@ -424,7 +424,12 @@
         <g id="closet-brushed-s-hook" clip-path="url(#closet-hook-rail-occlusion)" transform="scale(1.22 1)">
           <image href="/assets/closet/brushed-s-hook.png" x="-31.09" y="-12.13" width="52.36" height="89.6" preserveAspectRatio="none"></image>
         </g>
-        <image id="closet-cropped-jacket" href="/assets/closet/cropped-jacket-charcoal-hanger.webp" width="560" height="773" preserveAspectRatio="none"></image>
+        <g id="closet-cropped-jacket">
+          <!-- The charcoal panel sits behind the original pattern markings. -->
+          <path fill="#1e1e1d" d="M312 222 C300 229 276 235 277 254 L280 626.5 H439 C434 568 427 511 427 465 C426 427 430 390 433 366 C429 339 429 319 431 301 C436 278 426 271 400 263 C366 254 342 239 312 222 Z"></path>
+          <image href="/assets/closet/cropped-jacket-charcoal-hanger.webp" width="560" height="773" preserveAspectRatio="none"></image>
+          <path fill="none" stroke="#e6dec9" stroke-width="2.5" d="M307 418 H407 M307 409 V427 M407 409 V427"></path>
+        </g>
         <clipPath id="closet-jacket-body-clip">
           <rect x="0" y="105" width="560" height="668"></rect>
         </clipPath>
