@@ -396,11 +396,27 @@
         <g id="closet-brushed-s-hook" clip-path="url(#closet-hook-rail-occlusion)" transform="scale(1.22 1)">
           <image href="/assets/closet/brushed-s-hook.png" x="-31.09" y="-12.13" width="52.36" height="89.6" preserveAspectRatio="none"></image>
         </g>
+        <filter id="closet-jacket-chalk-wobble" filterUnits="userSpaceOnUse" x="0" y="0" width="560" height="773" color-interpolation-filters="sRGB">
+          <!-- Center gray leaves the artwork outside the pattern panel in place. -->
+          <feFlood flood-color="#808080" result="neutral"></feFlood>
+          <feTurbulence x="267" y="168" width="188" height="477" type="fractalNoise"
+                        baseFrequency=".019 .026" numOctaves="2" seed="8" result="wobble"></feTurbulence>
+          <feMerge result="chalk-displacement">
+            <feMergeNode in="neutral"></feMergeNode>
+            <feMergeNode in="wobble"></feMergeNode>
+          </feMerge>
+          <feDisplacementMap in="SourceGraphic" in2="chalk-displacement" scale="12" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
         <g id="closet-cropped-jacket">
-          <!-- The charcoal panel sits behind the original pattern markings. -->
-          <path fill="#1e1e1d" d="M312 222 C300 229 276 235 277 254 L280 626.5 H439 C434 568 427 511 427 465 C426 427 430 390 433 366 C429 339 429 319 431 301 C436 278 426 271 400 263 C366 254 342 239 312 222 Z"></path>
-          <image href="/assets/closet/cropped-jacket-charcoal-hanger.webp" width="560" height="773" preserveAspectRatio="none"></image>
-          <path fill="none" stroke="#e6dec9" stroke-width="2.5" d="M408 330 V527 M399 330 H417 M399 527 H417"></path>
+          <g filter="url(#closet-jacket-chalk-wobble)">
+            <!-- The charcoal panel sits behind the original pattern markings. -->
+            <path fill="#1e1e1d" d="M312 222 C300 229 276 235 277 254 L280 626.5 H439 C434 568 427 511 427 465 C426 427 430 390 433 366 C429 339 429 319 431 301 C436 278 426 271 400 263 C366 254 342 239 312 222 Z"></path>
+            <image href="/assets/closet/cropped-jacket-charcoal-hanger.webp" width="560" height="773" preserveAspectRatio="none"></image>
+          </g>
+          <path fill="none" stroke="#e6dec9" stroke-width="2.7" stroke-linecap="round"
+                d="M408 316 C406.5 345 409.5 369 407.5 396 S407 437 409 459 C410.5 488 407.5 512 408 542 M398 317 Q407 315 418 317 M399 542 Q408 540 418 541"></path>
+          <text x="408" y="307" text-anchor="middle" fill="#e6dec9"
+                style="font: 400 23px 'Notebook Hand', 'Segoe Print', cursive; font-synthesis: none">mm</text>
         </g>
         <clipPath id="closet-jacket-body-clip">
           <rect x="0" y="105" width="560" height="668"></rect>
