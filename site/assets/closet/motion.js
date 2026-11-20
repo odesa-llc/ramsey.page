@@ -4,10 +4,6 @@
   const detail = root.querySelector('.closet-detail');
   const title = detail.querySelector('h1');
   const closetTitle = document.title;
-  const label = scene.querySelector('.closet-cursor-label');
-  const name = label.querySelector('.closet-cursor-name');
-  const status = label.querySelector('.closet-cursor-status');
-  const touchLabel = scene.querySelector('.closet-touch-label');
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const projects = new Map(Array.from(scene.querySelectorAll('[data-swing]'), (element) => {
     const project = element.querySelector('[data-project]');
@@ -27,9 +23,8 @@
   let frame = 0;
   let lastFrame = 0;
   let hovered;
-  let selected;
   let gesture;
-  let lastGesture;
+  let lastDrag;
   let showingDetail;
 
   function rotate(piece, angle) {
@@ -80,69 +75,17 @@
     }
   }
 
-  function place(bubble, clientX, clientY) {
-    bubble.hidden = false;
-    const bounds = scene.getBoundingClientRect();
-    const width = bubble.offsetWidth;
-    const height = bubble.offsetHeight;
-    const x = clientX - bounds.left;
-    const y = clientY - bounds.top;
-    const gap = 8;
-    const right = Math.min(bounds.right, document.documentElement.clientWidth) - bounds.left;
-    const bottom = Math.min(bounds.bottom, window.innerHeight) - bounds.top;
-    const left = x - width / 2;
-    const top = y + gap + height > bottom - 8 ? y - height - gap : y + gap;
-    bubble.style.transform = 'translate(' + clamp(left, 8, right - width - 8) + 'px, ' +
-      clamp(top, 8, bottom - height - 8) + 'px)';
-  }
-
-  function showKeyboardLabel() {
-    const project = document.activeElement;
-    if (!projects.has(project) || !project.matches(':focus-visible')) {
-      label.hidden = true;
-      return;
-    }
-    name.textContent = project.dataset.project;
-    status.textContent = project.dataset.status || '';
-    status.hidden = !status.textContent;
-    const box = project.getBoundingClientRect();
-    place(label, box.left + box.width / 2, box.bottom);
-  }
-
-  function showTouchLabel(project) {
-    const href = project.getAttribute('href');
-    if (!href) return;
-    selected = project;
-    label.hidden = true;
-    touchLabel.textContent = project.dataset.status ?
-      project.dataset.project + ' · ' + project.dataset.status : project.dataset.project;
-    touchLabel.setAttribute('href', href);
-    touchLabel.target = project.getAttribute('target') || '_self';
-    touchLabel.rel = 'noopener';
-    const box = project.getBoundingClientRect();
-    place(touchLabel, box.left + box.width / 2, box.bottom);
-  }
-
-  function clearTouchLabel() {
-    selected = null;
-    touchLabel.hidden = true;
-  }
-
   scene.addEventListener('pointerdown', (event) => {
-    if (!event.isPrimary || event.button !== 0 || event.target.closest('.closet-touch-label')) return;
+    if (!event.isPrimary || event.button !== 0) return;
     const project = event.target.closest('[data-project]');
     const piece = projects.get(project);
-    if (!piece) {
-      clearTouchLabel();
-      return;
-    }
+    if (!piece) return;
     const svg = piece.element.ownerSVGElement;
     const scale = svg.getBoundingClientRect().width / svg.viewBox.baseVal.width;
     gesture = {
       piece,
       id: event.pointerId,
       touch: event.pointerType === 'touch',
-      selected: project === selected,
       startX: event.clientX,
       angle: piece.angle,
       velocity: 0,
@@ -153,7 +96,6 @@
   });
 
   scene.addEventListener('pointermove', (event) => {
-    if (event.pointerType !== 'touch') label.hidden = true;
     if (gesture?.id === event.pointerId) {
       const { piece } = gesture;
       const dx = event.clientX - gesture.startX;
@@ -163,7 +105,6 @@
         piece.element.dataset.held = '';
         piece.project.setPointerCapture(event.pointerId);
         swinging.delete(piece);
-        clearTouchLabel();
       }
       if (!reduceMotion.matches) {
         const previous = piece.angle;
@@ -183,7 +124,6 @@
     }
     if (hovered !== project) {
       hovered = project;
-      clearTouchLabel();
       release(piece, piece.velocity + (event.movementX < 0 ? 30 : -30));
     }
   });
@@ -202,26 +142,18 @@
       release(piece, piece.velocity - 42);
     }
     if (cancelled) return;
-    lastGesture = { ...finished, at: performance.now() };
-    if (finished.touch) showTouchLabel(piece.project);
+    lastDrag = finished.dragged ? { project: piece.project, at: performance.now() } : null;
   }
   window.addEventListener('pointerup', finishPointer);
   window.addEventListener('pointercancel', finishPointer);
   scene.addEventListener('click', (event) => {
     const project = event.target.closest('[data-project]');
-    if (!lastGesture || !event.detail || performance.now() - lastGesture.at > 700 ||
-        lastGesture.piece.project !== project) return;
-    if (lastGesture.dragged || (lastGesture.touch && !lastGesture.selected)) event.preventDefault();
-    lastGesture = null;
+    if (!lastDrag || !event.detail || performance.now() - lastDrag.at > 700 || lastDrag.project !== project) return;
+    event.preventDefault();
+    lastDrag = null;
   });
   scene.addEventListener('pointerleave', () => {
     hovered = null;
-  });
-  scene.addEventListener('focusin', showKeyboardLabel);
-  scene.addEventListener('focusout', () => { label.hidden = true; });
-  window.addEventListener('resize', () => {
-    clearTouchLabel();
-    showKeyboardLabel();
   });
 
   function showPage() {
@@ -231,8 +163,6 @@
     showingDetail = next;
     detail.hidden = !next;
     scene.hidden = next;
-    label.hidden = true;
-    clearTouchLabel();
     document.title = next ? `${title.textContent.trim()} — ramsey hatoum` : closetTitle;
     if (next) {
       root.dispatchEvent(new Event('pouch:open'));

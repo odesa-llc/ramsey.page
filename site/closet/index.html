@@ -201,35 +201,7 @@
 
   #ramsey-closet .closet-hotspots-mobile { display: none; }
 
-  #ramsey-closet .closet-cursor-label {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    gap: .45rem;
-    padding: .42rem .73rem .45rem;
-    border-radius: 999px;
-    background: #242622;
-    color: #fff9f0;
-    box-shadow: 0 2px 8px #18161230;
-    font-size: .875rem;
-    line-height: 1.2;
-    white-space: nowrap;
-    pointer-events: none;
-    text-decoration: none;
-  }
-
-  #ramsey-closet .closet-touch-label {
-    min-height: 44px;
-    box-sizing: border-box;
-    pointer-events: auto;
-  }
-
   #ramsey-closet [hidden] { display: none; }
-  #ramsey-closet .closet-cursor-status { color: #d7d7cb; }
-  #ramsey-closet .closet-cursor-status::before { content: '·'; margin-right: .45rem; }
 
   #ramsey-closet .closet-detail {
     position: relative;
@@ -438,7 +410,7 @@
           <path d="M225 0 H330 V105 H270 V12 H225 Z"></path>
         </clipPath>
         <image id="closet-clasp-chain-art" href="/assets/closet/clasp-bag-chain.webp" width="560" height="408"></image>
-        <image id="closet-indented-cap" href="/assets/closet/closet-cap-mixed-barbs.png" width="1478" height="1064" preserveAspectRatio="none"></image>
+        <image id="closet-indented-cap" href="/assets/closet/closet-cap-shorter-stitch.png" width="1478" height="1064" preserveAspectRatio="none"></image>
       </defs>
     </svg>
     <picture>
@@ -533,12 +505,12 @@
           <g transform="translate(0 253) scale(1 2.2) translate(0 -253)">
             <use href="#closet-desktop-source" clip-path="url(#closet-desktop-piece-3-link-clip)"></use>
           </g>
-          <use class="closet-cap-assembly" href="#closet-indented-cap" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.125) translate(-739 -74)"></use>
+          <use class="closet-cap-assembly" href="#closet-indented-cap" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"></use>
         </g>
-        <a href="#skull-cap" aria-label="&quot;barrotes&quot; cap, coming soon" data-i18n-aria-label="closet.capLabel" data-project="&quot;barrotes&quot; cap" data-i18n-data-project="closet.capName" data-status="coming soon" data-i18n-data-status="closet.comingSoon">
+        <a href="#skull-cap" aria-label="&quot;barrotes&quot; cap, coming soon" data-i18n-aria-label="closet.capLabel" data-project="&quot;barrotes&quot; cap" data-i18n-data-project="closet.capName">
           <use class="closet-hit" href="#closet-desktop-piece-3"></use>
           <use class="closet-hit" href="#closet-desktop-piece-3-link" transform="translate(0 253) scale(1 2.2) translate(0 -253)"></use>
-          <path class="closet-hit" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.125) translate(-739 -74)"
+          <path class="closet-hit" transform="translate(1229.02 263.23) scale(0.175454 0.197) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"
                 d="M739 27 C769 27 792 53 792 83 C789 105 786 119 791 144 C795 170 785 192 787 218 Q814 222 814 259 C936 280 1046 340 1115 442 C1213 538 1253 657 1280 767 Q1298 830 1311 884 C1317 912 1240 943 1130 960 C895 1009 584 1009 359 971 C230 949 156 924 155 892 Q167 841 181 748 C198 639 250 532 332 437 C414 341 536 282 653 261 Q650 230 674 220 L674 194 C671 173 665 149 672 128 L670 87 C668 56 696 27 739 27 Z"></path>
         </a>
       </g>
@@ -629,23 +601,18 @@
             <g transform="translate(0 560) scale(1 1.95) translate(0 -560)">
               <use href="#closet-mobile-source" clip-path="url(#closet-mobile-piece-3-link-clip)"></use>
             </g>
-            <use class="closet-cap-assembly" href="#closet-indented-cap" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.125) translate(-739 -74)"></use>
+            <use class="closet-cap-assembly" href="#closet-indented-cap" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"></use>
           </g>
-          <a href="#skull-cap" aria-label="&quot;barrotes&quot; cap, coming soon" data-i18n-aria-label="closet.capLabel" data-project="&quot;barrotes&quot; cap" data-i18n-data-project="closet.capName" data-status="coming soon" data-i18n-data-status="closet.comingSoon">
+          <a href="#skull-cap" aria-label="&quot;barrotes&quot; cap, coming soon" data-i18n-aria-label="closet.capLabel" data-project="&quot;barrotes&quot; cap" data-i18n-data-project="closet.capName">
             <use class="closet-hit" href="#closet-mobile-piece-3"></use>
             <use class="closet-hit" href="#closet-mobile-piece-3-link" transform="translate(0 560) scale(1 1.95) translate(0 -560)"></use>
-            <path class="closet-hit" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.125) translate(-739 -74)"
+            <path class="closet-hit" transform="translate(590.00 575.92) scale(0.159896 0.185) rotate(-4 739 74) translate(739 74) scale(.925 1.15) translate(-739 -74)"
                   d="M739 27 C769 27 792 53 792 83 C789 105 786 119 791 144 C795 170 785 192 787 218 Q814 222 814 259 C936 280 1046 340 1115 442 C1213 538 1253 657 1280 767 Q1298 830 1311 884 C1317 912 1240 943 1130 960 C895 1009 584 1009 359 971 C230 949 156 924 155 892 Q167 841 181 748 C198 639 250 532 332 437 C414 341 536 282 653 261 Q650 230 674 220 L674 194 C671 173 665 149 672 128 L670 87 C668 56 696 27 739 27 Z"></path>
           </a>
         </g>
       </g>
     </svg>
     <span id="closet-jacket-status" class="closet-jacket-status"><!--i18n:closet.comingSoon-->coming soon<!--/i18n--></span>
-    <div class="closet-cursor-label" aria-hidden="true" hidden>
-      <span class="closet-cursor-name"></span>
-      <span class="closet-cursor-status" hidden></span>
-    </div>
-    <a class="closet-cursor-label closet-touch-label" hidden></a>
   </main>
   <main class="closet-detail" aria-labelledby="closet-cap-title" hidden>
     <div class="closet-detail-background" aria-hidden="true">
@@ -676,6 +643,6 @@
 </div>
 <script src="/assets/closet/pattern-previews.js"></script>
 <script src="/assets/closet/pouch.js?v=2"></script>
-<script src="/assets/closet/motion.js?v=4"></script>
+<script src="/assets/closet/motion.js?v=5"></script>
 </body>
 </html>
