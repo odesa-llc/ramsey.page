@@ -33,7 +33,9 @@
   let showingDetail;
 
   function rotate(piece, angle) {
-    piece.angle = clamp(angle, -piece.limit, piece.limit);
+    const nextAngle = clamp(angle, -piece.limit, piece.limit);
+    if (nextAngle === piece.angle) return;
+    piece.angle = nextAngle;
     if (piece.angle) {
       piece.element.setAttribute('transform', 'rotate(' + piece.angle.toFixed(3) + ' ' + piece.x + ' ' + piece.y + ')');
     } else {

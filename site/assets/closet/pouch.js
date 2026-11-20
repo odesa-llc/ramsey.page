@@ -40,9 +40,20 @@
       0, destinationTop, width, destinationBottom - destinationTop);
   }
 
+  let lastOffset;
   function paintFrame(offset) {
-    context.clearRect(0, 0, width, height);
-    context.drawImage(photo, 0, 0, width, height);
+    if (offset === lastOffset) return;
+    if (lastOffset === undefined || photo.naturalWidth !== width || photo.naturalHeight !== height) {
+      context.clearRect(0, 0, width, height);
+      context.drawImage(photo, 0, 0, width, height);
+    } else {
+      // Restore only the two strips repainted by the previous frame.
+      context.clearRect(0, 0, width, 300);
+      drawStrip(context, 0, 300, 0, 300);
+      context.clearRect(0, filmTop, width, film.height);
+      drawStrip(context, filmTop, filmBottom, filmTop, filmBottom);
+    }
+    lastOffset = offset;
 
     // Replace the exposed knit above the fixed zipper, preserving empty alpha.
     context.save();
@@ -68,6 +79,7 @@
   }
 
   function stop() {
+    lastOffset = undefined;
     playback += 1;
     cancelAnimationFrame(frame);
     canvas.hidden = true;
