@@ -241,6 +241,7 @@
 .bag-demo .bp-wip{transform:scaleX(-1)}
 .bag-demo .bp-art{width:178px;height:208px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);place-items:center;flex:none;margin:auto;position:relative}
 .bag-demo .bp-art[data-stage="finished"]{width:220px;transform:rotate(-6deg)}
+.bag-demo .bp-finished-handbag{display:block;width:100%;height:100%;pointer-events:none;filter:drop-shadow(0 8px 8px #383b3011)}
 .bag-demo .bp-art[data-stage="wip"]{transform:rotate(4deg)}
 .bag-demo .bp-stage-caption{text-align:center;margin:14px 0 0;font-size:17px;line-height:1.25}
 

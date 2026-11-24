@@ -8,11 +8,11 @@
   <script src="/support.js"></script>
   <link rel="preload" href="/assets/fonts/NotebookHand-Contextual-Regular.woff2?v=1.105" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/typography.css?v=contextual-1.105">
-  <link rel="stylesheet" href="/home-map/home.css?v=finished-bag-pair-2">
+  <link rel="stylesheet" href="/home-map/home.css?v=finished-bag-chain">
   <link rel="stylesheet" href="/home-map/tilted-frieze.css?v=cutting-mat-2">
   <link rel="stylesheet" href="/home-map/collage-lighting.css?v=wide-glow-1">
   <script src="/home-map/collage-lighting.js?v=wide-glow-1" defer></script>
-  <script src="/home-map/making.js?v=quiet-variation-2" defer></script>
+  <script src="/home-map/making.js?v=finished-bag-chain" defer></script>
   <script src="/home-map/portrait-soft-sweep.js?v=2" defer></script>
   <script src="/cutout-interaction.js?v=8" defer></script>
   <link rel="stylesheet" href="/home-map/closet-navigation.css?v=2">
@@ -66,7 +66,21 @@
               <span class="bp-stage-caption bp-stage-caption--shared"><!--i18n:home.mapHardwareLabel-->week 3<!--/i18n--></span>
             </button><button type="button" class="bp-note-piece" data-stage="finished" aria-pressed="false" aria-label="Read about the finished handbag" data-i18n-aria-label="home.mapFinishedRead" data-note="The closed flap shows the finished bag’s rounded shape." data-i18n-data-note="home.mapFinishedNote">
               <span class="bp-callout"><!--i18n:home.mapFinishedFeature-->finished bag<!--/i18n--></span>
-              <span class="bp-art" data-stage="finished"><img src="/assets/home-map/handbag-finished.webp" width="960" height="635" alt="Finished black handbag with silver hardware" data-i18n-alt="home.mapFinishedAlt" draggable="false"></span>
+              <span class="bp-art" data-stage="finished">
+                <svg class="bp-finished-handbag" viewBox="48 -240 864 880" role="img" aria-label="Finished black handbag with a silver chain strap" data-i18n-aria-label="home.mapFinishedAlt" focusable="false">
+                  <defs>
+                    <image id="bp-finished-handbag-body" href="/assets/home-map/handbag-finished.webp" width="960" height="635"></image>
+                    <clipPath id="bp-finished-handbag-ring-rims">
+                      <path d="M134 49C118 52 100 78 102 102C103 115 110 123 120 125L124 115C117 114 114 109 114 100C113 82 124 62 137 58Z M881 222C897 232 901 256 890 274C881 286 868 295 851 290L854 281C867 285 879 275 883 262C889 248 883 235 875 231Z"></path>
+                    </clipPath>
+                  </defs>
+                  <use href="#bp-finished-handbag-body"></use>
+                  <image href="/assets/closet/clasp-bag-chain.webp" width="560" height="408" transform="matrix(1.39 .321 0 .98 106.3 -313)"></image>
+                  <!-- The front of each side ring passes over the last chain link. -->
+                  <use href="#bp-finished-handbag-body" clip-path="url(#bp-finished-handbag-ring-rims)"></use>
+                  <circle data-callout-target cx="511" cy="-206" r="1" fill="none" aria-hidden="true"></circle>
+                </svg>
+              </span>
             </button></div>
                 </div>
                 <p class="bp-note-detail" aria-live="polite" aria-atomic="true"><!--i18n:home.mapPatternNote-->I used paper patterns to cut the bag’s body panels and flap.<!--/i18n--></p>

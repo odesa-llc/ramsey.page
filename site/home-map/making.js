@@ -69,10 +69,15 @@ document.querySelectorAll('.bag-demo[data-kind="map"]').forEach((demo, mapIndex)
     const base=diagram.getBoundingClientRect(),bounds=node=>{const r=node.getBoundingClientRect();return{x:r.x-base.x,y:r.y-base.y,w:r.width,h:r.height,cx:r.x-base.x+r.width/2,cy:r.y-base.y+r.height/2};};
     const images=pieces.map(p=>bounds(p.querySelector('.bp-art'))),notes=labels.map(bounds);
     const targets=pieces.map(p=>bounds(p.querySelector('.bp-pattern-papers,.bp-art[data-stage="final"] img')||p.querySelector('.bp-art')));
+    const calloutTargets=pieces.map(piece=>piece.querySelector('[data-callout-target]'));
     const cutoutAnchors=demo.classList.contains('bag-two-map')
       ? {pattern:[.66,.05],wip:[.36,.06],fitting:[.55,.24],final:[.55,.045]}
       : {hardware:[.66,.12],finished:[.54,.16]};
     function target(i){
+      if (calloutTargets[i]) {
+        const anchor = bounds(calloutTargets[i]);
+        return [anchor.cx, anchor.cy];
+      }
       const box=targets[i],stage=list[i].id;
       if(cutoutAnchors[stage]){
         const img=pieces[i].querySelector('.bp-art img');
