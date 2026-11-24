@@ -73,6 +73,11 @@
     "alt": "Handmade black handbag with silver hardware",
     "parisAlt": "Paris street"
   },
+  "portfolio": {
+    "title": "Tidle, Maslo, odesa, and PwC",
+    "odesaDescription": "I’m building odesa, a planning board for sewing projects that starts with a product link or a few photos. I’m using AI to read product pages, identify garments and accessories from images, name the board, and generate a 3D model. The canvas keeps the references, draft pattern, and material suggestions together.",
+    "odesaDemo": "Two handbag photos become a project board with a title, reference photos, a pattern, materials, and a 3D preview."
+  },
   "tidle": {
     "intro": "I built Tidle to make everyday tasks easier to keep in view. Quick capture, categories, and subtasks keep plans organized, while reminders and recurring tasks help the day stay on track.",
     "appStore": "View on the App Store",

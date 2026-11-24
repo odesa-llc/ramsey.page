@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tidle, Maslo, and PwC</title>
+  <title><!--i18n:portfolio.title-->Tidle, Maslo, odesa, and PwC<!--/i18n--></title>
   <link rel="stylesheet" href="assets/gt-standard.css">
   <link rel="stylesheet" href="assets/notebook-hand.css">
   <link rel="stylesheet" href="operations.css">
@@ -110,6 +110,25 @@
       <div class="operations__copy">
         <p>I built Maslo, a map-first DC rental search, and integrated city open data for budget and walkability filters, nearby Metro stops and grocery stores, and walking routes.</p>
         <button class="operations__explore" type="button" disabled>Explore <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="operations" id="odesa" aria-labelledby="odesa-title">
+      <header class="operations__identity">
+        <h2 class="operations__title" id="odesa-title">odesa</h2>
+      </header>
+
+      <div class="operations__panel odesa-project__panel">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="assets/odesa-sewing-board-still.webp">
+          <img src="assets/odesa-sewing-board.gif" width="720" height="720" loading="lazy"
+            alt="Two handbag photos become a project board with a title, reference photos, a pattern, materials, and a 3D preview."
+            data-i18n-alt="portfolio.odesaDemo">
+        </picture>
+      </div>
+
+      <div class="operations__copy">
+        <p><!--i18n:portfolio.odesaDescription-->I’m building odesa, a planning board for sewing projects that starts with a product link or a few photos. I’m using AI to read product pages, identify garments and accessories from images, name the board, and generate a 3D model. The canvas keeps the references, draft pattern, and material suggestions together.<!--/i18n--></p>
       </div>
     </section>
 
