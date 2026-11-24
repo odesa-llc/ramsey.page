@@ -69,6 +69,7 @@ main {
 .pwc-project__logo { --icon-size: 20px; }
 
 .maslo-project__logo { border-radius: 4px; }
+.odesa-sewing__icon { color-scheme: only light; }
 .pwc-project__logo { width: 24px; }
 
 .pwc-project__identity {
@@ -93,7 +94,7 @@ main {
 
 .pwc-project__salesforce {
   display: block;
-  width: 32px;
+  width: 24px;
   height: auto;
 }
 
