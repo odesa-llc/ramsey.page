@@ -584,10 +584,11 @@ body .skull-cap-credits :is(summary, dt, dd, a) {
   width: 90%;
   height: calc(100% - 62px);
 }
-.bag-demo.bag-two-map .handbag-two-linings img {
-  width: 100%;
-  height: 100%;
+.bag-demo.bag-two-map .bp-art[data-stage="wip"] .handbag-two-linings > img {
+  width: 94%;
+  height: 96%;
   min-height: 0;
+  place-self: center;
 }
 .handbag-two-linings > img:first-child {
   translate: 7% 0;
