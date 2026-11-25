@@ -512,5 +512,15 @@
   "closet.paris": "fait à paris",
   "closet.patternAlt": "Patron du bonnet en papier avec deux plis horizontaux.",
   "closet.pouchAlt": "Maille côtelée noire et bobine de fil crème dans une pochette zippée translucide.",
-  "closet.sceneDescription": "Une veste courte en simili cuir est suspendue à côté de deux sacs faits main et d’un bonnet côtelé sur une tringle en métal."
+  "closet.sceneDescription": "Une veste courte en simili cuir est suspendue à côté de deux sacs faits main et d’un bonnet côtelé sur une tringle en métal.",
+  "beltOne.title": "Ceinture n° 1",
+  "beltOne.weekOne": "Semaine 1",
+  "beltOne.beltLabel": "ceinture et boucle",
+  "beltOne.beltAlt": "Boucle argentée sur une sangle olive surpiquée",
+  "beltOne.eyeletsLabel": "œillets",
+  "beltOne.eyeletsAlt": "Boîte ouverte d’œillets argentés avec leur outil de pose",
+  "beltOne.glueLabel": "Prym Fray Check",
+  "beltOne.glueAlt": "Flacon bleu et blanc de colle anti-effilochage Prym",
+  "beltOne.webbingLabel": "bande de sangle",
+  "beltOne.webbingAlt": "Bande découpée dans une sangle tissée olive"
 }
