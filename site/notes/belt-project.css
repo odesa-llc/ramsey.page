@@ -1,92 +1,110 @@
 .belt-project {
   grid-column: 1 / -1;
-  width: min(100%, 760px);
+  width: 100%;
   justify-self: center;
-  text-align: center;
+}
+
+#belt-project-title {
   scroll-margin-top: 32px;
 }
 
-.belt-project-title,
-.belt-project-week {
-  margin: 0;
-  font-weight: 400;
-  line-height: 1.35;
+.bag-demo.belt-map {
+  max-width: 660px;
+  min-height: 0;
 }
 
-.belt-project-title {
-  font-size: 17px;
-  transform: rotate(-1.3deg);
+.bag-demo.belt-map .bp-notes-row {
+  gap: clamp(6px, 2vw, 22px);
 }
 
-.belt-project-week {
-  margin-top: 13px;
-  font-size: 15px;
+.bag-demo.belt-map .bp-note-piece[data-stage="belt"] {
+  flex: 1.48;
 }
 
-.belt-project-cutouts {
+.bag-demo.belt-map .bp-note-piece[data-stage="glue"] {
+  flex: .8;
+}
+
+.bag-demo.belt-map .bp-note-piece[data-stage="webbing"] {
+  flex: 1.7;
+}
+
+.bag-demo.belt-map .bp-note-piece .bp-art {
+  height: clamp(120px, 24vw, 155px);
+  max-width: none;
+}
+
+.belt-cutout {
+  position: relative;
+  display: block;
+  width: min(82%, var(--belt-art-width));
+  transform: rotate(var(--belt-art-angle));
+}
+
+.belt-source-pair {
   display: grid;
-  grid-template-columns: 1.65fr .8fr .65fr 1.1fr;
-  gap: clamp(16px, 3vw, 42px);
-  margin: 23px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.belt-project-item {
-  --cutout-angle: 5deg;
-  min-width: 0;
-}
-
-.belt-project-item--eyelets {
-  --cutout-angle: -5deg;
-}
-
-.belt-project-item--webbing {
-  --cutout-angle: 7deg;
-}
-
-.belt-project-item figure {
-  display: grid;
+  grid-template-columns: minmax(0, .28fr) minmax(0, 1.35fr);
+  align-items: center;
   justify-items: center;
-  gap: 13px;
-  margin: 0;
+  gap: clamp(5px, 1.1vw, 12px);
+  width: 88%;
+  max-width: 155px;
+}
+.belt-source-pair .belt-cutout {
+  width: min(100%, var(--belt-art-width));
+}
+.belt-source-buckle {
+  --belt-art-width: 24px;
+  --belt-art-angle: -9deg;
 }
 
-.belt-project-item img {
+.belt-map .bp-art .belt-cutout img {
   display: block;
   width: 100%;
-  height: 146px;
-  object-fit: contain;
-  transform: rotate(var(--cutout-angle));
-  filter: drop-shadow(0 5px 5px #24251c22);
+  height: auto;
 }
 
-.belt-project-item--glue img {
-  height: 146px;
-  width: 80%;
-  max-width: 59px;
-  object-position: center 62%;
+.belt-map [data-stage="belt"] {
+  --belt-art-width: 108px;
+  --belt-art-angle: 5deg;
+  --belt-anchor-y: 27%;
 }
 
-.belt-project-item figcaption {
+.belt-map [data-stage="eyelets"] {
+  --belt-art-width: 89px;
+  --belt-art-angle: -5deg;
+}
+
+.belt-map [data-stage="glue"] {
+  --belt-art-width: clamp(20px, 4.8vw, 30px);
+  --belt-art-angle: 5deg;
+}
+
+.belt-map [data-stage="webbing"] {
+  --belt-art-width: 113px;
+  --belt-art-angle: 7deg;
+  --belt-anchor-y: 32%;
+}
+
+.belt-cutout-anchor {
+  position: absolute;
+  top: var(--belt-anchor-y, 3%);
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.bag-demo.belt-map .belt-project-week {
+  margin: 14px 0 0;
+  color: #657460;
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.3;
 }
 
-@media (max-width: 580px) {
-  .belt-project-cutouts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: clamp(18px, 8vw, 36px);
-    row-gap: 22px;
-    max-width: 360px;
-    margin-inline: auto;
-  }
-
-  .belt-project-item img {
-    height: 109px;
-  }
-
-  .belt-project-item--glue img {
-    max-width: 46px;
+@media (max-width: 440px) {
+  .bag-demo.belt-map .bp-callout {
+    min-height: 3.6em;
   }
 }
