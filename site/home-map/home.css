@@ -591,14 +591,14 @@ body .skull-cap-credits :is(summary, dt, dd, a) {
   place-self: center;
 }
 .handbag-two-linings > img:first-child {
-  translate: 7% 0;
+  translate: 7% 3px;
 }
 .handbag-two-linings > img:nth-child(2) {
-  translate: -7% 0;
+  translate: -7% -3px;
 }
 .handbag-two-linings-anchor {
   position: absolute;
-  top: 4px;
+  top: 7px;
   left: 54%;
   width: 1px;
   height: 1px;
