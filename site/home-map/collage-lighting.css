@@ -1,10 +1,10 @@
 /* Wide glow: spread the light across the collage with a soft falloff. */
-.skull-cap-art[data-lighting="wide"] {
+.sewing-inspo-art[data-lighting="wide"] {
   isolation: isolate;
   opacity: 1;
 }
 
-.skull-cap-art[data-lighting="wide"]::before {
+.sewing-inspo-art[data-lighting="wide"]::before {
   content: '';
   position: absolute;
   inset: -14% -37% -10%;

@@ -1,4 +1,5 @@
 .belt-project {
+  --sewing-timeline-width: 660px;
   grid-column: 1 / -1;
   width: 100%;
   justify-self: center;
