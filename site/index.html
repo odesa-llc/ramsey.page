@@ -258,14 +258,19 @@
     width: 100%;
     height: var(--wall-height);
     pointer-events: none;
-    touch-action: pan-y;
+    touch-action: pan-y pinch-zoom;
   }
 
   #ramsey-closet .closet-hotspots .closet-hit {
     fill: transparent;
     pointer-events: fill;
     cursor: grab;
-    touch-action: pan-y;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  #ramsey-closet .closet-scene[data-projects-in-view] .closet-hotspots-mobile,
+  #ramsey-closet .closet-scene[data-projects-in-view] .closet-hotspots-mobile .closet-hit {
+    touch-action: pinch-zoom;
   }
 
   #ramsey-closet .closet-hotspots [data-held] .closet-hit { cursor: grabbing; }
@@ -807,6 +812,6 @@
 </div>
 <script src="/assets/closet/pattern-previews.js"></script>
 <script src="/assets/closet/pouch.js?v=2"></script>
-<script src="/assets/closet/motion.js?v=6"></script>
+<script src="/assets/closet/motion.js?v=7"></script>
 </body>
 </html>

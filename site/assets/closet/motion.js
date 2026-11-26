@@ -7,6 +7,9 @@
   const notesDescription = notesLink.getAttribute('aria-describedby');
   const closetTitle = document.title;
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileLayout = matchMedia('(max-width: 560px)');
+  const mobileHits = [...scene.querySelectorAll('.closet-hotspots-mobile .closet-hit')];
+  const viewport = window.visualViewport;
   const projects = new Map(Array.from(scene.querySelectorAll('[data-swing]'), (element) => {
     const project = element.querySelector('[data-project]');
     const [x, y] = element.dataset.pin.split(' ').map(Number);
@@ -28,6 +31,23 @@
   let gesture;
   let lastDrag;
   let showingDetail;
+
+  function updateMobileGestures() {
+    const top = viewport?.offsetTop ?? 0;
+    const bottom = top + (viewport?.height ?? window.innerHeight);
+    const allInView = mobileLayout.matches && !scene.hidden && mobileHits.every(element => {
+      const bounds = element.getBoundingClientRect();
+      return bounds.height > 0 && bounds.top >= top && bounds.bottom <= bottom;
+    });
+    scene.toggleAttribute('data-projects-in-view', allInView);
+  }
+
+  new ResizeObserver(updateMobileGestures).observe(scene);
+  mobileLayout.addEventListener('change', updateMobileGestures);
+  window.addEventListener('scroll', updateMobileGestures, { passive: true });
+  window.addEventListener('resize', updateMobileGestures);
+  viewport?.addEventListener('scroll', updateMobileGestures, { passive: true });
+  viewport?.addEventListener('resize', updateMobileGestures);
 
   function rotate(piece, angle) {
     const nextAngle = clamp(angle, -piece.limit, piece.limit);
@@ -89,6 +109,8 @@
       id: event.pointerId,
       touch: event.pointerType === 'touch',
       startX: event.clientX,
+      startY: event.clientY,
+      locksScroll: event.pointerType === 'touch' && scene.hasAttribute('data-projects-in-view'),
       angle: piece.angle,
       velocity: 0,
       sampled: event.timeStamp,
@@ -101,7 +123,8 @@
     if (gesture?.id === event.pointerId) {
       const { piece } = gesture;
       const dx = event.clientX - gesture.startX;
-      if (!gesture.dragged && Math.abs(dx) < 5) return;
+      const distance = gesture.locksScroll ? Math.hypot(dx, event.clientY - gesture.startY) : Math.abs(dx);
+      if (!gesture.dragged && distance < 5) return;
       if (!gesture.dragged) {
         gesture.dragged = true;
         piece.element.dataset.held = '';
@@ -175,6 +198,7 @@
       root.dispatchEvent(new Event('pouch:close'));
     }
     if (!initial) window.scrollTo(0, 0);
+    updateMobileGestures();
   }
   window.addEventListener('hashchange', showPage);
   showPage();
