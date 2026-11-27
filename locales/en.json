@@ -76,7 +76,7 @@
   "portfolio": {
     "title": "Tidle, PwC, Maslo, odesa, and Tricount",
     "tricountDescription": "I’m redesigning Tricount, a shared-expense app, to make it easier to see who paid, what everyone owes, and how to settle up.",
-    "tricountDemo": "Three hands holding cards slide in. A €60 bill becomes €20 per person, then color spreads outward from the Tricount logo.",
+    "tricountDemo": "Three hands sway with yellow, green, and purple cards around the words “tricount splits it”.",
     "odesaDescription": "I’m building odesa, an AI-assisted sewing board that turns a product link or photos into a sewing plan with a draft pattern, material suggestions, and a 3D preview.",
     "odesaDemo": "Two handbag photos become a project board with a title, reference photos, a pattern, materials, and a 3D preview."
   },
