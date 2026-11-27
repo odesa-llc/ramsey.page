@@ -427,6 +427,23 @@ html:has(.project-focus[open]) { overflow: hidden; }
   height: 100%;
 }
 
+.tricount-project__panel {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  background: #ede8de;
+}
+
+.tricount-project__panel picture {
+  width: 56.25%;
+}
+
+.tricount-project__panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .pwc-project__panel {
   display: grid;
   place-items: center;
