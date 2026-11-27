@@ -74,8 +74,8 @@
     "parisAlt": "Paris street"
   },
   "portfolio": {
-    "title": "Tidle, Maslo, odesa, and PwC",
-    "odesaDescription": "I’m building odesa, a planning board for sewing projects that starts with a product link or a few photos. I’m using AI to read product pages, identify garments and accessories from images, name the board, and generate a 3D model. The canvas keeps the references, draft pattern, and material suggestions together.",
+    "title": "Tidle, PwC, Maslo, and odesa",
+    "odesaDescription": "I’m building odesa, an AI-assisted sewing board that turns a product link or photos into a sewing plan with a draft pattern, material suggestions, and a 3D preview.",
     "odesaDemo": "Two handbag photos become a project board with a title, reference photos, a pattern, materials, and a 3D preview."
   },
   "tidle": {

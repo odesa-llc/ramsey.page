@@ -74,8 +74,8 @@
     "parisAlt": "Rue parisienne"
   },
   "portfolio": {
-    "title": "Tidle, Maslo, odesa et PwC",
-    "odesaDescription": "Je développe odesa, un tableau pour préparer des projets de couture à partir d’une fiche produit ou de quelques photos. J’utilise l’IA pour lire les fiches, identifier les vêtements et accessoires en photo, nommer le tableau et générer un modèle 3D. Le tableau réunit les références, une ébauche de patron et des suggestions de matières.",
+    "title": "Tidle, PwC, Maslo et odesa",
+    "odesaDescription": "Je développe odesa, un tableau assisté par l’IA qui transforme un lien vers un produit ou des photos en projet de couture, avec une ébauche de patron, des suggestions de matières et un aperçu 3D.",
     "odesaDemo": "Deux photos d’un sac à main deviennent un tableau avec un titre, des photos de référence, un patron, des matières et un aperçu 3D."
   },
   "tidle": {

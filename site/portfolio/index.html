@@ -3,17 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><!--i18n:portfolio.title-->Tidle, Maslo, odesa, and PwC<!--/i18n--></title>
+  <title><!--i18n:portfolio.title-->Tidle, PwC, Maslo, and odesa<!--/i18n--></title>
   <link rel="stylesheet" href="assets/gt-standard.css">
   <link rel="stylesheet" href="assets/notebook-hand.css">
-  <link rel="stylesheet" href="operations.css?v=20261124-project-icons">
+  <link rel="stylesheet" href="operations.css?v=project-focus">
   <script src="operations.js" defer></script>
+  <script src="skill-filter.js" defer></script>
+  <script src="project-focus.js" defer></script>
 </head>
 <body>
   <main>
-    <img class="portfolio-avatar" src="/assets/home-map/portrait-soft-sweep-ink.webp" alt="Ramsey Hatoum" width="235" height="285">
+    <div class="skill-filter" hidden>
+      <div class="skill-filter__toolbar">
+        <button class="skill-filter__toggle" type="button" aria-expanded="false" aria-controls="skill-filter-panel">
+          Filter by tool or skill <span class="skill-filter__chevron" aria-hidden="true"></span>
+        </button>
+        <div class="skill-filter__active" role="group" aria-label="Selected filters" hidden></div>
+      </div>
 
-    <section class="operations" aria-labelledby="operations-title">
+      <div class="skill-filter__panel" id="skill-filter-panel" hidden>
+        <input class="skill-filter__search" type="search" aria-label="Search tools and skills" placeholder="Search tools and skills…" autocomplete="off">
+        <div class="skill-filter__group">
+          <h2>Popular</h2>
+          <div class="skill-filter__options" role="group" aria-label="Popular tools and skills" data-skill-group="popular"></div>
+        </div>
+        <div class="skill-filter__group">
+          <h2>More tools and skills</h2>
+          <div class="skill-filter__options" role="group" aria-label="More tools and skills" data-skill-group="more"></div>
+        </div>
+        <p class="skill-filter__no-skills" role="status" hidden>No tools or skills found.</p>
+      </div>
+    </div>
+
+    <section class="operations" aria-labelledby="operations-title" data-skills="firebase ios product-design stripe">
       <header class="operations__identity">
         <div>
           <h1 class="operations__title" id="operations-title">Tidle</h1>
@@ -91,49 +113,7 @@
       </div>
     </section>
 
-    <section class="operations odesa-project" aria-labelledby="maslo-title">
-      <header class="operations__identity">
-        <h2 class="operations__title" id="maslo-title">Maslo</h2>
-        <img class="operations__project-icon maslo-project__logo" src="assets/odesa-logo.jpg" alt="" width="20" height="20">
-      </header>
-
-      <div class="operations__panel odesa-project__panel">
-        <img src="assets/odesa-2000-a-month.jpg" width="1134" height="1134"
-          alt="A Washington, DC rowhouse outlined in white with a $2,000 per month label.">
-        <span class="odesa-project__price" aria-hidden="true">
-          <span class="odesa-project__price-value">
-            <span class="odesa-project__price-reel" data-rent="2000"><span>$2,000</span></span>
-          </span><span class="odesa-project__price-unit">/mo</span>
-        </span>
-      </div>
-
-      <div class="operations__copy">
-        <p>I built Maslo, a map-first DC rental search, and integrated city open data for budget and walkability filters, nearby Metro stops and grocery stores, and walking routes.</p>
-        <button class="operations__explore" type="button" disabled>Explore <span aria-hidden="true">→</span></button>
-      </div>
-    </section>
-
-    <section class="operations" id="odesa" aria-labelledby="odesa-title">
-      <header class="operations__identity">
-        <h2 class="operations__title" id="odesa-title">odesa</h2>
-        <img class="operations__project-icon odesa-sewing__icon" src="assets/odesa-favicon.svg" alt="" width="18" height="18">
-      </header>
-
-      <div class="operations__panel odesa-project__panel">
-        <picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="assets/odesa-sewing-board-still.webp">
-          <img src="assets/odesa-sewing-board.gif" width="720" height="720" loading="lazy"
-            alt="Two handbag photos become a project board with a title, reference photos, a pattern, materials, and a 3D preview."
-            data-i18n-alt="portfolio.odesaDemo">
-        </picture>
-      </div>
-
-      <div class="operations__copy">
-        <p><!--i18n:portfolio.odesaDescription-->I’m building odesa, a planning board for sewing projects that starts with a product link or a few photos. I’m using AI to read product pages, identify garments and accessories from images, name the board, and generate a 3D model. The canvas keeps the references, draft pattern, and material suggestions together.<!--/i18n--></p>
-      </div>
-    </section>
-
-    <section class="operations pwc-project" aria-labelledby="pwc-title">
+    <section class="operations pwc-project" aria-labelledby="pwc-title" data-skills="access-control product-design salesforce">
       <header class="operations__identity pwc-project__identity">
         <div class="pwc-project__heading">
           <h2 class="operations__title" id="pwc-title">PwC</h2>
@@ -169,6 +149,58 @@
         <p class="pwc-project__manufacturer">I led the design and rollout of Salesforce lead-to-opportunity workflows for a manufacturer.</p>
       </div>
     </section>
+
+    <section class="operations odesa-project" aria-labelledby="maslo-title" data-skills="mapping open-data product-design web-development">
+      <header class="operations__identity">
+        <h2 class="operations__title" id="maslo-title">Maslo</h2>
+        <img class="operations__project-icon maslo-project__logo" src="assets/odesa-logo.jpg" alt="" width="20" height="20">
+      </header>
+
+      <div class="operations__panel odesa-project__panel">
+        <img src="assets/odesa-2000-a-month.jpg" width="1134" height="1134"
+          alt="A Washington, DC rowhouse outlined in white with a $2,000 per month label.">
+        <span class="odesa-project__price" aria-hidden="true">
+          <span class="odesa-project__price-value">
+            <span class="odesa-project__price-reel" data-rent="2000"><span>$2,000</span></span>
+          </span><span class="odesa-project__price-unit">/mo</span>
+        </span>
+      </div>
+
+      <div class="operations__copy">
+        <p>I built Maslo, a map-first DC rental search, and integrated city open data for budget and walkability filters, nearby Metro stops and grocery stores, and walking routes.</p>
+        <button class="operations__explore" type="button" disabled>Explore <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="operations" id="odesa" aria-labelledby="odesa-title" data-skills="ai product-design web-development">
+      <header class="operations__identity">
+        <h2 class="operations__title" id="odesa-title">odesa</h2>
+        <img class="operations__project-icon odesa-sewing__icon" src="assets/odesa-favicon.svg" alt="" width="18" height="18">
+      </header>
+
+      <div class="operations__panel odesa-project__panel">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="assets/odesa-sewing-board-still.webp">
+          <img src="assets/odesa-sewing-board.gif" width="720" height="720" loading="lazy"
+            alt="Two handbag photos become a project board with a title, reference photos, a pattern, materials, and a 3D preview."
+            data-i18n-alt="portfolio.odesaDemo">
+        </picture>
+      </div>
+
+      <div class="operations__copy">
+        <p><!--i18n:portfolio.odesaDescription-->I’m building odesa, an AI-assisted sewing board that turns a product link or photos into a sewing plan with a draft pattern, material suggestions, and a 3D preview.<!--/i18n--></p>
+      </div>
+    </section>
+
+    <div class="skill-filter__empty" hidden>
+      <p>No projects match these filters.</p>
+      <button class="skill-filter__clear" type="button">Clear filters</button>
+    </div>
+    <p class="skill-filter__status" role="status"></p>
   </main>
+  <dialog class="project-focus" aria-labelledby="project-focus-title">
+    <button class="project-focus__back" type="button" autofocus>Back to projects</button>
+    <div class="project-focus__content"></div>
+  </dialog>
 </body>
 </html>
