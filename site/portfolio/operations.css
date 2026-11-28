@@ -412,6 +412,15 @@ html:has(.project-focus[open]) { overflow: hidden; }
   margin: 0;
 }
 
+.project-focus__description {
+  max-inline-size: 48ch;
+  margin: 0 0 18px;
+  color: #4b4b4b;
+  font-size: 16px;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
 .odesa-project__panel {
   aspect-ratio: 1;
 }

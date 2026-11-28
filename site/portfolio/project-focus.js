@@ -51,7 +51,7 @@
     return element.animate(frames, { duration, fill: "both" });
   }
 
-  function open({ panel, title, logo }, opener) {
+  function open({ panel, title, logo, detail }, opener) {
     if (active) return;
     const titleBox = title.getBoundingClientRect();
     const logoBox = logo.getBoundingClientRect();
@@ -82,7 +82,10 @@
     heading.append(mark, name);
     panel.replaceWith(placeholder);
     content.style.setProperty("--focus-artwork-width", panelBox.width + "px");
-    content.append(heading, panel);
+    const description = detail?.content.firstElementChild.cloneNode(true);
+    content.append(heading);
+    if (description) content.append(description);
+    content.append(panel);
     title.classList.add("project-focus-source");
     logo.classList.add("project-focus-source");
     dialog.showModal();
@@ -95,6 +98,9 @@
           main.animate({ opacity: [1, 0] }, { duration, fill: "both", easing: "ease-out" }),
           back.animate({ opacity: [0, 1] }, { duration, easing: "ease-in" }),
         ];
+    if (description && !reducedMotion.matches) {
+      animations.push(description.animate({ opacity: [0, 1] }, { duration, easing: "ease-in" }));
+    }
     active = { panel, placeholder, title, logo, opener, animations, viewportWidth: innerWidth, viewportHeight: innerHeight };
   }
 
@@ -108,6 +114,7 @@
     const title = project.querySelector(".operations__title");
     const logo = project.querySelector(".pwc-project__partners") ?? project.querySelector(".operations__project-icon");
     const panel = project.querySelector(".operations__panel");
+    const detail = project.querySelector("template.project-focus__detail");
     const titleButton = document.createElement("button");
     titleButton.type = "button";
     titleButton.className = "project-focus__trigger";
@@ -123,7 +130,7 @@
     panel.append(artworkButton);
 
     for (const button of [titleButton, artworkButton]) {
-      button.addEventListener("click", () => open({ title, logo, panel }, button));
+      button.addEventListener("click", () => open({ title, logo, panel, detail }, button));
     }
   }
 })();
