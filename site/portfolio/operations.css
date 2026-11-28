@@ -426,19 +426,18 @@ html:has(.project-focus[open]) { overflow: hidden; }
 .project-focus__palette {
   display: inline-flex;
   gap: 4px;
-  margin-inline-start: 2px;
 }
 
 .project-focus__palette > span {
-  inline-size: 14px;
-  block-size: 14px;
+  inline-size: 12px;
+  block-size: 12px;
   border-radius: 2px;
   background-color: var(--swatch-color);
 }
 
 .project-focus__palette > span:nth-child(4) { margin-inline-start: 7px; }
 
-.project-focus__palette > span:last-child {
+.project-focus__palette > .project-focus__swatch--cream {
   box-shadow: inset 0 0 0 1px rgb(41 42 38 / 16%);
 }
 
