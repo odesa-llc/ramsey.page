@@ -71,20 +71,25 @@
     name.textContent = title.textContent;
     name.style.fontSize = getComputedStyle(title).fontSize;
     const mark = logo.cloneNode(true);
-    for (const [element, box] of [[name, titleBox], [mark, logoBox]]) {
-      Object.assign(element.style, {
-        left: box.x - headingStart.x + "px",
-        top: box.y - headingStart.y + "px",
-        width: box.width + "px",
-        height: box.height + "px",
-      });
+    const details = detail?.content.cloneNode(true);
+    const palette = details?.querySelector(".project-focus__palette");
+    const description = details?.querySelector(".project-focus__description");
+    if (!palette) {
+      for (const [element, box] of [[name, titleBox], [mark, logoBox]]) {
+        Object.assign(element.style, {
+          left: box.x - headingStart.x + "px",
+          top: box.y - headingStart.y + "px",
+          width: box.width + "px",
+          height: box.height + "px",
+        });
+      }
     }
     heading.append(mark, name);
+    if (palette) heading.append(palette);
     panel.replaceWith(placeholder);
     content.style.setProperty("--focus-artwork-width", panelBox.width + "px");
-    const description = detail?.content.firstElementChild.cloneNode(true);
     content.append(heading);
-    if (description) content.append(description);
+    if (details) content.append(details);
     content.append(panel);
     title.classList.add("project-focus-source");
     logo.classList.add("project-focus-source");

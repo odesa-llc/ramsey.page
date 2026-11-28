@@ -412,6 +412,51 @@ html:has(.project-focus[open]) { overflow: hidden; }
   margin: 0;
 }
 
+.project-focus__heading:has(> .project-focus__palette) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.project-focus__heading:has(> .project-focus__palette) > * {
+  position: static;
+  flex: none;
+}
+
+.project-focus__palette {
+  display: inline-flex;
+  gap: 4px;
+  margin-inline-start: 2px;
+}
+
+.project-focus__palette > span {
+  inline-size: 14px;
+  block-size: 14px;
+  border-radius: 2px;
+  background-color: var(--swatch-color);
+}
+
+.project-focus__palette > span:nth-child(4) { margin-inline-start: 7px; }
+
+.project-focus__palette > span:last-child {
+  box-shadow: inset 0 0 0 1px rgb(41 42 38 / 16%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .project-focus[open] .project-focus__palette {
+    animation: tricount-palette-reveal 560ms cubic-bezier(.28,.65,.26,1) 80ms both;
+  }
+
+  @keyframes tricount-palette-reveal {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0); }
+  }
+}
+
+@media (max-width: 420px) {
+  .project-focus:has(.project-focus__palette) { padding-block-start: 50px; }
+}
+
 .project-focus__description {
   max-inline-size: 48ch;
   margin: 0 0 18px;
